@@ -16,7 +16,7 @@ Balik ke identitas asli.</blockquote>
 
 STORAGE = {}
 
-DEV_LIST = ["Rilesya", "ranzpedia_bot"]
+DEV_LIST = ["Rilesya", "Ranzxyy"]
 
 @PY.UBOT("clone")
 async def impostor(client: Client, message: Message):

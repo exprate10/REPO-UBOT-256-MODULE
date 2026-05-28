@@ -30,7 +30,7 @@ async def done_command(client, message):
             f"<blockquote>📦 <b>Barang : {name_item}</b>\n"
             f"👉 <b>Testimoni : {testi}</b></blockquote>\n\n"
             f"<b>Kami Sedang Mengerjakan Pesanan Anda, tolong Tidak Spam Owner supaya Pesanan Lebih Cepat Diproses, Terima Kasih</b>\n"
-            f"<blockquote><b>Userbot By @ranzpedia_bot</b></blockquote>\n\n"
+            f"<blockquote><b>Userbot By @UbotRanzxyBot</b></blockquote>\n\n"
         )
         await izzy_ganteng.edit(response)
 

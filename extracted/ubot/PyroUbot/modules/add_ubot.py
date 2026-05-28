@@ -248,7 +248,7 @@ async def add_ubot_callback(client, callback_query):
         f"{new_client.me.first_name} {new_client.me.last_name or ''}</a>\n"
         f"<b>ID:</b> <code>{new_client.me.id}</code>\n"
         f"<b>Prefix:</b> <code>{' '.join(SH)}</code>\n\n"
-        f"<b>Join channel:</b> @ranzpedia_bot biar tetap update!\n"
+        f"<b>Join channel:</b> @AllTestiRanzxyy biar tetap update!\n"
         f"<b>Kalau bot ga respon, ketik /restart</b></blockquote>",
         reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("← Kembali", callback_data=f"home {user_id}")]]),
     )
@@ -257,9 +257,8 @@ async def add_ubot_callback(client, callback_query):
     await install_my_peer(new_client)
 
     try:
-        await new_client.join_chat("ranzpedia_bot")
-        await new_client.join_chat("ranzpedia_bot")
-        await new_client.join_chat("InformationUbotPremiumVdx")
+        await new_client.join_chat("AllTestiRanzxyy")
+        await new_client.join_chat("AboutRanzxyPedia")
     except UserAlreadyParticipant:
         pass
 
