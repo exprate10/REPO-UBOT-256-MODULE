@@ -4,7 +4,7 @@ from PyroUbot import *
 
 __MODULE__ = "sʜᴀᴢᴀᴍ"
 __HELP__ = """
-<blockquote><b><b>Shazam</b></b>
+<blockquote><b>Shazam</b></b>
 
 <b>Perintah:</b>
 <code>{0}find</code> [reply audio/video] → Cari judul lagu dari suara.</blockquote></b>

@@ -9,7 +9,7 @@ from PyroUbot import *
 
 __MODULE__ = "ᴄᴇᴋ ɪᴘ ᴀᴅʀᴇss"
 __HELP__ = """
-<blockquote><b><b>Cek IP Adress</b></b>
+<blockquote><b>Cek IP Adress</b></b>
 
 <b>Perintah:</b> <code>{0}ipaddress</code> [IP ADDRESS]
 Penjelasan: untuk mendapatkan alamat IP dari ip adress yang diberikan</blockquote></b>

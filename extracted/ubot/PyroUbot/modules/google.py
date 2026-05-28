@@ -3,7 +3,7 @@ from PyroUbot import *
 
 __MODULE__ = "ɢᴏᴏɢʟᴇ"
 __HELP__ = """
-<blockquote><b><b>Google</b>
+<blockquote><b>Google</b>
 
 <b>Perintah:</b> <code>{0}google [query]</code>
     search google</b></blockquote>

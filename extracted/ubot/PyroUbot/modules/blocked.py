@@ -3,7 +3,7 @@ from pyrogram.raw.functions.contacts import GetBlocked
 
 __MODULE__ = "ʙʟᴏᴄᴋᴇᴅ"
 __HELP__ = """
-<blockquote><b><b>Blocked</b>
+<blockquote><b>Blocked</b>
 
 <b>Perintah:</b> <code>{0}unblockall</code>
     meng unblock semua user di daftar contact

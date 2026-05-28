@@ -7,7 +7,7 @@ import requests
 __MODULE__ = "ʙʀᴀᴛ"
 __HELP__ = """
 <blockquote><b>『 
-  <b>• <b>Perintah:</b></b> <code>{0}brat [text]</code>
+  </b>• <b>Perintah:</b></b> <code>{0}brat [text]</code>
   <b>• ᴘᴇɴᴊᴇʟᴀsᴀɴ:</b> Untuk Membuat Gambar Text Seperti Tren Tiktok</b></blockquote>
 """
 

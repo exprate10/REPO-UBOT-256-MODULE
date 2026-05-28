@@ -3,7 +3,7 @@ from PyroUbot import *
 
 __MODULE__ = "ʟᴇᴀᴠᴇʀ"
 __HELP__ = """
-<blockquote><b><b>Leaver</b></b>
+<blockquote><b>Leaver</b></b>
 
 <b>Perintah:</b>
 <code>{0}leave</code> → Keluar dari grup ini.

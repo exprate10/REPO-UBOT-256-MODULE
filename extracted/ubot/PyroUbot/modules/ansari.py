@@ -7,7 +7,7 @@ from pyrogram.types import Message
 
 __MODULE__ = "ᴀɴsᴀʀɪ ɪsʟᴀᴍɪᴄ"
 __HELP__ = """
-<blockquote><b><b>Ansari Islamic</b>
+<blockquote><b>Ansari Islamic</b>
 
 <b>Perintah:</b> <code>{0}ansari</code>
     untuk bertanya tentang ayat alquran atau tentang pertanyaan islam lainya</b></blockquote>

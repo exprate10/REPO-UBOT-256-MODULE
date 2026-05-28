@@ -4,7 +4,7 @@ from PyroUbot import *
 __MODULE__ = "sʜɪᴏ"
 __HELP__ = """
 <b>⦪ 
-<blockquote><b>⎆ <b>Perintah:</b>
+<blockquote><b>⎆ </b>Perintah:</b>
 ᚗ <code>{0}shio</code> naga tanggal bulan tahun
 
 ⌭ ᴘᴇɴᴊᴇʟᴀsᴀɴ:

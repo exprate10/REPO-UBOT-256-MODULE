@@ -3,7 +3,7 @@ from PyroUbot import *
 __MODULE__ = "ғɪʟᴛᴇʀ"
 __HELP__ = """
 <blockquote><b>『 
-<b>ɴᴏᴛᴇs: ᴛʜɪs ɪs ᴏɴʟʏ ᴘʀɪᴠᴀᴛᴇ ᴄʜᴀᴛ</b>
+</b>ɴᴏᴛᴇs: ᴛʜɪs ɪs ᴏɴʟʏ ᴘʀɪᴠᴀᴛᴇ ᴄʜᴀᴛ</b>
 
 <b>⌲ <b>Perintah:</b></b> <code>{0}pfilter</code> ᴏʀ <code>{0}filter</code>
    <code>ᴍᴇɴɢᴀᴋᴛɪғᴋᴀɴ ᴀᴛᴀᴜ ᴍᴇɴᴏɴᴀᴋᴛɪғᴋᴀɴ ғɪʟᴛᴇʀs ᴘʀɪᴠᴀᴛᴇ ᴏʀ ɢʀᴏᴜᴘ</code>

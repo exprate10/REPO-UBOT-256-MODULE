@@ -5,7 +5,7 @@ from PyroUbot import PY
 
 __MODULE__ = "ᴄᴇᴋ ɪᴘ"
 __HELP__ = """
-<blockquote><b><b>Cek IP Website</b></b>
+<blockquote><b>Cek IP Website</b></b>
 
 <b>Perintah:</b> <code>{0}cekip</code> [domain]
 Penjelasan: untuk mendapatkan alamat IP dari domain yang diberikan</blockquote></b>

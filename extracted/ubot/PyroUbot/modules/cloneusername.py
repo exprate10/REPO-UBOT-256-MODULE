@@ -7,7 +7,7 @@ __MODULE__ = "ᴄʟᴏɴᴇ ᴜsᴇʀɴᴀᴍᴇ"
 __HELP__ = """
 <blockquote><b>📚 Folder Untuk Clone Username
 
-🚦 <b>Perintah:</b> {0}clone @username
+🚦 </b>Perintah:</b> {0}clone @username
 🦠 Penjelasan : Untuk MenClone Seseorang User.
 🚦 <b>Perintah:</b> {0}clone restore 
 🦠 Penjelasan : Untuk Mengembalikan Kamu Ke Identitas Sebelumnya.</b></blockquote>

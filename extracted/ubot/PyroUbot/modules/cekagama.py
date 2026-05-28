@@ -5,7 +5,7 @@ from PyroUbot import PY
 
 __MODULE__ = "ᴄᴇᴋ ᴀɢᴀᴍᴀ"
 __HELP__ = """
-<blockquote><b><b>Cek Agama</b></b>
+<blockquote><b>Cek Agama</b></b>
 
 <b>Perintah:</b>
 <code>{0}cekagama [nama]</code> → DETEKSI AGAMA DARI NAMA  

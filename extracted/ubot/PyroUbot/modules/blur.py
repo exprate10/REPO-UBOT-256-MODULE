@@ -26,7 +26,7 @@ async def ReTrieveFile(input_file_name):
 
 __MODULE__ = "ʙʟᴜʀ"
 __HELP__ = """
-<blockquote><b><b>Blur</b>
+<blockquote><b>Blur</b>
 
 <b>Perintah:</b> <code>{0}blur</code>
     Untuk Blur Gambar</b></blockquote>

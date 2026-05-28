@@ -4,7 +4,7 @@ from PyroUbot import *
 
 __MODULE__ = "ғᴀᴄᴇ ᴅᴇᴛᴇᴄᴛ"
 __HELP__ = """
-<blockquote><b><b>Face Detect</b></b>
+<blockquote><b>Face Detect</b></b>
 
 <b>Perintah:</b>
 <code>{0}face</code> [reply foto] → Deteksi wajah dan info lainnya.</blockquote></b>

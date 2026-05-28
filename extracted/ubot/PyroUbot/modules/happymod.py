@@ -5,7 +5,7 @@ from PyroUbot import *
 __MODULE__ = "ʜᴀᴘᴘʏᴍᴏᴅ"
 __HELP__ = """
 <b>⦪ 
-<blockquote><b>⎆ <b>Perintah:</b>
+<blockquote><b>⎆ </b>Perintah:</b>
 ᚗ <code>{0}hmod</code> nama apk
 ⊷ search apk mod android</b></blockquote>
 """

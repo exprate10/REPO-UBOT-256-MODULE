@@ -3,7 +3,7 @@ from PyroUbot import *
 
 __MODULE__ = "ǫʀ ᴄᴏᴅᴇ"
 __HELP__ = """
-<blockquote><b><b>QR Code</b></b>
+<blockquote><b>QR Code</b></b>
 
 <b>Perintah:</b>
 <code>{0}qr</code> [teks/link] → Buat gambar QR Code.</blockquote></b>

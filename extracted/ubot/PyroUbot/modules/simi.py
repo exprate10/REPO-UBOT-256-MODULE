@@ -7,7 +7,7 @@ from pyrogram.types import Message
 
 __MODULE__ = "sɪᴍɪ ᴀɪ"
 __HELP__ = """
-<blockquote><b><b>simi ai</b>
+<blockquote><b>simi ai</b>
 
 <b>Perintah:</b> <code>{0}simi</code>
     dapat mengobrol, tapi agak toxic</b></blockquote>

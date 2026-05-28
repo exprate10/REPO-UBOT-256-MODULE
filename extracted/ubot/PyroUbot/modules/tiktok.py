@@ -4,7 +4,7 @@ from PyroUbot import *
 
 __MODULE__ = "ᴛɪᴋᴛᴏᴋ"
 __HELP__ = """
-<blockquote><b><b>TikTok</b></b>
+<blockquote><b>TikTok</b></b>
 
 <b>Perintah:</b>
 <code>{0}tt</code> [link tiktok] → Download video No WM.

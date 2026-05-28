@@ -4,7 +4,7 @@ from PyroUbot import *
 
 __MODULE__ = "𝙻𝚄𝙼𝙸𝙽𝙰𝙸"
 __HELP__ = """
-<blockquote><b><b>LuminAI</b>
+<blockquote><b>LuminAI</b>
 
 <b>Perintah:</b> <code>{0}lumin</code>
     Dapat mengobrol dengan AI</b></blockquote>

@@ -10,7 +10,7 @@ kontol = False
 
 __MODULE__ = "𝚂𝙿𝙰𝙼 𝟸"
 __HELP__ = """
- <blockquote><b><b>Spam 2</b><b>
+ <blockquote><b>Spam 2</b><b>
 
 • <b>Perintah:</b> <code>{0}sdspm</code> [Waktu] [Balas ke pesan]
 • Penjelasan : Memulai spam ke database.

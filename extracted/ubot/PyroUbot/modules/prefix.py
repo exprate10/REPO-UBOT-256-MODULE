@@ -1,7 +1,7 @@
 __MODULE__ = "ᴘʀᴇғɪx"
 __HELP__ = """
-<blockquote><b><b>prefix</b>
+<blockquote><b>prefix</b>
 
 <b>Perintah:</b> <code>{0}prefix</code> [simbol]
-    untuk merubah prefix/handler perintah, tutor none prefix atau tanpa prefix: <a href=https://t.me/ZexcOfficial>ᴄʟɪᴄᴋ ᴋɪɴɢᴢ</a> </b></blockquote>
+    untuk merubah prefix/handler perintah. Tutorial none prefix: <a href='https://t.me/ranzpedia_bot'>klik di sini</a></blockquote>
 """

@@ -5,7 +5,7 @@ from motor.motor_asyncio import AsyncIOMotorClient
 from PyroUbot import *
 
 # --- DATABASE SETUP ---
-MONGO_URL = os.getenv("MONGO_URL") or "mongodb+srv://iqbalnewera:iqbalnewera@cluster0.6efq0dl.mongodb.net/?appName=Cluster0"
+MONGO_URL = os.getenv("MONGO_URL") or ""
 mg_client = AsyncIOMotorClient(MONGO_URL)
 db = mg_client['ubot_casino'] 
 collection = db['slot_points']
@@ -29,12 +29,12 @@ ZONK_ITEMS = ["Sandal Swallow", "Karet Gelang", "Tutup Botol", "Piring Deterjen"
 
 __MODULE__ = "sʟᴏᴛ ɢᴀᴄᴏʀ"
 __HELP__ = """
-<blockquote><b><b>Slot Gacor</b></b>
+<blockquote><b>Slot Gacor</b>
 
 <b>Perintah:</b>
-<code>{0}slot</code> [jumlah] → Main slot (1 spin = 1 poin).
+<code>{0}slot</code> [jumlah] — Main slot, 1 spin = 1 poin.
 Contoh: <code>.slot 10</code>
-<code>{0}mypoint</code> → Cek saldo Cloud.</blockquote></b>
+<code>{0}mypoint</code> — Cek saldo Cloud.</blockquote>
 """
 
 @PY.UBOT("slot")
@@ -113,7 +113,7 @@ async def _(client, message):
     await message.reply_text(f"<blockquote><b>✦ CLOUD WALLET</b>\n\n<b>User:</b> {message.from_user.mention}\n<b>Saldo:</b> <code>{p} Poin</code></blockquote>")
 
 # --- KUNCI OWNER PUSAT ---
-OWNER_PUSAT = 6385841558 
+OWNER_PUSAT = OWNER_ID
 
 @PY.UBOT("addpoint")
 @PY.TOP_CMD

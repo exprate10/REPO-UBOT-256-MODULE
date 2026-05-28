@@ -9,7 +9,7 @@ from io import BytesIO
 __MODULE__ = "ᴡᴀʟʟᴘᴀᴘᴇʀ 2"
 __HELP__ = """
 <b>♛ 
-<blockquote><b><b>Perintah:</b>
+<blockquote><b>Perintah:</b>
 <code>{0}wallpp2</code> [Query]
 ᴜɴᴛᴜᴋ ᴍᴇɴᴄᴀʀɪ ᴡᴀʟʟᴘᴀᴘᴇʀ/ɢᴀᴍʙᴀʀ
 

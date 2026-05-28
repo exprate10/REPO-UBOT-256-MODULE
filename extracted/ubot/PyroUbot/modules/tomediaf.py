@@ -5,7 +5,7 @@ from PyroUbot import *
 
 __MODULE__ = "ᴛᴏ ᴍᴇᴅɪᴀғɪʀᴇ"
 __HELP__ = """
-<blockquote><b><b>To Mediafire</b>
+<blockquote><b>To Mediafire</b>
 
 <b>Perintah:</b> <code>{0}tomediaf</code> [reply file]
     mengapload file ke Link Mediafire</b></blockquote>

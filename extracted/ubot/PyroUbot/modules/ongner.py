@@ -30,9 +30,9 @@ from httpx import AsyncClient, Timeout
 __MODULE__ = "ᴏɴɢɴᴇʀ"
 __HELP__ = """
 <blockquote><b>
-<blockquote><b><b>Perintah:</b> <code>{0}ᴄᴘɪɴɢ</code> - <code>{0}ᴄᴀᴅᴅʙʟ</code> - <code>{0}ᴄʟɪᴍɪᴛ</code> - <code>ᴄᴀʟɪᴠᴇ</code></b></blockquote>
+<blockquote><b>Perintah:</b> <code>{0}ᴄᴘɪɴɢ</code> - <code>{0}ᴄᴀᴅᴅʙʟ</code> - <code>{0}ᴄʟɪᴍɪᴛ</code> - <code>ᴄᴀʟɪᴠᴇ</code></b></blockquote>
 
-<blockquote><b><b>Perintah:</b> <code>{0}ʙᴏʏsᴢ ɢᴀɴᴛᴇɴᴋ ɢᴀ</code> - <code>{0}ᴛᴇs ᴏɴ</code></b></blockquote>
+<blockquote><b>Perintah:</b> <code>{0}ʙᴏʏsᴢ ɢᴀɴᴛᴇɴᴋ ɢᴀ</code> - <code>{0}ᴛᴇs ᴏɴ</code></b></blockquote>
 
 <blockquote><b>- <code>{0}ᴘ</code>\n- <code>{0}ᴏᴋ</code>\n- <code>{0}sɪᴘ</code>\n- <code>{0}ʟᴏᴠᴇ</code>\n- <code>{0}ʜᴀʜᴀ</code>\n- <code>{0}ᴋᴜᴅᴀ</code></b></blockquote>
 """

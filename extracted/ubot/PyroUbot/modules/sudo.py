@@ -10,7 +10,7 @@ __MODULE__ = "sᴜᴅᴏ"
 __HELP__ = """
 <blockquote><b>👥 Sudo — RANZ PEDIA</b>
 
-<b><b>Perintah:</b></b>
+<b>Perintah:</b></b>
 <code>{0}addsudo [@username/reply]</code>
 Kasih akses user lain buat jalanin fitur userbot kamu
 

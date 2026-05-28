@@ -3,7 +3,7 @@ from PyroUbot import *
 
 __MODULE__ = "ʙɪɴ ᴄʜᴇᴄᴋᴇʀ"
 __HELP__ = """
-<blockquote><b><b>Bin Checker</b></b>
+<blockquote><b>Bin Checker</b></b>
 
 <b>Perintah:</b>
 <code>{0}bin</code> [6 digit angka] → Cek informasi kartu (BIN).</blockquote></b>

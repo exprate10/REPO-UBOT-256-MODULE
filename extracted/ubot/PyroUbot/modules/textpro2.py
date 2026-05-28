@@ -9,9 +9,9 @@ __MODULE__ = "ᴛᴇxᴛᴘʀᴏ𝟸"
 __HELP__ = """
 📚 <b>TextPro2 Commands</b>
 
-<blockquote><b>🚦 <b>Perintah:</b> <code>eraser</code>
+<blockquote><b>🚦 </b>Perintah:</b> <code>eraser</code>
 🦠 Penjelasan : Membuat gambar dengan efek Eraser.</b></blockquote>
-<blockquote><b>🚦 <b>Perintah:</b> <code>papercut</code>
+<blockquote><b>🚦 </b>Perintah:</b> <code>papercut</code>
 🦠 Penjelasan : Membuat gambar dengan efek Paper Cut.</b></blockquote>
 """
 

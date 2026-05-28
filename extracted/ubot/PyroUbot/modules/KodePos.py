@@ -7,7 +7,7 @@ from pyrogram.types import Message
 
 __MODULE__ = "ᴋᴏᴅᴇ ᴘᴏs"
 __HELP__ = """
-<blockquote><b><b>kode pos desa</b>
+<blockquote><b>kode pos desa</b>
 
 <b>Perintah:</b> <code>{0}kdps</code>
     dapat membantu melihat code pos suatu desa</b></blockquote>

@@ -3,7 +3,7 @@ from PyroUbot import *
 
 __MODULE__ = "sᴛɪᴄᴋᴇʀ ᴛᴏ ɪᴍɢ"
 __HELP__ = """
-<blockquote><b><b>Converter</b></b>
+<blockquote><b>Converter</b></b>
 
 <b>Perintah:</b>
 <code>{0}toimg</code> [reply stiker] → Ubah stiker menjadi foto JPG.</blockquote></b>

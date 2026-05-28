@@ -5,7 +5,7 @@ from PyroUbot import *
 
 __MODULE__ = "ɢʟᴏʙᴀʟ ʙᴀɴ"
 __HELP__ = """
-<blockquote><b><b>Global Ban</b></b>
+<blockquote><b>Global Ban</b></b>
 
 <b>Perintah:</b>
 <code>{0}gban [user_id/username/reply]</code> → Ban user dari semua grup yang kamu kelola.

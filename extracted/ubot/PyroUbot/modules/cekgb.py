@@ -4,9 +4,9 @@ from PyroUbot import *
 
 __MODULE__ = "ᴄʜᴇᴄᴋ ɢʙ"
 __HELP__ = """
-<blockquote><b><b>Cek GB Quote</b></b>
+<blockquote><b>Cek GB Quote</b></b>
 
-<b><b>Perintah:</b></b>
+<b>Perintah:</b></b>
 <code>{0}cekgb</code> [halaman]
 Contoh: <code>.cekgb 2</code>
 <i>(Tampilan rapi di dalam kutipan & auto-edit)</i></blockquote></b>

@@ -7,7 +7,7 @@ from pyrogram.types import Message
 
 __MODULE__ = "𝙱𝙰𝚁𝙳 𝙰𝙸"
 __HELP__ = """
-<blockquote><b><b>bard-ai</b>
+<blockquote><b>bard-ai</b>
 
 <b>Perintah:</b> <code>{0}bard</code>
     dapat menulis cerita, puisi, skrip, kode komputer, musik, email, surat, dll</b></blockquote>

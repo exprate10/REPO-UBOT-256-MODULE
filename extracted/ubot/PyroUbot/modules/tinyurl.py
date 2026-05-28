@@ -3,7 +3,7 @@ from PyroUbot import *
 
 __MODULE__ = "sʜᴏʀᴛᴇɴᴇʀ"
 __HELP__ = """
-<blockquote><b><b>Shortener</b></b>
+<blockquote><b>Shortener</b></b>
 
 <b>Perintah:</b>
 <code>{0}short</code> [link] → Memendekkan link yang panjang.</blockquote></b>

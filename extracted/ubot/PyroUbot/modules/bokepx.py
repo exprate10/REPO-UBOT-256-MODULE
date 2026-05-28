@@ -6,7 +6,7 @@ __MODULE__ = "ʙᴏᴋᴇxx"
 __HELP__ = """
 <b>⦪ </b>
 
-<blockquote><b>⎆ <b>Perintah:</b>
+<blockquote><b>⎆ </b>Perintah:</b>
 ᚗ <code>{0}bokep1</code>
 ⊷ lagi nyari bokepnya bntr....
 

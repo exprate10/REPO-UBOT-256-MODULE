@@ -5,7 +5,7 @@ __MODULE__ = "ᴛʜᴀɴᴋs"
 __HELP__ = """
 <blockquote><b>✨ Thanks Buyer — RANZ PEDIA</b>
 
-<b><b>Perintah:</b></b>
+<b>Perintah:</b></b>
 <code>{0}thanks</code> — Animasi terima kasih ke buyer
 <code>{0}tq</code> — Versi singkat thanks
 <code>{0}nx</code> — Versi santai / gaul</blockquote>

@@ -5,7 +5,7 @@ from PyroUbot import *
 __MODULE__ = "ᴘᴀsᴀɴɢᴀɴ"
 __HELP__ = """
 <b>⦪ 
-<blockquote><b>⎆ <b>Perintah:</b>
+<blockquote><b>⎆ </b>Perintah:</b>
 ᚗ <code>{0}pasangan</code> nama1, nama2
 
 ⌭ ᴘᴇɴᴊᴇʟᴀsᴀɴ:

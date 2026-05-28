@@ -3,7 +3,7 @@ from PyroUbot import *
 
 __MODULE__ = "ᴘɪɴᴛᴇʀᴇsᴛ"
 __HELP__ = """
-<blockquote><b><b>Pinterest</b></b>
+<blockquote><b>Pinterest</b></b>
 
 <b>Perintah:</b>
 <code>{0}pin</code> [link] → Download foto/video dari Pinterest.</blockquote></b>

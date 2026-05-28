@@ -5,7 +5,7 @@ from PyroUbot import *
 
 __MODULE__ = "sᴘᴏᴛɪғʏ ᴘʀᴏ"
 __HELP__ = """
-<blockquote><b><b>Spotify Pro</b></b>
+<blockquote><b>Spotify Pro</b></b>
 
 <b>Perintah:</b>
 <code>{0}spotify</code> [judul lagu] → Cari dan download lagu Spotify menjadi MP3.</blockquote></b>

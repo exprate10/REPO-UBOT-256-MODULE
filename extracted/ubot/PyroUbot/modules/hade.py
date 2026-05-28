@@ -30,7 +30,7 @@ def remini(image_path, model_type="enhance"):
 __MODULE__ = "remini"
 __HELP__ = """
 <b>⦪ 
-<blockquote><b>⎆ <b>Perintah:</b>
+<blockquote><b>⎆ </b>Perintah:</b>
 ᚗ <code>{0}hd</code></b></blockquote>
 """
 

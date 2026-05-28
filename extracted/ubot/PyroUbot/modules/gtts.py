@@ -5,7 +5,7 @@ from PyroUbot import *
 __MODULE__ = "ɢᴛᴛs"
 __HELP__ = """
 <blockquote><b>♛ 
-<b><b>Perintah:</b></b>
+</b>Perintah:</b></b>
 • <code>.tts</code> [teks]
 ᴍᴇɴɢᴜʙᴀʜ ᴛᴇᴋs ᴍᴇɴᴊᴀᴅɪ sᴜᴀʀᴀ (ɢᴏᴏɢʟᴇ ᴠᴏɪᴄᴇ).
 

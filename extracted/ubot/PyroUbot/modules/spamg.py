@@ -10,13 +10,13 @@ __MODULE__ = "ꜱᴘᴀᴍ"
 __HELP__ = """
 <blockquote><b>『 bantuan spam 』</b>
 
-<b><b>Perintah:</b></b> <code>{0}spam</code>
+<b>Perintah:</b></b> <code>{0}spam</code>
    <code>melakukan spam pesan</code>
 
-<b><b>Perintah:</b></b> <code>{0}setdelay</code>
+<b>Perintah:</b></b> <code>{0}setdelay</code>
    <code>mengatur delay setiap pesan yang di kirim</code>
 
-<b><b>Perintah:</b></b> <code>{0}stopspam</code>
+<b>Perintah:</b></b> <code>{0}stopspam</code>
    <code>memberhentikan spam pesan yang sedang berjalan</code></blockquote>
 """
 

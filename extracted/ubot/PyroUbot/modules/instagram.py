@@ -10,7 +10,7 @@ from PyroUbot import *
 
 __MODULE__ = "ɪɴsᴛᴀɢʀᴀᴍ"
 __HELP__ = """
- <blockquote><b><b>Instagram</b></b>
+ <blockquote><b>Instagram</b></b>
 
 • <b>Perintah</b> : <code>{0}ig</code> <b>[link]</b>
 • <b>Penjelasan : Downloader Vid Insta</b></blockquote>

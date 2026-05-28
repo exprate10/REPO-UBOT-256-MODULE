@@ -3,7 +3,7 @@ from PyroUbot import *
 
 __MODULE__ = "ɪᴘ ɪɴꜰᴏ"
 __HELP__ = """
-<blockquote><b><b>IP Info</b></b>
+<blockquote><b>IP Info</b></b>
 
 <b>Perintah:</b>
 <code>{0}ipinfo [alamat_ip]</code> → Cek informasi detail alamat IP.</blockquote></b>

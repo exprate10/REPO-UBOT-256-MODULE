@@ -4,7 +4,7 @@ import requests
 __MODULE__ = "ᴄᴏᴜɴᴛʀʏ ɪɴꜰᴏ"
 __HELP__ = """
 <blockquote><b>『 
-  <b>• <b>Perintah:</b></b> <code>{0}country</code> [ɴᴀᴍᴀ ɴᴇɢᴀʀᴀ]
+  </b>• <b>Perintah:</b></b> <code>{0}country</code> [ɴᴀᴍᴀ ɴᴇɢᴀʀᴀ]
   <b>• ᴘᴇɴᴊᴇʟᴀsᴀɴ:</b> ᴜɴᴛᴜᴋ ᴍᴇɴᴀᴍᴘɪʟᴋᴀɴ ɪɴꜰᴏʀᴍᴀꜱɪ ᴛᴇɴᴛᴀɴɢ ꜱᴇꜱᴜᴀᴛᴜ ɴᴇɢᴀʀᴀ.</blockquote>
 """
 

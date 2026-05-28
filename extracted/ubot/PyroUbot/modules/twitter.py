@@ -6,7 +6,7 @@ from PyroUbot import *
 __MODULE__ = "ᴛᴡɪᴛᴛᴇʀ"
 __HELP__ = """
 <b>⦪ <blockquote><b>
-⎆ <b>Perintah:</b>
+⎆ </b>Perintah:</b>
 ᚗ <code>{0}twit</code> link video twitter
 ⊶ Mendownload Music Yang Di Inginkan.</b></blockquote>
 """

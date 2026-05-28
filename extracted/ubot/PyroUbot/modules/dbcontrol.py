@@ -7,15 +7,15 @@ from PyroUbot import *
 __MODULE__ = "ᴅʙ ᴄᴏɴᴛʀᴏʟ"
 __HELP__ = """
 <blockquote><b>
-<blockquote><b><b>Perintah:</b> <code>{0}ᴛɪᴍᴇ</code>
+<blockquote><b>Perintah:</b> <code>{0}ᴛɪᴍᴇ</code>
     ᴜɴᴛᴜᴋ ᴍᴇɴᴀᴍʙᴀʜ - ᴍᴇɴɢᴜʀᴀɴɢɪ ᴍᴀsᴀ ᴀᴋᴛɪғ ᴜsᴇʀ</b></blockquote>
 
-<blockquote><b><b>Perintah:</b> <code>{0}ᴄᴇᴋ</code>
+<blockquote><b>Perintah:</b> <code>{0}ᴄᴇᴋ</code>
     ᴜɴᴛᴜᴋ ᴍᴇʟɪʜᴀᴛ ᴍᴀsᴀ ᴀᴋᴛɪғ ᴜsᴇʀ</b></blockquote>
 
-<blockquote><b><b>Perintah:</b> <code>{0}ᴀᴅᴅᴀᴅᴍɪɴ</code> - <code>{0}ᴜɴᴀᴅᴍɪɴ</code> - <code>{0}ɢᴇᴛᴀᴅᴍɪɴ</code></b></blockquote>
+<blockquote><b>Perintah:</b> <code>{0}ᴀᴅᴅᴀᴅᴍɪɴ</code> - <code>{0}ᴜɴᴀᴅᴍɪɴ</code> - <code>{0}ɢᴇᴛᴀᴅᴍɪɴ</code></b></blockquote>
 
-<blockquote><b><b>Perintah:</b> <code>{0}sᴇʟᴇs</code> - <code>{0}ᴜɴsᴇʟᴇs</code> - <code>{0}ɢᴇᴛsᴇʟᴇs</code></b></blockquote>
+<blockquote><b>Perintah:</b> <code>{0}sᴇʟᴇs</code> - <code>{0}ᴜɴsᴇʟᴇs</code> - <code>{0}ɢᴇᴛsᴇʟᴇs</code></b></blockquote>
 """
 
 @PY.BOT("prem")

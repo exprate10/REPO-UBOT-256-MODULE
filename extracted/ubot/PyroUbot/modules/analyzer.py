@@ -5,7 +5,7 @@ from PyroUbot import *
 
 __MODULE__ = "ᴀɴᴀʟʏᴢᴇʀ"
 __HELP__ = """
-<blockquote><b><b>Analyzer</b></b>
+<blockquote><b>Analyzer</b></b>
 
 <b>Perintah:</b>
 <code>{0}analyze</code> → Analisis detail grup/channel ini.</blockquote></b>

@@ -5,7 +5,7 @@ from PyroUbot import PY
 
 __MODULE__ = "ᴄᴇᴋ ᴋᴇᴄᴀɴᴛɪᴋᴀɴ"
 __HELP__ = """
-<blockquote><b><b>Cek Kecantikan</b></b>
+<blockquote><b>Cek Kecantikan</b></b>
 
 <b>Perintah:</b>
 <code>{0}cekkctkn [nama]</code> → Ratting berapa persen kecantikan nama  

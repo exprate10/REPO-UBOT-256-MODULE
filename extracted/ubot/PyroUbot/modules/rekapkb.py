@@ -5,7 +5,7 @@ from PyroUbot import PY
 
 __MODULE__ = "ᴛᴏᴏʟs ʀᴇᴋᴀᴘ"
 __HELP__ = """
-<blockquote><b><b>Rekap & Win</b></b>
+<blockquote><b>Rekap & Win</b></b>
 
 <b>Perintah:</b>
 <code>{0}rekap</code> → Rekap saldo dari pesan yang direply.  

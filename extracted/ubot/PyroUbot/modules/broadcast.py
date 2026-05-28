@@ -13,7 +13,7 @@ from PyroUbot import *
 __MODULE__ = "ʙʀᴏᴀᴅᴄᴀꜱᴛ"
 __HELP__ = """
 <blockquote><b>
-<b>Perintah:</b> <code>{0}ɢɪᴋᴇꜱ</code>
+</b>Perintah:</b> <code>{0}ɢɪᴋᴇꜱ</code>
 
 ᴛʏᴘᴇ : ᴀʟʟ , ᴜꜱᴇʀꜱ , ɢʀᴏᴜᴘ
 
@@ -402,7 +402,7 @@ async def _(client, message):
         else:
             await remove_from_vars(client.me.id, "BL_ID", chat_id)
             response = f"""
-<blockquote><b>{grp} ɢʀᴏᴜᴘ: {message.chat.title}</blockquote ></b>
+<blockquote><b>{grp} ɢʀᴏᴜᴘ: {message.chat.title}</blockquote></b>
 <blockquote><b>{ktrn} ᴋᴇᴛ: ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ʀᴇᴍᴏᴠᴇᴅ ꜰʀᴏᴍ ᴛʜᴇ ʙʟᴀᴄᴋʟɪꜱᴛ</blockquote></b>
 """
         return await msg.edit(response)

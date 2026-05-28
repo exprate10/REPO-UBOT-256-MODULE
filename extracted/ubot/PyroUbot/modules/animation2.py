@@ -4,7 +4,7 @@ from PyroUbot import *
 
 __MODULE__ = "𝙰𝙽𝙸𝙼𝙰𝚂𝙸 𝟸"
 __HELP__ = """
- <blockquote><b><b>Animasi 2</b></b>
+ <blockquote><b>Animasi 2</b></b>
 
 • <b>Perintah</b> : <code>{0}gombal</code>
 • <b>Penjelasan : gatau gabut doang.</b>

@@ -6,7 +6,7 @@ from PyroUbot import *
 __MODULE__ = "ɴᴜʟɪs"
 __HELP__ = """
 <blockquote><b>『 
-  <b>• <b>Perintah:</b></b> <code>{0}nulis</code> [ʀᴇᴘʟʏ/ᴛᴇxᴛ]
+  </b>• <b>Perintah:</b></b> <code>{0}nulis</code> [ʀᴇᴘʟʏ/ᴛᴇxᴛ]
   <b>• ᴘᴇɴᴊᴇʟᴀsᴀɴ:</b> ᴜɴᴛᴜᴋ ɴᴜʟɪs sᴇsᴜᴀᴛᴜ ᴋᴀʟɪᴍᴀᴛ/ᴋᴀᴛᴀ ᴅɪ ʙᴜᴋᴜ</blockquote>
 """
 

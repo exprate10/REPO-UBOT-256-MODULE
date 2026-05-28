@@ -7,7 +7,7 @@ from pyrogram.types import Message
 
 __MODULE__ = "blackboxpro"
 __HELP__ = """
-<blockquote><b><b>blackboxpro</b>
+<blockquote><b>blackboxpro</b>
 
 <b>Perintah:</b> <code>{0}blackboxpro</code>
     dapat membantu Anda dengan berbagai konsep pemprograman dan lebih lengkap dari blackbox biasa</b></blockquote>

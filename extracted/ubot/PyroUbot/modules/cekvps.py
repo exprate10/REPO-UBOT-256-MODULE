@@ -5,7 +5,7 @@ from PyroUbot import *
 
 __MODULE__ = "ᴠᴘꜱ ɪɴꜰᴏ"
 __HELP__ = """
-<blockquote><b><b>VPS Info</b></b>
+<blockquote><b>VPS Info</b></b>
 
 <b>Perintah:</b>
 <code>{0}vpsinfo</code> → Cek spesifikasi dan penggunaan server.</blockquote></b>

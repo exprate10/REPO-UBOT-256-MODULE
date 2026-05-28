@@ -31,7 +31,7 @@ NOBLE = [
 
 __MODULE__ = "ᴀɴɪᴍᴀꜱɪ"
 __HELP__ = """
-<blockquote><b><b>Animasi</b>
+<blockquote><b>Animasi</b>
 
 <b>Perintah:</b>
     <code>{0}dino</code>

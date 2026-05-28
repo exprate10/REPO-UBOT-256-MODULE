@@ -9,7 +9,7 @@ from io import BytesIO
 __MODULE__ = "ᴀɴɪᴍᴇ"
 __HELP__ = """
 <blockquote><b>『 
-<b>⌲ <b>Perintah:</b></b> <code>{0}anime [query]</code>
+</b>⌲ <b>Perintah:</b></b> <code>{0}anime [query]</code>
 
 <b>Query:</b> <b>keneki</b>,
     <b>megumin/b>,

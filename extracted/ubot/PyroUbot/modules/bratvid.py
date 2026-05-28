@@ -5,7 +5,7 @@ from PyroUbot import *
 __MODULE__ = "ʙʀᴀᴛᴠɪᴅɪᴏ"
 __HELP__ =  """
 <b>✮ 
-<blockquote><b><b>Perintah:</b>
+<blockquote><b>Perintah:</b>
 <code>{0}bratvideo [text]</code>
 Untuk Membuat Gambar Text video Seperti Tren Tiktok</b></blockquote>
 

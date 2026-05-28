@@ -5,7 +5,7 @@ import requests
 __MODULE__ = "ᴘʟᴀʏʙᴜᴛᴛᴏɴ"
 __HELP__ = """
 <b>⦪ <blockquote><b>
-⎆ <b>Perintah:</b>
+⎆ </b>Perintah:</b>
 ᚗ <code>{0}ytgold</code>
 ⊷ untuk membuat gold playbutton youtube
 

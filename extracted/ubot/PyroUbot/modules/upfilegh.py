@@ -6,7 +6,7 @@ from PyroUbot import PY
 
 __MODULE__ = "ᴜᴘʟᴏᴀᴅ ᴋᴇ ɢɪᴛʜᴜʙ"
 __HELP__ = """
-<blockquote><b><b>Upload File ke GitHub</b></b>
+<blockquote><b>Upload File ke GitHub</b></b>
 
 <b>Perintah:</b>
 <code>{0}upgh [email] [password]</code> → Login ke GitHub.

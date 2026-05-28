@@ -5,7 +5,7 @@ from PyroUbot import *
 __MODULE__ = "ᴄᴇᴋ ᴅᴏᴍᴘᴇᴛ"
 __HELP__ = """
 <b>⦪ 
-<blockquote><b>⎆ <b>Perintah:</b>
+<blockquote><b>⎆ </b>Perintah:</b>
 ᚗ <code>{0}cdompet</code> reply chat
 ⊷ mendeteksi isi dompet seseorang.
 </blockquote></b>

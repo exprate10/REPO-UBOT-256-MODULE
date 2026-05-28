@@ -14,7 +14,7 @@ from PyroUbot import *
 
 __MODULE__ = "ᴀᴅᴍɪɴ"
 __HELP__ = """
-<blockquote><b><b>Admin</b>
+<blockquote><b>Admin</b>
 
 <b>Perintah:</b> <code>{0}kick</code> |<code>{0}ban</code> |<code>{0}mute</code> |<code>{0}etmin</code> |<code>{0}ceo</code> |<code>{0}demote</code>
     <code>{0}unmute</code> |<code>{0}unban</code>
@@ -196,7 +196,7 @@ async def _(client, message):
         except Exception as error:
             await message.reply(error)
         msg_kick = f"""
-<blockquote><b>{bcs}ᴡᴀʀɴɪɴɢ: {mention}<b>
+<blockquote><b>{bcs}ᴡᴀʀɴɪɴɢ: {mention}</b>
 <b>{tion}ᴀᴅᴍɪɴ: {message.from_user.mention}</b>
 <b>{ktrng}ᴀʟᴀꜱᴀɴ: {reason}</b></blockquote>
 
@@ -224,7 +224,7 @@ async def _(client, message):
         except Exception as error:
             await message.reply(error)
         msg_ban = f"""
-<blockquote><b>{bcs}ᴡᴀʀɴɪɴɢ: {mention}<b>
+<blockquote><b>{bcs}ᴡᴀʀɴɪɴɢ: {mention}</b>
 <b>{tion}ᴀᴅᴍɪɴ: {message.from_user.mention}</b>
 <b>{ktrng}ᴀʟᴀꜱᴀɴ: {reason}</b></blockquote>
 

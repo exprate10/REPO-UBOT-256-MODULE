@@ -5,7 +5,7 @@ from PyroUbot import *
 
 __MODULE__ = "ʙɪɴɢ ɪᴍɢ"
 __HELP__ = """
-<blockquote><b><b>Bing-image</b>
+<blockquote><b>Bing-image</b>
 
 <b>Perintah:</b> <code>{0}pic</code> [ǫᴜᴇʀʏ]
     Untuk Mencari Photo Random Dari Google</b></blockquote>

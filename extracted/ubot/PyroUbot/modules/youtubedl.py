@@ -3,7 +3,7 @@ from PyroUbot import *
 
 __MODULE__ = "ʏᴏᴜᴛᴜʙᴇ"
 __HELP__ = """
-<blockquote><b><b>Youtube</b></b>
+<blockquote><b>Youtube</b></b>
 
 <b>Perintah:</b>
 <code>{0}ytv</code> [link] → Download Video YouTube.

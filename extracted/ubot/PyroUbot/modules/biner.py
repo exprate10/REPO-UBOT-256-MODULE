@@ -2,7 +2,7 @@ from PyroUbot import *
 
 __MODULE__ = "ʙɪɴᴇʀ"
 __HELP__ = """
-<blockquote><b><b>Biner</b></b>
+<blockquote><b>Biner</b></b>
 
 <b>Perintah:</b>
 <code>{0}tobin</code> [teks] → Ubah teks jadi kode biner.

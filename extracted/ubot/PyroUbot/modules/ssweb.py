@@ -6,7 +6,7 @@ from PyroUbot import *
 __MODULE__ = "ss ᴡᴇʙ ᴘᴄ"
 __HELP__ = """
 <b>✮ 
-<blockquote><b><b>Perintah:</b>
+<blockquote><b>Perintah:</b>
 <code>{0}ssweb</code> link
 untuk screenshot website pc</b></blockquote>
 """

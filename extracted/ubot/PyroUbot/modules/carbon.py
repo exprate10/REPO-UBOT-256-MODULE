@@ -17,7 +17,7 @@ from PyroUbot import *
 __MODULE__ = "ᴄᴀʀʙᴏɴ"
 __HELP__ = """
 <b>⦪࿈ 
-<blockquote><b>⎆ <b>Perintah:</b>
+<blockquote><b>⎆ </b>Perintah:</b>
 ᚗ <code>{0}carbon</code>
 ⊷ membuat text carbonara
 

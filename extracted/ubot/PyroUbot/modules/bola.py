@@ -7,7 +7,7 @@ __MODULE__ = "⚽ Tebak Bola"
 __HELP__ = """
 <blockquote><b>『 TEBak PEMAIN BOLA 』</b>
 
-<b><b>Perintah:</b></b>
+<b>Perintah:</b></b>
 • <code>.bola</code> → mulai game
 • <code>.jawab</code> [nama] → jawab
 • <code>.bolaskor</code> → lihat skor

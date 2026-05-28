@@ -4,7 +4,7 @@ from PyroUbot import *
 
 __MODULE__ = "ᴀᴜᴛᴏ ʀᴇᴘᴏʀᴛ"
 __HELP__ = """
-<blockquote><b><b>Auto Report</b></b>
+<blockquote><b>Auto Report</b></b>
 
 <b>Perintah:</b>
 <code>{0}report</code> [reply/username] [alasan] → Laporkan akun ke Telegram.

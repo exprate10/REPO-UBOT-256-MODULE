@@ -4,7 +4,7 @@ from PyroUbot import *
 
 __MODULE__ = "𝚂𝙰𝙻𝙰𝙼"
 __HELP__ = """
- <blockquote><b><b>salam</b></b>
+ <blockquote><b>salam</b></b>
 
 • <b>Perintah</b> : <code>{0}p</code>
 • <b>Penjelasan : assalamu'alaikum.</b>

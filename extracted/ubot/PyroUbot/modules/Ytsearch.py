@@ -9,7 +9,7 @@ __MODULE__ = "ʏᴛsᴇᴀʀᴄʜ"
 __HELP__ = """
 📚 <b>Ytsearch Commands</b>
 
-<blockquote><b>🚦 <b>Perintah:</b> <code>ytsearch</code>
+<blockquote><b>🚦 </b>Perintah:</b> <code>ytsearch</code>
 🦠 Penjelasan : Mencari video di YouTube berdasarkan kata kunci.</b></blockquote>
 """
 

@@ -7,7 +7,7 @@ from pyrogram.types import Message
 
 __MODULE__ = "ᴅᴜᴋᴜɴ ᴀɪ"
 __HELP__ = """
-<blockquote><b><b>Dukun Ai</b>
+<blockquote><b>Dukun Ai</b>
 
 <b>Perintah:</b> <code>{0}dukunai</code>
 meramal dengan nama/peristiwa Contoh <code>{0}dukunai</code> namaku boysz</b></blockquote>

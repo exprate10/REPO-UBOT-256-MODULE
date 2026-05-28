@@ -5,7 +5,7 @@ from pyrogram.types import Message
 
 __MODULE__ = "ᴄᴏɴᴠᴇʀᴛ ᴄᴜʀʀᴇɴᴄʏ"
 __HELP__ = """
-<blockquote><b><b>Convert Currency</b></b>
+<blockquote><b>Convert Currency</b></b>
 
 <b>Perintah:</b>
 <code>{0}convert 10000 IDR USD</code> → Mengubah 10.000 IDR ke USD.

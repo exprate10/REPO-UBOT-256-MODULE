@@ -5,7 +5,7 @@ import requests
 __MODULE__ = "sᴛᴀʙʟᴇᴅɪғғᴜsɪᴏɴ"
 __HELP__ = """
 <b>⦪ <blockquote><b>
-⎆ <b>Perintah:</b>
+⎆ </b>Perintah:</b>
 ᚗ <code>{0}sd</code> text
 ⊶ Untuk Membuat Gambar Menggunakan Text.</b></blockquote>
 """

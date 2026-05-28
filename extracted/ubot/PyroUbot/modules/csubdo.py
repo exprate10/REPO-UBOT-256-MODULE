@@ -5,7 +5,7 @@ from PyroUbot import *
 
 __MODULE__ = "ꜱᴜʙᴅᴏᴍᴀɪɴ"
 __HELP__ = """
-<blockquote><b><b>Subdomain</b></b>
+<blockquote><b>Subdomain</b></b>
 
 <b>Perintah:</b>
 <code>{0}sd [subdomain] [ip]</code> → Membuat subdomain baru.</blockquote></b>

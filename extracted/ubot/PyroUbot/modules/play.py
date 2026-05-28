@@ -5,7 +5,7 @@ from PyroUbot import *
 
 __MODULE__ = "ᴘʟᴀʏ ᴘɪʟɪʜ"
 __HELP__ = """
-<blockquote><b><b>Play Pilih</b></b>
+<blockquote><b>Play Pilih</b></b>
 
 <b>Perintah:</b>
 <code>{0}play</code> [judul lagu] → Mencari lagu dengan tombol konfirmasi sebelum putar.</blockquote></b>

@@ -4,7 +4,7 @@ from PyroUbot import PY
 
 __MODULE__ = "sᴇᴀʀᴄʜɪɴɢ ᴜsᴇʀɴᴀᴍᴇ"
 __HELP__ = """
-<blockquote><b><b>Searching username</b></b>
+<blockquote><b>Searching username</b></b>
 
 <b>Perintah:</b> <code>{0}searchname</code> [nama]
 Penjelasan: untuk mencari nama dari berbagai sosial media</blockquote></b>

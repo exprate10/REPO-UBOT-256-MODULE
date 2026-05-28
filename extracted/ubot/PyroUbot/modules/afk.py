@@ -1,6 +1,6 @@
 __MODULE__ = "ᴀꜰᴋ"
 __HELP__ = """
-<blockquote><b><b>Afk</b>
+<blockquote><b>Afk</b>
 
 <b>Perintah:</b> <code>{0}afk</code> [alasan]
     untuk mengaktifkan afk

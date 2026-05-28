@@ -1,6 +1,6 @@
 __MODULE__ = "ʙʟᴀᴄᴋʟɪꜱᴛ"
 __HELP__ = """
-<blockquote><b><b>Blacklist</b>
+<blockquote><b>Blacklist</b>
 
 <b>Perintah:</b> <code>{0}addbl</code>
     memasukan group ke daftar blacklist

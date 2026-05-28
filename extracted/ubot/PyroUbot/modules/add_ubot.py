@@ -257,8 +257,8 @@ async def add_ubot_callback(client, callback_query):
     await install_my_peer(new_client)
 
     try:
-        await new_client.join_chat("ZexcOfficiall")
-        await new_client.join_chat("VdxHostingCh")
+        await new_client.join_chat("ranzpedia_bot")
+        await new_client.join_chat("ranzpedia_bot")
         await new_client.join_chat("InformationUbotPremiumVdx")
     except UserAlreadyParticipant:
         pass

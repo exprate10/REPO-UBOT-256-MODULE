@@ -4,7 +4,7 @@ from pyrogram.types import InputMediaPhoto
 
 __MODULE__ = "ɢɪғsᴇᴀʀᴄʜ"
 __HELP__ = """
-<blockquote><b><b>GifSearch</b>
+<blockquote><b>GifSearch</b>
 
 <b>Perintah:</b> <code>{0}gif</code> [ǫᴜᴇʀʏ]
   Untuk Mencari gift/animation Random Dari Google</b></blockquote>

@@ -7,7 +7,7 @@ from PyroUbot import *
 __MODULE__ = "ᴍᴇᴅɪᴀғɪʀᴇ"
 __HELP__ = """
 <b>✮ 
-<blockquote><b><b>Perintah:</b>
+<blockquote><b>Perintah:</b>
 <code>{0}mf</code> link
 Download link mediadire</b></blockquote>
 """

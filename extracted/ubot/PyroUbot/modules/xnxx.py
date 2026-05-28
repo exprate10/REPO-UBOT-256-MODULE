@@ -5,7 +5,7 @@ from PyroUbot import *
 __MODULE__ = "xɴxx"
 __HELP__ = """
 <b>♛ <blockquote><b>
-<b>Perintah:</b>
+</b>Perintah:</b>
 <code>{0}xnxx</code> kata pencarian
 Mendownload Video Yang Di Inginkan.</b></blockquote>
 """

@@ -7,7 +7,7 @@ from pyrogram.types import Message
 
 __MODULE__ = "ᴜsᴇʀ ᴅᴀɴᴀ"
 __HELP__ = """
-<blockquote><b><b>Check Username Dana</b>
+<blockquote><b>Check Username Dana</b>
 
 <b>Perintah:</b> <code>{0}checkdana</code>
 cek username dana dari nomor Contoh <code>{0}checkdana</code> 085xxxx</b></blockquote>

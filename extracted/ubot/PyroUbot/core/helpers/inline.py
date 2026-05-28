@@ -116,7 +116,7 @@ class BTN:
         if user_id != OWNER_ID:
             return [
                 [InlineKeyboardButton("🛒 Beli Userbot", callback_data="bahan")],
-                [InlineKeyboardButton("📢 Channel Resmi", url="https://t.me/ZexcOfficiall")],
+                [InlineKeyboardButton("◉ Channel Resmi", url="https://t.me/ranzpedia_bot")],
                 [
                     InlineKeyboardButton("🤖 Buat Userbot", callback_data="buat_ubot"),
                     InlineKeyboardButton("📋 Help Menu", callback_data="help_back"),

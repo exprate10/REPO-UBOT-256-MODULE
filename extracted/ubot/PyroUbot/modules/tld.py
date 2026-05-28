@@ -3,7 +3,7 @@ from PyroUbot import *
 
 __MODULE__ = "ᴛʟᴅ ᴄʜᴇᴄᴋ"
 __HELP__ = """
-<blockquote><b><b>TLD Check</b></b>
+<blockquote><b>TLD Check</b></b>
 
 <b>Perintah:</b>
 <code>{0}tld</code> [ekstensi] → Cek informasi ekstensi domain (Contoh: .com, .id, .xyz).</blockquote></b>

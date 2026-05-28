@@ -9,7 +9,7 @@ from PyroUbot import *
 __MODULE__ = "ɢᴇᴛ ᴘᴘ"
 __HELP__ = """
 <b>⦪ 
-<blockquote><b>⎆ <b>Perintah:</b>
+<blockquote><b>⎆ </b>Perintah:</b>
 ᚗ <code>{0}getpp</code> replychat
 
 ⌭ ᴘᴇɴᴊᴇʟᴀsᴀɴ:

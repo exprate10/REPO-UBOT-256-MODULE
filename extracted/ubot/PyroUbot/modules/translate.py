@@ -1,3 +1,4 @@
+import asyncio
 import os
 from gc import get_objects
 
@@ -74,6 +75,7 @@ async def _(client, message):
     reply = f"{translation.text}"
     rep = message.reply_to_message or message
     await TM.delete()
+    await asyncio.sleep(0.8)
     await client.send_message(message.chat.id, reply, reply_to_message_id=rep.id)
 
 

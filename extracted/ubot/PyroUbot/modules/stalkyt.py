@@ -6,7 +6,7 @@ from PyroUbot import *
 
 __MODULE__ = "sᴛᴀʟᴋʏᴛ"
 __HELP__ = """
-<blockquote><b><b>Stalk YT</b>
+<blockquote><b>Stalk YT</b>
 
 <b>Perintah:</b> <code>{0}stalkyt</code> 
     Untuk Stalk yt Menggunakan Username</b></blockquote>

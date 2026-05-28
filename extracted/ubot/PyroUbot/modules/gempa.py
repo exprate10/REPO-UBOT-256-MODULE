@@ -37,7 +37,7 @@ async def stalkig(client, message):
             jam = hasil['jam']
             photoUrl = f"https://warning.bmkg.go.id/img/logo-bmkg.png"
             caption = f"""
-<blockquote><b>╭─ •  「 <b>Info Gempa Terkini</b> 」
+<blockquote><b>╭─ •  「 </b>Info Gempa Terkini</b> 」
 │  ◦ <b>Magnitude: <code>{magnitude}</code></b>
 │  ◦ <b>Kedalaman: <code>{kedalaman}</code></b>
 │  ◦ <b>Koordinat: <code>{bujur}, {lintang}</code></b>

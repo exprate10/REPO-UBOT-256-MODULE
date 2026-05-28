@@ -7,7 +7,7 @@ from pyrogram.types import Message
 
 __MODULE__ = "ᴇɴᴄʀʏᴘᴛ ʜᴀʀᴅ"
 __HELP__ = """
-<blockquote><b><b>Encrypt JS</b></b>
+<blockquote><b>Encrypt JS</b></b>
 
 <b>Perintah:</b>
 <code>{0}enc</code> → Balas file .js untuk dienkripsi.

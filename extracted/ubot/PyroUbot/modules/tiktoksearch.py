@@ -5,7 +5,7 @@ from PyroUbot import *
 __MODULE__ = "ᴛɪᴋᴛᴏᴋ sᴇᴀʀᴄʜ"
 __HELP__ = """
 <blockquote><b>
-  <b>➢ <b>Perintah:</b></b> <code>{0}ttsearch</code> 
+  </b>➢ <b>Perintah:</b></b> <code>{0}ttsearch</code> 
    <i>penjelasan:</b> untuk mencari vt yang di perintahkan.</i></blockquote>
 """
 

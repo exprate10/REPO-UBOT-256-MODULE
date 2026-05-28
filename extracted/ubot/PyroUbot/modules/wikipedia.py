@@ -4,7 +4,7 @@ from PyroUbot import *
 
 __MODULE__ = "ᴡɪᴋɪᴘᴇᴅɪᴀ"
 __HELP__ = """
-<blockquote><b><b>wikipedia</b>
+<blockquote><b>wikipedia</b>
 
 <b>Perintah:</b> <code>{0}wiki/wikipedia</code>
     Wikipedia menyediakan informasi tentang berbagai topik, mulai dari sejarah, sains, budaya, hingga teknologi.</b></blockquote>

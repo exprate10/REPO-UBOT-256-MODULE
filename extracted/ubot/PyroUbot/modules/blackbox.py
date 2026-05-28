@@ -8,7 +8,7 @@ from pyrogram.types import Message
 __MODULE__ = "ʙʟᴀᴄᴋʙᴏx ᴀɪ"
 __HELP__ = """
 <b>⦪ 
-<blockquote><b>⎆ <b>Perintah:</b>
+<blockquote><b>⎆ </b>Perintah:</b>
 ᚗ <code>{0}blackbox</code>
 ⊷ dapat membantu Anda dengan berbagai konsep pemrograman</b></blockquote>
 """

@@ -1,6 +1,6 @@
 __MODULE__ = "ɢʀᴏᴜᴘ"
 __HELP__ = """
-<blockquote><b><b>Group</b>
+<blockquote><b>Group</b>
 
 <b>Perintah:</b> <code>{0}etmin</code>
     Untuk Mengadminkan

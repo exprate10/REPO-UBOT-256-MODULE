@@ -4,7 +4,7 @@ from PyroUbot import *
 
 __MODULE__ = "ᴀꜱᴜᴘᴀɴ"
 __HELP__ = """
-<blockquote><b><b>Asupan</b>
+<blockquote><b>Asupan</b>
 
 <b>Perintah:</b> <code>{0}asupan</code>
     mengirim video asupan random 

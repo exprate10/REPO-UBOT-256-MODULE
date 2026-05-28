@@ -6,7 +6,7 @@ from PyroUbot import PY
 
 __MODULE__ = "sᴇɴᴅ ᴘʀᴏxʏ"
 __HELP__ = """
-<blockquote><b><b>Auto Proxy</b></b>
+<blockquote><b>Auto Proxy</b></b>
 
 <b>Perintah:</b> <code>{0}proxy</code>
 Penjelasan: Mengirimkan daftar proxy terbaru dan memperbaruinya setiap 3 menit.</blockquote></b>

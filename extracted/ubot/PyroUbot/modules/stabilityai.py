@@ -9,7 +9,7 @@ __MODULE__ = "sᴛᴀʙɪʟɪᴛʏ ᴀɪ"
 __HELP__ = """
 📚 <b>sᴛᴀʙɪʟɪᴛʏ ᴀɪ Commands</b>
 
-<blockquote><b>🚦 <b>Perintah:</b> <code>stabilityai</code>
+<blockquote><b>🚦 </b>Perintah:</b> <code>stabilityai</code>
 🦠 Penjelasan : Membuat gambar dengan efek stabilityai.</b></blockquote>
 """
 

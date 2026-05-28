@@ -4,7 +4,7 @@ from PyroUbot import *
 
 __MODULE__ = "ᴛᴇʟᴇɢʀᴀᴘʜ"
 __HELP__ = """
-<blockquote><b><b>Telegraph</b></b>
+<blockquote><b>Telegraph</b></b>
 
 <b>Perintah:</b>
 <code>{0}tg [reply_media]</code> → Upload gambar/video ke link telegraph.</blockquote></b>

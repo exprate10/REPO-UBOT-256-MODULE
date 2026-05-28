@@ -3,7 +3,7 @@ from PyroUbot import *
 __MODULE__ = "ᴀʀᴄʜɪᴠᴇ"
 __HELP__ = """
 <b>⦪ 
-<blockquote><b>⎆ <b>Perintah:</b>
+<blockquote><b>⎆ </b>Perintah:</b>
 ᚗ <code>{0}arch</code>
 ⊷ mengarchivekan group chat pribadi maupun channel
 

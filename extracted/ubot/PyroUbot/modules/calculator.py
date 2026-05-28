@@ -4,7 +4,7 @@ from PyroUbot import PY
 
 __MODULE__ = "ᴄᴀʟᴄᴜʟᴀᴛᴏʀ"
 __HELP__ = """
-<blockquote><b><b>Kalkulator</b></b>
+<blockquote><b>Kalkulator</b></b>
 
 <b>Perintah:</b>
 <code>{0}calc [ekspresi]</code> → Menghitung ekspresi matematika  

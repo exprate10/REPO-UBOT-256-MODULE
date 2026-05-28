@@ -7,7 +7,7 @@ from pyrogram.types import Message
 
 __MODULE__ = "ᴀᴏʏᴏ"
 __HELP__ = """
-<blockquote><b><b>aoyo</b>
+<blockquote><b>aoyo</b>
 
 <b>Perintah:</b> <code>{0}aoyo</code>
     Membantu mencari informasi dengan nama, Contoh: .aoyo informasi siapa Boysz</b></blockquote>

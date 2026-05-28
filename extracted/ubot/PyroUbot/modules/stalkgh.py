@@ -6,7 +6,7 @@ from PyroUbot import *
 
 __MODULE__ = "sᴛᴀʟᴋɢʜ"
 __HELP__ = """
-<blockquote><b><b>Stalk GH</b>
+<blockquote><b>Stalk GH</b>
 
 <b>Perintah:</b> <code>{0}stalkgh</code> 
     Untuk Stalk Github Menggunakan Username</b></blockquote>

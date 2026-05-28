@@ -2,7 +2,7 @@ from PyroUbot import *
 
 __MODULE__ = "ᴛᴇᴋs sᴛʏʟᴇ"
 __HELP__ = """
-<blockquote><b><b>Style</b></b>
+<blockquote><b>Style</b></b>
 
 <b>Perintah:</b>
 <code>{0}style</code> [teks] → Ubah teks jadi gaya keren.</blockquote></b>

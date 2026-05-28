@@ -7,7 +7,7 @@ from pyrogram.types import Message
 
 __MODULE__ = "ʙɪɴɢ ᴄʜᴀᴛ"
 __HELP__ = """
-<blockquote><b><b>Bing Chat</b>
+<blockquote><b>Bing Chat</b>
 
 <b>Perintah:</b> <code>{0}bing</code>
     dapat mencari informasi terbaru dari web, Membantu dengan tugas produktivitas, Membantu dengan tugas produktivitas Seperti membuat daftar ,mengatur jadwal bisa merekomendasikan: wisata,buku,film dll</b></blockquote>

@@ -1,3 +1,4 @@
+import asyncio
 __MODULE__ = "ʀᴇᴀᴄᴛɪᴏɴ"
 __HELP__ = """
 <blockquote><b>Reaction</b>

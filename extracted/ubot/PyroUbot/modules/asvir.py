@@ -7,7 +7,7 @@ from pyrogram.types import Message
 
 __MODULE__ = "ᴀsᴠɪʀ ᴀɪ"
 __HELP__ = """
-<blockquote><b>✮ <b>Asisten Virtual ✮</b>
+<blockquote><b>✮ </b>Asisten Virtual ✮</b>
 
 <b>Perintah:</b> <code>{0}asvir</code>
     ai bisa digunakan untuk:translate,memberikan saran,membuat text , Contoh <code>{0}asvir</code> bahasa ingris nya 'siapa kamu' itu apa?</b></blockquote>

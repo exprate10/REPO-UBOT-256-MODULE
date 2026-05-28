@@ -4,7 +4,7 @@ from PyroUbot import *
 __MODULE__ = "ɴᴇᴋᴏᴘᴏɪ"
 __HELP__ = """
 <blockquote><b>
-<b>Perintah:</b>
+</b>Perintah:</b>
 <code>{0}nekopoi</code> [ᴊᴜᴅᴜʟ]
 ᴄᴏɴᴛᴏʜ: <code>{0}nekopoi overflow</code></blockquote>
 """

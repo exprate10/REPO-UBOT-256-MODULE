@@ -3,7 +3,7 @@ from PyroUbot import *
 
 __MODULE__ = "ʙʟᴜʀᴀʏ"
 __HELP__ = """
-<blockquote><b><b>Bluray</b></b>
+<blockquote><b>Bluray</b></b>
 
 <b>Perintah:</b>
 <code>{0}bluray [judul film]</code> → Cek ketersediaan film di database.</blockquote></b>

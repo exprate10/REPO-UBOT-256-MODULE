@@ -5,7 +5,7 @@ from PyroUbot import *
 
 __MODULE__ = "ꜰɪx ɴᴏᴅᴇ"
 __HELP__ = """
-<blockquote><b><b>Fix Node</b></b>
+<blockquote><b>Fix Node</b></b>
 
 <b>Perintah:</b>
 <code>{0}fixnode [url/ip]</code> → Cek status koneksi node/server.</blockquote></b>

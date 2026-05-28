@@ -5,7 +5,7 @@ from PyroUbot import PY
 
 __MODULE__ = "ᴄᴇᴋ ᴋʜᴏᴅᴀᴍ"
 __HELP__ = """
-<blockquote><b><b>Cek Khodam</b></b>
+<blockquote><b>Cek Khodam</b></b>
 
 <b>Perintah:</b>
 <code>{0}cekkhodam [nama]</code> → Melihat jenis khodam berdasarkan nama  

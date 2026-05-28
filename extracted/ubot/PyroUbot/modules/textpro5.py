@@ -9,17 +9,17 @@ __MODULE__ = "ᴛᴇxᴛᴘʀᴏ5"
 __HELP__ = """
 <b>TextPro2 Commands</b>
 
-<blockquote><b><b>Perintah:</b> <code>blackpink</code>
+<blockquote><b>Perintah:</b> <code>blackpink</code>
 Penjelasan : Membuat gambar dengan efek blackpink.</b></blockquote>
-<blockquote><b><b>Perintah:</b> <code>glasses</code>
+<blockquote><b>Perintah:</b> <code>glasses</code>
 Penjelasan : Membuat gambar dengan efek glasses.
-<blockquote><b><b>Perintah:</b> <code>coverpubg</code>
+<blockquote><b>Perintah:</b> <code>coverpubg</code>
 Penjelasan : Membuat gambar dengan efek coverpubg.
-<blockquote><b><b>Perintah:</b> <code>greenbrush</code>
+<blockquote><b>Perintah:</b> <code>greenbrush</code>
 Penjelasan : Membuat gambar dengan efek greenbrush.
-<blockquote><b><b>Perintah:</b> <code>blackpink2</code>
+<blockquote><b>Perintah:</b> <code>blackpink2</code>
 Penjelasan : Membuat gambar dengan efek blackpink2.
-<blockquote><b><b>Perintah:</b> <code>pig</code>
+<blockquote><b>Perintah:</b> <code>pig</code>
 Penjelasan : Membuat gambar dengan efek pig.</b></blockquote>
 """
 

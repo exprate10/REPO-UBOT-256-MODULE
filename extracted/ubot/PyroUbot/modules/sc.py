@@ -3,7 +3,7 @@ __HELP__ = """
 <blockquote>
 <b>「 ꜱᴏᴜɴᴅᴄʟᴏᴜᴅ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ 」</b>
 
-• <b><b>Perintah:</b></b> <code>{0}sc</code> <b>[ʟɪɴᴋ]</b>
+• <b>Perintah:</b></b> <code>{0}sc</code> <b>[ʟɪɴᴋ]</b>
 • <b>ꜰᴜɴɢꜱɪ:</b> ᴍᴇɴɢᴜɴᴅᴜʜ ᴍᴜꜱɪᴋ ᴅᴀʀɪ ꜱᴏᴜɴᴅᴄʟᴏᴜᴅ
 
 • <b>ᴄᴏɴᴛᴏʜ:</b> <code>{0}sc https://soundcloud.com/username/title</code>

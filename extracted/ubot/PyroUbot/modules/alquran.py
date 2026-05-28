@@ -28,7 +28,7 @@ async def fetch_ayat(surah: int, ayat: int):
 
 __MODULE__ = "ᴀʟ ǫᴜʀ'ᴀɴ"
 __HELP__ = """
-<blockquote><b><b>Al Qur'an</b>
+<blockquote><b>Al Qur'an</b>
 
 <b>Perintah:</b> <code>{0}alquran 1 2</code>
     Untuk Mencari Ayat Al Qur'an

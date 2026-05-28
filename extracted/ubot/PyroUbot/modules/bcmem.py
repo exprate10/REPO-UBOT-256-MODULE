@@ -5,7 +5,7 @@ __MODULE__ = "ʙʀᴏᴀᴅᴄᴀsᴛ"
 __HELP__ = """
 <blockquote><b>◉ Broadcast Member — RANZ PEDIA</b>
 
-<b><b>Perintah:</b></b>
+<b>Perintah:</b></b>
 <code>{0}bcmem</code> <i>(reply pesan/media)</i>
 Sebar pesan ke semua member via PM
 

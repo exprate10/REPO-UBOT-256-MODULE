@@ -9,13 +9,13 @@ __MODULE__ = "ʟᴏɢᴏ"
 __HELP__ = """
 <b>Logo Commands</b>
 
-<blockquote><b><b>Perintah:</b> <code>avengers</code>
+<blockquote><b>Perintah:</b> <code>avengers</code>
 Penjelasan : Membuat gambar dengan logo avengers-logo.</b></blockquote>
-<blockquote><b><b>Perintah:</b> <code>lion</code>
+<blockquote><b>Perintah:</b> <code>lion</code>
 Penjelasan : Membuat gambar dengan logo lion-logo.</b></blockquote>
-<blockquote><b><b>Perintah:</b> <code>ninja</code>
+<blockquote><b>Perintah:</b> <code>ninja</code>
 Penjelasan : Membuat gambar dengan logo ninja-logo.</b></blockquote>
-<blockquote><b><b>Perintah:</b> <code>joker</code>
+<blockquote><b>Perintah:</b> <code>joker</code>
 Penjelasan : Membuat gambar dengan logo joker-logo.</b></blockquote>
 """
 

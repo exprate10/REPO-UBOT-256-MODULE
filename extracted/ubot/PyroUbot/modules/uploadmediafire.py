@@ -5,7 +5,7 @@ from PyroUbot import PY
 
 __MODULE__ = "Upload MediaFire"
 __HELP__ = """
-<blockquote><b><b>Upload MediaFire</b></b>
+<blockquote><b>Upload MediaFire</b></b>
 
 <b>Perintah:</b>
 <code>.mediafire</code> → Mengunggah file ZIP ke MediaFire.

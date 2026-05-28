@@ -5,7 +5,7 @@ from PyroUbot import *
 
 __MODULE__ = "ᴀʟᴋɪᴛᴀʙ"
 __HELP__ = """
-<blockquote><b><b>Alkitab</b>
+<blockquote><b>Alkitab</b>
 
 <b>Perintah:</b> <code>{0}alkitab</code> kejadian
     Untuk Search Ayat Alkitab.</b></blockquote>

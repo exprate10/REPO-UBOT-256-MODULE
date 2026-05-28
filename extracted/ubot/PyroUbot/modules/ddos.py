@@ -10,7 +10,7 @@ time_limit = 300  # Batas waktu maksimum (dalam detik)
 
 __MODULE__ = "ᴅᴅᴏs"
 __HELP__ = """
-<blockquote><b><b>ddos</b></b>
+<blockquote><b>ddos</b></b>
 
 • <b>Perintah</b> : <code>{0}ddosfloods</code> <b>[Target] [Time]</b>
 • <b>Perintah</b> : <code>{0}ddoshttp</code> <b>[Target] [Time]</b>

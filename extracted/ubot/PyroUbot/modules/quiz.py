@@ -7,7 +7,7 @@ __MODULE__ = "Quick Quiz"
 __HELP__ = """
 <blockquote><b>『 QUICK QUIZ 』</b>
 
-<b><b>Perintah:</b></b>
+<b>Perintah:</b></b>
 • <code>.quiz</code> → mulai quiz
 • <code>.quizskor</code> → lihat skor
 

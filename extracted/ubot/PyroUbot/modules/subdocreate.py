@@ -6,7 +6,7 @@ from PyroUbot import PY
 
 __MODULE__ = "𝙲𝚁𝙴𝙰𝚃𝙴 𝙳𝙾𝙼𝙰𝙸𝙽"
 __HELP__ = """
-<blockquote><b><b>Subdomain Creator</b></b>
+<blockquote><b>Subdomain Creator</b></b>
 
 <b>Perintah:</b>
 <code>{0}subdocreate [domain] [subdomain] [IP]</code> → Menambahkan subdomain ke domain yang tersedia di Cloudflare.

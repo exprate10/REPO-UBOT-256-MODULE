@@ -5,7 +5,7 @@ __MODULE__ = "ɢᴍᴀᴘs"
 __HELP__ = """
 <b>✮Folder Untuk Maps✮</b>
 
-<blockquote><b>♛<b>Perintah:</b> <code>{0}gps</code>
+<blockquote><b>♛</b>Perintah:</b> <code>{0}gps</code>
 Penjelasan : Buat Mencari Lokasi Menggunakan Maps/Gps</b></blockquote>
 """
 

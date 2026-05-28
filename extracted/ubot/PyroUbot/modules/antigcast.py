@@ -12,7 +12,7 @@ __MODULE__ = "ᴀɴᴛɪɢᴄᴀsᴛ"
 __HELP__ = """
 
 <b>⦪ <blockquote><b>
-⎆ <b>Perintah:</b>
+⎆ </b>Perintah:</b>
 ᚗ <code>{0}on</code> [on atau off] 
 ⊷ ᴜɴᴛᴜᴋ ᴍᴇɴɢʜɪᴅᴜᴘᴋᴀɴ ᴀᴛᴀᴜ ᴍᴇᴍᴀᴛɪᴋᴀɴ ᴀɴᴛɪɢᴄᴀꜱᴛ
 

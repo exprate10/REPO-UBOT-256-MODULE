@@ -7,7 +7,7 @@ from pyrogram.types import Message
 
 __MODULE__ = "yousearch Ai"
 __HELP__ = """
-<blockquote><b><b>yousearch-ai</b>
+<blockquote><b>yousearch-ai</b>
 
 <b>Perintah:</b> <code>{0}yousearch</code>
     yousearch adalah ai yang menjawab pertanyaan mu lebih lengkap dari ai biasanya</b></blockquote>

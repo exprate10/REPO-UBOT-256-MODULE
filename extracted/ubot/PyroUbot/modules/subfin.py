@@ -6,7 +6,7 @@ from pyrogram.types import Message
 __MODULE__ = "sᴜʙғɪɴᴅᴇʀ"
 __HELP__ = """
 <blockquote><b>
- <b>Perintah:</b> <code>{0}subfin</code>
+ </b>Perintah:</b> <code>{0}subfin</code>
  ᴘᴇɴᴊᴇʟᴀsᴀɴ : ᴜɴᴛᴜᴋ ᴄᴇᴋ sᴜʙᴅᴏᴍᴀɪɴ ᴅᴀʀɪ ᴅᴏᴍᴀɪɴ ᴜᴛᴀᴍᴀ</b></blockquote>
 """
 

@@ -4,7 +4,7 @@ from PyroUbot import *
 
 __MODULE__ = "ᴀʀᴛɪ ɴᴀᴍᴀ"
 __HELP__ = """
-<blockquote><b><b>Arti Nama</b></b>
+<blockquote><b>Arti Nama</b></b>
 
 <b>Perintah:</b>
 <code>{0}artinama [nama]</code> → Mengartikan dengan nama</blockquote></b>

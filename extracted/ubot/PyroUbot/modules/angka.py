@@ -7,7 +7,7 @@ __MODULE__ = "Tebak Angka"
 __HELP__ = """
 <blockquote><b>『 TEBak ANGKA 』</b>
 
-<b><b>Perintah:</b></b>
+<b>Perintah:</b></b>
 • <code>.angka</code> → mulai game
 • <code>.jawab</code> [angka] → jawab
 • <code>.angkaskor</code> → lihat skor

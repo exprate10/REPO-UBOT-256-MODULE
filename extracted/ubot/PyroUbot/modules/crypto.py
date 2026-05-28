@@ -3,7 +3,7 @@ from PyroUbot import *
 
 __MODULE__ = "ᴄʀʏᴘᴛᴏ"
 __HELP__ = """
-<blockquote><b><b>Crypto</b></b>
+<blockquote><b>Crypto</b></b>
 
 <b>Perintah:</b>
 <code>{0}crypto [simbol]</code> → Cek harga crypto saat ini (Contoh: btc, eth, doge).</blockquote></b>
