@@ -1,0 +1,7 @@
+extracted/ubot/.git/
+__pycache__/
+*.pyc
+*.pyo
+*.session
+.env
+*.log
