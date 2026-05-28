@@ -1,88 +1,130 @@
 import asyncio
-import aiohttp
-import uuid
+import random
+import string
+import time
+import io
 from datetime import datetime
+
+import aiohttp
+import qrcode
 from dateutil.relativedelta import relativedelta
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from pytz import timezone
+
 from PyroUbot import *
-from PyroUbot.config import PAKASIR_API_KEY, PAKASIR_MERCHANT_ID, LOGS_MAKER_UBOT
+from PyroUbot.config import PAKASIR_API_KEY, PAKASIR_PROJECT, LOGS_MAKER_UBOT, OWNER_ID
 
 __MODULE__ = "ᴘᴀʏᴍᴇɴᴛ"
 __HELP__ = """
-<blockquote><b>💳 PAYMENT — RANZ PEDIA</b>
+<blockquote><b>PAYMENT — RANZ PEDIA</b>
 
 Sistem pembayaran otomatis via QRIS Pakasir.
-Bot langsung konfirmasi begitu bayaran masuk!</blockquote>
+Bot langsung konfirmasi begitu saldo masuk.</blockquote>
 """
 
+PAKASIR_BASE = "https://app.pakasir.com/api"
+
 ROLE_HARGA = {
-    "member": {"1": 2000, "0": 3000},
-    "seles":  {"1": 4000, "0": 5000},
+    "member": {"1": 2000,  "0": 3000},
+    "seles":  {"1": 4000,  "0": 5000},
     "admin":  {"1": 10000, "0": 15000},
 }
 
 ROLE_LABEL = {
-    "member": "👤 Member",
-    "seles":  "💼 Seles",
-    "admin":  "⚙️ Admin",
+    "member": "Member",
+    "seles":  "Seles",
+    "admin":  "Admin",
 }
 
 DURASI_LABEL = {
-    "1": "📅 1 Bulan",
-    "0": "♾️ Permanen",
+    "1": "1 Bulan",
+    "0": "Permanen",
 }
 
 pending_payments = {}
 
 
-async def pakasir_create_invoice(amount: int, order_id: str, description: str) -> dict:
-    url = "https://api.pakasir.com/transaction/create"
-    headers = {
-        "Authorization": f"Bearer {PAKASIR_API_KEY}",
-        "Content-Type": "application/json",
-    }
+def generate_order_id() -> str:
+    rand = "".join(random.choices(string.ascii_uppercase + string.digits, k=8))
+    return f"TRX-{int(time.time() * 1000)}-{rand}"
+
+
+def buat_foto_qris(qr_string: str) -> io.BytesIO:
+    qr = qrcode.QRCode(
+        version=1,
+        error_correction=qrcode.constants.ERROR_CORRECT_M,
+        box_size=10,
+        border=4,
+    )
+    qr.add_data(qr_string)
+    qr.make(fit=True)
+    img = qr.make_image(fill_color="black", back_color="white")
+    buf = io.BytesIO()
+    img.save(buf, format="PNG")
+    buf.seek(0)
+    buf.name = "qris.png"
+    return buf
+
+
+async def pakasir_create_qris(amount: int, order_id: str) -> dict:
+    url = f"{PAKASIR_BASE}/transactioncreate/qris"
     payload = {
-        "merchant_id": PAKASIR_MERCHANT_ID,
+        "project":  PAKASIR_PROJECT,
         "order_id": order_id,
-        "amount": amount,
-        "description": description,
-        "payment_method": "qris",
+        "amount":   amount,
+        "api_key":  PAKASIR_API_KEY,
     }
     try:
         async with aiohttp.ClientSession() as session:
-            async with session.post(url, json=payload, headers=headers, timeout=aiohttp.ClientTimeout(total=15)) as resp:
+            async with session.post(
+                url,
+                json=payload,
+                headers={"Content-Type": "application/json"},
+                timeout=aiohttp.ClientTimeout(total=15),
+            ) as resp:
                 return await resp.json()
     except Exception as e:
         return {"error": str(e)}
 
 
-async def pakasir_check_status(order_id: str) -> dict:
-    url = f"https://api.pakasir.com/transaction/status/{order_id}"
-    headers = {"Authorization": f"Bearer {PAKASIR_API_KEY}"}
+async def pakasir_check_status(order_id: str, amount: int) -> bool:
+    url = (
+        f"{PAKASIR_BASE}/transactiondetail"
+        f"?project={PAKASIR_PROJECT}"
+        f"&amount={amount}"
+        f"&order_id={order_id}"
+        f"&api_key={PAKASIR_API_KEY}"
+    )
     try:
         async with aiohttp.ClientSession() as session:
-            async with session.get(url, headers=headers, timeout=aiohttp.ClientTimeout(total=10)) as resp:
-                return await resp.json()
-    except Exception as e:
-        return {"error": str(e)}
+            async with session.get(
+                url,
+                timeout=aiohttp.ClientTimeout(total=10),
+            ) as resp:
+                if resp.status == 404:
+                    return False
+                data = await resp.json()
+                trx = data.get("transaction", {})
+                return trx.get("status") == "completed"
+    except Exception:
+        return False
 
 
-async def get_user_current_role(user_id: int, bot_id: int) -> str:
+async def get_role_user(user_id: int, bot_id: int) -> str:
     admin_list = await get_list_from_vars(bot_id, "ADMIN_USERS")
     seles_list = await get_list_from_vars(bot_id, "SELER_USERS")
-    prem_list = await get_list_from_vars(bot_id, "PREM_USERS")
+    prem_list  = await get_list_from_vars(bot_id, "PREM_USERS")
     if user_id in admin_list:
         return "admin"
-    elif user_id in seles_list:
+    if user_id in seles_list:
         return "seles"
-    elif user_id in prem_list:
+    if user_id in prem_list:
         return "member"
     return "none"
 
 
-async def proses_prem_user(user_id: int, role: str, durasi: str, bot_client):
-    bot_id = bot_client.me.id
+async def aktifkan_user(user_id: int, role: str, durasi: str):
+    bot_id = bot.me.id
 
     prem_list = await get_list_from_vars(bot_id, "PREM_USERS")
     if user_id not in prem_list:
@@ -99,443 +141,549 @@ async def proses_prem_user(user_id: int, role: str, durasi: str, bot_client):
             await add_to_vars(bot_id, "ADMIN_USERS", user_id)
 
     now = datetime.now(timezone("Asia/Jakarta"))
-    if durasi == "1":
-        expired = now + relativedelta(months=1)
-    else:
-        expired = now + relativedelta(years=100)
-    await set_expired_date(user_id, expired)
+    exp = now + relativedelta(months=1) if durasi == "1" else now + relativedelta(years=100)
+    await set_expired_date(user_id, exp)
 
 
-async def kirim_notif_order(user_id: int, username: str, role: str, durasi: str, order_id: str):
-    waktu = datetime.now(timezone("Asia/Jakarta")).strftime("%d-%m-%Y %H:%M:%S")
-    label_role = ROLE_LABEL.get(role, role.upper())
+async def notif_order_sukses(user_id: int, nama: str, role: str, durasi: str, order_id: str):
+    waktu        = datetime.now(timezone("Asia/Jakarta")).strftime("%d-%m-%Y %H:%M:%S")
+    label_role   = ROLE_LABEL.get(role, role)
     label_durasi = DURASI_LABEL.get(durasi, durasi)
-    harga = ROLE_HARGA.get(role, {}).get(durasi, 0)
+    harga        = ROLE_HARGA.get(role, {}).get(durasi, 0)
 
-    text = (
-        f"<blockquote><b>✅ ORDER USERBOT SUKSES!</b>\n\n"
-        f"<b>🛍️ Detail Order:</b>\n"
-        f"<b>├ 👤 User:</b> <a href='tg://user?id={user_id}'>{username}</a>\n"
-        f"<b>├ 🆔 User ID:</b> <code>{user_id}</code>\n"
-        f"<b>├ 📦 Order ID:</b> <code>{order_id}</code>\n"
-        f"<b>├ 🎫 Role:</b> {label_role}\n"
-        f"<b>├ 📆 Durasi:</b> {label_durasi}\n"
-        f"<b>├ 💰 Nominal:</b> Rp {harga:,}\n"
-        f"<b>└ ⏰ Waktu:</b> {waktu}\n\n"
-        f"<b>🎉 User berhasil aktifkan userbot!</b></blockquote>"
+    teks = (
+        f"<blockquote>"
+        f"<b>&#x2713; ORDER SUKSES — RANZ PEDIA</b>\n\n"
+        f"<b>User    :</b> <a href='tg://user?id={user_id}'>{nama}</a>\n"
+        f"<b>User ID :</b> <code>{user_id}</code>\n"
+        f"<b>Order ID:</b> <code>{order_id}</code>\n"
+        f"<b>Role    :</b> {label_role}\n"
+        f"<b>Durasi  :</b> {label_durasi}\n"
+        f"<b>Nominal :</b> Rp {harga:,}\n"
+        f"<b>Waktu   :</b> {waktu}"
+        f"</blockquote>"
     )
     try:
-        await bot.send_message(LOGS_MAKER_UBOT, text)
+        await bot.send_message(LOGS_MAKER_UBOT, teks)
     except Exception as e:
-        print(f"[ERROR] Gagal kirim notif order: {e}")
+        print(f"[PAYMENT] Gagal kirim notif log: {e}")
 
 
-
-@PY.CALLBACK("bahan")
-async def pilih_role_callback(client, callback_query):
-    user_id = callback_query.from_user.id
-
-    if user_id in ubot._get_my_id:
-        btns = [
-            [InlineKeyboardButton("🔄 Restart Userbot", callback_data="ress_ubot")],
-            [InlineKeyboardButton("⬅️ Kembali", callback_data=f"home {user_id}")],
-        ]
-        return await callback_query.edit_message_text(
-            "<blockquote><b>✅ Kamu udah punya userbot aktif!</b>\n\n"
-            "Kalo ubotnya ga respon, coba restart dulu ya.</blockquote>",
-            reply_markup=InlineKeyboardMarkup(btns),
-        )
-
-    if len(ubot._ubot) + 1 > MAX_BOT:
-        return await callback_query.edit_message_text(
-            f"<blockquote><b>❌ Slot userbot penuh!</b>\n\n"
-            f"<b>Kapasitas:</b> {len(ubot._ubot)} slot\n\n"
-            f"Hubungi <a href='tg://openmessage?user_id={OWNER_ID}'>Owner</a> dulu ya!</blockquote>",
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("⬅️ Kembali", callback_data=f"home {user_id}")]]),
-        )
-
-    text = (
-        "<blockquote><b>🎫 Pilih Role Userbot</b>\n\n"
-        "<b>👤 Member</b> — akses fitur standar\n"
-        "<b>💼 Seles</b> — akses + bisa jual userbot\n"
-        "<b>⚙️ Admin</b> — akses penuh semua fitur\n\n"
-        "<b>Pilih role yang kamu mau:</b></blockquote>"
-    )
-    from PyroUbot.core.helpers.inline import BTN
-    return await callback_query.edit_message_text(
-        text,
-        reply_markup=InlineKeyboardMarkup(BTN.ROLE_PICKER(user_id)),
-    )
-
-
-@PY.CALLBACK("^role_pick")
-async def role_pick_callback(client, callback_query):
-    data = callback_query.data.split()
-    role = data[1]
-    user_id = int(data[2])
-
-    if callback_query.from_user.id != user_id:
-        return await callback_query.answer("Eh, ini bukan buat kamu!", show_alert=True)
-
-    from PyroUbot.core.helpers.inline import BTN
-    label_role = ROLE_LABEL.get(role, role.upper())
-    harga_1 = ROLE_HARGA[role]["1"]
-    harga_0 = ROLE_HARGA[role]["0"]
-
-    text = (
-        f"<blockquote><b>✅ Role dipilih: {label_role}</b>\n\n"
-        f"<b>Sekarang pilih durasi:</b>\n"
-        f"<b>📅 1 Bulan</b> — Rp {harga_1:,}\n"
-        f"<b>♾️ Permanen</b> — Rp {harga_0:,}</blockquote>"
-    )
-    return await callback_query.edit_message_text(
-        text,
-        reply_markup=InlineKeyboardMarkup(BTN.DURASI_PICKER(role, user_id)),
-    )
-
-
-@PY.CALLBACK("^durasi_pick")
-async def durasi_pick_callback(client, callback_query):
-    data = callback_query.data.split()
-    role = data[1]
-    durasi = data[2]
-    user_id = int(data[3])
-
-    if callback_query.from_user.id != user_id:
-        return await callback_query.answer("Bukan buat kamu ini!", show_alert=True)
-
-    label_role = ROLE_LABEL.get(role, role.upper())
+async def loop_cek_bayar(user_id: int, order_id: str, amount: int, role: str, durasi: str):
+    label_role   = ROLE_LABEL.get(role, role)
     label_durasi = DURASI_LABEL.get(durasi, durasi)
-    harga = ROLE_HARGA.get(role, {}).get(durasi, 0)
+    max_detik    = 30 * 60
+    interval     = 10
+    elapsed      = 0
 
-    from PyroUbot.core.helpers.inline import BTN
-    text = (
-        f"<blockquote><b>📋 Ringkasan Order</b>\n\n"
-        f"<b>🎫 Role:</b> {label_role}\n"
-        f"<b>📆 Durasi:</b> {label_durasi}\n"
-        f"<b>💰 Harga:</b> Rp {harga:,}\n\n"
-        f"<b>Klik Bayar Sekarang buat lanjut ke QRIS!</b></blockquote>"
-    )
-    return await callback_query.edit_message_text(
-        text,
-        reply_markup=InlineKeyboardMarkup(BTN.KONFIRMASI_BAYAR(role, durasi, user_id)),
-    )
-
-
-
-@PY.CALLBACK("^pakasir_pay")
-async def pakasir_pay_callback(client, callback_query):
-    data = callback_query.data.split()
-    role = data[1]
-    durasi = data[2]
-    user_id = int(data[3])
-
-    if callback_query.from_user.id != user_id:
-        return await callback_query.answer("Eh ini bukan order kamu!", show_alert=True)
-
-    label_role = ROLE_LABEL.get(role, role.upper())
-    label_durasi = DURASI_LABEL.get(durasi, durasi)
-    harga = ROLE_HARGA.get(role, {}).get(durasi, 0)
-    order_id = f"RANZPEDIA-{user_id}-{uuid.uuid4().hex[:8].upper()}"
-
-    await callback_query.edit_message_text(
-        "<blockquote><b>⏳ Lagi bikin QRIS kamu...</b>\n\nSabar ya, sebentar lagi!</blockquote>"
-    )
-
-    result = await pakasir_create_invoice(harga, order_id, f"Beli Userbot {label_role} {label_durasi}")
-
-    if "error" in result or result.get("status") not in ("success", "created", True, "pending", 200):
-        qris_url = None
-        qris_img = None
-    else:
-        qris_url = result.get("data", {}).get("qr_url") or result.get("qr_url")
-        qris_img = result.get("data", {}).get("qr_image") or result.get("qr_image")
-
-    pending_payments[order_id] = {
-        "user_id": user_id,
-        "role": role,
-        "durasi": durasi,
-        "harga": harga,
-        "status": "pending",
-    }
-
-    if qris_img or qris_url:
-        caption = (
-            f"<blockquote><b>💳 QRIS Pembayaran</b>\n\n"
-            f"<b>🎫 Role:</b> {label_role}\n"
-            f"<b>📆 Durasi:</b> {label_durasi}\n"
-            f"<b>💰 Total:</b> Rp {harga:,}\n"
-            f"<b>🆔 Order ID:</b> <code>{order_id}</code>\n\n"
-            f"<b>Scan QRIS di atas lewat aplikasi e-wallet / bank kamu!</b>\n"
-            f"<b>Bot otomatis konfirmasi begitu bayaran masuk 🙏</b></blockquote>"
-        )
-        try:
-            await callback_query.message.delete()
-        except Exception:
-            pass
-        try:
-            if qris_img:
-                await bot.send_photo(user_id, photo=qris_img, caption=caption)
-            else:
-                await bot.send_photo(user_id, photo=qris_url, caption=caption)
-        except Exception:
-            await bot.send_message(user_id, caption + f"\n\n<b>Link QRIS:</b> {qris_url or qris_img}")
-    else:
-        await callback_query.edit_message_text(
-            f"<blockquote><b>💳 Silakan Transfer Manual</b>\n\n"
-            f"<b>🎫 Role:</b> {label_role}\n"
-            f"<b>📆 Durasi:</b> {label_durasi}\n"
-            f"<b>💰 Total:</b> Rp {harga:,}\n"
-            f"<b>🆔 Order ID:</b> <code>{order_id}</code>\n\n"
-            f"<b>Transfer ke Dana/QRIS Owner lalu kirim bukti ke</b> "
-            f"<a href='tg://openmessage?user_id={OWNER_ID}'>Owner RANZ PEDIA</a></blockquote>",
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("⬅️ Kembali", callback_data="bahan")]]),
-        )
-
-    asyncio.create_task(auto_check_payment(user_id, order_id, role, durasi))
-
-
-
-async def auto_check_payment(user_id: int, order_id: str, role: str, durasi: str):
-    label_role = ROLE_LABEL.get(role, role.upper())
-    label_durasi = DURASI_LABEL.get(durasi, durasi)
-    max_wait = 60 * 30
-    interval = 10
-    elapsed = 0
-
-    while elapsed < max_wait:
+    while elapsed < max_detik:
         await asyncio.sleep(interval)
         elapsed += interval
 
         if order_id not in pending_payments:
             return
 
-        result = await pakasir_check_status(order_id)
-        status = result.get("data", {}).get("status") or result.get("status")
+        lunas = await pakasir_check_status(order_id, amount)
 
-        if status in ("paid", "success", "settlement", "capture"):
+        if lunas:
             pending_payments.pop(order_id, None)
 
             try:
-                get_user = await bot.get_users(user_id)
-                username = get_user.first_name
+                user_obj = await bot.get_users(user_id)
+                nama     = user_obj.first_name
             except Exception:
-                username = str(user_id)
+                nama = str(user_id)
 
-            await proses_prem_user(user_id, role, durasi, bot)
-            await kirim_notif_order(user_id, username, role, durasi, order_id)
+            await aktifkan_user(user_id, role, durasi)
+            await notif_order_sukses(user_id, nama, role, durasi, order_id)
 
             await bot.send_message(
                 user_id,
-                f"<blockquote><b>✅ Pembayaran Diterima!</b>\n\n"
-                f"<b>🎫 Role:</b> {label_role}\n"
-                f"<b>📆 Durasi:</b> {label_durasi}\n\n"
-                f"<b>Sekarang kamu bisa langsung bikin userbot!</b></blockquote>",
+                (
+                    f"<blockquote>"
+                    f"<b>&#x2713; Pembayaran Diterima!</b>\n\n"
+                    f"<b>Role   :</b> {label_role}\n"
+                    f"<b>Durasi :</b> {label_durasi}\n\n"
+                    f"Sekarang langsung bikin userbot kamu ya!"
+                    f"</blockquote>"
+                ),
                 reply_markup=InlineKeyboardMarkup([[
-                    InlineKeyboardButton("🤖 Buat Userbot", callback_data="buat_ubot")
+                    InlineKeyboardButton("Buat Userbot", callback_data="buat_ubot"),
                 ]]),
-            )
-            return
-
-        elif status in ("failed", "expired", "cancelled", "cancel"):
-            pending_payments.pop(order_id, None)
-            await bot.send_message(
-                user_id,
-                "<blockquote><b>❌ Pembayaran Gagal / Expired</b>\n\n"
-                "Coba order ulang ya! Kalo ada masalah hubungi owner.</blockquote>",
-                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔄 Order Lagi", callback_data="bahan")]]),
             )
             return
 
     pending_payments.pop(order_id, None)
     await bot.send_message(
         user_id,
-        "<blockquote><b>⏰ Waktu pembayaran habis!</b>\n\n"
-        "Kamu terlalu lama, order dibatalin otomatis.\n"
-        "Coba lagi dari awal ya!</blockquote>",
-        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔄 Order Lagi", callback_data="bahan")]]),
+        (
+            "<blockquote>"
+            "<b>&#x23; Waktu Bayar Habis</b>\n\n"
+            "Udah 30 menit tapi bayaran belum masuk, "
+            "order dibatalin otomatis.\n"
+            "Coba order lagi dari awal ya."
+            "</blockquote>"
+        ),
+        reply_markup=InlineKeyboardMarkup([[
+            InlineKeyboardButton("Order Lagi", callback_data="bahan"),
+        ]]),
     )
 
 
-@PY.CALLBACK("^uprole_pick")
-async def uprole_pick_callback(client, callback_query):
-    data = callback_query.data.split()
-    new_role = data[1]
-    user_id = int(data[2])
-    old_role = data[3]
+@PY.CALLBACK("bahan")
+async def cb_pilih_role(client, callback_query):
+    uid = callback_query.from_user.id
 
-    if callback_query.from_user.id != user_id:
-        return await callback_query.answer("Ini bukan buat kamu!", show_alert=True)
+    if uid in ubot._get_my_id:
+        return await callback_query.edit_message_text(
+            (
+                "<blockquote>"
+                "<b>Kamu udah punya userbot aktif.</b>\n\n"
+                "Kalau ubotnya ga respon, coba restart dulu."
+                "</blockquote>"
+            ),
+            reply_markup=InlineKeyboardMarkup([
+                [InlineKeyboardButton("Restart Userbot", callback_data="ress_ubot")],
+                [InlineKeyboardButton("Kembali", callback_data=f"home {uid}")],
+            ]),
+        )
 
-    from PyroUbot.core.helpers.inline import BTN
-    label_new = ROLE_LABEL.get(new_role, new_role.upper())
+    if len(ubot._ubot) + 1 > MAX_BOT:
+        return await callback_query.edit_message_text(
+            (
+                f"<blockquote>"
+                f"<b>Slot userbot lagi penuh.</b>\n\n"
+                f"Total sekarang: {len(ubot._ubot)} slot.\n"
+                f"Hubungi <a href='tg://openmessage?user_id={OWNER_ID}'>Owner</a> dulu ya."
+                f"</blockquote>"
+            ),
+            reply_markup=InlineKeyboardMarkup([[
+                InlineKeyboardButton("Kembali", callback_data=f"home {uid}"),
+            ]]),
+        )
 
-    text = (
-        f"<blockquote><b>⬆️ Up Role ke: {label_new}</b>\n\n"
-        f"<b>Pilih durasi baru kamu:</b></blockquote>"
-    )
     return await callback_query.edit_message_text(
-        text,
-        reply_markup=InlineKeyboardMarkup(BTN.DURASI_PICKER(new_role, user_id, is_uprole=True, old_role=old_role)),
-    )
-
-
-@PY.CALLBACK("^durasi_up")
-async def durasi_up_callback(client, callback_query):
-    data = callback_query.data.split()
-    new_role = data[1]
-    durasi = data[2]
-    old_role = data[3]
-    user_id = int(data[4])
-
-    if callback_query.from_user.id != user_id:
-        return await callback_query.answer("Bukan buat kamu!", show_alert=True)
-
-    old_harga = ROLE_HARGA.get(old_role, {}).get(durasi, 0)
-    new_harga = ROLE_HARGA.get(new_role, {}).get(durasi, 0)
-    upgrade_harga = max(new_harga - old_harga, 0)
-
-    label_old = ROLE_LABEL.get(old_role, old_role.upper())
-    label_new = ROLE_LABEL.get(new_role, new_role.upper())
-    label_durasi = DURASI_LABEL.get(durasi, durasi)
-
-    from PyroUbot.core.helpers.inline import BTN
-    order_id = f"RANZPEDIA-UP-{user_id}-{uuid.uuid4().hex[:8].upper()}"
-
-    pending_payments[order_id] = {
-        "user_id": user_id,
-        "role": new_role,
-        "durasi": durasi,
-        "harga": upgrade_harga,
-        "status": "pending",
-        "is_upgrade": True,
-    }
-
-    text = (
-        f"<blockquote><b>⬆️ Up Role Userbot</b>\n\n"
-        f"<b>🎫 Role Sekarang:</b> {label_old}\n"
-        f"<b>🚀 Role Baru:</b> {label_new}\n"
-        f"<b>📆 Durasi:</b> {label_durasi}\n"
-        f"<b>💰 Harga Upgrade:</b> Rp {upgrade_harga:,}\n"
-        f"<b>🆔 Order ID:</b> <code>{order_id}</code>\n\n"
-        f"<b>Klik Bayar Sekarang buat proses upgrade!</b></blockquote>"
-    )
-    return await callback_query.edit_message_text(
-        text,
+        (
+            "<blockquote>"
+            "<b>Pilih Role Userbot</b>\n\n"
+            "<b>Member</b>  — fitur standar\n"
+            "<b>Seles</b>   — fitur standar + bisa jual ubot\n"
+            "<b>Admin</b>   — akses penuh semua fitur\n\n"
+            "Pilih yang kamu mau:"
+            "</blockquote>"
+        ),
         reply_markup=InlineKeyboardMarkup([
-            [InlineKeyboardButton("💳 Bayar Sekarang", callback_data=f"pakasir_pay {new_role} {durasi} {user_id}")],
-            [InlineKeyboardButton("⬅️ Kembali", callback_data=f"bahan")],
+            [InlineKeyboardButton("Member", callback_data=f"role_pick member {uid}")],
+            [InlineKeyboardButton("Seles",  callback_data=f"role_pick seles {uid}")],
+            [InlineKeyboardButton("Admin",  callback_data=f"role_pick admin {uid}")],
+            [InlineKeyboardButton("Kembali", callback_data=f"home {uid}")],
         ]),
     )
 
 
+@PY.CALLBACK("^role_pick")
+async def cb_role_pick(client, callback_query):
+    parts  = callback_query.data.split()
+    role   = parts[1]
+    uid    = int(parts[2])
 
-@PY.CALLBACK("^(success|failed|home)")
-async def admin_action_callback(client, callback_query):
-    query = callback_query.data.split()
-    action = query[0]
+    if callback_query.from_user.id != uid:
+        return await callback_query.answer("Ini bukan buat kamu.", show_alert=True)
 
-    if action == "home":
-        user_id = callback_query.from_user.id
-        from PyroUbot.core.helpers.inline import BTN
-        from PyroUbot.core.helpers.text import MSG
+    label  = ROLE_LABEL.get(role, role)
+    harga1 = ROLE_HARGA[role]["1"]
+    harga0 = ROLE_HARGA[role]["0"]
+
+    return await callback_query.edit_message_text(
+        (
+            f"<blockquote>"
+            f"<b>Role dipilih: {label}</b>\n\n"
+            f"Sekarang pilih durasi:\n"
+            f"<b>1 Bulan</b>   — Rp {harga1:,}\n"
+            f"<b>Permanen</b>  — Rp {harga0:,}"
+            f"</blockquote>"
+        ),
+        reply_markup=InlineKeyboardMarkup([
+            [InlineKeyboardButton("1 Bulan",  callback_data=f"durasi_pick {role} 1 {uid}")],
+            [InlineKeyboardButton("Permanen", callback_data=f"durasi_pick {role} 0 {uid}")],
+            [InlineKeyboardButton("Kembali",  callback_data="bahan")],
+        ]),
+    )
+
+
+@PY.CALLBACK("^durasi_pick")
+async def cb_durasi_pick(client, callback_query):
+    parts  = callback_query.data.split()
+    role   = parts[1]
+    durasi = parts[2]
+    uid    = int(parts[3])
+
+    if callback_query.from_user.id != uid:
+        return await callback_query.answer("Ini bukan buat kamu.", show_alert=True)
+
+    label_role   = ROLE_LABEL.get(role, role)
+    label_durasi = DURASI_LABEL.get(durasi, durasi)
+    harga        = ROLE_HARGA.get(role, {}).get(durasi, 0)
+
+    return await callback_query.edit_message_text(
+        (
+            f"<blockquote>"
+            f"<b>Ringkasan Order</b>\n\n"
+            f"<b>Role  :</b> {label_role}\n"
+            f"<b>Durasi:</b> {label_durasi}\n"
+            f"<b>Harga :</b> Rp {harga:,}\n\n"
+            f"Klik <b>Bayar Sekarang</b> buat lanjut ke QRIS."
+            f"</blockquote>"
+        ),
+        reply_markup=InlineKeyboardMarkup([
+            [InlineKeyboardButton("Bayar Sekarang", callback_data=f"pakasir_pay {role} {durasi} {uid}")],
+            [InlineKeyboardButton("Kembali",        callback_data=f"role_pick {role} {uid}")],
+        ]),
+    )
+
+
+@PY.CALLBACK("^pakasir_pay")
+async def cb_pakasir_pay(client, callback_query):
+    parts  = callback_query.data.split()
+    role   = parts[1]
+    durasi = parts[2]
+    uid    = int(parts[3])
+
+    if callback_query.from_user.id != uid:
+        return await callback_query.answer("Ini bukan buat kamu.", show_alert=True)
+
+    label_role   = ROLE_LABEL.get(role, role)
+    label_durasi = DURASI_LABEL.get(durasi, durasi)
+    harga        = ROLE_HARGA.get(role, {}).get(durasi, 0)
+    order_id     = generate_order_id()
+
+    await callback_query.edit_message_text(
+        "<blockquote><b>Lagi bikin QRIS kamu, tunggu sebentar...</b></blockquote>"
+    )
+
+    hasil = await pakasir_create_qris(harga, order_id)
+
+    payment  = hasil.get("payment") if hasil and not hasil.get("error") else None
+    qr_str   = payment.get("payment_number") if payment else None
+
+    if not qr_str:
+        pending_payments.pop(order_id, None)
         return await callback_query.edit_message_text(
-            MSG.START(callback_query),
-            reply_markup=InlineKeyboardMarkup(BTN.START(callback_query)),
+            (
+                f"<blockquote>"
+                f"<b>Gagal bikin QRIS.</b>\n\n"
+                f"<b>Role  :</b> {label_role}\n"
+                f"<b>Durasi:</b> {label_durasi}\n"
+                f"<b>Harga :</b> Rp {harga:,}\n\n"
+                f"Transfer manual ke QRIS Owner lalu kirim bukti ke "
+                f"<a href='tg://openmessage?user_id={OWNER_ID}'>Owner RANZ PEDIA</a>.\n"
+                f"<b>Order ID:</b> <code>{order_id}</code>"
+                f"</blockquote>"
+            ),
+            reply_markup=InlineKeyboardMarkup([[
+                InlineKeyboardButton("Kembali", callback_data="bahan"),
+            ]]),
         )
 
-    user_target = int(query[1])
+    pending_payments[order_id] = {
+        "user_id": uid,
+        "role":    role,
+        "durasi":  durasi,
+        "harga":   harga,
+    }
+
+    caption = (
+        f"<blockquote>"
+        f"<b>QRIS Pembayaran — RANZ PEDIA</b>\n\n"
+        f"<b>Role    :</b> {label_role}\n"
+        f"<b>Durasi  :</b> {label_durasi}\n"
+        f"<b>Total   :</b> Rp {harga:,}\n"
+        f"<b>Order ID:</b> <code>{order_id}</code>\n\n"
+        f"Scan QRIS di atas pakai aplikasi e-wallet atau bank kamu.\n"
+        f"Bot otomatis konfirmasi begitu saldo masuk."
+        f"</blockquote>"
+    )
+
+    foto_qris = buat_foto_qris(qr_str)
+
     try:
-        get_user = await bot.get_users(user_target)
-        full_name = get_user.first_name
+        await callback_query.message.delete()
     except Exception:
-        full_name = str(user_target)
+        pass
 
-    if action == "success":
-        role = query[2]
-        durasi = query[3]
-        label_role = ROLE_LABEL.get(role, role.upper())
-        label_durasi = DURASI_LABEL.get(durasi, durasi)
+    await bot.send_photo(
+        uid,
+        photo=foto_qris,
+        caption=caption,
+        reply_markup=InlineKeyboardMarkup([[
+            InlineKeyboardButton("Batalkan Order", callback_data=f"batal_order {order_id} {uid}"),
+        ]]),
+    )
 
-        await proses_prem_user(user_target, role, durasi, bot)
-        order_id = f"MANUAL-{user_target}"
-        await kirim_notif_order(user_target, full_name, role, durasi, order_id)
-
-        await bot.send_message(
-            user_target,
-            f"<blockquote><b>✅ Pembayaran Dikonfirmasi!</b>\n\n"
-            f"<b>🎫 Role:</b> {label_role}\n"
-            f"<b>📆 Durasi:</b> {label_durasi}\n\n"
-            f"<b>Sekarang kamu bisa bikin userbot!</b></blockquote>",
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🤖 Buat Userbot", callback_data="buat_ubot")]]),
-        )
-        return await callback_query.edit_message_caption(
-            caption=f"<blockquote><b>✅ {full_name} berhasil dijadikan {label_role} ({label_durasi})</b></blockquote>",
-        )
-
-    if action == "failed":
-        await bot.send_message(
-            user_target,
-            "<blockquote><b>❌ Pembayaran ditolak!</b>\n\n"
-            "Bukti transfer tidak valid atau tidak sesuai.\n"
-            "Coba bayar ulang dengan bukti yang benar ya!</blockquote>",
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔄 Coba Lagi", callback_data="bahan")]]),
-        )
-        return await callback_query.edit_message_caption(
-            caption=f"<blockquote><b>❌ {full_name} ditolak.</b></blockquote>"
-        )
+    asyncio.create_task(loop_cek_bayar(uid, order_id, harga, role, durasi))
 
 
-@PY.CALLBACK("status")
-async def cek_status_callback(client, callback_query):
-    user_id = callback_query.from_user.id
+@PY.CALLBACK("^batal_order")
+async def cb_batal_order(client, callback_query):
+    parts    = callback_query.data.split()
+    order_id = parts[1]
+    uid      = int(parts[2])
 
-    if user_id in ubot._get_my_id:
-        exp = await get_expired_date(user_id)
-        prefix = await get_pref(user_id)
-        waktu = exp.strftime("%d-%m-%Y") if exp else "Tidak Ada"
-        role = await get_user_current_role(user_id, bot.me.id)
-        label_role = ROLE_LABEL.get(role, "Tidak Diketahui")
+    if callback_query.from_user.id != uid:
+        return await callback_query.answer("Ini bukan buat kamu.", show_alert=True)
 
-        return await callback_query.edit_message_text(
-            f"<blockquote><b>📊 Status Userbot Kamu</b>\n\n"
-            f"<b>✅ Status:</b> Aktif\n"
-            f"<b>🎫 Role:</b> {label_role}\n"
-            f"<b>⌨️ Prefix:</b> <code>{prefix[0] if prefix else '.'}</code>\n"
-            f"<b>📅 Expired:</b> {waktu}</blockquote>",
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("⬅️ Kembali", callback_data=f"home {user_id}")]]),
-        )
-    else:
-        return await callback_query.edit_message_text(
-            "<blockquote><b>❌ Kamu belum punya userbot aktif!</b>\n\n"
-            "Beli dulu yuk!</blockquote>",
-            reply_markup=InlineKeyboardMarkup([
-                [InlineKeyboardButton("🛒 Beli Userbot", callback_data="bahan")],
-                [InlineKeyboardButton("⬅️ Kembali", callback_data=f"home {user_id}")],
-            ]),
-        )
+    pending_payments.pop(order_id, None)
+
+    await callback_query.message.delete()
+    await bot.send_message(
+        uid,
+        "<blockquote><b>Order dibatalin.</b>\n\nKalau mau order lagi klik tombol di bawah.</blockquote>",
+        reply_markup=InlineKeyboardMarkup([[
+            InlineKeyboardButton("Order Lagi", callback_data="bahan"),
+        ]]),
+    )
+
+
+@PY.CALLBACK("^uprole_pick")
+async def cb_uprole_pick(client, callback_query):
+    parts    = callback_query.data.split()
+    new_role = parts[1]
+    uid      = int(parts[2])
+    old_role = parts[3]
+
+    if callback_query.from_user.id != uid:
+        return await callback_query.answer("Ini bukan buat kamu.", show_alert=True)
+
+    label_new = ROLE_LABEL.get(new_role, new_role)
+
+    return await callback_query.edit_message_text(
+        (
+            f"<blockquote>"
+            f"<b>Up Role ke: {label_new}</b>\n\n"
+            f"Pilih durasi baru:"
+            f"</blockquote>"
+        ),
+        reply_markup=InlineKeyboardMarkup([
+            [InlineKeyboardButton("1 Bulan",  callback_data=f"durasi_up {new_role} 1 {old_role} {uid}")],
+            [InlineKeyboardButton("Permanen", callback_data=f"durasi_up {new_role} 0 {old_role} {uid}")],
+            [InlineKeyboardButton("Kembali",  callback_data="bahan")],
+        ]),
+    )
+
+
+@PY.CALLBACK("^durasi_up")
+async def cb_durasi_up(client, callback_query):
+    parts    = callback_query.data.split()
+    new_role = parts[1]
+    durasi   = parts[2]
+    old_role = parts[3]
+    uid      = int(parts[4])
+
+    if callback_query.from_user.id != uid:
+        return await callback_query.answer("Ini bukan buat kamu.", show_alert=True)
+
+    old_harga    = ROLE_HARGA.get(old_role, {}).get(durasi, 0)
+    new_harga    = ROLE_HARGA.get(new_role, {}).get(durasi, 0)
+    harga_up     = max(new_harga - old_harga, 0)
+    label_old    = ROLE_LABEL.get(old_role, old_role)
+    label_new    = ROLE_LABEL.get(new_role, new_role)
+    label_durasi = DURASI_LABEL.get(durasi, durasi)
+    order_id     = generate_order_id()
+
+    pending_payments[order_id] = {
+        "user_id":    uid,
+        "role":       new_role,
+        "durasi":     durasi,
+        "harga":      harga_up,
+        "is_upgrade": True,
+    }
+
+    return await callback_query.edit_message_text(
+        (
+            f"<blockquote>"
+            f"<b>Up Role Userbot</b>\n\n"
+            f"<b>Role Sekarang :</b> {label_old}\n"
+            f"<b>Role Baru     :</b> {label_new}\n"
+            f"<b>Durasi        :</b> {label_durasi}\n"
+            f"<b>Harga Upgrade :</b> Rp {harga_up:,}\n"
+            f"<b>Order ID      :</b> <code>{order_id}</code>\n\n"
+            f"Klik <b>Bayar Sekarang</b> buat lanjut ke QRIS."
+            f"</blockquote>"
+        ),
+        reply_markup=InlineKeyboardMarkup([
+            [InlineKeyboardButton("Bayar Sekarang", callback_data=f"pakasir_pay {new_role} {durasi} {uid}")],
+            [InlineKeyboardButton("Kembali",        callback_data="bahan")],
+        ]),
+    )
 
 
 @PY.CALLBACK("up_role")
-async def up_role_callback(client, callback_query):
-    user_id = callback_query.from_user.id
-    current_role = await get_user_current_role(user_id, bot.me.id)
+async def cb_up_role(client, callback_query):
+    uid          = callback_query.from_user.id
+    current_role = await get_role_user(uid, bot.me.id)
 
     if current_role == "none":
         return await callback_query.edit_message_text(
-            "<blockquote><b>❌ Kamu belum punya role apapun!</b>\n\nBeli dulu baru bisa upgrade.</blockquote>",
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🛒 Beli Sekarang", callback_data="bahan")]]),
+            (
+                "<blockquote>"
+                "<b>Kamu belum punya role apapun.</b>\n\n"
+                "Beli dulu baru bisa upgrade."
+                "</blockquote>"
+            ),
+            reply_markup=InlineKeyboardMarkup([[
+                InlineKeyboardButton("Beli Sekarang", callback_data="bahan"),
+            ]]),
         )
 
     if current_role == "admin":
-        return await callback_query.answer("Kamu udah role Admin, paling tinggi!", show_alert=True)
+        return await callback_query.answer("Kamu udah role Admin, itu yang paling tinggi.", show_alert=True)
 
-    label_current = ROLE_LABEL.get(current_role, current_role.upper())
-    from PyroUbot.core.helpers.inline import BTN
+    label_current = ROLE_LABEL.get(current_role, current_role)
+    role_order    = ["member", "seles", "admin"]
+    role_idx      = role_order.index(current_role)
+    tombol        = []
+
+    for i, r in enumerate(role_order):
+        if i > role_idx:
+            tombol.append([InlineKeyboardButton(
+                f"Up ke {ROLE_LABEL.get(r, r)}",
+                callback_data=f"uprole_pick {r} {uid} {current_role}",
+            )])
+
+    tombol.append([InlineKeyboardButton("Kembali", callback_data=f"home {uid}")])
 
     return await callback_query.edit_message_text(
-        f"<blockquote><b>⬆️ Up Role Userbot</b>\n\n"
-        f"<b>Role sekarang:</b> {label_current}\n\n"
-        f"<b>Pilih role yang mau kamu upgrade ke:</b></blockquote>",
-        reply_markup=InlineKeyboardMarkup(BTN.UP_ROLE_PICKER(user_id, current_role)),
+        (
+            f"<blockquote>"
+            f"<b>Up Role Userbot</b>\n\n"
+            f"<b>Role sekarang:</b> {label_current}\n\n"
+            f"Mau upgrade ke role mana?"
+            f"</blockquote>"
+        ),
+        reply_markup=InlineKeyboardMarkup(tombol),
     )
+
+
+@PY.CALLBACK("status")
+async def cb_status(client, callback_query):
+    uid = callback_query.from_user.id
+
+    if uid not in ubot._get_my_id:
+        return await callback_query.edit_message_text(
+            (
+                "<blockquote>"
+                "<b>Kamu belum punya userbot aktif.</b>\n\n"
+                "Beli dulu baru bisa cek status."
+                "</blockquote>"
+            ),
+            reply_markup=InlineKeyboardMarkup([
+                [InlineKeyboardButton("Beli Userbot", callback_data="bahan")],
+                [InlineKeyboardButton("Kembali",      callback_data=f"home {uid}")],
+            ]),
+        )
+
+    exp          = await get_expired_date(uid)
+    prefix       = await get_pref(uid)
+    waktu_exp    = exp.strftime("%d-%m-%Y") if exp else "Tidak ada"
+    role         = await get_role_user(uid, bot.me.id)
+    label_role   = ROLE_LABEL.get(role, "Tidak diketahui")
+
+    return await callback_query.edit_message_text(
+        (
+            f"<blockquote>"
+            f"<b>Status Userbot Kamu</b>\n\n"
+            f"<b>Status  :</b> Aktif\n"
+            f"<b>Role    :</b> {label_role}\n"
+            f"<b>Prefix  :</b> <code>{prefix[0] if prefix else '.'}</code>\n"
+            f"<b>Expired :</b> {waktu_exp}"
+            f"</blockquote>"
+        ),
+        reply_markup=InlineKeyboardMarkup([[
+            InlineKeyboardButton("Kembali", callback_data=f"home {uid}"),
+        ]]),
+    )
+
+
+@PY.CALLBACK("^(success|failed)")
+async def cb_admin_aksi(client, callback_query):
+    parts  = callback_query.data.split()
+    action = parts[0]
+
+    if callback_query.from_user.id != OWNER_ID:
+        return await callback_query.answer("Ini khusus owner.", show_alert=True)
+
+    uid_target = int(parts[1])
+
+    try:
+        user_obj = await bot.get_users(uid_target)
+        nama     = user_obj.first_name
+    except Exception:
+        nama = str(uid_target)
+
+    if action == "success":
+        role         = parts[2]
+        durasi       = parts[3]
+        label_role   = ROLE_LABEL.get(role, role)
+        label_durasi = DURASI_LABEL.get(durasi, durasi)
+
+        await aktifkan_user(uid_target, role, durasi)
+        await notif_order_sukses(uid_target, nama, role, durasi, f"MANUAL-{uid_target}")
+
+        await bot.send_message(
+            uid_target,
+            (
+                f"<blockquote>"
+                f"<b>Pembayaran dikonfirmasi!</b>\n\n"
+                f"<b>Role  :</b> {label_role}\n"
+                f"<b>Durasi:</b> {label_durasi}\n\n"
+                f"Sekarang langsung bikin userbot kamu ya."
+                f"</blockquote>"
+            ),
+            reply_markup=InlineKeyboardMarkup([[
+                InlineKeyboardButton("Buat Userbot", callback_data="buat_ubot"),
+            ]]),
+        )
+        return await callback_query.edit_message_caption(
+            caption=(
+                f"<blockquote>"
+                f"<b>{nama} berhasil diaktifkan sebagai {label_role} ({label_durasi}).</b>"
+                f"</blockquote>"
+            ),
+        )
+
+    await bot.send_message(
+        uid_target,
+        (
+            "<blockquote>"
+            "<b>Pembayaran ditolak.</b>\n\n"
+            "Bukti transfer tidak valid atau tidak sesuai.\n"
+            "Kalau ada masalah hubungi owner langsung."
+            "</blockquote>"
+        ),
+        reply_markup=InlineKeyboardMarkup([[
+            InlineKeyboardButton("Coba Lagi", callback_data="bahan"),
+        ]]),
+    )
+    return await callback_query.edit_message_caption(
+        caption=f"<blockquote><b>{nama} ditolak.</b></blockquote>"
+    )
+
+
+@PY.CALLBACK("^home")
+async def cb_home(client, callback_query):
+    from PyroUbot.core.helpers.inline import BTN
+    from PyroUbot.core.helpers.text import MSG
+    uid = callback_query.from_user.id
+    try:
+        await callback_query.message.delete()
+        await bot.send_photo(
+            uid,
+            photo="https://i.imgur.com/7BTzIeo.png",
+            caption=MSG.START(callback_query),
+            reply_markup=InlineKeyboardMarkup(BTN.START(callback_query)),
+        )
+    except Exception:
+        await callback_query.edit_message_text(
+            MSG.START(callback_query),
+            reply_markup=InlineKeyboardMarkup(BTN.START(callback_query)),
+        )

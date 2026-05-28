@@ -40,4 +40,5 @@ opencv-python-headless==4.10.0.82
 pyromod==1.5
 pykeyboard
 httpx[http2]==0.27.2
+qrcode[pil]==7.4.2
 git+https://github.com/cokycokynanas/PythonModules
