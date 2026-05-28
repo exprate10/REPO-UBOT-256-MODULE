@@ -7,9 +7,9 @@ from pyrogram.types import Message
 
 __MODULE__ = "ᴛᴜʀʙᴏ ɢᴘᴛ"
 __HELP__ = """
-<blockquote><b>✮ Bantuan Untuk Turbo Gpt ✮
+<blockquote><b>✮ <b>Turbo Gpt ✮</b>
 
-perintah : <code>{0}turbo</code>
+<b>Perintah:</b> <code>{0}turbo</code>
     buat menjawab pertanyaan <code>{0}claude</code> haii</b></blockquote>
 """
 
@@ -21,10 +21,10 @@ async def chat_gpt(client, message):
 
         if len(message.command) < 2:
             await message.reply_text(
-                "<emoji id=5019523782004441717>❌</emoji>mohon gunakan format\ncontoh : .turbo hai"
+                "<emoji id=5019523782004441717>⌭</emoji>tolong gunakan format\ncontoh : .turbo hai"
             )
         else:
-            prs = await message.reply_text(f"<emoji id=6226405134004389590>🔍</emoji>Turbo Sedang Menjawab Pesan Anda....")
+            prs = await message.reply_text(f"<emoji id=6226405134004389590>⌖</emoji>Turbo Sedang Menjawab Pesan Anda....")
             hai = message.text.split(' ', 1)[1]
             response = requests.get(f'https://vapis.my.id/api/turbov1?q={hai}')
 

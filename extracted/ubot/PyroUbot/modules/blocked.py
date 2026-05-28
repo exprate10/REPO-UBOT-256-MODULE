@@ -3,12 +3,12 @@ from pyrogram.raw.functions.contacts import GetBlocked
 
 __MODULE__ = "ʙʟᴏᴄᴋᴇᴅ"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk Blocked
+<blockquote><b><b>Blocked</b>
 
-perintah : <code>{0}unblockall</code>
+<b>Perintah:</b> <code>{0}unblockall</code>
     meng unblock semua user di daftar contact
 
-perintah : <code>{0}getblock</code>
+<b>Perintah:</b> <code>{0}getblock</code>
     melihat jumlah yang di blockir di contact</b></blockquote>
 """
 
@@ -39,4 +39,4 @@ async def _(user, message):
         except Exception as i:
             await _prs.edit(f"{i}")
     else:
-        await _prs.edit(f"tidak ada yang di blockir")
+        await _prs.edit(f"ga ada yang di blockir")

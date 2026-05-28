@@ -10,14 +10,14 @@ __MODULE__ = "ᴄᴏᴜᴘʟᴇ"
 __HELP__ = """
 <blockquote><b>『 ᴄᴏᴜᴘʟᴇ 』</b>
 
-  <b>➢ ᴘᴇʀɪɴᴛᴀʜ:</b> <code>{0}couple</code> <b>ᴊᴜᴍʟᴀʜ/ᴋᴀᴛᴀ_ᴋᴜɴᴄɪ</b> 
+  <b>➢ <b>Perintah:</b></b> <code>{0}couple</code> <b>ᴊᴜᴍʟᴀʜ/ᴋᴀᴛᴀ_ᴋᴜɴᴄɪ</b> 
    <i>penjelasan:</b> untuk mencari photo couple secara random</i></blockquote>
 """
 
 @PY.UBOT("couple")
 async def pinterest(client, message):
     prs = await EMO.PROSES(client)
-    err = await EMO.GAGAL(client)
+    err = await EMO.gagal(client)
     jalan = await message.reply(f"{prs}<b>ᴘʀᴏᴄᴇssɪɴɢ...</b>")
     chat_id = message.chat.id
     url = "https://api.botcahx.eu.org/api/randomgambar/couplepp?apikey=@31Moire_mor"

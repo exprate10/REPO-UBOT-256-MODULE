@@ -8,21 +8,21 @@ from PyroUbot import *
 
 __MODULE__ = "ᴊᴏɪɴʟᴇᴀᴠᴇ"
 __HELP__ = """
-<blockquote>Bantuan Untuk Joinleave
+<blockquote><b>Joinleave</b>
 
-perintah : <code>{0}kickme</code>
+<b>Perintah:</b> <code>{0}kickme</code>
     keluar dari group telegram
 
-perintah : <code>{0}join</code>
+<b>Perintah:</b> <code>{0}join</code>
     join ke group melalui tautan atau username group
 
-perintah : <code>{0}leaveallgc</code>
+<b>Perintah:</b> <code>{0}leaveallgc</code>
     keluar semua dari group telegram kecuali admin/owner
 
-perintah : <code>{0}leaveallmute</code>
+<b>Perintah:</b> <code>{0}leaveallmute</code>
     keluar dari grup yang membatasi anda
 
-perintah : <code>{0}leaveallch</code>
+<b>Perintah:</b> <code>{0}leaveallch</code>
     kekuar semua dari channel kecuali admin/owner</blockquote>
 """
 
@@ -33,7 +33,7 @@ perintah : <code>{0}leaveallch</code>
 async def _(client, message):
     sks = await EMO.BERHASIL(client)
     prs = await EMO.PROSES(client)
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     Man = message.command[1] if len(message.command) > 1 else message.chat.id
     xxnx = await message.reply(f"{prs}memproꜱeꜱ...")
     if message.chat.id in BLACKLIST_CHAT:
@@ -51,7 +51,7 @@ async def _(client, message):
 async def _(client, message):
     sks = await EMO.BERHASIL(client)
     prs = await EMO.PROSES(client)
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     Man = message.command[1] if len(message.command) > 1 else message.chat.id
     xxnx = await message.reply(f"{prs}memproꜱeꜱ...")
     try:
@@ -66,7 +66,7 @@ async def _(client, message):
 async def _(client, message):
     sks = await EMO.BERHASIL(client)
     prs = await EMO.PROSES(client)
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     Man = await message.reply(f"{prs}global leave dari obrolan group...")
     er = 0
     done = 0
@@ -90,7 +90,7 @@ async def _(client, message):
 async def _(client, message):
     sks = await EMO.BERHASIL(client)
     prs = await EMO.PROSES(client)
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     Man = await message.reply(f"{prs}global leave dari channel...")
     er = 0
     done = 0
@@ -113,7 +113,7 @@ async def _(client, message):
 async def _(client, message):
     sks = await EMO.BERHASIL(client)
     prs = await EMO.PROSES(client)
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     done = 0
     Haku = await message.reply_text(f"{prs}proccesing...")
     async for dialog in client.get_dialogs():

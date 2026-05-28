@@ -2,9 +2,9 @@ from PyroUbot import *
 
 __MODULE__ = "ʙɪɴᴇʀ"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk Biner</b>
+<blockquote><b><b>Biner</b></b>
 
-Perintah:
+<b>Perintah:</b>
 <code>{0}tobin</code> [teks] → Ubah teks jadi kode biner.
 <code>{0}frombin</code> [biner] → Ubah biner kembali jadi teks.</blockquote></b>
 """
@@ -28,5 +28,5 @@ async def _(client, message):
         res = ''.join(chr(int(text[i:i+8], 2)) for i in range(0, len(text), 8))
         await message.reply_text(f"<blockquote><b>📖 BINARY TO TEXT</b>\n\n<code>{res}</code></blockquote>")
     except:
-        await message.reply_text("<blockquote>❌ Kode biner tidak valid!</blockquote>")
+        await message.reply_text("<blockquote>⌭ Kode biner tidak valid!</blockquote>")
         

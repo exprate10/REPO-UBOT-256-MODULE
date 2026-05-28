@@ -7,9 +7,9 @@ __MODULE__ = "ᴄʟᴏɴᴇ ᴜsᴇʀɴᴀᴍᴇ"
 __HELP__ = """
 <blockquote><b>📚 Folder Untuk Clone Username
 
-🚦 Perintah : {0}clone @username
+🚦 <b>Perintah:</b> {0}clone @username
 🦠 Penjelasan : Untuk MenClone Seseorang User.
-🚦 Perintah : {0}clone restore 
+🚦 <b>Perintah:</b> {0}clone restore 
 🦠 Penjelasan : Untuk Mengembalikan Kamu Ke Identitas Sebelumnya.</b></blockquote>
 """
 
@@ -22,17 +22,17 @@ async def impostor(client: Client, message: Message):
     WannX2 = ["@Rilesya"]
 
     if inputArgs in WannX2:
-        await message.edit("<blockquote><b>❌ [Kontol] - Tidak dapat menyamar sebagai Developer Kingz😡</b></blockquote>")
-        await client.send_message("<blockquote><b> @iqbuboy", "Maaf Telah MengClone Boysz 🥺</b></blockquote>")
+        await message.edit("<blockquote><b>⌭ [Kontol] - Tidak dapat menyamar sebagai Developer Kingz</b></blockquote>")
+        await client.send_message("<blockquote><b> @iqbuboy", "Maaf Telah MengClone Boysz </b></blockquote>")
         return
 
-    xx = await message.edit("<blockquote><b>⏰ Memproses...</b></blockquote>")
+    xx = await message.edit("<blockquote><b>◷ Memproses...</b></blockquote>")
 
     if "restore" in inputArgs:
         if user_id not in STORAGE:
             return await xx.edit("<blockquote><b>📑 Anda harus meng-clone seseorang dulu sebelum mengembalikan identitas!</b></blockquote>")
 
-        await message.edit("<blockquote><b>⏰ Mengembalikan Identitas Asli...</b></blockquote>")
+        await message.edit("<blockquote><b>◷ Mengembalikan Identitas Asli...</b></blockquote>")
         await update_profile(client, STORAGE[user_id], restore=True)
         del STORAGE[user_id]
         return await xx.edit("<blockquote><b>📑 Berhasil mengembalikan akun Anda!</b></blockquote>")
@@ -41,15 +41,15 @@ async def impostor(client: Client, message: Message):
         try:
             user = await client.get_users(inputArgs)
         except:
-            return await xx.edit("<blockquote><b>❌ Nama pengguna/ID tidak valid.</b></blockquote>")
+            return await xx.edit("<blockquote><b>⌭ Nama pengguna/ID tidak valid.</b></blockquote>")
         userObj = await client.get_chat(user.id)
     elif message.reply_to_message:
         reply_user = message.reply_to_message.from_user
         if not reply_user:
-            return await xx.edit("<blockquote><b>❌ Tidak dapat menyamar sebagai admin anonim 🥺</b></blockquote>")
+            return await xx.edit("<blockquote><b>⌭ Tidak dapat menyamar sebagai admin anonim </b></blockquote>")
         userObj = await client.get_chat(reply_user.id)
     else:
-        return await xx.edit("<blockquote><b>❌ Gunakan .clone @username atau reply pesan pengguna.</b></blockquote>")
+        return await xx.edit("<blockquote><b>⌭ Gunakan .clone @username atau reply pesan pengguna.</b></blockquote>")
 
     if user_id not in STORAGE:
         my_profile = await client.get_chat("me")

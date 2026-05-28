@@ -4,7 +4,7 @@ from PyroUbot import *
 
 __MODULE__ = "𝚃𝙾𝚇𝙸𝙲"
 __HELP__ = """
- <blockquote><b>Bantuan Untuk toxic</b>
+ <blockquote><b><b>toxic</b></b>
 
 • <b>Perintah</b> : <code>{0}jamet</code>
 • <b>Penjelasan : gatau gabut doang.</b>

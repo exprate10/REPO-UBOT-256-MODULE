@@ -4,9 +4,9 @@ from PyroUbot import PY
 
 __MODULE__ = "sᴇᴀʀᴄʜɪɴɢ ᴜsᴇʀɴᴀᴍᴇ"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk Searching username</b>
+<blockquote><b><b>Searching username</b></b>
 
-Perintah: <code>{0}searchname</code> [nama]
+<b>Perintah:</b> <code>{0}searchname</code> [nama]
 Penjelasan: untuk mencari nama dari berbagai sosial media</blockquote></b>
 """
 
@@ -18,7 +18,7 @@ async def cek_user_command(client, message):
 
     if len(args) < 2:
         await message.reply_text(
-            "<blockquote><b>⚠️ Gunakan format: searchname [nama]</b></blockquote>"
+            "<blockquote><b>⌯ Gunakan format: searchname [nama]</b></blockquote>"
         )
         return
 
@@ -36,7 +36,7 @@ async def cek_user_command(client, message):
         "✮ Youtube": f"https://youtube.com/@{username}"
     }
 
-    result_text = f"<blockquote><b><emoji id=5231012545799666522>🔍</emoji> HASIL PENCARIAN USERNAME `{username}` DARI SEMUA SOSMED\n\n</blockquote></b>"
+    result_text = f"<blockquote><b><emoji id=5231012545799666522>⌖</emoji> HASIL PENCARIAN USERNAME `{username}` DARI SEMUA SOSMED\n\n</blockquote></b>"
     result_text += "\n".join([f"<blockquote><b>{platform}: [Klik disini]({link}) 𝐛𝐲𝐊𝐢𝐧𝐠𝐳𝐔𝐬𝐞𝐫𝐛𝐨𝐭</blockquote></b>" for platform, link in platforms.items()])
 
     await message.reply_text(result_text, disable_web_page_preview=True)

@@ -5,9 +5,9 @@ from PyroUbot import *
 
 __MODULE__ = "ɢʟᴏʙᴀʟ ʙᴀɴ"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk Global Ban</b>
+<blockquote><b><b>Global Ban</b></b>
 
-Perintah:
+<b>Perintah:</b>
 <code>{0}gban [user_id/username/reply]</code> → Ban user dari semua grup yang kamu kelola.
 <code>{0}ungban [user_id/username/reply]</code> → Menghapus status gban user.</blockquote></b>
 """
@@ -26,12 +26,12 @@ async def _(client, message):
             "2. Atau ketik <code>.gban [username/ID]</code></blockquote>"
         )
 
-    status_msg = await message.reply_text("<blockquote><b>⏳ Memulai proses Global Ban...</b></blockquote>")
+    status_msg = await message.reply_text("<blockquote><b>◷ Memulai proses Global Ban...</b></blockquote>")
     
     try:
         user = await client.get_users(user_id)
     except Exception as e:
-        return await status_msg.edit(f"<blockquote><b>❌ User tidak ditemukan:</b> {str(e)}</blockquote>")
+        return await status_msg.edit(f"<blockquote><b>⌭ User ga ketemu:</b> {str(e)}</blockquote>")
 
     done = 0
     failed = 0
@@ -46,12 +46,12 @@ async def _(client, message):
                 failed += 1
 
     hasil = (
-        f"<blockquote><b>🚫 GLOBAL BAN BERHASIL</b>\n\n"
-        f"<b>👤 User:</b> {user.mention}\n"
+        f"<blockquote><b>⊘ GLOBAL BAN BERHASIL</b>\n\n"
+        f"<b>◉ User:</b> {user.mention}\n"
         f"<b>🆔 ID:</b> <code>{user.id}</code>\n\n"
-        f"<b>✅ Berhasil Ban:</b> <code>{done} Grup</code>\n"
-        f"<b>❌ Gagal/Bukan Admin:</b> <code>{failed} Grup</code>\n\n"
-        f"<b>💡 INFO:</b>\n"
+        f"<b>⌬ Berhasil Ban:</b> <code>{done} Grup</code>\n"
+        f"<b>⌭ gagal/Bukan Admin:</b> <code>{failed} Grup</code>\n\n"
+        f"<b>✦ INFO:</b>\n"
         f"<i>User ini sekarang tidak bisa masuk ke grup mana pun yang Anda kelola.</i></blockquote>"
     )
     await status_msg.edit(hasil)
@@ -63,7 +63,7 @@ async def _(client, message):
     if not user_id:
         return await message.reply_text("<blockquote>Gunakan: <code>.ungban [username/ID/reply]</code></blockquote>")
 
-    status_msg = await message.reply_text("<blockquote><b>⏳ Menghapus status Global Ban...</b></blockquote>")
+    status_msg = await message.reply_text("<blockquote><b>◷ Menghapus status Global Ban...</b></blockquote>")
     
     done = 0
     async for dialog in client.get_dialogs():
@@ -74,5 +74,5 @@ async def _(client, message):
             except:
                 pass
 
-    await status_msg.edit(f"<blockquote><b>✅ UNGBAN BERHASIL</b>\nUser telah di-unban di <code>{done}</code> grup.</blockquote>")
+    await status_msg.edit(f"<blockquote><b>⌬ UNGBAN BERHASIL</b>\nUser telah di-unban di <code>{done}</code> grup.</blockquote>")
     

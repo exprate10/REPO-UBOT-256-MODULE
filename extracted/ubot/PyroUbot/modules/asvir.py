@@ -7,10 +7,10 @@ from pyrogram.types import Message
 
 __MODULE__ = "ᴀsᴠɪʀ ᴀɪ"
 __HELP__ = """
-<blockquote><b>✮ Bantuan Untuk Asisten Virtual ✮
+<blockquote><b>✮ <b>Asisten Virtual ✮</b>
 
-perintah : <code>{0}asvir</code>
-    ai bisa digunakan untuk:translate,memberikan saran,membuat text , contoh <code>{0}asvir</code> bahasa ingris nya 'siapa kamu' itu apa?</b></blockquote>
+<b>Perintah:</b> <code>{0}asvir</code>
+    ai bisa digunakan untuk:translate,memberikan saran,membuat text , Contoh <code>{0}asvir</code> bahasa ingris nya 'siapa kamu' itu apa?</b></blockquote>
 """
 
 @PY.UBOT("asvir")
@@ -21,7 +21,7 @@ async def chat_gpt(client, message):
 
         if len(message.command) < 2:
             await message.reply_text(
-                "<emoji id=5019523782004441717>❌</emoji>mohon gunakan format\ncontoh : .asvir bahasa ingris nya 'siapa kamu' itu apa?"
+                "<emoji id=5019523782004441717>⌭</emoji>tolong gunakan format\ncontoh : .asvir bahasa ingris nya 'siapa kamu' itu apa?"
             )
         else:
             prs = await message.reply_text(f"<emoji id=4943239162758169437>🤩</emoji>Menjawab....")

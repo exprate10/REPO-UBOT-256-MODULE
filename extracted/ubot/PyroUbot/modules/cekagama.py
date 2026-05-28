@@ -5,9 +5,9 @@ from PyroUbot import PY
 
 __MODULE__ = "ᴄᴇᴋ ᴀɢᴀᴍᴀ"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk Cek Agama</b>
+<blockquote><b><b>Cek Agama</b></b>
 
-Perintah:
+<b>Perintah:</b>
 <code>{0}cekagama [nama]</code> → DETEKSI AGAMA DARI NAMA  
 
 Sumber: Random generator berdasarkan nama.</blockquote></b>
@@ -22,7 +22,7 @@ AGAMA_LIST = [
 async def cek_agama(client, message):
     args = message.text.split(maxsplit=1)
     if len(args) < 2:
-        return await message.reply_text("<blockquote><b>⚠️ Gunakan format: .cekagama [nama]</blockquote></b>")
+        return await message.reply_text("<blockquote><b>⌯ Gunakan format: .cekagama [nama]</blockquote></b>")
 
     nama = args[1]
     agama = random.choice(AGAMA_LIST)
@@ -33,7 +33,7 @@ async def cek_agama(client, message):
     ├ ᴀɢᴀᴍᴀ: `{agama}`
     ├ sᴇʟᴀᴍᴀᴛ ʏᴀ ᴀɢᴀᴍᴀ ɴʏᴀ ᴄᴏᴄᴏᴋ ᴋᴏᴋ
     ╰────────────────────────
-    ɴᴏᴛᴇ ᴍᴀᴀғ ʏᴀ {nama} ᴄᴜᴍᴀ ʙᴇᴄᴀɴᴅᴀ ᴋᴏᴋ 😁
+    ɴᴏᴛᴇ ᴍᴀᴀғ ʏᴀ {nama} ᴄᴜᴍᴀ ʙᴇᴄᴀɴᴅᴀ ᴋᴏᴋ 
     
     </blockquote></b>'''
     await message.reply_text(hasil)

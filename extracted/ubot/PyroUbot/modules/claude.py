@@ -7,10 +7,10 @@ from pyrogram.types import Message
 
 __MODULE__ = "ᴄʟᴀᴜᴅᴇ ᴀɪ"
 __HELP__ = """
-<blockquote><b>✮ Bantuan Untuk Claude ✮
+<blockquote><b>✮ <b>Claude ✮</b>
 
-perintah : <code>{0}claude</code>
-    buat percakapan contoh <code>{0}claude</code> haii</b></blockquote>
+<b>Perintah:</b> <code>{0}claude</code>
+    buat percakapan Contoh <code>{0}claude</code> haii</b></blockquote>
 """
 
 @PY.UBOT("claude")
@@ -21,10 +21,10 @@ async def chat_gpt(client, message):
 
         if len(message.command) < 2:
             await message.reply_text(
-                "<emoji id=5019523782004441717>❌</emoji>mohon gunakan format\ncontoh : .claude hai"
+                "<emoji id=5019523782004441717>⌭</emoji>tolong gunakan format\ncontoh : .claude hai"
             )
         else:
-            prs = await message.reply_text(f"<emoji id=6226405134004389590>🔍</emoji>Menjawab....")
+            prs = await message.reply_text(f"<emoji id=6226405134004389590>⌖</emoji>Menjawab....")
             hai = message.text.split(' ', 1)[1]
             response = requests.get(f'https://vapis.my.id/api/claude?q={hai}')
 

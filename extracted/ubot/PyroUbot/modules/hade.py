@@ -29,9 +29,8 @@ def remini(image_path, model_type="enhance"):
         )
 __MODULE__ = "remini"
 __HELP__ = """
-<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ hd ⦫<b>
-
-<blockquote><b>⎆ perintah :
+<b>⦪ 
+<blockquote><b>⎆ <b>Perintah:</b>
 ᚗ <code>{0}hd</code></b></blockquote>
 """
 

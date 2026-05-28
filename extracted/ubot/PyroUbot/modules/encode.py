@@ -7,9 +7,9 @@ from pyrogram.types import Message
 
 __MODULE__ = "ᴇɴᴄʀʏᴘᴛ ʜᴀʀᴅ"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk Encrypt JS</b>
+<blockquote><b><b>Encrypt JS</b></b>
 
-Perintah:
+<b>Perintah:</b>
 <code>{0}enc</code> → Balas file .js untuk dienkripsi.
 
 Sumber: Menggunakan UglifyJS untuk enkripsi JavaScript.</blockquote></b>
@@ -17,7 +17,7 @@ Sumber: Menggunakan UglifyJS untuk enkripsi JavaScript.</blockquote></b>
 
 # Periksa apakah UglifyJS sudah terinstal
 if not shutil.which("uglifyjs"):
-    raise Exception("⚠️ UglifyJS belum terinstal. Install dengan `npm install -g uglify-js`")
+    raise Exception("⌯ UglifyJS belum terinstal. Install dengan `npm install -g uglify-js`")
 
 @PY.UBOT("enc")
 @PY.TOP_CMD
@@ -29,7 +29,7 @@ async def encrypt_js(client: Client, message: Message):
     file_name = file_info.file_name
 
     if not file_name.endswith('.js'):
-        return await message.reply("❌ File harus berekstensi .js!")
+        return await message.reply("⌭ File harus berekstensi .js!")
 
     # Mengunduh file dari Telegram
     msg = await message.reply("⚡ Mengunduh file...")
@@ -46,11 +46,11 @@ async def encrypt_js(client: Client, message: Message):
 
         await message.reply_document(
             encrypted_file_path,
-            caption="✅ **File berhasil dienkripsi!**\n🔒 @kingprem_bot"
+            caption="⌬ **File berhasil dienkripsi!**\n⌠ @kingprem_bot"
         )
 
     except subprocess.CalledProcessError:
-        await msg.edit("❌ Gagal mengenkripsi file!")
+        await msg.edit("⌭ gagal mengenkripsi file!")
 
     # Hapus file sementara
     os.remove(file_path)

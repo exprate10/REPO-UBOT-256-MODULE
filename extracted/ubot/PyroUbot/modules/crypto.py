@@ -3,9 +3,9 @@ from PyroUbot import *
 
 __MODULE__ = "ᴄʀʏᴘᴛᴏ"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk Crypto</b>
+<blockquote><b><b>Crypto</b></b>
 
-Perintah:
+<b>Perintah:</b>
 <code>{0}crypto [simbol]</code> → Cek harga crypto saat ini (Contoh: btc, eth, doge).</blockquote></b>
 """
 
@@ -22,7 +22,7 @@ async def _(client, message):
         )
 
     coin = message.command[1].lower()
-    status_msg = await message.reply_text("<blockquote><b>🔄 Sedang mengambil data pasar...</b></blockquote>")
+    status_msg = await message.reply_text("<blockquote><b>⟳ Sedang mengambil data pasar...</b></blockquote>")
 
     try:
         # Mengambil data dari API Binance (Tanpa API Key)
@@ -31,7 +31,7 @@ async def _(client, message):
         async with aiohttp.ClientSession() as session:
             async with session.get(url) as resp:
                 if resp.status != 200:
-                    return await status_msg.edit("<blockquote><b>❌ Koin tidak ditemukan.</b>\nPastikan simbol benar (contoh: btc, eth, sol).</blockquote>")
+                    return await status_msg.edit("<blockquote><b>⌭ Koin ga ketemu.</b>\nPastikan simbol benar (contoh: btc, eth, sol).</blockquote>")
                 data = await resp.json()
 
         price = float(data.get("price"))
@@ -39,14 +39,14 @@ async def _(client, message):
         formatted_price = "{:,.2f}".format(price)
 
         hasil = (
-            f"<blockquote><b>💰 HARGA CRYPTO TERKINI</b>\n\n"
+            f"<blockquote><b>✦ HARGA CRYPTO TERKINI</b>\n\n"
             f"<b>🪙 Koin:</b> <code>{coin.upper()} / USDT</code>\n"
-            f"<b>💵 Harga:</b> <code>$ {formatted_price}</code>\n\n"
-            f"<b>💡 ARAHAN PEMULA:</b>\n"
+            f"<b>✦ Harga:</b> <code>$ {formatted_price}</code>\n\n"
+            f"<b>✦ ARAHAN PEMULA:</b>\n"
             f"<i>Harga diambil langsung dari market Binance. Ingat, investasi crypto berisiko tinggi!</i></blockquote>"
         )
         await status_msg.edit(hasil)
 
     except Exception as e:
-        await status_msg.edit(f"<blockquote><b>⚠️ Terjadi kesalahan:</b>\n<code>{str(e)}</code></blockquote>")
+        await status_msg.edit(f"<blockquote><b>⌯ Terjadi kesalahan:</b>\n<code>{str(e)}</code></blockquote>")
         

@@ -5,9 +5,9 @@ from PyroUbot import PY
 
 __MODULE__ = "ᴄᴇᴋ ɪᴘ"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk Cek IP Website</b>
+<blockquote><b><b>Cek IP Website</b></b>
 
-Perintah: <code>{0}cekip</code> [domain]
+<b>Perintah:</b> <code>{0}cekip</code> [domain]
 Penjelasan: untuk mendapatkan alamat IP dari domain yang diberikan</blockquote></b>
 """
 
@@ -19,7 +19,7 @@ async def cek_ip_command(client, message):
 
     if len(args) < 2:
         await message.reply_text(
-            "<blockquote><b>⚠️ Gunakan format: cekip [domain]</b></blockquote>"
+            "<blockquote><b>⌯ Gunakan format: cekip [domain]</b></blockquote>"
         )
         return
 
@@ -27,8 +27,8 @@ async def cek_ip_command(client, message):
 
     try:
         ip_address = socket.gethostbyname(domain)
-        result_text = f"<blockquote><b>🔍 **Hasil Pengecekan IP untuk:** `{domain}`\n\n🌐 IP Address: `{ip_address}`</b></blockquote>"
+        result_text = f"<blockquote><b>⌖ **Hasil Pengecekan IP untuk:** `{domain}`\n\n◎ IP Address: `{ip_address}`</b></blockquote>"
     except Exception as e:
-        result_text = f"❌ Terjadi kesalahan: {str(e)}"
+        result_text = f"⌭ Terjadi kesalahan: {str(e)}"
 
     await message.reply_text(result_text)

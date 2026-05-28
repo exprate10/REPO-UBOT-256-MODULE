@@ -2,9 +2,9 @@ from PyroUbot import *
 
 __MODULE__ = "ꜱᴛᴀꜰꜰ"
 __HELP__ = """
-<blockquote>Bantuan Untuk Staff
+<blockquote><b>Staff</b>
 
-perintah : <code>{0}staff</code>
+<b>Perintah:</b> <code>{0}staff</code>
     untuk mendapatkan informaꜱi ꜱeluruh ꜱtaff grup</blockquote>
 """
 import os
@@ -45,7 +45,7 @@ async def staff_cmd(client, message):
 Staff Grup
 {chat_title}
 
-<emoji id=5803032306213982905>👑</emoji> Owner:
+<emoji id=5803032306213982905>✧</emoji> Owner:
 {creator[0]}"""
     elif not co_founder:
         adm = admin[-1].replace("┣", "┗")
@@ -55,7 +55,7 @@ Staff Grup
 Staff Grup
 {chat_title}
 
-<emoji id=5803032306213982905>👑</emoji> Owner:
+<emoji id=5803032306213982905>✧</emoji> Owner:
 {creator[0]}
 
 <emoji id=5800942688660360834>👮</emoji> admin:
@@ -70,7 +70,7 @@ Staff Grup
 Staff Grup
 {chat_title}
 
-<emoji id=5803032306213982905>👑</emoji> Owner:
+<emoji id=5803032306213982905>✧</emoji> Owner:
 {creator[0]}
 
 <emoji id=5800942688660360834>👮</emoji> Co-Founder:
@@ -90,7 +90,7 @@ Staff Grup
 Staff Grup
 {chat_title}
 
-<emoji id=5803032306213982905>👑</emoji> Owner:
+<emoji id=5803032306213982905>✧</emoji> Owner:
 {creator[0]}
 
 <emoji id=5800942688660360834>👮</emoji> Co-Founder:

@@ -3,15 +3,14 @@ from PyroUbot import *
 
 __MODULE__ = "ᴘʀᴏꜱᴇꜱ"
 __HELP__ = """
-<b>🜲 ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴘʀᴏꜱᴇꜱ</b>
-<b>Penjelasan : Proses Transaksi.</b>
+<b>🜲 <b>Penjelasan : Proses Transaksi.</b>
 
 <blockquote>⎆ <b>Perintah</b> : <code>{0}proses</code> <b>[name item],[testi]</b></blockquote>
 """
 
 @PY.UBOT("proses")
 async def done_command(client, message):
-    izzy_ganteng = await message.reply("<blockquote>🚀 Memproses</blockquote>")
+    izzy_ganteng = await message.reply("<blockquote>⟶ Memproses</blockquote>")
     await asyncio.sleep(5)
     try:
         args = message.text.split(" ", 1)
@@ -27,11 +26,11 @@ async def done_command(client, message):
         name_item = parts[0].strip()
         testi = parts[1].strip()
         response = (
-            f"<b>✅️ Pesanan Diproses</b>\n"
+            f"<b>⌬️ Pesanan Diproses</b>\n"
             f"<blockquote>📦 <b>Barang : {name_item}</b>\n"
             f"👉 <b>Testimoni : {testi}</b></blockquote>\n\n"
-            f"<b>Kami Sedang Mengerjakan Pesanan Anda, Mohon Tidak Spam Owner supaya Pesanan Lebih Cepat Diproses, Terima Kasih</b>\n"
-            f"<blockquote><b>Userbot By @UbotZexcOfficial_bot</b></blockquote>\n\n"
+            f"<b>Kami Sedang Mengerjakan Pesanan Anda, tolong Tidak Spam Owner supaya Pesanan Lebih Cepat Diproses, Terima Kasih</b>\n"
+            f"<blockquote><b>Userbot By @ranzpedia_bot</b></blockquote>\n\n"
         )
         await izzy_ganteng.edit(response)
 

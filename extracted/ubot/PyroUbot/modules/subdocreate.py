@@ -6,16 +6,16 @@ from PyroUbot import PY
 
 __MODULE__ = "𝙲𝚁𝙴𝙰𝚃𝙴 𝙳𝙾𝙼𝙰𝙸𝙽"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk Subdomain Creator</b>
+<blockquote><b><b>Subdomain Creator</b></b>
 
-Perintah:
+<b>Perintah:</b>
 <code>{0}subdocreate [domain] [subdomain] [IP]</code> → Menambahkan subdomain ke domain yang tersedia di Cloudflare.
 <code>{0}listdomain </code> → Untuk melihat list domain.
 
-🔍 Contoh:
+⌖ Contoh:
 <code>{0}subdocreate example.com test 192.168.1.1</code>
 
-💡 Gunakan <code>{0}domainlist</code> untuk melihat daftar domain yang tersedia.</blockquote></b>
+✦ Gunakan <code>{0}domainlist</code> untuk melihat daftar domain yang tersedia.</blockquote></b>
 """
 
 # Konfigurasi Cloudflare (Tambahkan daftar domain dengan Zone ID)
@@ -49,7 +49,7 @@ def create_subdomain(zone_id, subdomain, target_ip):
 async def subdomain_create(client, message):
     args = message.text.split(maxsplit=3)
     if len(args) < 4:
-        await message.reply_text("❌ Silakan masukkan format yang benar: `.subdocreate [domain] [subdomain] [IP]`")
+        await message.reply_text("⌭ Silakan masukkan format yang benar: `.subdocreate [domain] [subdomain] [IP]`")
         return
 
     domain = args[1].strip()
@@ -57,27 +57,27 @@ async def subdomain_create(client, message):
     target_ip = args[3].strip()
 
     if domain not in DOMAIN_LIST:
-        await message.reply_text(f"❌ Domain `{domain}` tidak ditemukan dalam daftar. Gunakan `.domainlist` untuk melihat daftar domain yang tersedia.")
+        await message.reply_text(f"⌭ Domain `{domain}` ga ketemu dalam daftar. Gunakan `.domainlist` untuk melihat daftar domain yang tersedia.")
         return
 
     zone_id = DOMAIN_LIST[domain]
     full_subdomain = f"{subdomain}.{domain}"
 
-    await message.reply_text(f"🔍 **Menambahkan subdomain:** `{full_subdomain}` ➝ `{target_ip}`")
+    await message.reply_text(f"⌖ **Menambahkan subdomain:** `{full_subdomain}` ➝ `{target_ip}`")
 
     result = create_subdomain(zone_id, full_subdomain, target_ip)
 
     if result.get("success"):
-        await message.reply_text(f"✅ **Subdomain Berhasil Ditambahkan!**\n🌐 `{full_subdomain} → {target_ip}`")
+        await message.reply_text(f"⌬ **Subdomain berhasil ditambah!**\n◎ `{full_subdomain} → {target_ip}`")
     else:
         error_msg = result.get("errors", [{"message": "Unknown Error"}])[0]["message"]
-        await message.reply_text(f"❌ **Gagal Menambahkan Subdomain**\n⚠️ Error: `{error_msg}`")
+        await message.reply_text(f"⌭ **gagal Menambahkan Subdomain**\n⌯ Error: `{error_msg}`")
 
 @PY.UBOT("domainlist")
 @PY.TOP_CMD
 async def list_domains(client, message):
     domain_list_text = "📜 **Daftar Domain yang Tersedia:**\n"
     for domain in DOMAIN_LIST.keys():
-        domain_list_text += f"✅ `{domain}`\n"
+        domain_list_text += f"⌬ `{domain}`\n"
     
     await message.reply_text(domain_list_text)

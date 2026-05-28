@@ -8,13 +8,13 @@ from PyroUbot import *
 @PY.UBOT("etmin")
 @PY.TOP_CMD
 async def promotte(client: Client, message: Message):
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     sks = await EMO.BERHASIL(client)
     prs = await EMO.PROSES(client)
     user_id = await extract_user(message)
-    anu = await eor(message, f"{prs}processing...")
+    anu = await eor(message, f"{prs}sebentar ya...")
     if not user_id:
-        return await anu.edit(f"{ggl}pengguna tidak ditemukan.")
+        return await anu.edit(f"{ggl}pengguna ga ketemu.")
     (await client.get_chat_member(message.chat.id, client.me.id)).privileges
     try:
         await message.chat.promote_member(
@@ -39,13 +39,13 @@ async def promotte(client: Client, message: Message):
 @PY.UBOT("ceo")
 @PY.TOP_CMD
 async def promotte(client: Client, message: Message):
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     sks = await EMO.BERHASIL(client)
     prs = await EMO.PROSES(client)
     user_id = await extract_user(message)
-    anu = await eor(message, f"{prs}processing...")
+    anu = await eor(message, f"{prs}sebentar ya...")
     if not user_id:
-        return await anu.edit(f"{ggl}pengguna tidak ditemukan.")
+        return await anu.edit(f"{ggl}pengguna ga ketemu.")
     (await client.get_chat_member(message.chat.id, client.me.id)).privileges
     try:
         await message.chat.promote_member(
@@ -71,13 +71,13 @@ async def promotte(client: Client, message: Message):
 @PY.UBOT("demote")
 @PY.TOP_CMD
 async def demote(client: Client, message: Message):
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     sks = await EMO.BERHASIL(client)
     prs = await EMO.PROSES(client)
     user_id = await extract_user(message)
-    sempak = await eor(message, f"{prs}processing...")
+    sempak = await eor(message, f"{prs}sebentar ya...")
     if not user_id:
-        return await sempak.edit(f"{ggl}pengguna tidak ditemukan")
+        return await sempak.edit(f"{ggl}pengguna ga ketemu")
     if user_id == client.me.id:
         return await sempak.edit(f"{ggl}tidak bisa demote diri sendiri.")
     await message.chat.promote_member(
@@ -102,7 +102,7 @@ async def demote(client: Client, message: Message):
 @PY.UBOT("getlink")
 @PY.TOP_CMD
 async def get_link(client, message):
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     sks = await EMO.BERHASIL(client)
     prs = await EMO.PROSES(client)
     try:

@@ -5,22 +5,22 @@ import requests
 __MODULE__ = "ᴇᴘʜᴏᴛᴏ"
 __HELP__ = """**「 BANTUAN UNTUK MODULE EPHOTO 」**
 
-𖠇➛ **ᴘᴇʀɪɴᴛᴀʜ: .television (ᴛᴇxᴛ)**
+𖠇➛ **<b>Perintah:</b> .television (ᴛᴇxᴛ)**
 𖠇➛ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: ᴜɴᴛᴜᴋ ᴍᴇᴍʙᴜᴀᴛ ᴛᴇxᴛ ᴛᴇʟᴇᴠɪsɪᴏɴ**
 
-𖠇➛ **ᴘᴇʀɪɴᴛᴀʜ: .glasse (ᴛᴇxᴛ)**
+𖠇➛ **<b>Perintah:</b> .glasse (ᴛᴇxᴛ)**
 𖠇➛ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: ᴜɴᴛᴜᴋ ᴍᴇᴍʙᴜᴀᴛ ᴛᴇxᴛ ɢʟᴀssᴇ**
 
-𖠇➛ **ᴘᴇʀɪɴᴛᴀʜ: .blackpink (ᴛᴇxᴛ)**
+𖠇➛ **<b>Perintah:</b> .blackpink (ᴛᴇxᴛ)**
 𖠇➛ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: ᴜɴᴛᴜᴋ ᴍᴇᴍʙᴜᴀᴛ ᴛᴇxᴛ ʙʟᴀᴄᴋᴘɪɴᴋ**
 
-𖠇➛ **ᴘᴇʀɪɴᴛᴀʜ: .blackpink2 (ᴛᴇxᴛ)**
+𖠇➛ **<b>Perintah:</b> .blackpink2 (ᴛᴇxᴛ)**
 𖠇➛ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: ᴜɴᴛᴜᴋ ᴍᴇᴍʙᴜᴀᴛ ᴛᴇxᴛ ʙʟᴀᴄᴋᴘɪɴᴋ2**
 
-𖠇➛ **ᴘᴇʀɪɴᴛᴀʜ: .coverpubg (ᴛᴇxᴛ)**
+𖠇➛ **<b>Perintah:</b> .coverpubg (ᴛᴇxᴛ)**
 𖠇➛ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: ᴜɴᴛᴜᴋ ᴍᴇᴍʙᴜᴀᴛ ᴍᴇᴍʙᴜᴀᴛ ᴛᴇxᴛ ʙʟᴀᴄᴋᴘɪɴᴋ2**
 
-𖠇➛ **ᴘᴇʀɪɴᴛᴀʜ: .hororr (ᴛᴇxᴛ)**
+𖠇➛ **<b>Perintah:</b> .hororr (ᴛᴇxᴛ)**
 𖠇➛ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: ᴜɴᴛᴜᴋ ᴍᴇᴍʙᴜᴀᴛ ᴛᴇxᴛ ʜᴏʀᴏʀʀʀ**"""
 
 def tweet(text):

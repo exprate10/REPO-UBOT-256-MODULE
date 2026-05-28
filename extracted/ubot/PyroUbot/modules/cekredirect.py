@@ -3,8 +3,7 @@ from PyroUbot import *
 
 __MODULE__ = "ᴄᴇᴋ ʀᴇᴅɪʀᴇᴄᴛ"
 __HELP__ = """
-<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴄᴇᴋ ʀᴇᴅɪʀᴇᴄᴛ ⦫</b>
-<blockquote>⎆ perintah :
+<b>⦪ <blockquote>⎆ <b>Perintah:</b>
 ᚗ <code>{0}redirect</code> url
 ⊶ Untuk mengecek link asli shorturl.</blockquote>
 """
@@ -23,7 +22,7 @@ async def cek_redirect(client, message):
             data = response.json()
             if data.get("status"):
                 hasil = data.get("result", [])
-                teks = f"🔍 **Hasil Redirect:**\n\n"
+                teks = f"⌖ **Hasil Redirect:**\n\n"
                 for idx, item in enumerate(hasil, 1):
                     teks += f"**{idx}.** `{item['url']}`"
                     if "status" in item:
@@ -31,8 +30,8 @@ async def cek_redirect(client, message):
                     teks += "\n"
                 await message.reply(f"<blockquote>{teks}</blockquote>")
             else:
-                await message.reply("⚠️ Gagal mengambil data redirect.")
+                await message.reply("⌯ gagal mengambil data redirect.")
         else:
-            await message.reply("❌ API tidak dapat diakses, coba lagi nanti.")
+            await message.reply("⌭ API tidak dapat diakses, coba lagi nanti.")
     except Exception as e:
         await message.reply(f"🚨 Terjadi kesalahan:\n`{str(e)}`")

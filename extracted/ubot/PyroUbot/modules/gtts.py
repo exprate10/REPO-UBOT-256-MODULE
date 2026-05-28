@@ -4,9 +4,8 @@ from PyroUbot import *
 
 __MODULE__ = "ɢᴛᴛs"
 __HELP__ = """
-<blockquote><b>♛ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ɢᴛᴛs ♛</b>
-
-<b>Perintah:</b>
+<blockquote><b>♛ 
+<b><b>Perintah:</b></b>
 • <code>.tts</code> [teks]
 ᴍᴇɴɢᴜʙᴀʜ ᴛᴇᴋs ᴍᴇɴᴊᴀᴅɪ sᴜᴀʀᴀ (ɢᴏᴏɢʟᴇ ᴠᴏɪᴄᴇ).
 
@@ -16,7 +15,7 @@ __HELP__ = """
 @PY.UBOT("tts")
 async def gtts_cmd(client, message):
     if len(message.command) < 2:
-        return await message.reply("<blockquote>❌ <b>ʜᴀʀᴀᴘ ᴍᴀsᴜᴋᴋᴀɴ ᴛᴇᴋs!</b>\nᴄᴏɴᴛᴏʜ: <code>.tts halo bosqu</code></blockquote>")
+        return await message.reply("<blockquote>⌭ <b>ʜᴀʀᴀᴘ ᴍᴀsᴜᴋᴋᴀɴ ᴛᴇᴋs!</b>\nᴄᴏɴᴛᴏʜ: <code>.tts halo bosqu</code></blockquote>")
 
     teks = message.text.split(None, 1)[1]
     sh = await message.reply("<b>sᴇᴅᴀɴɢ ᴍᴇᴍᴘʀᴏsᴇs...</b>")
@@ -28,7 +27,7 @@ async def gtts_cmd(client, message):
         async with httpx.AsyncClient() as x:
             res = await x.get(tts_url)
             if res.status_code != 200:
-                return await sh.edit("<blockquote>❌ <b>ɢᴀɢᴀʟ ᴍᴇɴɢᴀᴍʙɪʟ sᴜᴀʀᴀ.</b></blockquote>")
+                return await sh.edit("<blockquote>⌭ <b>ɢᴀɢᴀʟ ᴍᴇɴɢᴀᴍʙɪʟ sᴜᴀʀᴀ.</b></blockquote>")
             
             audio_data = res.content
             
@@ -47,5 +46,5 @@ async def gtts_cmd(client, message):
             os.remove(file_name)
             
     except Exception as e:
-        await sh.edit(f"<blockquote>❌ ᴇʀʀᴏʀ: <code>{str(e)}</code></blockquote>")
+        await sh.edit(f"<blockquote>⌭ ᴇʀʀᴏʀ: <code>{str(e)}</code></blockquote>")
 

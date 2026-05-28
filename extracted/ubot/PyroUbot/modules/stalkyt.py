@@ -6,19 +6,19 @@ from PyroUbot import *
 
 __MODULE__ = "sᴛᴀʟᴋʏᴛ"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk Stalk YT
+<blockquote><b><b>Stalk YT</b>
 
-Perintah : <code>{0}stalkyt</code> 
+<b>Perintah:</b> <code>{0}stalkyt</code> 
     Untuk Stalk yt Menggunakan Username</b></blockquote>
 """
 
 @PY.UBOT("stalkyt")
 async def stalkyt(client, message):
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     sks = await EMO.BERHASIL(client)
     prs = await EMO.PROSES(client)
     
-    jalan = await message.reply(f"{prs} Processing...")
+    jalan = await message.reply(f"{prs} sebentar ya...")
     
     if len(message.command) != 2:
         return await jalan.edit(f"{ggl} Please use the command `stalkyt` followed by the yt username.")

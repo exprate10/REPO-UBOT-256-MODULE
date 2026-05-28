@@ -8,9 +8,8 @@ from PyroUbot import *
 
 __MODULE__ = "ɢᴇᴛ ᴘᴘ"
 __HELP__ = """
-<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ɢᴇᴛ ᴘᴘ ⦫</b>
-
-<blockquote><b>⎆ ᴘᴇʀɪɴᴛᴀʜ :
+<b>⦪ 
+<blockquote><b>⎆ <b>Perintah:</b>
 ᚗ <code>{0}getpp</code> replychat
 
 ⌭ ᴘᴇɴᴊᴇʟᴀsᴀɴ:
@@ -38,13 +37,13 @@ async def get_profile_pic(client, message):
             await client.send_photo(
                 message.chat.id,
                 photo=photo.file_id,
-                caption="<pre>Done✅</pre>"
+                caption="<pre>Done⌬</pre>"
             )
             return
 
         await message.reply_text("**__User/grup tidak memiliki foto profil__**.")
 
     except (UsernameNotOccupied, UserNotParticipant, PeerIdInvalid):
-        await message.reply_text("**__Akun atau grup tidak ditemukan.__**")
+        await message.reply_text("**__Akun atau grup ga ketemu.__**")
     except Exception as e:
         await message.reply_text(f"**__Terjadi kesalahan: {str(e)}__**")

@@ -8,17 +8,17 @@ __MODULE__ = "ꜱᴛᴀʟᴋꜰꜰ"
 __HELP__ = """
 <blockquote><b>『 ꜱᴛᴀʟᴋꜰꜰ 』</b>
 
-  <b>➢ ᴘᴇʀɪɴᴛᴀʜ:</b> <code>{0}stalkff</code> 
+  <b>➢ <b>Perintah:</b></b> <code>{0}stalkff</code> 
    <i>penjelasan:</b> search akun ff menggunakan id</i></blockquote>
 """
 
 @PY.UBOT("stalkff")
 async def stalkff(client, message):
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     sks = await EMO.BERHASIL(client)
     prs = await EMO.PROSES(client)
     
-    jalan = await message.reply(f"{prs} Processing...")
+    jalan = await message.reply(f"{prs} sebentar ya...")
     
     if len(message.command) != 2:
         return await jalan.edit(f"{ggl} Please use the command `stalkff` id akun.")
@@ -36,9 +36,9 @@ async def stalkff(client, message):
             openid = data['open_id']
             photoUrl = data['img_url']
             caption = f"""
-<b><emoji id=5841235769728962577>⭐</emoji>Nicname: <code>{Nicname}</code></b>
-<b><emoji id=5843952899184398024>⭐</emoji>Region: <code>{region}</code></b>
-<b><emoji id=5841243255856960314>⭐</emoji>OpenID: <code>{openid}</code></b>
+<b><emoji id=5841235769728962577>✦</emoji>Nicname: <code>{Nicname}</code></b>
+<b><emoji id=5843952899184398024>✦</emoji>Region: <code>{region}</code></b>
+<b><emoji id=5841243255856960314>✦</emoji>OpenID: <code>{openid}</code></b>
 """
             photo_path = wget.download(photoUrl)
             await client.send_photo(chat_id, caption=caption, photo=photo_path)

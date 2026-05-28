@@ -9,13 +9,13 @@ __MODULE__ = "ʟᴏɢᴏ"
 __HELP__ = """
 <b>Logo Commands</b>
 
-<blockquote><b>Perintah : <code>avengers</code>
+<blockquote><b><b>Perintah:</b> <code>avengers</code>
 Penjelasan : Membuat gambar dengan logo avengers-logo.</b></blockquote>
-<blockquote><b>Perintah : <code>lion</code>
+<blockquote><b><b>Perintah:</b> <code>lion</code>
 Penjelasan : Membuat gambar dengan logo lion-logo.</b></blockquote>
-<blockquote><b>Perintah : <code>ninja</code>
+<blockquote><b><b>Perintah:</b> <code>ninja</code>
 Penjelasan : Membuat gambar dengan logo ninja-logo.</b></blockquote>
-<blockquote><b>Perintah : <code>joker</code>
+<blockquote><b><b>Perintah:</b> <code>joker</code>
 Penjelasan : Membuat gambar dengan logo joker-logo.</b></blockquote>
 """
 
@@ -47,7 +47,7 @@ async def process_image_command(client, message, api_url, command_name):
         return
 
     request_text = args[1]
-    await message.reply_text("<b><i>Sedang memproses, mohon tunggu...</i></b>")
+    await message.reply_text("<b><i>Sedang memproses, tolong tunggu...</i></b>")
 
     image_content = fetch_image(api_url, request_text)
     if image_content:
@@ -57,7 +57,7 @@ async def process_image_command(client, message, api_url, command_name):
         await message.reply_photo(photo=temp_file)
         os.remove(temp_file)
     else:
-        await message.reply_text("Gagal membuat gambar. Coba lagi nanti.")
+        await message.reply_text("gagal membuat gambar. Coba lagi nanti.")
 
 # Handler untuk setiap perintah
 @PY.UBOT("avengers")

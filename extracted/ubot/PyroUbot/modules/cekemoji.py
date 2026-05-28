@@ -33,5 +33,5 @@ async def cek_emoji_id(client, message):
             )
 
     return await message.reply(
-        "<b>Tidak ditemukan custom emoji Telegram</b>"
+        "<b>ga ketemu custom emoji Telegram</b>"
     )

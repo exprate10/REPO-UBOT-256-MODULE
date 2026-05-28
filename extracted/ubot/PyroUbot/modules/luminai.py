@@ -4,9 +4,9 @@ from PyroUbot import *
 
 __MODULE__ = "𝙻𝚄𝙼𝙸𝙽𝙰𝙸"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk LuminAI
+<blockquote><b><b>LuminAI</b>
 
-Perintah : <code>{0}lumin</code>
+<b>Perintah:</b> <code>{0}lumin</code>
     Dapat mengobrol dengan AI</b></blockquote>
 """
 
@@ -15,11 +15,11 @@ async def _(client, message):
     try:
         if len(message.command) < 2:
             await message.reply_text(
-                "<emoji id=5019523782004441717>❌</emoji> Mohon gunakan format yang benar.\nContoh: <code>.lumin halo</code>"
+                "<emoji id=5019523782004441717>⌭</emoji> tolong gunakan format yang benar.\nContoh: <code>.lumin halo</code>"
             )
             return
 
-        prs = await message.reply_text("<emoji id=5319230516929502602>🔍</emoji> Menjawab...")
+        prs = await message.reply_text("<emoji id=5319230516929502602>⌖</emoji> Menjawab...")
         query = message.text.split(' ', 1)[1]
         response = requests.get(f'https://api.diioffc.web.id/api/ai/luminai?query={query}')
 
@@ -30,9 +30,9 @@ async def _(client, message):
                 x = data["result"]["message"]
                 await prs.edit(f"<blockquote>{x}</blockquote>")
             else:
-                await prs.edit("❌ Respons API tidak memiliki data yang diharapkan.")
+                await prs.edit("⌭ Respons API tidak memiliki data yang diharapkan.")
         except Exception as err:
-            await prs.edit(f"⚠️ Terjadi kesalahan saat memproses respons API: {err}")
+            await prs.edit(f"⌯ Terjadi kesalahan saat memproses respons API: {err}")
 
     except Exception as e:
-        await message.reply_text(f"⚠️ Terjadi kesalahan: {e}")
+        await message.reply_text(f"⌯ Terjadi kesalahan: {e}")

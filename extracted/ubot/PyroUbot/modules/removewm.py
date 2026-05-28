@@ -7,8 +7,7 @@ from PyroUbot import *
 
 __MODULE__ = "ʀᴇᴍᴏᴠᴇ ᴡᴍ"
 __HELP__ = """
-<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ʀᴇᴍᴏᴠᴇ ᴡᴍ ⦫</b>
-<blockquote>⎆ perintah :
+<b>⦪ <blockquote>⎆ <b>Perintah:</b>
 ᚗ <code>{0}removewm</code> reply picture
 ⊶ untuk menghapus watermark sebuah picture.</blockquote>
 """
@@ -44,7 +43,7 @@ async def remove_watermark(client, message: Message):
 
     url = await upload_media(message)
     if not url:
-        await message.reply_text("Gagal mengunggah gambar.")
+        await message.reply_text("gagal mengunggah gambar.")
         return
 
     api_url = f"https://api.siputzx.my.id/api/tools/dewatermark?url={url}"
@@ -57,7 +56,7 @@ async def remove_watermark(client, message: Message):
                 with open(image_path, "wb") as f:
                     f.write(image_data)
 
-                await message.reply_photo(image_path, caption="✅ Watermark berhasil dihapus.")
+                await message.reply_photo(image_path, caption="⌬ Watermark sukses dihapus.")
                 os.remove(image_path)
             else:
                 await message.reply_text("Terjadi kesalahan saat menghubungi API.")

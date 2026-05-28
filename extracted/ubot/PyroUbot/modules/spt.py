@@ -28,8 +28,8 @@ async def support_callback(client, callback_query):
     text = f"<b>ᴘᴇʀᴛᴀɴʏᴀᴀɴ ᴀɴᴅᴀ ꜱᴜᴅᴀʜ ᴛᴇʀᴋɪʀɪᴍ : {full_name}</b>"
     buttons = [
         [
-            InlineKeyboardButton("👤 ᴘʀᴏꜰɪʟ", callback_data=f"profil {user_id}"),
-            InlineKeyboardButton("ᴊᴀᴡᴀʙ 💬", callback_data=f"jawab_pesan {user_id}"),
+            InlineKeyboardButton("◉ ᴘʀᴏꜰɪʟ", callback_data=f"profil {user_id}"),
+            InlineKeyboardButton("ᴊᴀᴡᴀʙ ◱", callback_data=f"jawab_pesan {user_id}"),
         ],
     ]
     if get.id in SUPPORT:
@@ -70,12 +70,12 @@ async def jawab_pesan_callback(client, callback_query):
             return await client.send_message(get.id, "ᴘᴇᴍʙᴀᴛᴀʟᴀɴ ᴏᴛᴏᴍᴀᴛɪꜱ")
     text = f"<b>ꜱɪʟᴀʜᴋᴀɴ ᴋɪʀɪᴍ ʙᴀʟᴀꜱᴀɴ ᴀɴᴅᴀ : {full_name}</b>"
     if not user_ids == OWNER_ID:
-        buttons = [[InlineKeyboardButton("💬 ᴊᴀᴡᴀʙ 💬", f"jawab_pesan {user_id}")]]
+        buttons = [[InlineKeyboardButton("◱ ᴊᴀᴡᴀʙ ◱", f"jawab_pesan {user_id}")]]
     else:
         buttons = [
             [
-                InlineKeyboardButton("👤 ᴘʀᴏꜰɪʟ", callback_data=f"profil {user_id}"),
-                InlineKeyboardButton("ᴊᴀᴡᴀʙ 💬", callback_data=f"jawab_pesan {user_id}"),
+                InlineKeyboardButton("◉ ᴘʀᴏꜰɪʟ", callback_data=f"profil {user_id}"),
+                InlineKeyboardButton("ᴊᴀᴡᴀʙ ◱", callback_data=f"jawab_pesan {user_id}"),
             ],
         ]
     if get.id in SUPPORT:
@@ -103,7 +103,7 @@ async def profil_callback(client, callback_query):
         full_name = f"{get.first_name} {get.last_name or ''}"
         username = f"{get.username}"
         msg = (
-            f"<b>👤 <a href=tg://user?id={get.id}>{full_name}</a></b>\n"
+            f"<b>◉ <a href=tg://user?id={get.id}>{full_name}</a></b>\n"
             f"<b> ┣ ɪᴅ ᴘᴇɴɢɢᴜɴᴀ:</b> <code>{get.id}</code>\n"
             f"<b> ┣ ɴᴀᴍᴀ ᴅᴇᴘᴀɴ:</b> {first_name}\n"
         )

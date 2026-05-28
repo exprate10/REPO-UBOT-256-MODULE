@@ -11,12 +11,12 @@ from PyroUbot import *
 
 __MODULE__ = "ɪᴍᴀɢᴇ"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk image
+<blockquote><b><b>image</b>
 
-perintah : <code>{0}mirror</code>
+<b>Perintah:</b> <code>{0}mirror</code>
     Untuk mirror gambar
    
-perintah : <code>{0}negative</code>
+<b>Perintah:</b> <code>{0}negative</code>
     Untuk negative gambar</b></blockquote>
 """
 

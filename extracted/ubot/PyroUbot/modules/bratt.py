@@ -23,7 +23,7 @@ async def BratVideo(text):
             )
 
             if res.status_code != 200:
-                raise Exception("Gagal mengambil frame dari API")
+                raise Exception("gagal mengambil frame dari API")
 
             frame_path = os.path.join(temp_dir, f"frame{i}.mp4")
             with open(frame_path, "wb") as f:

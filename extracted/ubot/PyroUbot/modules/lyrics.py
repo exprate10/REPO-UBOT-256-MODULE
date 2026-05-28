@@ -8,17 +8,17 @@ __MODULE__ = "ʟʏʀɪᴄꜱ"
 __HELP__ = """
 <b>『 ʟʏʀɪᴄꜱ 』</b>
 
-  <b>➢ ᴘᴇʀɪɴᴛᴀʜ:</b> <code>{0}lyrics</code> 
+  <b>➢ <b>Perintah:</b></b> <code>{0}lyrics</code> 
    <i>penjelasan:</b> search lyrics music</i>
 """
 
 @PY.UBOT("lyrics")
 async def lyrics(client, message):
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     sks = await EMO.BERHASIL(client)
     prs = await EMO.PROSES(client)
     
-    jalan = await message.reply(f"{prs} Processing...")
+    jalan = await message.reply(f"{prs} sebentar ya...")
     
     if len(message.command) != 2:
         return await jalan.edit(f"{ggl} Please use the command `lyrics` judul music.")
@@ -35,7 +35,7 @@ async def lyrics(client, message):
             lyrics = hasil['lyrics']
             photoUrl = f"https://cdn.vectorstock.com/i/1000v/71/92/music-lyrics-logo-mark-for-concert-vector-35117192.jpg"
             caption = f"""
-<b><emoji id=5841235769728962577>⭐</emoji>{ggl}</b>
+<b><emoji id=5841235769728962577>✦</emoji>{ggl}</b>
 
 <blockquote><b>USERBOT 10K/BULAN BY @kingprem_bot</b></blockquote>
 """

@@ -31,9 +31,9 @@ NOBLE = [
 
 __MODULE__ = "ᴀɴɪᴍᴀꜱɪ"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk Animasi
+<blockquote><b><b>Animasi</b>
 
-perintah :
+<b>Perintah:</b>
     <code>{0}dino</code>
     <code>{0}awk</code>
     <code>{0}loveyou</code>
@@ -227,15 +227,15 @@ async def lipkoll(client, message):
     await asyncio.sleep(2)
     await e.edit("Kangeeen 👉👈")
     await asyncio.sleep(2)
-    await e.edit("Pingiinn Slipkool Yaaang 🥺👉👈")
+    await e.edit("Pingiinn Slipkool Yaaang 👉👈")
 
 
 @PY.UBOT("nakal")
 @PY.TOP_CMD
 async def nakall(client, message):
-    e = await message.edit("Ayanggg ih🥺")
+    e = await message.edit("Ayanggg ih")
     await asyncio.sleep(2)
-    await e.edit("Nakal Banget Dah Ayang 🥺")
+    await e.edit("Nakal Banget Dah Ayang ")
     await asyncio.sleep(2)
     await e.edit("Aku Gak Like Ayang 😠")
     await asyncio.sleep(2)

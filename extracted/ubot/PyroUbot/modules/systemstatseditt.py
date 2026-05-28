@@ -10,9 +10,8 @@ from PyroUbot import *
 
 __MODULE__ = "sʏsᴛᴇᴍ"
 __HELP__ = """
-<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ sʏsᴛᴇᴍ ⦫</b>
-<blockquote>
-⎆ perintah :
+<b>⦪ <blockquote>
+⎆ <b>Perintah:</b>
 ᚗ <code>{0}spc</code>
 
 ⎆ ᴘᴇɴᴊᴇʟᴀsᴀɴ:

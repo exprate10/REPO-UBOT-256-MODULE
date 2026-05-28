@@ -9,18 +9,18 @@ from PyroUbot import *
 
 __MODULE__ = "𝙵𝚄𝙽"
 __HELP__ = """
-<blockquote>• Bantuan Untuk Fun •
+<blockquote>• <b>Fun •</b>
 
-✓ Perintah: <code>{0}giben</code>
+✓ <b>Perintah:</b> <code>{0}giben</code>
 ◉ Penjelasan: Fake global ban.
 
-✓ Perintah: <code>{0}gimut</code>
+✓ <b>Perintah:</b> <code>{0}gimut</code>
 ◉ Penjelasan: Fake global mute.
 
-✓ Perintah: <code>{0}gikik</code>
+✓ <b>Perintah:</b> <code>{0}gikik</code>
 ◉ Penjelasan: Fake global kick.
 
-✓ Perintah: <code>{0}gikes</code>
+✓ <b>Perintah:</b> <code>{0}gikes</code>
 ◉ Penjelasan: Fake global broadcast.</blockquote>
 """
 

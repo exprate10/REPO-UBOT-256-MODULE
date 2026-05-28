@@ -1,16 +1,16 @@
 __MODULE__ = "ʙʟᴀᴄᴋʟɪꜱᴛ"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk Blacklist
+<blockquote><b><b>Blacklist</b>
 
-perintah : <code>{0}addbl</code>
+<b>Perintah:</b> <code>{0}addbl</code>
     memasukan group ke daftar blacklist
 
-perintah : <code>{0}unbl</code>
+<b>Perintah:</b> <code>{0}unbl</code>
     menghapus group dari daftar blacklist
 
-perintah : <code>{0}rallbl</code>
+<b>Perintah:</b> <code>{0}rallbl</code>
     menghapus semua daftar blacklist group
 
-perintah : <code>{0}listbl</code>
+<b>Perintah:</b> <code>{0}listbl</code>
     memeriksa daftar blacklist group</b></blockquote>
 """

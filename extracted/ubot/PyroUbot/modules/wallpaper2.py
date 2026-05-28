@@ -8,9 +8,8 @@ from io import BytesIO
 
 __MODULE__ = "ᴡᴀʟʟᴘᴀᴘᴇʀ 2"
 __HELP__ = """
-<b>♛ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴡᴀʟʟᴘᴀᴘᴇʀ ♛</b>
-
-<blockquote><b>perintah :
+<b>♛ 
+<blockquote><b><b>Perintah:</b>
 <code>{0}wallpp2</code> [Query]
 ᴜɴᴛᴜᴋ ᴍᴇɴᴄᴀʀɪ ᴡᴀʟʟᴘᴀᴘᴇʀ/ɢᴀᴍʙᴀʀ
 
@@ -49,10 +48,10 @@ async def _(client, message):
     
     if query not in URLS:
         valid_queries = ", ".join(URLS.keys())
-        await message.reply(f"<emoji id=5215204871422093648>❌</emoji> Query tidak valid. Gunakan salah satu dari: {valid_queries}.")
+        await message.reply(f"<emoji id=5215204871422093648>⌭</emoji> Query tidak valid. Gunakan salah satu dari: {valid_queries}.")
         return
 
-    processing_msg = await message.reply("<emoji id=4943239162758169437>🤩</emoji> Processing...")
+    processing_msg = await message.reply("<emoji id=4943239162758169437>🤩</emoji> sebentar ya...")
     
     try:
         await client.send_chat_action(message.chat.id, ChatAction.UPLOAD_PHOTO)
@@ -65,4 +64,4 @@ async def _(client, message):
         await client.send_photo(message.chat.id, photo)
         await processing_msg.delete()
     except requests.exceptions.RequestException as e:
-        await processing_msg.edit_text(f"<emoji id=5215204871422093648>❌</emoji> Gagal mengambil gambar anime Error: {e}")
+        await processing_msg.edit_text(f"<emoji id=5215204871422093648>⌭</emoji> gagal mengambil gambar anime Error: {e}")

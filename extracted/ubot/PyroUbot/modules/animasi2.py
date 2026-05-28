@@ -11,9 +11,8 @@ from PyroUbot import *
 
 __MODULE__ = "ᴀɴɪᴍᴀsɪ 2"
 __HELP__ = """
-<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴀɴɪᴍᴀsɪ 2⦫<b>
-
-<blockqoute><b>⎆ perintah :
+<b>⦪ 
+<blockqoute><b>⎆ <b>Perintah:</b>
 ᚗ <code>{0}dino</code> 
 ᚗ <code>{0}hack</code> 
 ᚗ <code>{0}gabut</code> 
@@ -88,7 +87,7 @@ async def hak(client: Client, message: Message):
         ("Hacking... 93.50%\n[█████████████████░░░]\n`Decryption successful!`\nETA: 0m, 02s", 2),
         ("Hacking... 100%\n[████████████████████]\n`Scanning file...`\nETA: 0m, 00s", 2),
         ("Hacking complete!\nUploading file...", 2),
-        ("Targeted Account Hacked...!\n\n ✅ File has been successfully uploaded to my server.\nTelegram Database:\n`./DOWNLOADS/msgstore.db.crypt12`", 2),
+        ("Targeted Account Hacked...!\n\n ⌬ File has been successfully uploaded to my server.\nTelegram Database:\n`./DOWNLOADS/msgstore.db.crypt12`", 2),
     ]
     for step, delay in hacking_steps:
         await message.edit(step)
@@ -247,7 +246,7 @@ async def menggabut(client: Client, message: Message):
         "🙉",
         "🙈",
         "🙉",
-        "😂",
+        "",
         "🐢                       🚶",
         "🐢                      🚶",
         "🐢                     🚶",

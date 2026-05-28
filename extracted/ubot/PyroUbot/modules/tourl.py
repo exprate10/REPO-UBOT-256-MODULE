@@ -5,9 +5,9 @@ from PyroUbot import *
 
 __MODULE__ = "ᴛᴏᴜʀʟ"
 __HELP__ = """
-<blockquote><b>Bantuan untuk tourl
+<blockquote><b><b>tourl</b>
 
-perintah : <code>{0}tourl</code> [reply media/text]
+<b>Perintah:</b> <code>{0}tourl</code> [reply media/text]
     mengapload media/text ke Link</b></blockquote>
 """
 

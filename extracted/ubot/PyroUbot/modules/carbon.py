@@ -16,9 +16,8 @@ from PyroUbot import *
 
 __MODULE__ = "ᴄᴀʀʙᴏɴ"
 __HELP__ = """
-<b>⦪࿈ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴄᴀʀʙᴏɴ ࿈⦫<b>
-
-<blockquote><b>⎆ perintah :
+<b>⦪࿈ 
+<blockquote><b>⎆ <b>Perintah:</b>
 ᚗ <code>{0}carbon</code>
 ⊷ membuat text carbonara
 
@@ -27,7 +26,7 @@ __HELP__ = """
 @PY.UBOT("limit")
 @PY.TOP_CMD
 async def _(client, message):
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     sks = await EMO.BERHASIL(client)
     prs = await EMO.PROSES(client)
     pong = await EMO.PING(client)
@@ -89,7 +88,7 @@ async def _(client, message):
             await client.send_message(message.chat.id, text)
             return await client.invoke(DeleteHistory(peer=bot_info, max_id=0, revoke=True))
     else:
-        print("Status tidak valid atau status.text tidak ada")
+        print("Status tidak valid atau status.text ga ada")
 
 async def make_carbon(code):
     url = "https://carbonara.solopov.dev/api/cook"
@@ -271,7 +270,7 @@ async def _(client, inline_query):
                     title="get font!",
                     reply_markup=buttons,
                     input_message_content=InputTextMessageContent(
-                        "silahkan pilih salah satu font dibawah"
+                        "langsung aja pilih salah satu font dibawah"
                     ),
                 )
             )
@@ -330,4 +329,4 @@ async def _(client, callback_query):
         buttons.row(InlineKeyboardButton("►", callback_data=f"next {get_id}"))
         return await callback_query.edit_message_reply_markup(reply_markup=buttons)
     except Exception as error:
-        return await callback_query.answer(f"❌ Error: {error}", True)
+        return await callback_query.answer(f"⌭ Error: {error}", True)

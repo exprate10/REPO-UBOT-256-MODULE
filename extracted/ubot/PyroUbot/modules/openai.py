@@ -8,11 +8,10 @@ from pyrogram.types import Message
 
 __MODULE__ = "ᴏᴘᴇɴᴀɪ"
 __HELP__ = """
-<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴏᴘᴇɴᴀɪ ⦫</b>
-<blockquote>
-⎆ perintah :
+<b>⦪ <blockquote>
+⎆ <b>Perintah:</b>
 ᚗ <code>{0}ai</code>
-⊶ buat pertanyaan contoh <code>{0}ask</code> dimana letak Antartika</blockquote>
+⊶ buat pertanyaan Contoh <code>{0}ask</code> dimana letak Antartika</blockquote>
 """
 
 API_KEY = os.getenv("API_KEY")
@@ -25,7 +24,7 @@ async def chat_gpt(client, message):
 
         if len(message.command) < 2:
             await message.reply_text(
-                "<emoji id=5017122105011995219>⛔</emoji>mohon gunakan format\ncontoh : .ai halo"
+                "<emoji id=5017122105011995219>⊘</emoji>tolong gunakan format\ncontoh : .ai halo"
             )
         else:
             prs = await message.reply_text(f"<emoji id=5224450179368767019>🌎</emoji>proccesing....")

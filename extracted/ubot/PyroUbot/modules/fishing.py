@@ -118,7 +118,7 @@ async def mancing(_, m):
     data, u = get_user(m.from_user.id)
 
     if t.time() - u["last"] < COOLDOWN:
-        return await m.reply("⏳ Tunggu cooldown")
+        return await m.reply("◷ Tunggu cooldown")
 
     rod = u["rod"]
     base = ROD_INFO[rod["name"]]["base_bonus"]
@@ -144,8 +144,8 @@ async def mancing(_, m):
         f"🎣 <b>Hasil Mancing</b>\n\n"
         f"🐟 {fish}\n"
         f"✨ {rarity}\n"
-        f"💰 {price} coin\n"
-        f"🎯 Bonus Rod: +{bonus}%"
+        f"✦ {price} coin\n"
+        f"◈ Bonus Rod: +{bonus}%"
     )
 
 @PY.UBOT("lombamancing")
@@ -163,7 +163,7 @@ async def stop(_, m):
     data = load()
 
     rank = sorted(data.items(), key=lambda x: x[1]["lomba"], reverse=True)
-    txt = "🏆 <b>Hasil Lomba</b>\n\n"
+    txt = "✧ <b>Hasil Lomba</b>\n\n"
 
     for i, (uid, u) in enumerate(rank[:5], 1):
         txt += f"{i}. <code>{uid}</code> — {u['lomba']} pts\n"
@@ -175,7 +175,7 @@ async def stop(_, m):
 @PY.UBOT("skorlomba")
 async def skor(_, m):
     _, u = get_user(m.from_user.id)
-    await m.reply(f"🎯 Skor lomba kamu: {u['lomba']}")
+    await m.reply(f"◈ Skor lomba kamu: {u['lomba']}")
 
 @PY.UBOT("rod")
 async def rod(_, m):
@@ -187,7 +187,7 @@ async def rod(_, m):
         f"🎣 <b>Rod Kamu</b>\n\n"
         f"🔹 Nama: {r['name']}\n"
         f"🔺 Level: {r['level']}\n"
-        f"🎯 Bonus: +{bonus}%"
+        f"◈ Bonus: +{bonus}%"
     )
 
 @PY.UBOT("upgraderod")
@@ -197,23 +197,23 @@ async def upgraderod(_, m):
     cost = r["level"] * 100
 
     if u["coin"] < cost:
-        return await m.reply("❌ Coin tidak cukup")
+        return await m.reply("⌭ Coin tidak cukup")
 
     u["coin"] -= cost
     r["level"] += 1
     save(data)
 
     await m.reply(
-        f"⬆️ <b>Rod Upgrade</b>\n\n"
+        f"↑ <b>Rod Upgrade</b>\n\n"
         f"🎣 {r['name']} Lv {r['level']}\n"
-        f"💰 -{cost} coin"
+        f"✦ -{cost} coin"
     )
 
 @PY.UBOT("ikan")
 async def ikan(_, m):
     u = load().get(str(m.from_user.id))
     if not u or not u["fish"]:
-        return await m.reply("❌ Tidak ada ikan")
+        return await m.reply("⌭ ga ada ikan")
 
     txt = "🎒 <b>Koleksi Ikan</b>\n\n"
     for f, j in u["fish"].items():
@@ -229,16 +229,16 @@ async def jual(_, m):
     u["coin"] += total
     save(data)
 
-    await m.reply(f"💰 Semua ikan terjual\nCoin +{total}")
+    await m.reply(f"✦ Semua ikan terjual\nCoin +{total}")
 
 @PY.UBOT("profil")
 async def profil(_, m):
     u = load().get(str(m.from_user.id))
     await m.reply(
-        f"👤 <b>Profil Mancing</b>\n\n"
+        f"◉ <b>Profil Mancing</b>\n\n"
         f"🎚 Level: {u['level']}\n"
         f"🎣 Rod: {u['rod']['name']} Lv {u['rod']['level']}\n"
-        f"💰 Coin: {u['coin']}\n"
+        f"✦ Coin: {u['coin']}\n"
         f"📈 EXP: {u['exp']}/{exp_need(u['level'])}"
     )
 
@@ -247,7 +247,7 @@ async def top(_, m):
     data = load()
     rank = sorted(data.items(), key=lambda x: x[1]["level"], reverse=True)[:10]
 
-    txt = "🏆 <b>Top Mancing</b>\n\n"
+    txt = "✧ <b>Top Mancing</b>\n\n"
     for i, (uid, u) in enumerate(rank, 1):
         txt += f"{i}. <code>{uid}</code> — Lv {u['level']}\n"
     await m.reply(txt)

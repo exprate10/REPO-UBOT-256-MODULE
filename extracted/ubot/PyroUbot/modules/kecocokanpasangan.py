@@ -4,9 +4,8 @@ from PyroUbot import *
 
 __MODULE__ = "ᴘᴀsᴀɴɢᴀɴ"
 __HELP__ = """
-<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴋᴇᴄᴏᴄᴏᴋᴀɴ ᴘᴀsᴀɴɢᴀɴ ⦫</b>
-
-<blockquote><b>⎆ ᴘᴇʀɪɴᴛᴀʜ :
+<b>⦪ 
+<blockquote><b>⎆ <b>Perintah:</b>
 ᚗ <code>{0}pasangan</code> nama1, nama2
 
 ⌭ ᴘᴇɴᴊᴇʟᴀsᴀɴ:
@@ -33,16 +32,16 @@ async def cek_kecocokan(_, message):
             hasil = data["data"]
             teks = (
                 "<blockquote>"
-                f"<emoji id=6026321200597176575>🃏</emoji> **Kecocokan Nama Pasangan** <emoji id=6026321200597176575>🃏</emoji>\n"
+                f"<emoji id=6026321200597176575>◱</emoji> **Kecocokan Nama Pasangan** <emoji id=6026321200597176575>◱</emoji>\n"
                 f"<emoji id=5204015897500469606>😢</emoji> **{hasil['nama_anda']}**\n <emoji id=5226859896539989141>😘</emoji> **{hasil['nama_pasangan']}**\n\n"
-                f"<emoji id=5217466996337165348>👍</emoji> **Sisi Positif:**\n`{hasil['sisi_positif']}`\n\n"
-                f"<emoji id=5436223772510142944>👎</emoji> **Sisi Negatif:**\n`{hasil['sisi_negatif']}`\n\n"
+                f"<emoji id=5217466996337165348>⌬</emoji> **Sisi Positif:**\n`{hasil['sisi_positif']}`\n\n"
+                f"<emoji id=5436223772510142944>⌭</emoji> **Sisi Negatif:**\n`{hasil['sisi_negatif']}`\n\n"
                 f"<emoji id=5238039443008408242>💌</emoji> **Catatan:**\n_{hasil['catatan']}_"
                 "</blockquote>"
             )
             await message.reply_photo(hasil["gambar"], caption=teks)
         else:
-            await message.reply("⚠️ **Gagal mendapatkan data kecocokan.**")
+            await message.reply("⌯ **gagal mendapatkan data kecocokan.**")
     
     except Exception as e:
-        await message.reply(f"❌ **Terjadi kesalahan:** `{e}`")
+        await message.reply(f"⌭ **Terjadi kesalahan:** `{e}`")

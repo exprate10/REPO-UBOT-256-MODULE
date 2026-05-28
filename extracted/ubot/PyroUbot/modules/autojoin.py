@@ -3,9 +3,9 @@ from PyroUbot import *
 
 __MODULE__ = "ᴊᴏɪɴᴇʀ"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk Joiner</b>
+<blockquote><b><b>Joiner</b></b>
 
-Perintah:
+<b>Perintah:</b>
 <code>{0}join</code> [reply link grup] → Join ke grup yang ada di pesan tersebut.
 Catatan: Bisa deteksi banyak link sekaligus dalam satu pesan.</blockquote></b>
 """
@@ -15,9 +15,9 @@ Catatan: Bisa deteksi banyak link sekaligus dalam satu pesan.</blockquote></b>
 async def _(client, message):
     # Validasi reply
     if not message.reply_to_message or not message.reply_to_message.text:
-        return await message.reply_text("<blockquote><b>❌ GAGAL</b>\nBalas ke pesan yang berisi link grup atau username (misal: @roomiqbal).</blockquote>")
+        return await message.reply_text("<blockquote><b>⌭ gagal</b>\nBalas ke pesan yang berisi link grup atau username (misal: @roomiqbal).</blockquote>")
 
-    status_msg = await message.reply_text("<blockquote><b>⏳ Sedang memproses permintaan join...</b></blockquote>")
+    status_msg = await message.reply_text("<blockquote><b>◷ Sedang memproses permintaan join...</b></blockquote>")
     
     # Ambil semua kata dalam pesan yang di-reply
     text = message.reply_to_message.text
@@ -29,7 +29,7 @@ async def _(client, message):
             links.append(word.split("/")[-1])
 
     if not links:
-        return await status_msg.edit("<blockquote><b>❌ TIDAK ADA LINK</b>\nTidak ditemukan username atau link grup yang valid.</blockquote>")
+        return await status_msg.edit("<blockquote><b>⌭ ga ada LINK</b>\nga ketemu username atau link grup yang valid.</blockquote>")
 
     success = 0
     failed = 0
@@ -44,10 +44,10 @@ async def _(client, message):
             continue
 
     hasil = (
-        f"<blockquote><b>✅ PROSES JOIN SELESAI</b>\n\n"
+        f"<blockquote><b>⌬ PROSES JOIN SELESAI</b>\n\n"
         f"<b>• Berhasil:</b> <code>{success} Grup</code>\n"
-        f"<b>• Gagal:</b> <code>{failed} Grup</code>\n\n"
-        f"<i>Info: Gagal biasanya karena grup privat atau akun sudah kena limit.</i></blockquote>"
+        f"<b>• gagal:</b> <code>{failed} Grup</code>\n\n"
+        f"<i>Info: gagal biasanya karena grup privat atau akun sudah kena limit.</i></blockquote>"
     )
     await status_msg.edit(hasil)
     

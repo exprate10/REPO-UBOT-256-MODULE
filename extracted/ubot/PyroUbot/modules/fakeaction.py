@@ -6,9 +6,8 @@ from PyroUbot import *
 
 __MODULE__ = "ғᴀᴋᴇ ᴀᴄᴛɪᴏɴ"
 __HELP__ = """
-<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ғᴀᴋᴇ ᴀᴄᴛɪᴏɴ ⦫</b>
-
-<blockquote>⎆ perintah :
+<b>⦪ 
+<blockquote>⎆ <b>Perintah:</b>
 ᚗ <code>{0}ftyping</code> detik
 ⊶ Menampilkan pengetikan palsu dalam obrolan.
 

@@ -7,8 +7,7 @@ from pyrogram.types import Message
 
 __MODULE__ = "sʜᴏʀᴛ ʟɪɴᴋ"
 __HELP__ = """
-<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ sʜᴏʀᴛ ʟɪɴᴋ ⦫</b>
-<blockquote>⎆ perintah :
+<b>⦪ <blockquote>⎆ <b>Perintah:</b>
 ᚗ <code>{0}tinyurl</code> link
 ⊶ dapat memperpendek tautan url yang panjang
 
@@ -25,10 +24,10 @@ async def chat_gpt(client, message):
 
         if len(message.command) < 2:
             await message.reply_text(
-                "<emoji id=5019523782004441717>❌</emoji>mohon gunakan format\ncontoh : .tinyurl https://google.com"
+                "<emoji id=5019523782004441717>⌭</emoji>tolong gunakan format\ncontoh : .tinyurl https://google.com"
             )
         else:
-            prs = await message.reply_text(f"<emoji id=5071138963800982678>😎</emoji> Proses....")
+            prs = await message.reply_text(f"<emoji id=5071138963800982678></emoji> Proses....")
             a = message.text.split(' ', 1)[1]
             response = requests.get(f'https://api.botcahx.eu.org/api/linkshort/tinyurl?link={a}&apikey=@31Moire_mor')
 
@@ -54,10 +53,10 @@ async def chat_gpt(client, message):
 
         if len(message.command) < 2:
             await message.reply_text(
-                "<emoji id=5019523782004441717>❌</emoji>mohon gunakan format\ncontoh : .bitly https://google.com"
+                "<emoji id=5019523782004441717>⌭</emoji>tolong gunakan format\ncontoh : .bitly https://google.com"
             )
         else:
-            prs = await message.reply_text(f"<emoji id=5071138963800982678>😎</emoji> Proses....")
+            prs = await message.reply_text(f"<emoji id=5071138963800982678></emoji> Proses....")
             a = message.text.split(' ', 1)[1]
             response = requests.get(f'https://api.botcahx.eu.org/api/linkshort/bitly?link={a}&apikey=@31Moire_mor')
 

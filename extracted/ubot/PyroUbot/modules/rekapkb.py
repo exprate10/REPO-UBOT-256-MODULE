@@ -5,9 +5,9 @@ from PyroUbot import PY
 
 __MODULE__ = "ᴛᴏᴏʟs ʀᴇᴋᴀᴘ"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk Rekap & Win</b>
+<blockquote><b><b>Rekap & Win</b></b>
 
-Perintah:
+<b>Perintah:</b>
 <code>{0}rekap</code> → Rekap saldo dari pesan yang direply.  
 <code>{0}win 5</code> → Hitung kemenangan dengan fee 5% (ganti angka sesuai kebutuhan).  
 
@@ -40,7 +40,7 @@ def format_number(num):
 @PY.TOP_CMD
 async def rekap_command(client, message):
     if not message.reply_to_message or not message.reply_to_message.text:
-        return await message.reply("❌ Reply pesan yang berisi data untuk merekap.")
+        return await message.reply("⌭ Reply pesan yang berisi data untuk merekap.")
 
     text = message.reply_to_message.text
     data = rekap_data(text)
@@ -54,7 +54,7 @@ async def rekap_command(client, message):
     elif selisih < 0:
         analisis_selisih = f"⚖️ SALDO: KECIL ketinggalan {format_number(abs(selisih))} nih!"
     else:
-        analisis_selisih = "⚖️ SALDO: KECIL dan BESAR seimbang nih! 🎉"
+        analisis_selisih = "⚖️ SALDO: KECIL dan BESAR seimbang nih! ✧"
 
     result = f"⚪ 𝗞 : [{', '.join(format_number(item['nominal']) for item in kecil)}] = {format_number(kecil_total)}\n\n"
     result += f"🔵 𝗕 : [{', '.join(format_number(item['nominal']) for item in besar)}] = {format_number(besar_total)}\n\n"
@@ -79,10 +79,10 @@ async def win_command(client, message):
 
     fee_percent = int(args[1])
     if fee_percent < 1 or fee_percent > 10:
-        return await message.reply("❌ Fee harus di antara 1-10%.")
+        return await message.reply("⌭ Fee harus di antara 1-10%.")
 
     if not message.reply_to_message or not message.reply_to_message.text:
-        return await message.reply("❌ Reply pesan yang berisi data untuk menghitung hasil akhir.")
+        return await message.reply("⌭ Reply pesan yang berisi data untuk menghitung hasil akhir.")
 
     text = message.reply_to_message.text
     data = rekap_data(text)

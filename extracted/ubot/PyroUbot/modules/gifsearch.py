@@ -4,9 +4,9 @@ from pyrogram.types import InputMediaPhoto
 
 __MODULE__ = "ɢɪғsᴇᴀʀᴄʜ"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk GifSearch
+<blockquote><b><b>GifSearch</b>
 
-Perintah : <code>{0}gif</code> [ǫᴜᴇʀʏ]
+<b>Perintah:</b> <code>{0}gif</code> [ǫᴜᴇʀʏ]
   Untuk Mencari gift/animation Random Dari Google</b></blockquote>
 """
 
@@ -23,7 +23,7 @@ async def gif_cmd(client, message):
             client.me.id, x.query_id, x.results[random.randrange(len(x.results))].id
         )
     except:
-        await message.reply("<b>❌ ɢɪꜰ ᴛɪᴅᴀᴋ ᴅɪᴛᴇᴍᴜᴋᴀɴ</b>")
+        await message.reply("<b>⌭ ɢɪꜰ ᴛɪᴅᴀᴋ ᴅɪᴛᴇᴍᴜᴋᴀɴ</b>")
         return await TM.delete()
     saved = await client.get_messages(client.me.id, int(saved.updates[1].message.id))
     await client.send_animation(

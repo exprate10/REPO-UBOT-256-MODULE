@@ -5,7 +5,7 @@ from PyroUbot import *
 
 MODULE = "ᴄᴇᴋ ᴜsᴇʀ"
 HELP = """
-<b>📌 CEK USER</b>
+<b>⌖ CEK USER</b>
 
 <blockquote><b>Perintah untuk melihat informasi lengkap akun Telegram.</b>
 
@@ -28,7 +28,7 @@ def status_text(status):
         UserStatus.ONLINE: "🟢 Online",
         UserStatus.OFFLINE: "⚫ Offline",
         UserStatus.RECENTLY: "🕓 Recently",
-        UserStatus.LAST_WEEK: "📅 Last Week",
+        UserStatus.LAST_WEEK: "◷ Last Week",
         UserStatus.LAST_MONTH: "🗓 Last Month",
     }.get(status, "❓ Unknown")
 
@@ -56,36 +56,36 @@ async def whois_plus(client: Client, message):
         except UsernameNotOccupied:
             return await edit_or_reply(
                 message,
-                "❌ **User tidak ditemukan**"
+                "⌭ **User ga ketemu**"
             )
         except Exception as e:
-            return await edit_or_reply(message, f"⚠️ `{e}`")
+            return await edit_or_reply(message, f"⌯ `{e}`")
 
     else:
         target = message.from_user
 
     if not target:
-        return await edit_or_reply(message, "❌ Target tidak valid")
+        return await edit_or_reply(message, "⌭ Target tidak valid")
 
     text = (
-        f"🔍 **{MODULE}**\n"
+        f"⌖ **{MODULE}**\n"
         "━━━━━━━━━━━━━━\n"
-        f"👤 **Nama** : {target.first_name or '-'}\n"
+        f"◉ **Nama** : {target.first_name or '-'}\n"
         f"🆔 **ID** : `{target.id}`\n"
-        f"🔗 **Username** : @{target.username}\n" if target.username else
-        f"🔍 **{MODULE}**\n━━━━━━━━━━━━━━\n"
-        f"👤 **Nama** : {target.first_name or '-'}\n"
+        f"⌕ **Username** : @{target.username}\n" if target.username else
+        f"⌖ **{MODULE}**\n━━━━━━━━━━━━━━\n"
+        f"◉ **Nama** : {target.first_name or '-'}\n"
         f"🆔 **ID** : `{target.id}`\n"
-        f"🔗 **Username** : -\n"
+        f"⌕ **Username** : -\n"
     )
 
     text += (
-        f"🤖 **Bot** : {'Ya' if target.is_bot else 'Tidak'}\n"
+        f"◍ **Bot** : {'Ya' if target.is_bot else 'Tidak'}\n"
         f"🏷 **Verified** : {'Ya' if target.is_verified else 'Tidak'}\n"
     )
 
     if hasattr(target, "status"):
-        text += f"📡 **Status** : {status_text(target.status)}\n"
+        text += f"◎ **Status** : {status_text(target.status)}\n"
 
     text += (
         "━━━━━━━━━━━━━━\n"

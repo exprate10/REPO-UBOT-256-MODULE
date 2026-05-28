@@ -8,17 +8,17 @@ __MODULE__ = "ɢᴇᴍᴘᴀ"
 __HELP__ = """
 <blockquote><b>『 ɢᴇᴍᴘᴀ 』</b>
 
-  <b>➢ ᴘᴇʀɪɴᴛᴀʜ:</b> <code>{0}gempa</code> 
+  <b>➢ <b>Perintah:</b></b> <code>{0}gempa</code> 
    <i>penjelasan:</b> cek info sekitar gempa bmkg</i></blockquote>
 """
 
 @PY.UBOT("gempa")
 async def stalkig(client, message):
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     sks = await EMO.BERHASIL(client)
     prs = await EMO.PROSES(client)
     
-    jalan = await message.reply(f"{prs} Processing...")
+    jalan = await message.reply(f"{prs} sebentar ya...")
     chat_id = message.chat.id
     url = f"https://api.botcahx.eu.org/api/search/gempa?apikey=@31Moire_mor"
     

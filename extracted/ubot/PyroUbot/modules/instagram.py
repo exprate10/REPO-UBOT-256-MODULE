@@ -10,7 +10,7 @@ from PyroUbot import *
 
 __MODULE__ = "ɪɴsᴛᴀɢʀᴀᴍ"
 __HELP__ = """
- <blockquote><b>Bantuan Untuk Instagram</b>
+ <blockquote><b><b>Instagram</b></b>
 
 • <b>Perintah</b> : <code>{0}ig</code> <b>[link]</b>
 • <b>Penjelasan : Downloader Vid Insta</b></blockquote>
@@ -153,7 +153,7 @@ async def instacrot(client: Client, message):
 
     link = message.text.split()[1]
     try:
-        m = await message.reply_text("⏳")
+        m = await message.reply_text("◷")
         url = link.replace("instagram.com", "ddinstagram.com")
         url = url.replace("==", "%3D%3D")
         if url.endswith("="):
@@ -185,7 +185,7 @@ async def instacrot(client: Client, message):
             tracemsg = traceback.format_exc()
             await message.reply_text(tracemsg)
             await message.reply_text(
-                "<blockquote>400: Sorry, Unable To Find It  try another or report it  to @bakuzaan or support chat @bakuzaan 🤖</blockquote>"
+                "<blockquote>400: Sorry, Unable To Find It  try another or report it  to @bakuzaan or support chat @bakuzaan ◍</blockquote>"
             )
         finally:
             await m.delete()

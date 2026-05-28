@@ -7,9 +7,9 @@ from pyrogram.types import Message
 
 __MODULE__ = "ᴋᴏᴅᴇ ᴘᴏs"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk kode pos desa
+<blockquote><b><b>kode pos desa</b>
 
-perintah : <code>{0}kdps</code>
+<b>Perintah:</b> <code>{0}kdps</code>
     dapat membantu melihat code pos suatu desa</b></blockquote>
 """
 
@@ -22,10 +22,10 @@ async def chat_gpt(client, message):
 
         if len(message.command) < 2:
             await message.reply_text(
-                "<emoji id=5019523782004441717>❌</emoji>mohon gunakan format\ncontoh : .kdps nama desa"
+                "<emoji id=5019523782004441717>⌭</emoji>tolong gunakan format\ncontoh : .kdps nama desa"
             )
         else:
-            prs = await message.reply_text(f"<emoji id=5319230516929502602>🔍</emoji>mencari....")
+            prs = await message.reply_text(f"<emoji id=5319230516929502602>⌖</emoji>mencari....")
             a = message.text.split(' ', 1)[1]
             response = requests.get(f'https://api.botcahx.eu.org/api/search/kodepos?query={a}&apikey=@31Moire_mor')
 

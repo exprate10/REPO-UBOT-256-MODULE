@@ -12,24 +12,23 @@ from PyroUbot import *
 
 __MODULE__ = "ʙʀᴏᴀᴅᴄᴀꜱᴛ"
 __HELP__ = """
-<blockquote><b>ʙᴀɴᴛᴜᴀɴ ʙʀᴏᴀᴅᴄᴀꜱᴛ
-
-ᴘᴇʀɪɴᴛᴀʜ : <code>{0}ɢɪᴋᴇꜱ</code>
+<blockquote><b>
+<b>Perintah:</b> <code>{0}ɢɪᴋᴇꜱ</code>
 
 ᴛʏᴘᴇ : ᴀʟʟ , ᴜꜱᴇʀꜱ , ɢʀᴏᴜᴘ
 
 ᴀʟʟ ᴜɴᴛᴜᴋ ꜱᴇᴍᴜᴀ , ᴜꜱᴇʀꜱ ᴜɴᴛᴜᴋ ᴜꜱᴇʀ, ɢʀᴏᴜᴘ ᴜɴᴛᴜᴋ ɢʀᴏᴜᴘ
 
-ᴘᴇʀɪɴᴛᴀʜ : <code>{0}ꜱᴛᴏᴘɢ</code>
+<b>Perintah:</b> <code>{0}ꜱᴛᴏᴘɢ</code>
     ᴜɴᴛᴜᴋ ᴍᴇɴɢʜᴇɴᴛɪᴋᴀɴ ᴘʀᴏꜱᴇꜱ ɢɪᴋᴇꜱ ʏᴀɴɢ ꜱᴇᴅᴀɴɢ ʙᴇʀʟᴀɴɢꜱᴜɴɢ
 
-ᴘᴇʀɪɴᴛᴀʜ : <code>{0}ʙᴄꜰᴅ</code> ᴏʀ <code>{0}ᴄꜰᴅ</code>
+<b>Perintah:</b> <code>{0}ʙᴄꜰᴅ</code> ᴏʀ <code>{0}ᴄꜰᴅ</code>
     ᴍᴇɴɢɪʀɪᴍ ᴘᴇꜱᴀɴ ꜱɪᴀʀᴀɴ ꜱᴇᴄᴀʀᴀ ꜰᴏʀᴡᴀʀᴅ (ꜱᴜᴘᴘᴏʀᴛ ᴄʜᴀɴɴᴇʟ)
 
-ᴘᴇʀɪɴᴛᴀʜ : <code>{0}ꜱᴇɴᴅ</code>
+<b>Perintah:</b> <code>{0}ꜱᴇɴᴅ</code>
     ᴍᴇɴɢɪʀɪᴍ ᴘᴇꜱᴀɴ ᴋᴇ ᴜꜱᴇʀ/ɢʀᴏᴜᴘ/ᴄʜᴀɴɴᴇʟ
 
-ᴘᴇʀɪɴᴛᴀʜ : <code>{0}ᴀᴜᴛᴏʙᴄ</code>
+<b>Perintah:</b> <code>{0}ᴀᴜᴛᴏʙᴄ</code>
     ᴍᴇɴɢɪʀɪᴍ ᴘᴇꜱᴀɴ ꜱɪᴀʀᴀɴ ꜱᴇᴄᴀʀᴀ ᴏᴛᴏᴍᴀᴛɪꜱ (ꜱᴇʀᴠᴇʀ-ꜱɪᴅᴇ)
 
 ǫᴜᴇʀʏ ᴀᴜᴛᴏʙᴄ:
@@ -40,7 +39,7 @@ __HELP__ = """
 
 async def limit_cmd(client, message):
 
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     sks = await EMO.BERHASIL(client)
     prs = await EMO.PROSES(client)
     pong = await EMO.PING(client)
@@ -51,7 +50,7 @@ async def limit_cmd(client, message):
 
     bot_info = await client.resolve_peer("SpamBot")
 
-    msg = await message.reply(f"<blockquote>{prs}ᴘʀᴏᴄᴇꜱꜱɪɴɢ . . .</blockquote>")
+    msg = await message.reply(f"<blockquote>{prs}sebentar ya...</blockquote>")
 
     response = await client.invoke(
         StartBot(
@@ -103,7 +102,7 @@ async def limit_cmd(client, message):
             await client.send_message(message.chat.id, text)
             return await client.invoke(DeleteHistory(peer=bot_info, max_id=0, revoke=True))
     else:
-        print("Status tidak valid atau status.text tidak ada")
+        print("Status tidak valid atau status.text ga ada")
 
 
 gcast_progress = []
@@ -123,10 +122,10 @@ async def gcast_handler(client, message):
     jam = await EMO.JAM(client)
     silang = await EMO.SILANG(client)
     prs = await EMO.PROSES(client)
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     sks = await EMO.BERHASIL(client)
     
-    _msg = f"<blockquote><b>{prs}ᴍᴇᴍᴘʀᴏꜱᴇꜱ...</b></blockquote>"
+    _msg = f"<blockquote><b>{prs}lagi proses...</b></blockquote>"
     gcs = await message.reply(_msg)    
 
     command, text = extract_type_and_msg(message)
@@ -195,7 +194,7 @@ async def gcast_handler(client, message):
 async def stopg_handler(client, message):
 
     sks = await EMO.BERHASIL(client)
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     global gcast_progress
 
     if client.me.id in gcast_progress:
@@ -219,9 +218,9 @@ async def _(client, message):
     jam = await EMO.JAM(client)
     silang = await EMO.SILANG(client)
     prs = await EMO.PROSES(client)
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
 
-    _msg = f"<blockquote>{prs}ᴘʀᴏꜱᴇꜱ ʙᴀɴɢ...</blockquote>"
+    _msg = f"<blockquote>{prs}lagi proses...</blockquote>"
     gcs = await message.reply(_msg)
 
     type_query = get_arg(message) or "all"
@@ -317,7 +316,7 @@ async def _(client, message):
 @PY.ADMIN
 async def _(client, message):
 
-    msg = await message.reply("<blockquote><b>ᴏᴋᴇᴇ ᴘʀᴏꜱᴇꜱ ʙᴏʏ...</blockquote></b>\n\n<blockquote><b>ᴍᴏʜᴏɴ ʙᴇʀꜱᴀʙᴀʀ ᴜɴᴛᴜᴋ ᴍᴇɴᴜɴɢɢᴜ ᴘʀᴏꜱᴇꜱ ʙʀᴏᴀᴅᴄᴀꜱᴛ ꜱᴀᴍᴘᴀɪ ꜱᴇʟᴇꜱᴀɪ</blockquote></b>", quote=True)
+    msg = await message.reply("<blockquote><b>gas, lagi proses...</blockquote></b>\n\n<blockquote><b>ᴍᴏʜᴏɴ ʙᴇʀꜱᴀʙᴀʀ ᴜɴᴛᴜᴋ ᴍᴇɴᴜɴɢɢᴜ ᴘʀᴏꜱᴇꜱ ʙʀᴏᴀᴅᴄᴀꜱᴛ ꜱᴀᴍᴘᴀɪ ꜱᴇʟᴇꜱᴀɪ</blockquote></b>", quote=True)
 
     send = get_message(message)
 
@@ -356,7 +355,7 @@ async def _(client, message):
     prs = await EMO.PROSES(client)
     grp = await EMO.BL_GROUP(client)
     ktrn = await EMO.BL_KETERANGAN(client)
-    _msg = f"<blockquote>{prs}ᴘʀᴏꜱᴇꜱ ʙᴀɴɢ...</blockquote>"
+    _msg = f"<blockquote>{prs}lagi proses...</blockquote>"
 
     msg = await message.reply(_msg)
 
@@ -387,7 +386,7 @@ async def _(client, message):
     prs = await EMO.PROSES(client)
     grp = await EMO.BL_GROUP(client)
     ktrn = await EMO.BL_KETERANGAN(client)
-    _msg = f"<blockquote>{prs}ᴘʀᴏꜱᴇꜱ ʙᴀɴɢ...</blockquote>"
+    _msg = f"<blockquote>{prs}lagi proses...</blockquote>"
 
     msg = await message.reply(_msg)
 
@@ -419,7 +418,7 @@ async def _(client, message):
     prs = await EMO.PROSES(client)
     brhsl = await EMO.BERHASIL(client)
     ktrng = await EMO.BL_KETERANGAN(client)
-    _msg = f"<blockquote>{prs}ᴘʀᴏꜱᴇꜱ ʙᴀɴɢ...</blockquote>"
+    _msg = f"<blockquote>{prs}lagi proses...</blockquote>"
     mzg = await message.reply(_msg)
 
     blacklist = await get_list_from_vars(client.me.id, "BL_ID")
@@ -443,9 +442,9 @@ async def _(client, message):
 async def _(client, message):
 
     prs = await EMO.PROSES(client)
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     brhsl = await EMO.BERHASIL(client)
-    _msg = f"<blockquote>{prs}ᴘʀᴏꜱᴇꜱ ʙᴀɴɢ...</blockquote>"
+    _msg = f"<blockquote>{prs}lagi proses...</blockquote>"
 
     msg = await message.reply(_msg)
     blacklists = await get_list_from_vars(client.me.id, "BL_ID")
@@ -534,9 +533,9 @@ async def _(client, message):
     brhsl = await EMO.BERHASIL(client)
     bcs = await EMO.BROADCAST(client)
     mng = await EMO.MENUNGGU(client)
-    ggl = await EMO.GAGAL(client)   
+    ggl = await EMO.gagal(client)   
     
-    msg = await message.reply(f"<blockquote>{prs}ᴘʀᴏꜱᴇꜱ ʙᴀɴɢ...</blockquote>")
+    msg = await message.reply(f"<blockquote>{prs}lagi proses...</blockquote>")
     type_query, value = extract_type_and_text(message)
 
     auto_text_vars = await get_vars(client.me.id, "AUTO_TEXT") or []
@@ -640,7 +639,7 @@ async def startup_autobc():
                                     continue
 
                     try:
-                        await x.send_message("me", f"<blockquote>✅ ᴀᴜᴛᴏʙᴄ ꜱᴇʀᴠᴇʀ ᴅᴏɴᴇ!\n🚀 ʙᴇʀʜᴀꜱɪʟ ᴋᴇ {group_count} ɢʀᴏᴜᴘ.</blockquote>")
+                        await x.send_message("me", f"<blockquote>⌬ ᴀᴜᴛᴏʙᴄ ꜱᴇʀᴠᴇʀ ᴅᴏɴᴇ!\n⟶ ʙᴇʀʜᴀꜱɪʟ ᴋᴇ {group_count} ɢʀᴏᴜᴘ.</blockquote>")
                     except:
                         pass
 
@@ -660,7 +659,7 @@ asyncio.create_task(startup_autobc())
 @PY.ADMIN
 async def broadcast_bot(client, message):
 
-    msg = await message.reply("<blockquote><b>ꜱᴇᴅᴀɴɢ ᴅɪᴘʀᴏꜱᴇꜱ...</b></blockquote>", quote=True)
+    msg = await message.reply("<blockquote><b>lagi diproses...</b></blockquote>", quote=True)
     done = 0
 
     if not message.reply_to_message:
@@ -674,4 +673,4 @@ async def broadcast_bot(client, message):
         except:
             pass
 
-    return await msg.edit(f"<blockquote>✅ ʙᴇʀʜᴀꜱɪʟ ᴍᴇɴɢɪʀɪᴍ ᴘᴇꜱᴀɴ ᴋᴇ {done} ᴜʙᴏᴛ</blockquote>")
+    return await msg.edit(f"<blockquote>⌬ ʙᴇʀʜᴀꜱɪʟ ᴍᴇɴɢɪʀɪᴍ ᴘᴇꜱᴀɴ ᴋᴇ {done} ᴜʙᴏᴛ</blockquote>")

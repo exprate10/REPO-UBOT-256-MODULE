@@ -6,7 +6,7 @@ __MODULE__ = "ᴅᴏɴᴇ"
 __HELP__ = """
 <blockquote><b>Bantuan Done</b>
 
-• Perintah :
+• <b>Perintah:</b>
 <code>{0}done</code> nama_barang,harga,pembayaran
 
 • Fungsi :
@@ -32,19 +32,19 @@ def get_trx_id():
 @PY.UBOT("done")
 @PY.UBOT("d")
 async def done_cmd(client, message):
-    proses = await message.reply("<blockquote>⏳ Memproses transaksi...</blockquote>")
+    proses = await message.reply("<blockquote>◷ Memproses transaksi...</blockquote>")
     await asyncio.sleep(3)
 
     try:
         args = message.text.split(" ", 1)
         if len(args) < 2:
             return await proses.edit(
-                "<blockquote>❌ Format salah\nContoh:\n<code>.done Seles Ubot Perma,5000,QRIS</code></blockquote>"
+                "<blockquote>⌭ Format salah\nContoh:\n<code>.done Seles Ubot Perma,5000,QRIS</code></blockquote>"
             )
 
         data = args[1].split(",", 2)
         if len(data) < 2:
-            return await proses.edit("<blockquote>❌ Data tidak lengkap</blockquote>")
+            return await proses.edit("<blockquote>⌭ Data tidak lengkap</blockquote>")
 
         produk = data[0].strip()
         harga = data[1].strip()
@@ -58,12 +58,12 @@ async def done_cmd(client, message):
 『 <b>Transaction Successfull </b> 』
 ━━━━━━━━━━━━━━━
 📦 <b>Produk :</b> {produk}
-💰 <b>Harga :</b> Rp{harga}
-💳 <b>Pembayaran :</b> {payment}
+✦ <b>Harga :</b> Rp{harga}
+◈ <b>Pembayaran :</b> {payment}
 🕒 <b>Waktu :</b> {waktu}
-✅ <b>Status :</b> Tercatat & Selesai!
+⌬ <b>Status :</b> Tercatat & Selesai!
 ━━━━━━━━━━━━━━━
-👤 <b>Owner :</b> @{client.me.username}
+◉ <b>Owner :</b> @{client.me.username}
 ━━━━━━━━━━━━━━━
 ✨ <b>Terima Kasih Telah Bertransaksi ✨ !</b>
 </blockquote>
@@ -72,4 +72,4 @@ async def done_cmd(client, message):
         await proses.edit(text)
 
     except Exception as e:
-        await proses.edit(f"<blockquote>❌ Error : {e}</blockquote>")
+        await proses.edit(f"<blockquote>⌭ Error : {e}</blockquote>")

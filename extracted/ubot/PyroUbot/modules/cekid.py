@@ -6,8 +6,7 @@ from PyroUbot import *
 
 __MODULE__ = "ᴄᴇᴋ ɪᴅ"
 __HELP__ = """
-<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴄᴇᴋ ɪᴅ ⦫</b>
-<blockquote>⎆ perintah :
+<b>⦪ <blockquote>⎆ <b>Perintah:</b>
 ᚗ <code>{0}cekid</code>
 ⊶ Untuk Mengambil Data User/Channel/Grup.
 </blockquote>
@@ -89,7 +88,7 @@ async def generate_profile_card(client: Client, user: User):
     )
 
     first_name = user.first_name or "Pengguna"
-    username_text = f"@{user.username}" if user.username else "Tidak ada"
+    username_text = f"@{user.username}" if user.username else "ga ada"
     dc_id = user.dc_id or "Tidak diketahui"
     premium = "Iya" if getattr(user, "is_premium", False) else "Tidak"
 
@@ -155,10 +154,10 @@ async def cekidte(client, message):
             )
         except:
             return await message.reply(
-                "<b>❌ Pengguna tidak ditemukan</b>"
+                "<b>⌭ Pengguna ga ketemu</b>"
             )
 
-    wait = await message.reply("⏳ Processing...")
+    wait = await message.reply("◷ sebentar ya...")
 
     card = await generate_profile_card(
         client,
@@ -176,19 +175,19 @@ async def cekidte(client, message):
     username_text = (
         f"@{target_user.username}"
         if target_user.username
-        else "Tidak ada"
+        else "ga ada"
     )
 
     caption = f"""
-<blockquote><b>╭──「 🔍 NI BRO DATA BELIAU YG SANGAT BAPERAN 🗿」</b>
-│ 👤 <b>Nama:</b> {name_link}
+<blockquote><b>╭──「 ⌖ NI BRO DATA BELIAU YG SANGAT BAPERAN 🗿」</b>
+│ ◉ <b>Nama:</b> {name_link}
 │ 🟢 <b>ID:</b> <code>{target_user.id}</code>
 │ 🔱 <b>Username:</b> {username_text}
-│ 🏷️ <b>DC:</b> <code>{target_user.dc_id or 'Tidak diketahui'}</code>
-│ ✨️ <b>Premium:</b> {"Premium ✅" if getattr(target_user,'is_premium',False) else "Tidak ❌"}
+│ ◈ <b>DC:</b> <code>{target_user.dc_id or 'Tidak diketahui'}</code>
+│ ✨️ <b>Premium:</b> {"Premium ⌬" if getattr(target_user,'is_premium',False) else "Tidak ⌭"}
 │ 🆔 <b>Chat ID:</b> <code>{message.chat.id}</code> ({chat_title})
-│ 🔗 <b>Link:</b> <a href="tg://user?id={target_user.id}">Klik</a>
-╰──「 <b>@UbotZexcOfficial_bot</b> 」</blockquote>
+│ ⌕ <b>Link:</b> <a href="tg://user?id={target_user.id}">Klik</a>
+╰──「 <b>@ranzpedia_bot</b> 」</blockquote>
 """
 
     await wait.delete()

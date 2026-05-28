@@ -4,8 +4,7 @@ from PyroUbot import *
 
 __MODULE__ = "ᴠᴄᴄ ɢᴇɴᴇʀᴀᴛᴏʀ"
 __HELP__ = """
-<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴠᴄᴄ ɢᴇɴᴇʀᴀᴛᴏʀ ⦫</b>
-<blockquote>⎆ perintah :
+<b>⦪ <blockquote>⎆ <b>Perintah:</b>
 ᚗ <code>{0}vcc</code>
 ⊶ untuk membuat fake vcc</blockquote>
 """
@@ -27,15 +26,15 @@ async def generate_vcc(client, message):
             result = "<blockquote>**Generated VCCs:**\n"
             
             for vcc in vcc_list:
-                result += f"\n💳 **Card Number:** `{vcc['cardNumber']}`\n"
-                result += f"📅 **Exp Date:** `{vcc['expirationDate']}`\n"
-                result += f"👤 **Holder:** `{vcc['cardholderName']}`\n"
-                result += f"🔑 **CVV:** `{vcc['cvv']}`\n"
+                result += f"\n◈ **Card Number:** `{vcc['cardNumber']}`\n"
+                result += f"◷ **Exp Date:** `{vcc['expirationDate']}`\n"
+                result += f"◉ **Holder:** `{vcc['cardholderName']}`\n"
+                result += f"⌕ **CVV:** `{vcc['cvv']}`\n"
                 result += "-------------------------</blockquote>"
             
             await message.reply_text(result)
         else:
-            await message.reply_text("Gagal mengambil data VCC.")
+            await message.reply_text("gagal mengambil data VCC.")
     
     except Exception as e:
         await message.reply_text(f"Terjadi kesalahan: {e}")

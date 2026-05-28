@@ -2,15 +2,15 @@ from PyroUbot import *
 
 __MODULE__ = "ᴄᴏɴᴛʀᴏʟ"
 __HELP__ = """
-<blockquote>Bantuan Untuk Control
+<blockquote><b>Control</b>
 
-perintah : <code>{0}prefix</code>
+<b>Perintah:</b> <code>{0}prefix</code>
    untuk merubah prefix/handler perintah
 
-perintah : <code>{0}creat</code>
+<b>Perintah:</b> <code>{0}creat</code>
    untuk membuat group atau channel
 
-perintah : <code>{0}emoji</code> query emojiprem
+<b>Perintah:</b> <code>{0}emoji</code> query emojiprem
    untuk merubah emoji pada tampilan tertentu
 
 query:
@@ -61,7 +61,7 @@ async def _(client, message):
 async def _(client, message):
     prs = await EMO.PROSES(client)
     brhsl = await EMO.BERHASIL(client)
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     Tm = await message.reply(f"{prs}memproses...", quote=True)
     if len(message.command) < 2:
         return await Tm.edit(f"{ggl}{message.text} [simbol]")
@@ -115,7 +115,7 @@ async def _(client, message):
             else f"""
 <blockquote><b>hello {rpk}
 tuan saya sedang afk selama : {afk_runtime}
-mohon tunggu beberapa waktu</blockquote></b>
+tolong tunggu beberapa waktu</blockquote></b>
 """
         )
         return await message.reply(afk_text)
@@ -141,7 +141,7 @@ async def _(client, message):
 async def _(client, message):
     prs = await EMO.PROSES(client)
     brhsl = await EMO.BERHASIL(client)
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     try:
         msg = await message.reply(f"{prs}memproses...", quote=True)
 
@@ -160,7 +160,7 @@ async def _(client, message):
           "proses": "EMOJI_PROSES",
           "gcast": "EMOJI_BROADCAST",
           "sukses": "EMOJI_BERHASIL",
-          "gagal": "EMOJI_GAGAL",
+          "gagal": "EMOJI_gagal",
           "catatan": "EMOJI_KETERANGAN",
           "group": "EMOJI_GROUP",
           "menunggu": "EMOJI_MENUNGGU",
@@ -187,7 +187,7 @@ async def _(client, message):
             else:
                 await msg.edit(f"{ggl}tidak dapat menemukan emoji premium")
         else:
-            await msg.edit(f"{ggl}mapping tidak ditemukan")
+            await msg.edit(f"{ggl}mapping ga ketemu")
 
     except Exception as error:
         await msg.edit(str(error))

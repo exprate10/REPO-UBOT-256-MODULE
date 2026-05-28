@@ -4,9 +4,8 @@ import requests
 
 __MODULE__ = "sᴛᴀʙʟᴇᴅɪғғᴜsɪᴏɴ"
 __HELP__ = """
-<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ sᴛᴀʙʟᴇᴅɪғғᴜsɪᴏɴ ⦫</b>
-<blockquote><b>
-⎆ Perintah :
+<b>⦪ <blockquote><b>
+⎆ <b>Perintah:</b>
 ᚗ <code>{0}sd</code> text
 ⊶ Untuk Membuat Gambar Menggunakan Text.</b></blockquote>
 """
@@ -36,7 +35,7 @@ async def _(client, message):
         return
 
     request_text = args[1]
-    await message.reply_text("<b><i>Sedang memproses, mohon tunggu</i></b>...")
+    await message.reply_text("<b><i>Sedang memproses, tolong tunggu</i></b>...")
 
     image_content = get_giraffe_image(request_text)
     if image_content:
@@ -48,4 +47,4 @@ async def _(client, message):
         
         os.remove(temp_file)
     else:
-        await message.reply_text("Gagal membuat gambar. Coba lagi nanti.")
+        await message.reply_text("gagal membuat gambar. Coba lagi nanti.")

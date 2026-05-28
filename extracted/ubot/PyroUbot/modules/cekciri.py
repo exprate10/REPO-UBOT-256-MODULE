@@ -79,12 +79,12 @@ async def cekkhodam(client, message):
 __MODULE__ = "ᴄᴇᴋ ᴄɪʀɪ"
 __HELP__ = """<blockquote><b>「 BANTUAN UNTUK MODULE CEK CIRI 」</b>
 
-<b>♛ ᴘᴇʀɪɴᴛᴀʜ: .cekkontol</b>
+<b>♛ <b>Perintah:</b> .cekkontol</b>
 <b>卍 ᴘᴇɴᴊᴇʟᴀsᴀɴ: ᴄᴇᴋ ᴋᴏɴᴛᴏʟ ᴅᴇɴɢᴀɴ ɴᴀᴍᴀ ᴏʀᴀɴɢɴʏᴀ</b>
 
-<b>♛ ᴘᴇʀɪɴᴛᴀʜ: .cekmemek</b>
+<b>♛ <b>Perintah:</b> .cekmemek</b>
 <b>卍 ᴘᴇɴᴊᴇʟᴀsᴀɴ: ᴄᴇᴋ ᴍᴇᴍᴇᴋ ᴅᴇɴɢᴀɴ ɴᴀᴍᴀ ᴏʀᴀɴɢɴʏᴀ</b>
 
-<b>♛ ᴘᴇʀɪɴᴛᴀʜ: .ceksange</b>
+<b>♛ <b>Perintah:</b> .ceksange</b>
 <b>卍 ᴘᴇɴᴊᴇʟᴀsᴀɴ: ᴄᴇᴋ sᴀɴɢᴇ ᴅᴇɴɢᴀɴ ɴᴀᴍᴀ ᴏʀᴀɴɢɴʏᴀ</b></blockquote>
   """

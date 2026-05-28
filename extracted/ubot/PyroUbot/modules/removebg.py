@@ -25,9 +25,9 @@ async def ReTrieveFile(input_file_name):
 
 __MODULE__ = "ʀᴇᴍᴏᴠᴇʙɢ"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk Remove BG
+<blockquote><b><b>Remove BG</b>
 
-perintah : <code>{0}rmbg</code> [replay gambarnya]
+<b>Perintah:</b> <code>{0}rmbg</code> [replay gambarnya]
     Untuk Menghapus Latar Belakang Gambar</blockquote></b>
 
 """

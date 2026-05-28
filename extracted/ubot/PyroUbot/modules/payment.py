@@ -166,7 +166,7 @@ async def notif_order_sukses(user_id: int, nama: str, role: str, durasi: str, or
     try:
         await bot.send_message(LOGS_MAKER_UBOT, teks)
     except Exception as e:
-        print(f"[PAYMENT] Gagal kirim notif log: {e}")
+        print(f"[PAYMENT] gagal kirim notif log: {e}")
 
 
 async def loop_cek_bayar(user_id: int, order_id: str, amount: int, role: str, durasi: str):
@@ -371,7 +371,7 @@ async def cb_pakasir_pay(client, callback_query):
         return await callback_query.edit_message_text(
             (
                 f"<blockquote>"
-                f"<b>Gagal bikin QRIS.</b>\n\n"
+                f"<b>gagal bikin QRIS.</b>\n\n"
                 f"<b>Role  :</b> {label_role}\n"
                 f"<b>Durasi:</b> {label_durasi}\n"
                 f"<b>Harga :</b> Rp {harga:,}\n\n"
@@ -584,7 +584,7 @@ async def cb_status(client, callback_query):
 
     exp          = await get_expired_date(uid)
     prefix       = await get_pref(uid)
-    waktu_exp    = exp.strftime("%d-%m-%Y") if exp else "Tidak ada"
+    waktu_exp    = exp.strftime("%d-%m-%Y") if exp else "ga ada"
     role         = await get_role_user(uid, bot.me.id)
     label_role   = ROLE_LABEL.get(role, "Tidak diketahui")
 

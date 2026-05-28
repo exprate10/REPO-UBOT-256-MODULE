@@ -9,12 +9,12 @@ from PyroUbot import *
 
 __MODULE__ = "ᴛᴀɢᴀʟʟ"
 __HELP__ = """
-<blockquote>Bantuan Untuk Tagall
+<blockquote><b>Tagall</b>
 
-perintah : <code>{0}tagall</code>
+<b>Perintah:</b> <code>{0}tagall</code>
     melakukan tag ke seluruh anggota group
 
-perintah : <code>{0}batal</code>
+<b>Perintah:</b> <code>{0}batal</code>
     membatalkan perintah tagall</blockquote>
 """
 
@@ -27,16 +27,16 @@ emoji_categories = {
         "😀",
         "😃",
         "😄",
-        "😁",
+        "",
         "😆",
-        "😅",
-        "😂",
-        "🤣",
-        "😊",
-        "😍",
-        "🥰",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
         "😘",
-        "😎",
+        "",
         "🥳",
         "😇",
         "🙃",
@@ -109,7 +109,7 @@ emoji_categories = {
     ],
     "travel": [
         "✈️",
-        "🚀",
+        "⟶",
         "🚲",
         "🚗",
         "⛵",
@@ -144,15 +144,15 @@ emoji_categories = {
         "🥋",
         "🛹",
         "🥏",
-        "🎯",
-        "🥇",
-        "🏆",
+        "◈",
+        "✧",
+        "✧",
         "🥅",
     ],
-    "music": ["🎵", "🎶", "🎤", "🎧", "🎼", "🎸", "🥁", "🎷", "🎺", "🎻", "🪕", "🎹", "🔊"],
-    "celebration": ["🎉", "🎊", "🥳", "🎈", "🎁", "🍰", "🧁", "🥂", "🍾", "🎆", "🎇"],
-    "work": ["💼", "👔", "👓", "📚", "✏️", "📆", "🖥️", "🖊️", "📂", "📌", "📎"],
-    "emotions": ["❤️", "💔", "😢", "😭", "😠", "😡", "😊", "😃", "🙄", "😳", "😇", "😍"],
+    "music": ["♧", "♧", "🎤", "🎧", "🎼", "🎸", "🥁", "🎷", "🎺", "🎻", "🪕", "🎹", "🔊"],
+    "celebration": ["✧", "🎊", "🥳", "🎈", "🎁", "🍰", "🧁", "🥂", "🍾", "🎆", "🎇"],
+    "work": ["💼", "👔", "👓", "📚", "✏️", "📆", "◍", "🖊️", "📂", "⌖", "⌗"],
+    "emotions": ["❤️", "💔", "😢", "", "😠", "", "", "😃", "", "😳", "😇", ""],
 }
 
 
@@ -195,7 +195,7 @@ async def _(client, message):
 async def _(client, message):
     if message.chat.id not in tagallgcid:
         return await message.reply_text(
-            "tidak ada perintah : tagall yang digunakan"
+            "ga ada perintah : tagall yang digunakan"
         )
     try:
         tagallgcid.remove(message.chat.id)

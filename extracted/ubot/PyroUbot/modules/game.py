@@ -2,15 +2,15 @@ from PyroUbot import *
 
 __MODULE__ = "ɢᴀᴍᴇ"
 __HELP__ = """
-<blockquote>Bantuan Untuk Game
+<blockquote><b>Game</b>
 
-perintah : <code>{0}catur</code>
+<b>Perintah:</b> <code>{0}catur</code>
    untuk memunculkan game catur
 
-perintah : <code>{0}game</code>
+<b>Perintah:</b> <code>{0}game</code>
    untuk memunculkan game random
    
-perintah : <code>{0}tictactoe</code>
+<b>Perintah:</b> <code>{0}tictactoe</code>
    untuk memunculkan game tictactoe  
 
 note: jumlah menu game 500+</blockquote>

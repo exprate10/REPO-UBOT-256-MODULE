@@ -9,9 +9,9 @@ from PyroUbot import *
 
 __MODULE__ = "ᴄᴇᴋ ɪᴘ ᴀᴅʀᴇss"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk Cek IP Adress</b>
+<blockquote><b><b>Cek IP Adress</b></b>
 
-Perintah: <code>{0}ipaddress</code> [IP ADDRESS]
+<b>Perintah:</b> <code>{0}ipaddress</code> [IP ADDRESS]
 Penjelasan: untuk mendapatkan alamat IP dari ip adress yang diberikan</blockquote></b>
 """
 

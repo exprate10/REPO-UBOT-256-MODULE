@@ -1,7 +1,7 @@
 __MODULE__ = "ᴛᴇʟᴇɢʀᴀᴘʜ"
 __HELP__ = """
-<blockquote><b>Bantuan untuk telegraph
+<blockquote><b><b>telegraph</b>
 
-perintah : <code>{0}tg</code> [reply media/text]
+<b>Perintah:</b> <code>{0}tg</code> [reply media/text]
     mengapload media/text ke telegra.ph</b></blockquote>
 """

@@ -7,9 +7,9 @@ from pyrogram.types import Message
 
 __MODULE__ = "ᴀɴsᴀʀɪ ɪsʟᴀᴍɪᴄ"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk Ansari Islamic
+<blockquote><b><b>Ansari Islamic</b>
 
-perintah : <code>{0}ansari</code>
+<b>Perintah:</b> <code>{0}ansari</code>
     untuk bertanya tentang ayat alquran atau tentang pertanyaan islam lainya</b></blockquote>
 """
 
@@ -21,7 +21,7 @@ async def chat_gpt(client, message):
 
         if len(message.command) < 2:
             await message.reply_text(
-                "<blockquote><b><emoji id=5019523782004441717>❌</emoji>bertanya tentang ayat alquran atau tentang pertanyaan islam lainya</b></blockquote>"
+                "<blockquote><b><emoji id=5019523782004441717>⌭</emoji>bertanya tentang ayat alquran atau tentang pertanyaan islam lainya</b></blockquote>"
             )
         else:
             prs = await message.reply_text(f"<blockquote><b><emoji id=5352953358892149485>😇</emoji>Tunggu sebentar kk....</b></blockquote>")

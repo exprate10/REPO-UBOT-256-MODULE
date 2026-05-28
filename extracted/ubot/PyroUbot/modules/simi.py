@@ -7,9 +7,9 @@ from pyrogram.types import Message
 
 __MODULE__ = "sɪᴍɪ ᴀɪ"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk simi ai
+<blockquote><b><b>simi ai</b>
 
-perintah : <code>{0}simi</code>
+<b>Perintah:</b> <code>{0}simi</code>
     dapat mengobrol, tapi agak toxic</b></blockquote>
 """
 
@@ -22,10 +22,10 @@ async def chat_gpt(client, message):
 
         if len(message.command) < 2:
             await message.reply_text(
-                "<emoji id=5019523782004441717>❌</emoji>mohon gunakan format\ncontoh : .simi query"
+                "<emoji id=5019523782004441717>⌭</emoji>tolong gunakan format\ncontoh : .simi query"
             )
         else:
-            prs = await message.reply_text(f"<emoji id=5319230516929502602>🔍</emoji>menjawab....")
+            prs = await message.reply_text(f"<emoji id=5319230516929502602>⌖</emoji>menjawab....")
             a = message.text.split(' ', 1)[1]
             response = requests.get(f'https://api.botcahx.eu.org/api/search/simsimi?query={a}&apikey=@31Moire_mor')
 

@@ -7,9 +7,8 @@ from pyrogram.types import Message
 
 __MODULE__ = "ϙᴜᴏᴛᴇs sᴜᴋᴜ"
 __HELP__ = """
-<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ϙᴜᴏᴛᴇs sᴜᴋᴜ ⦫<b>
-
-<blockquote>⎆ perintah :
+<b>⦪ 
+<blockquote>⎆ <b>Perintah:</b>
 ᚗ <code>{0}qjawa</code>
 ⊷ Quotes Jawa
 

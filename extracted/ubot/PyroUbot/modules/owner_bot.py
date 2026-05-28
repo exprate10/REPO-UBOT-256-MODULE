@@ -54,7 +54,7 @@ Status: Sukses Add Owner</blockquote>
             [
                 [
                     InlineKeyboardButton(
-                        "👑 TANGAN KANAN",
+                        "✧ TANGAN KANAN",
                         callback_data=f"profil {user.id}",
                     ),
                     InlineKeyboardButton(
@@ -104,7 +104,7 @@ async def _(client, message):
     user = message.from_user
     if not await khasjir(user.id):
         return
-    Sh = await message.reply("ꜱᴇᴅᴀɴɢ ᴍᴇᴍᴘʀᴏꜱᴇꜱ...")
+    Sh = await message.reply("ꜱᴇᴅᴀɴɢ lagi proses...")
     owner_users = await get_list_from_vars(bot.me.id, "OWNER_USERS")
 
     if not owner_users:
@@ -115,14 +115,14 @@ async def _(client, message):
         try:
             user = await client.get_users(int(user_id))
             owner_list.append(
-                f"<blockquote>👤 [{user.first_name} {user.last_name or ''}](tg://user?id={user.id}) | `{user.id}`</blockquote>"
+                f"<blockquote>◉ [{user.first_name} {user.last_name or ''}](tg://user?id={user.id}) | `{user.id}`</blockquote>"
             )
         except:
             continue
 
     if owner_list:
         response = (
-            "📋 ᴅᴀꜰᴛᴀʀ ᴏᴡɴᴇʀ:\n\n"
+            "◆ ᴅᴀꜰᴛᴀʀ ᴏᴡɴᴇʀ:\n\n"
             + "\n".join(owner_list)
             + f"\n\n• ᴛᴏᴛᴀʟ ᴏᴡɴᴇʀ: {len(owner_list)}"
         )
@@ -205,7 +205,7 @@ Status: Sukses Add TK</blockquote>
             [
                 [
                     InlineKeyboardButton(
-                        "👑 CIO",
+                        "✧ CIO",
                         callback_data=f"profil {user.id}",
                     ),
                     InlineKeyboardButton(
@@ -255,7 +255,7 @@ async def _(client, message):
     user = message.from_user
     if not await ciogwmah(user.id):
         return
-    Sh = await message.reply("ꜱᴇᴅᴀɴɢ ᴍᴇᴍᴘʀᴏꜱᴇꜱ...")
+    Sh = await message.reply("ꜱᴇᴅᴀɴɢ lagi proses...")
     khasjir_users = await get_list_from_vars(bot.me.id, "KHASJIR_USERS")
 
     if not khasjir_users:
@@ -266,14 +266,14 @@ async def _(client, message):
         try:
             user = await client.get_users(int(user_id))
             khasjir_list.append(
-                f"<blockquote>👤 [{user.first_name} {user.last_name or ''}](tg://user?id={user.id}) | `{user.id}`</blockquote>"
+                f"<blockquote>◉ [{user.first_name} {user.last_name or ''}](tg://user?id={user.id}) | `{user.id}`</blockquote>"
             )
         except:
             continue
 
     if khasjir_list:
         response = (
-            "📋 ᴅᴀꜰᴛᴀʀ ᴛᴀɴɢᴀɴ ᴋᴀɴᴀɴ:\n\n"
+            "◆ ᴅᴀꜰᴛᴀʀ ᴛᴀɴɢᴀɴ ᴋᴀɴᴀɴ:\n\n"
             + "\n".join(khasjir_list)
             + f"\n\n• ᴛᴏᴛᴀʟ ᴛᴀɴɢᴀɴ ᴋᴀɴᴀɴ: {len(khasjir_list)}"
         )
@@ -330,7 +330,7 @@ Status: Sukses Add Ceo</blockquote>
             [
                 [
                     InlineKeyboardButton(
-                        "👑 ALLROLE",
+                        "✧ ALLROLE",
                         callback_data=f"profil {user.id}",
                     ),
                     InlineKeyboardButton(
@@ -380,7 +380,7 @@ async def _(client, message):
     user = message.from_user
     if not await allrole(user.id):
         return
-    Sh = await message.reply("ꜱᴇᴅᴀɴɢ ᴍᴇᴍᴘʀᴏꜱᴇꜱ...")
+    Sh = await message.reply("ꜱᴇᴅᴀɴɢ lagi proses...")
     ciogwmah_users = await get_list_from_vars(bot.me.id, "CIOGWMAH_USERS")
 
     if not ciogwmah_users:
@@ -391,14 +391,14 @@ async def _(client, message):
         try:
             user = await client.get_users(int(user_id))
             ciogwmah_list.append(
-                f"<blockquote>👤 [{user.first_name} {user.last_name or ''}](tg://user?id={user.id}) | `{user.id}`</blockquote>"
+                f"<blockquote>◉ [{user.first_name} {user.last_name or ''}](tg://user?id={user.id}) | `{user.id}`</blockquote>"
             )
         except:
             continue
 
     if ciogwmah_list:
         response = (
-            "📋 ᴅᴀꜰᴛᴀʀ ᴄɪᴏ:\n\n"
+            "◆ ᴅᴀꜰᴛᴀʀ ᴄɪᴏ:\n\n"
             + "\n".join(ciogwmah_list)
             + f"\n\n• ᴛᴏᴛᴀʟ ᴄɪᴏ: {len(ciogwmah_list)}"
         )
@@ -483,7 +483,7 @@ async def _(client, message):
     user = message.from_user
     if user.id != OWNER_ID:
         return
-    Sh = await message.reply("ꜱᴇᴅᴀɴɢ ᴍᴇᴍᴘʀᴏꜱᴇꜱ...")
+    Sh = await message.reply("ꜱᴇᴅᴀɴɢ lagi proses...")
     allrole_users = await get_list_from_vars(bot.me.id, "ALLROLE_USERS")
 
     if not allrole_users:
@@ -494,14 +494,14 @@ async def _(client, message):
         try:
             user = await client.get_users(int(user_id))
             allrole_list.append(
-                f"<blockquote>👤 [{user.first_name} {user.last_name or ''}](tg://user?id={user.id}) | `{user.id}`</blockquote>"
+                f"<blockquote>◉ [{user.first_name} {user.last_name or ''}](tg://user?id={user.id}) | `{user.id}`</blockquote>"
             )
         except:
             continue
 
     if allrole_list:
         response = (
-            "📋 ᴅᴀꜰᴛᴀʀ ᴀʟʟʀᴏʟᴇ:\n\n"
+            "◆ ᴅᴀꜰᴛᴀʀ ᴀʟʟʀᴏʟᴇ:\n\n"
             + "\n".join(allrole_list)
             + f"\n\n• ᴛᴏᴛᴀʟ ᴀʟʟʀᴏʟᴇ: {len(allrole_list)}"
         )
@@ -547,10 +547,10 @@ async def _(client, message):
 <blockquote><b>ɴᴀᴍᴇ: [{user.first_name} {user.last_name or ''}](tg://user?id={user.id})</b>
 <b>ɪᴅ: `{user.id}`</b>
 <b>ᴇxᴘɪʀᴇᴅ: {get_bulan} ʙᴜʟᴀɴ</b>
-<b>ꜱɪʟᴀʜᴋᴀɴ ʙᴜᴋᴀ @UbotZexcOfficial_bot ᴜɴᴛᴜᴋ ᴍᴇᴍʙᴜᴀᴛ ᴜꜱᴇʀʙᴏᴛ</b></blockquote>
+<b>ꜱɪʟᴀʜᴋᴀɴ ʙᴜᴋᴀ @ranzpedia_bot ᴜɴᴛᴜᴋ ᴍᴇᴍʙᴜᴀᴛ ᴜꜱᴇʀʙᴏᴛ</b></blockquote>
 
 <blockquote>ᴄᴀʀᴀ ʙᴜᴀᴛ ᴜsᴇʀʙᴏᴛ :
-- sɪʟᴀʜᴋᴀɴ /start ᴅᴜʟᴜ ʙᴏᴛ @UbotZexcOfficial_bot 
+- sɪʟᴀʜᴋᴀɴ /start ᴅᴜʟᴜ ʙᴏᴛ @ranzpedia_bot 
 - ᴋᴀʟᴀᴜ sᴜᴅᴀʜ sᴛᴀʀᴛ ʙᴏᴛ ᴀʙɪsᴛᴜ ᴘᴇɴᴄᴇᴛ ᴛᴏᴍʙᴏʟ ʙᴜᴀᴛ ᴜsᴇʀʙᴏᴛ 
 - ɴᴀʜ ɴᴀɴᴛɪ ᴀᴅᴀ ᴀʀᴀʜᴀɴ ᴅᴀʀɪ ʙᴏᴛ ɴʏᴀ ɪᴛᴜ ɪᴋᴜᴛɪɴ</blockquote>
 <blockquote><b>ɴᴏᴛᴇ : ᴊᴀɴɢᴀɴ ʟᴜᴘᴀ ʙᴀᴄᴀ ᴀʀᴀʜᴀɴ ᴅᴀʀɪ ʙᴏᴛ ɴʏᴀ</b></blockquote>
@@ -579,7 +579,7 @@ async def _(client, message):
 
 @PY.UBOT("unprem")
 async def _(client, message):
-    msg = await message.reply("ꜱᴇᴅᴀɴɢ ᴍᴇᴍᴘʀᴏꜱᴇꜱ...")
+    msg = await message.reply("ꜱᴇᴅᴀɴɢ lagi proses...")
     user_id = await extract_user(message)
     if not user_id:
         return await msg.edit(
@@ -646,7 +646,7 @@ async def _(client, message):
     if user.id not in admin_users:
         return
 
-    msg = await message.reply("ꜱᴇᴅᴀɴɢ ᴍᴇᴍᴘʀᴏꜱᴇꜱ...")
+    msg = await message.reply("ꜱᴇᴅᴀɴɢ lagi proses...")
 
     user_id = await extract_user(message)
     if not user_id:
@@ -714,7 +714,7 @@ async def _(client, message):
     admin_users = await get_list_from_vars(bot.me.id, "ADMIN_USERS")
     if user.id not in admin_users:
         return
-    msg = await message.reply("ꜱᴇᴅᴀɴɢ ᴍᴇᴍᴘʀᴏꜱᴇꜱ...")
+    msg = await message.reply("ꜱᴇᴅᴀɴɢ lagi proses...")
     user_id = await extract_user(message)
     if not user_id:
         return await msg.edit(
@@ -754,7 +754,7 @@ async def _(client, message):
     admin_users = await get_list_from_vars(bot.me.id, "ADMIN_USERS")
     if user.id not in admin_users:
         return
-    Sh = await message.reply("ꜱᴇᴅᴀɴɢ ᴍᴇᴍᴘʀᴏꜱᴇꜱ...")
+    Sh = await message.reply("ꜱᴇᴅᴀɴɢ lagi proses...")
     seles_users = await get_list_from_vars(bot.me.id, "SELER_USERS")
 
     if not seles_users:
@@ -765,14 +765,14 @@ async def _(client, message):
         try:
             user = await client.get_users(int(user_id))
             seles_list.append(
-                f"<blockquote>👤 [{user.first_name} {user.last_name or ''}](tg://user?id={user.id}) | `{user.id}`</blockquote>"
+                f"<blockquote>◉ [{user.first_name} {user.last_name or ''}](tg://user?id={user.id}) | `{user.id}`</blockquote>"
             )
         except:
             continue
 
     if seles_list:
         response = (
-            "📋 ᴅᴀꜰᴛᴀʀ ʀᴇꜱᴇʟʟᴇʀ:\n\n"
+            "◆ ᴅᴀꜰᴛᴀʀ ʀᴇꜱᴇʟʟᴇʀ:\n\n"
             + "\n".join(seles_list)
             + f"\n\n• ᴛᴏᴛᴀʟ ʀᴇꜱᴇʟʟᴇʀ: {len(seles_list)}"
         )
@@ -804,7 +804,7 @@ async def _(client, message):
     expire_date = now + timedelta(days=int(get_day))
     await set_expired_date(user_id, expire_date)
     await Tm.edit(f"""
-💬 INFORMATION
+◱ INFORMATION
  Nama: {user.mention}
  Id: {get_id}
  Aktifkan_Selama: {get_day} hari
@@ -817,7 +817,7 @@ async def _(client, message):
     user = message.from_user
     if user.id != OWNER_ID:
         return
-    Sh = await message.reply("ᴘʀᴏᴄᴇꜱꜱɪɴɢ . . .")
+    Sh = await message.reply("sebentar ya...")
     user_id = await extract_user(message)
     if not user_id:
         return await Sh.edit("ᴘᴇɴɢɢᴜɴᴀ ᴛɪᴅᴀᴋ ᴛᴇᴍᴜᴋᴀɴ")
@@ -857,7 +857,7 @@ async def _(client, message):
     if not await is_owner(user.id):
         return
 
-    msg = await message.reply("⏳ sedang memproses...")
+    msg = await message.reply("◷ sedang memproses...")
 
     user_id = await extract_user(message)
     if not user_id:
@@ -876,7 +876,7 @@ async def _(client, message):
     if target.id in admin_users:
         return await msg.edit(
             f"""
-<blockquote><b>💬 INFORMATION</b>
+<blockquote><b>◱ INFORMATION</b>
 <b>name:</b> [{target.first_name} {target.last_name or ''}](tg://user?id={target.id})
 <b>id:</b> <code>{target.id}</code>
 <b>keterangan:</b> sudah admin</blockquote>
@@ -892,10 +892,10 @@ async def _(client, message):
     # PESAN SUKSES
     await msg.edit(
         f"""
-<blockquote><b>💬 INFORMATION</b>
+<blockquote><b>◱ INFORMATION</b>
 <b>name:</b> [{target.first_name} {target.last_name or ''}](tg://user?id={target.id})
 <b>id:</b> <code>{target.id}</code>
-<b>keterangan:</b> admin berhasil ditambahkan</blockquote>
+<b>keterangan:</b> admin berhasil ditambah</blockquote>
 """
     )
 
@@ -908,7 +908,7 @@ async def _(client, message):
             [
                 [
                     InlineKeyboardButton(
-                        "👑 OWNER",
+                        "✧ OWNER",
                         callback_data=f"profil {user.id}",
                     ),
                     InlineKeyboardButton(
@@ -942,7 +942,7 @@ async def _(client, message):
 
     if user.id not in admin_users:
         return await msg.edit(f"""
-<blockquote><b>💬 INFORMATION</b>
+<blockquote><b>◱ INFORMATION</b>
 <bname: [{user.first_name} {user.last_name or ''}](tg://user?id={user.id})</b>
 <b>id: {user.id}</b>
 <b>keterangan: tidak daam daftar</b></blockquote>
@@ -952,7 +952,7 @@ async def _(client, message):
     try:
         await remove_from_vars(bot.me.id, "ADMIN_USERS", user.id)
         return await msg.edit(f"""
-<blockquote><b>💬 INFORMATION</b>
+<blockquote><b>◱ INFORMATION</b>
 <b>name: [{user.first_name} {user.last_name or ''}](tg://user?id={user.id})</b>
 <b>id: {user.id}</b>
 <b>keterangan: unadmin</b></blockquote>
@@ -978,14 +978,14 @@ async def _(client, message):
         try:
             user = await client.get_users(int(user_id))
             admin_list.append(
-                f"👤 [{user.first_name} {user.last_name or ''}](tg://user?id={user.id}) | {user.id}"
+                f"◉ [{user.first_name} {user.last_name or ''}](tg://user?id={user.id}) | {user.id}"
             )
         except:
             continue
 
     if admin_list:
         response = (
-            "📋 daftar admin:\n\n"
+            "◆ daftar admin:\n\n"
             + "\n".join(admin_list)
             + f"\n\n⚜️ total admin: {len(admin_list)}"
         )
@@ -997,7 +997,7 @@ async def _(client, message):
 async def _(client, message):
     prs = await EMO.PROSES(client)
     brhsl = await EMO.BERHASIL(client)
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     user = message.from_user
     if user.id != OWNER_ID:
         return await message.reply_text(f"{ggl}mau ngapain kamu ?")
@@ -1028,7 +1028,7 @@ async def _(client, message):
 async def _(client, message):
     prs = await EMO.PROSES(client)
     brhsl = await EMO.BERHASIL(client)
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     user = message.from_user
     if user.id != OWNER_ID:
         return await message.reply_text(f"{ggl}mau ngapain kamu ?")
@@ -1047,7 +1047,7 @@ async def _(client, message):
     ultra_users = await get_list_from_vars(bot.me.id, "ULTRA_PREM")
 
     if user.id not in ultra_users:
-        return await msg.edit(f"{ggl}tidak ada di dalam database superultra")
+        return await msg.edit(f"{ggl}ga ada di dalam database superultra")
 
     try:
         await remove_from_vars(bot.me.id, "ULTRA_PREM", user.id)

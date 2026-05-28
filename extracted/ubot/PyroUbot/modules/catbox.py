@@ -32,7 +32,7 @@ async def download_progress(current, total, message, start):
         return
     try:
         await message.edit(
-            "<b>📥 Downloading...</b>\n"
+            "<b>⊻ Downloading...</b>\n"
             f"<code>{progress_bar(current, total)}</code>"
         )
     except:
@@ -61,10 +61,10 @@ async def upload_catbox(file_path, temporary=False):
 @PY.UBOT("litterbox")
 async def catbox_handler(client: Client, message: Message):
     if not message.reply_to_message:
-        return await message.reply("❌ Reply ke media")
+        return await message.reply("⌭ Reply ke media")
 
     temporary = message.command == "litterbox"
-    status = await message.reply("📥 Downloading...")
+    status = await message.reply("⊻ Downloading...")
     start = _time.time()
 
     file_path = await client.download_media(
@@ -73,14 +73,14 @@ async def catbox_handler(client: Client, message: Message):
         progress_args=(status, start),
     )
 
-    await status.edit("📤 Uploading ke Catbox...")
+    await status.edit("⊼ Uploading ke Catbox...")
 
     url = await upload_catbox(file_path, temporary)
     if not url:
-        return await status.edit("❌ Upload gagal")
+        return await status.edit("⌭ Upload gagal")
 
     await status.edit(
-        "<b>✅ UPLOAD BERHASIL</b>\n\n"
+        "<b>⌬ UPLOAD BERHASIL</b>\n\n"
         f"<code>{url}</code>",
         disable_web_page_preview=True,
     )

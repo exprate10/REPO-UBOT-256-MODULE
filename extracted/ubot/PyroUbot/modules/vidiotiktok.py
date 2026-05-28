@@ -7,10 +7,10 @@ API_KEY = "https://api.neoxr.my.id/api/tiktoksearch"
 @Client.on_message(filters.command("ttsearch", prefixes=".") & filters.me)
 async def tiktok_search(client: Client, message: Message):
     if len(message.command) < 2:
-        return await message.edit("❌ Masukkan kata kunci.\nContoh: `.ttsearch kucing lucu`")
+        return await message.edit("⌭ Masukkan kata kunci.\nContoh: `.ttsearch kucing lucu`")
 
     query = " ".join(message.command[1:])
-    await message.edit("🔍 Mencari video TikTok...")
+    await message.edit("⌖ Mencari video TikTok...")
 
     try:
         res = requests.get(
@@ -27,12 +27,12 @@ async def tiktok_search(client: Client, message: Message):
 
             await message.edit(
                 f"🎬 **Hasil Pencarian TikTok**\n\n"
-                f"👤 **Author**: {author}\n"
+                f"◉ **Author**: {author}\n"
                 f"📄 **Deskripsi**: {desc}\n"
-                f"🔗 **Link**: [Tonton Video]({video_url})",
+                f"⌕ **Link**: [Tonton Video]({video_url})",
                 disable_web_page_preview=False
             )
         else:
-            await message.edit("❌ Tidak ditemukan atau API error.")
+            await message.edit("⌭ ga ketemu atau API error.")
     except Exception as e:
-        await message.edit(f"⚠️ Terjadi error:\n`{e}`")
+        await message.edit(f"⌯ Terjadi error:\n`{e}`")

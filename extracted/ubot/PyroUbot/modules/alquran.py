@@ -11,7 +11,7 @@ async def fetch_ayat(surah: int, ayat: int):
     async with aiohttp.ClientSession() as session:
         async with session.get(url) as res:
             if res.status != 200:
-                raise Exception("Ayat tidak ditemukan")
+                raise Exception("Ayat ga ketemu")
 
             data = await res.json()
             ayat_data = data["data"]
@@ -28,9 +28,9 @@ async def fetch_ayat(surah: int, ayat: int):
 
 __MODULE__ = "ᴀʟ ǫᴜʀ'ᴀɴ"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk Al Qur'an
+<blockquote><b><b>Al Qur'an</b>
 
-perintah : <code>{0}alquran 1 2</code>
+<b>Perintah:</b> <code>{0}alquran 1 2</code>
     Untuk Mencari Ayat Al Qur'an
 
 Contoh: <code>{0}alquran 1 2</code>

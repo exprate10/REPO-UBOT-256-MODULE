@@ -17,9 +17,8 @@ from PyroUbot import *
 
 __MODULE__ = "ᴘɪɴɢ"
 __HELP__ = """
-<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴘɪɴɢ ⦫</b>
-
-<blockquote>⎆ perintah :
+<b>⦪ 
+<blockquote>⎆ <b>Perintah:</b>
 ᚗ <code>{0}ping</code>
 
 ᚗ <code>{0}ping1</code>
@@ -99,19 +98,19 @@ async def _(client, message):
     babi = client.me.is_premium
     if babi:
         _ping = f"""
-<blockquote>⎆ <emoji id=5260547274957672345>🎲</emoji> ᴘɪɴɢ : {str(delta_ping_formatted).replace('.', ',')} ms
-⎆ <emoji id=5235948055928262102>⭐</emoji> ᴜᴘᴛɪᴍᴇ : {uptime}
+<blockquote>⎆ <emoji id=5260547274957672345>◈</emoji> ᴘɪɴɢ : {str(delta_ping_formatted).replace('.', ',')} ms
+⎆ <emoji id=5235948055928262102>✦</emoji> ᴜᴘᴛɪᴍᴇ : {uptime}
 ⎆ <emoji id=5204015897500469606>😢</emoji> ᴋɪɴɢ : <code>{client.me.mention}</code>
-⎆ <emoji id=5194979342144260681>😂</emoji> ᴡᴀʀʀɪᴏʀ : <code>{bot.me.mention}</code></blockquote>
+⎆ <emoji id=5194979342144260681></emoji> ᴡᴀʀʀɪᴏʀ : <code>{bot.me.mention}</code></blockquote>
 
 <blockquote><b><emoji id=6142927453854632687>🚬</emoji> ᣃ࿈ ᴜsᴇʀʙᴏᴛ ᴘʀᴇᴍɪᴜᴍ ࿈ᣄ <emoji id=6142927453854632687>🚬</emoji></b></blockquote>"""
         await message.reply(_ping)
     else:
         _ping = f"""
-<blockquote>⎆ <emoji id=5260547274957672345>🎲</emoji> ᴘɪɴɢ : {str(delta_ping_formatted).replace('.', ',')} ms
-⎆ <emoji id=5235948055928262102>⭐</emoji> ᴜᴘᴛɪᴍᴇ : {uptime}
+<blockquote>⎆ <emoji id=5260547274957672345>◈</emoji> ᴘɪɴɢ : {str(delta_ping_formatted).replace('.', ',')} ms
+⎆ <emoji id=5235948055928262102>✦</emoji> ᴜᴘᴛɪᴍᴇ : {uptime}
 ⎆ <emoji id=5204015897500469606>😢</emoji> ᴋɪɴɢ : <code>{client.me.mention}</code>
-⎆ <emoji id=5194979342144260681>😂</emoji> ᴡᴀʀʀɪᴏʀ : <code>{bot.me.mention}</code></blockquote>
+⎆ <emoji id=5194979342144260681></emoji> ᴡᴀʀʀɪᴏʀ : <code>{bot.me.mention}</code></blockquote>
 
 <blockquote><b><emoji id=6142927453854632687>🚬</emoji> ᣃ࿈ ᴜsᴇʀʙᴏᴛ ᴘʀᴇᴍɪᴜᴍ ࿈ᣄ <emoji id=6142927453854632687>🚬</emoji></b></blockquote>"""
         await message.reply(_ping)
@@ -155,7 +154,7 @@ async def _(client, message):
 <emoji id=5897741587835786345>🔥</emoji> **✦҈͜͡➳ Master :**
 <code>{client.me.mention}</code>
 
-<emoji id=5900145373657176313>😂</emoji> **✦҈͜͡➳ Bot :**
+<emoji id=5900145373657176313></emoji> **✦҈͜͡➳ Bot :**
 <code>{bot.me.mention}</code></blockquote>
 
 <blockquote><b><emoji id=6142927453854632687>🚬</emoji> ᣃ࿈ ᴜsᴇʀʙᴏᴛ ᴘʀᴇᴍɪᴜᴍ ࿈ᣄ <emoji id=6142927453854632687>🚬</emoji></b></blockquote>"""
@@ -171,7 +170,7 @@ async def _(client, message):
 <emoji id=5897741587835786345>🔥</emoji> **✦҈͜͡➳ Master :**
 <code>{client.me.mention}</code>
 
-<emoji id=5900145373657176313>😂</emoji> **✦҈͜͡➳ Bot :**
+<emoji id=5900145373657176313></emoji> **✦҈͜͡➳ Bot :**
 <code>{bot.me.mention}</code></blockquote>
 
 <blockquote><b><emoji id=6142927453854632687>🚬</emoji> ᣃ࿈ ᴜsᴇʀʙᴏᴛ ᴘʀᴇᴍɪᴜᴍ ࿈ᣄ <emoji id=6142927453854632687>🚬</emoji></b></blockquote>"""
@@ -192,36 +191,36 @@ async def _(client, message):
     ngentod = await STR.OWNER(client)
     kontol = await STR.UBOT(client)
     devs = await STR.DEVS(client)  
-    xx = await message.edit("▩▩▩▩▩<emoji id=6332421827565982132>😎</emoji>")
+    xx = await message.edit("▩▩▩▩▩<emoji id=6332421827565982132></emoji>")
     await asyncio.sleep(0.3)
-    await xx.edit("▩▩▩▩■<emoji id=6332421827565982132>😎</emoji>")
+    await xx.edit("▩▩▩▩■<emoji id=6332421827565982132></emoji>")
     await asyncio.sleep(0.3)
-    await xx.edit("▩▩▩■■<emoji id=6332421827565982132>😎</emoji>")
+    await xx.edit("▩▩▩■■<emoji id=6332421827565982132></emoji>")
     await asyncio.sleep(0.3)
-    await xx.edit("▩▩■■■<emoji id=6332421827565982132>😎</emoji>")
+    await xx.edit("▩▩■■■<emoji id=6332421827565982132></emoji>")
     await asyncio.sleep(0.3)
-    await xx.edit("▩■■■■<emoji id=6332421827565982132>😎</emoji>")
+    await xx.edit("▩■■■■<emoji id=6332421827565982132></emoji>")
     await asyncio.sleep(0.3)
-    await xx.edit("■■■■■<emoji id=6332421827565982132>😎</emoji>")
+    await xx.edit("■■■■■<emoji id=6332421827565982132></emoji>")
     await asyncio.sleep(0.3)
-    await xx.edit("<emoji id=6332421827565982132>😎</emoji>")
+    await xx.edit("<emoji id=6332421827565982132></emoji>")
     await asyncio.sleep(0.5)
     babi = client.me.is_premium
     if babi:
         _ping = f"""
-<emoji id=5334738840676475461>😎</emoji> ᴘɪɴɢ : {str(delta_ping_formatted).replace('.', ',')} ms
-⎆ <emoji id=6332068553620982747>😎</emoji> ᴜᴘᴛɪᴍᴇ : {uptime}
-⎆ <emoji id=5420328446439992370>😎</emoji> ᴋɪɴɢ : <code>{client.me.mention}</code>
-⎆ <emoji id=5352784961814405440>😎</emoji> ᴡᴀʀʀɪᴏʀ : <code>{bot.me.mention}</code></blockquote>
+<emoji id=5334738840676475461></emoji> ᴘɪɴɢ : {str(delta_ping_formatted).replace('.', ',')} ms
+⎆ <emoji id=6332068553620982747></emoji> ᴜᴘᴛɪᴍᴇ : {uptime}
+⎆ <emoji id=5420328446439992370></emoji> ᴋɪɴɢ : <code>{client.me.mention}</code>
+⎆ <emoji id=5352784961814405440></emoji> ᴡᴀʀʀɪᴏʀ : <code>{bot.me.mention}</code></blockquote>
 
 <blockquote><b><emoji id=5400297831367979161>🗡</emoji> ᣃ࿈ ᴜsᴇʀʙᴏᴛ ᴘʀᴇᴍɪᴜᴍ ࿈ᣄ <emoji id=5400297831367979161>🗡</emoji></b></blockquote>"""
         await message.reply(_ping)
     else:
         _ping = f"""
-<blockquote>⎆ <emoji id=6332421827565982132>😎</emoji> ᴘɪɴɢ : {str(delta_ping_formatted).replace('.', ',')} ms
-⎆ <emoji id=5080277662069425163>😎</emoji> ᴜᴘᴛɪᴍᴇ : {uptime}
-⎆ <emoji id=5080240441882838117>😎</emoji> ᴋɪɴɢ : <code>{client.me.mention}</code>
-⎆ <emoji id=5071138963800982678>😎</emoji> ᴡᴀʀʀɪᴏʀ : <code>{bot.me.mention}</code></blockquote>
+<blockquote>⎆ <emoji id=6332421827565982132></emoji> ᴘɪɴɢ : {str(delta_ping_formatted).replace('.', ',')} ms
+⎆ <emoji id=5080277662069425163></emoji> ᴜᴘᴛɪᴍᴇ : {uptime}
+⎆ <emoji id=5080240441882838117></emoji> ᴋɪɴɢ : <code>{client.me.mention}</code>
+⎆ <emoji id=5071138963800982678></emoji> ᴡᴀʀʀɪᴏʀ : <code>{bot.me.mention}</code></blockquote>
 
 <blockquote><b><emoji id=5400297831367979161>🗡</emoji> ᣃ࿈ ᴜsᴇʀʙᴏᴛ ᴘʀᴇᴍɪᴜᴍ ࿈ᣄ <emoji id=5400297831367979161>🗡</emoji></b></blockquote>"""
         await message.reply(_ping)

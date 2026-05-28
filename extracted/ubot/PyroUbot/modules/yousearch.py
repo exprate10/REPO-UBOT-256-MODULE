@@ -7,9 +7,9 @@ from pyrogram.types import Message
 
 __MODULE__ = "yousearch Ai"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk yousearch-ai
+<blockquote><b><b>yousearch-ai</b>
 
-perintah : <code>{0}yousearch</code>
+<b>Perintah:</b> <code>{0}yousearch</code>
     yousearch adalah ai yang menjawab pertanyaan mu lebih lengkap dari ai biasanya</b></blockquote>
 """
 
@@ -22,10 +22,10 @@ async def Boysz_gpt(client, message):
 
         if len(message.command) < 2:
             await message.reply_text(
-                "<emoji id=5019523782004441717>❌</emoji>mohon gunakan format\ncontoh : .yousearch query"
+                "<emoji id=5019523782004441717>⌭</emoji>tolong gunakan format\ncontoh : .yousearch query"
             )
         else:
-            prs = await message.reply_text(f"<emoji id=5319230516929502602>🔍</emoji>proccesing....")
+            prs = await message.reply_text(f"<emoji id=5319230516929502602>⌖</emoji>proccesing....")
             a = message.text.split(' ', 1)[1]
             response = requests.get(f'https://api.siputzx.my.id/api/ai/yousearch?text={a}')
 

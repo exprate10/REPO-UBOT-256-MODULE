@@ -25,7 +25,7 @@ async def _(client, message):
 @PY.TOP_CMD
 @PY.PRIVATE
 async def _(client, message):
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     sks = await EMO.BERHASIL(client)
     prs = await EMO.PROSES(client)
     txt = await message.reply(f"{prs}<b>sᴇᴅᴀɴɢ ᴍᴇᴍᴘʀᴏsᴇs...</b>")
@@ -43,7 +43,7 @@ async def _(client, message):
 @PY.TOP_CMD
 @PY.PRIVATE
 async def _(client, message):
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     sks = await EMO.BERHASIL(client)
     prs = await EMO.PROSES(client)
     txt = await message.reply(f"<b>{prs}sᴇᴅᴀɴɢ ᴍᴇᴍᴘʀᴏsᴇs...</b>")
@@ -68,7 +68,7 @@ async def _(client, message):
 @PY.TOP_CMD
 @PY.PRIVATE
 async def _(client, message):
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     sks = await EMO.BERHASIL(client)
     prs = await EMO.PROSES(client)
     txt = await message.reply(f"<b>{prs}ᴛᴜɴɢɢᴜ sᴇʙᴇɴᴛᴀʀ..</b>")
@@ -93,11 +93,11 @@ async def _(client, message):
 async def _(client, message):
     vars = await all_vars(client.me.id, "PVT_FILTERS")
     if vars:
-        msg = "<emoji id=5411165185253592513>📝</emoji> ᴅᴀғᴛᴀʀ ғɪʟᴛᴇʀs\n"
+        msg = "<emoji id=5411165185253592513>◆</emoji> ᴅᴀғᴛᴀʀ ғɪʟᴛᴇʀs\n"
         for x in vars.keys():
             msg += f"├<emoji id=5316946234278169031>⏩</emoji> {x}\n"
         msg += f" ⤿ ᴛᴏᴛᴀʟ ғɪʟᴛᴇʀs: {len(vars)}"
     else:
-        msg = "<emoji id=6114014038960638990>❌</emoji> ᴛɪᴅᴀᴋ ᴀᴅᴀ ғɪʟᴛᴇʀs ʏᴀɴɢ ᴛᴇʀsɪᴍᴘᴀɴ"
+        msg = "<emoji id=6114014038960638990>⌭</emoji> ᴛɪᴅᴀᴋ ᴀᴅᴀ ғɪʟᴛᴇʀs ʏᴀɴɢ ᴛᴇʀsɪᴍᴘᴀɴ"
 
     return await message.reply(msg, quote=True)

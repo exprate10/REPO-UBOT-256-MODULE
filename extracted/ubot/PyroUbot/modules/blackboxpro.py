@@ -7,9 +7,9 @@ from pyrogram.types import Message
 
 __MODULE__ = "blackboxpro"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk blackboxpro
+<blockquote><b><b>blackboxpro</b>
 
-perintah : <code>{0}blackboxpro</code>
+<b>Perintah:</b> <code>{0}blackboxpro</code>
     dapat membantu Anda dengan berbagai konsep pemprograman dan lebih lengkap dari blackbox biasa</b></blockquote>
 """
 
@@ -22,10 +22,10 @@ async def chat_gpt(client, message):
 
         if len(message.command) < 2:
             await message.reply_text(
-                "<emoji id=5019523782004441717>❌</emoji>mohon gunakan format\ncontoh : .blackboxpro buatkan html untuk menyatakan cinta"
+                "<emoji id=5019523782004441717>⌭</emoji>tolong gunakan format\ncontoh : .blackboxpro buatkan html untuk menyatakan cinta"
             )
         else:
-            prs = await message.reply_text(f"<emoji id=5202216593966244027>👨‍💻</emoji>proses coding....")
+            prs = await message.reply_text(f"<emoji id=5202216593966244027>👨‍◍</emoji>proses coding....")
             a = message.text.split(' ', 1)[1]
             response = requests.get(f'https://api.siputzx.my.id/api/ai/blackboxai-pro?content={a}')
 

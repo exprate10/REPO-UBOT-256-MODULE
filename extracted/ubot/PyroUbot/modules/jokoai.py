@@ -7,9 +7,9 @@ from pyrogram.types import Message
 
 __MODULE__ = "ᴊᴏᴋᴏ ᴀɪ"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk joko-ai
+<blockquote><b><b>joko-ai</b>
 
-perintah : <code>{0}joko</code>
+<b>Perintah:</b> <code>{0}joko</code>
     Ai unik yang berbahasa jawa</b></blockquote>
 """
 
@@ -22,10 +22,10 @@ async def Boysz_gpt(client, message):
 
         if len(message.command) < 2:
             await message.reply_text(
-                "<emoji id=5019523782004441717>❌</emoji>mohon gunakan format\ncontoh : .joko query"
+                "<emoji id=5019523782004441717>⌭</emoji>tolong gunakan format\ncontoh : .joko query"
             )
         else:
-            prs = await message.reply_text(f"<emoji id=5319230516929502602>🔍</emoji>proccesing kingz....")
+            prs = await message.reply_text(f"<emoji id=5319230516929502602>⌖</emoji>proccesing kingz....")
             a = message.text.split(' ', 1)[1]
             response = requests.get(f'https://api.siputzx.my.id/api/ai/joko?content={a}')
 
@@ -49,10 +49,10 @@ async def Boysz_gpt(client, message):
 
         if len(message.command) < 2:
             await message.reply_text(
-                "<emoji id=5019523782004441717>❌</emoji>mohon gunakan format\ncontoh : .joko query"
+                "<emoji id=5019523782004441717>⌭</emoji>tolong gunakan format\ncontoh : .joko query"
             )
         else:
-            prs = await message.reply_text(f"<emoji id=5319230516929502602>🔍</emoji>proccesing kingz....")
+            prs = await message.reply_text(f"<emoji id=5319230516929502602>⌖</emoji>proccesing kingz....")
             a = message.text.split(' ', 1)[1]
             response = requests.get(f'https://api.siputzx.my.id/api/ai/joko?content={a}')
 

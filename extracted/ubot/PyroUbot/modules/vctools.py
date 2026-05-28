@@ -1,11 +1,11 @@
 __MODULE__ = "ᴠᴄᴛᴏᴏʟꜱ"
 __HELP__ = """
-<blockquote>Bantuan Untuk VcTools
+<blockquote><b>VcTools</b>
 
-perintah : <code>{0}jvc</code>
+<b>Perintah:</b> <code>{0}jvc</code>
     untuk bergabung ke voice chat group
 
-perintah : <code>{0}lvc</code>
+<b>Perintah:</b> <code>{0}lvc</code>
     untuk meninggalkan dari voice chat group
 """
 
@@ -35,7 +35,7 @@ from PyroUbot import *
 @PY.GROUP
 async def leave_vc(client, message):
     brhsl = await EMO.BERHASIL(client)
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     prs = await EMO.PROSES(client)
     try:
         mex = await message.reply(f"{prs}proccesing...")
@@ -53,7 +53,7 @@ async def leave_vc(client, message):
 @PY.GROUP
 async def join_vc(client, message):
     brhsl = await EMO.BERHASIL(client)
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     prs = await EMO.PROSES(client)
     try:
         mex = await message.reply(f"{prs}proccesing...")

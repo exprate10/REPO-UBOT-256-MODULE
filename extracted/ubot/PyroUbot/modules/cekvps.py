@@ -5,9 +5,9 @@ from PyroUbot import *
 
 __MODULE__ = "ᴠᴘꜱ ɪɴꜰᴏ"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk VPS Info</b>
+<blockquote><b><b>VPS Info</b></b>
 
-Perintah:
+<b>Perintah:</b>
 <code>{0}vpsinfo</code> → Cek spesifikasi dan penggunaan server.</blockquote></b>
 """
 
@@ -22,7 +22,7 @@ def get_size(bytes, suffix="B"):
 @PY.TOP_CMD
 async def _(client, message):
     # Pesan loading
-    status_msg = await message.reply_text("<blockquote><b>🔍 Sedang mengambil data server...</b></blockquote>")
+    status_msg = await message.reply_text("<blockquote><b>⌖ Sedang mengambil data server...</b></blockquote>")
     
     # Logika mengambil data sistem
     uname = platform.uname()
@@ -44,13 +44,13 @@ async def _(client, message):
             continue
 
     hasil = (
-        f"<blockquote><b>🖥️ SPESIFIKASI VPS</b>\n\n"
-        f"<b>⚙️ OS:</b> <code>{uname.system} {uname.release}</code>\n"
-        f"<b>⏰ Uptime:</b> <code>{bt.day}/{bt.month}/{bt.year}</code>\n\n"
-        f"<b>🧠 CPU:</b> <code>{psutil.cpu_count(logical=True)} Core ({psutil.cpu_percentage()}%)</code>\n"
+        f"<blockquote><b>◍ SPESIFIKASI VPS</b>\n\n"
+        f"<b>⌘ OS:</b> <code>{uname.system} {uname.release}</code>\n"
+        f"<b>◷ Uptime:</b> <code>{bt.day}/{bt.month}/{bt.year}</code>\n\n"
+        f"<b>◈ CPU:</b> <code>{psutil.cpu_count(logical=True)} Core ({psutil.cpu_percentage()}%)</code>\n"
         f"<b>💾 RAM:</b> <code>{get_size(svmem.used)} / {get_size(svmem.total)} ({svmem.percent}%)</code>\n"
         f"{disk_info}\n"
-        f"<b>💡 ARAHAN:</b>\n"
+        f"<b>✦ ARAHAN:</b>\n"
         f"<i>Jika RAM di atas 90%, segera restart bot atau bersihkan cache server agar tidak terjadi error.</i></blockquote>"
     )
     

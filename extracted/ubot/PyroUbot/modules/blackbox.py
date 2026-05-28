@@ -7,9 +7,8 @@ from pyrogram.types import Message
 
 __MODULE__ = "ʙʟᴀᴄᴋʙᴏx ᴀɪ"
 __HELP__ = """
-<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ʙʟᴀᴄᴋʙᴏx ᴀɪ ⦫</b>
-
-<blockquote><b>⎆ perintah :
+<b>⦪ 
+<blockquote><b>⎆ <b>Perintah:</b>
 ᚗ <code>{0}blackbox</code>
 ⊷ dapat membantu Anda dengan berbagai konsep pemrograman</b></blockquote>
 """
@@ -23,10 +22,10 @@ async def chat_gpt(client, message):
 
         if len(message.command) < 2:
             await message.reply_text(
-                "<emoji id=5019523782004441717>❌</emoji>mohon gunakan format\ncontoh : .blackbox query"
+                "<emoji id=5019523782004441717>⌭</emoji>tolong gunakan format\ncontoh : .blackbox query"
             )
         else:
-            prs = await message.reply_text(f"<emoji id=6226405134004389590>🔍</emoji>proccesing....")
+            prs = await message.reply_text(f"<emoji id=6226405134004389590>⌖</emoji>proccesing....")
             a = message.text.split(' ', 1)[1]
             response = requests.get(f'https://api.botcahx.eu.org/api/search/blackbox-chat?text={a}&apikey=bEcJ8rQU')
 

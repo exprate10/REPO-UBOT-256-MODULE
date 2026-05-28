@@ -5,9 +5,8 @@ from PyroUbot import *
 
 __MODULE__ = "ʙᴏᴋᴇx ʙɪᴀsᴇ"
 __HELP__ = """
-<b>✮ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ʙᴏᴋᴇx ʙɪᴀsᴇ ✮</b>
-
-<blockquote><b>perintah :
+<b>✮ 
+<blockquote><b><b>Perintah:</b>
 <code>{0}bokep</code>
 fitur bokep ya</b></blockquote>
 """

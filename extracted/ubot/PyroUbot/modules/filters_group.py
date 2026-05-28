@@ -2,20 +2,19 @@ from PyroUbot import *
 
 __MODULE__ = "ғɪʟᴛᴇʀ"
 __HELP__ = """
-<blockquote><b>『 ʙᴀɴᴛᴜᴀɴ ғɪʟᴛᴇʀs 』</b>
-
+<blockquote><b>『 
 <b>ɴᴏᴛᴇs: ᴛʜɪs ɪs ᴏɴʟʏ ᴘʀɪᴠᴀᴛᴇ ᴄʜᴀᴛ</b>
 
-<b>⌲ ᴘᴇʀɪɴᴛᴀʜ:</b> <code>{0}pfilter</code> ᴏʀ <code>{0}filter</code>
+<b>⌲ <b>Perintah:</b></b> <code>{0}pfilter</code> ᴏʀ <code>{0}filter</code>
    <code>ᴍᴇɴɢᴀᴋᴛɪғᴋᴀɴ ᴀᴛᴀᴜ ᴍᴇɴᴏɴᴀᴋᴛɪғᴋᴀɴ ғɪʟᴛᴇʀs ᴘʀɪᴠᴀᴛᴇ ᴏʀ ɢʀᴏᴜᴘ</code>
 
-<b>⌲ ᴘᴇʀɪɴᴛᴀʜ:</b> <code>{0}paddfilter</code> ᴏʀ <code>{0}addfilter</code>
+<b>⌲ <b>Perintah:</b></b> <code>{0}paddfilter</code> ᴏʀ <code>{0}addfilter</code>
    <code>ᴜɴᴛᴜᴋ ᴍᴇɴᴀᴍʙᴀʜᴋᴀɴ ғɪʟᴛᴇʀs ᴋᴇ ᴅᴀᴛᴀʙᴀsᴇ</code>
 
-<b>⌲ ᴘᴇʀɪɴᴛᴀʜ:</b> <code>{0}pdelfilter</code> ᴏʀ <code>{0}delfilter</code>
+<b>⌲ <b>Perintah:</b></b> <code>{0}pdelfilter</code> ᴏʀ <code>{0}delfilter</code>
    <code>ᴜɴᴛᴜᴋ ᴍᴇɴɢʜᴀᴘᴜs ғɪʟᴛᴇʀs ᴅᴀʀɪ ᴅᴀᴛᴀʙᴀsᴇ</b>
 
-<b>⌲ ᴘᴇʀɪɴᴛᴀʜ:</b> <code>{0}pfilters</code> ᴏʀ <code>{0}filters</code>
+<b>⌲ <b>Perintah:</b></b> <code>{0}pfilters</code> ᴏʀ <code>{0}filters</code>
    <code>ᴜɴᴛᴜᴋ ᴍᴇɴᴅᴀᴘᴀᴛᴋᴀɴ sᴇᴍᴜᴀ ᴅᴀғᴛᴀʀ ғɪʟᴛᴇʀs</code>
 
 <b>ɴᴏᴛᴇs</b> : <b>ᴘ ᴜɴᴛᴜᴋ ᴄʜᴀᴛ ᴘʀɪᴠᴀᴛᴇ ᴅᴀɴ sᴇʙᴀʟɪᴋɴʏᴀ</b></blockquote>
@@ -37,7 +36,7 @@ async def _(client, message):
 @PY.TOP_CMD
 @PY.GROUP
 async def _(client, message):
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     sks = await EMO.BERHASIL(client)
     prs = await EMO.PROSES(client)
     txt = await message.reply(f"{prs}<b>sᴇᴅᴀɴɢ ᴍᴇᴍᴘʀᴏsᴇs...</b>")
@@ -55,7 +54,7 @@ async def _(client, message):
 @PY.TOP_CMD
 @PY.GROUP
 async def _(client, message):
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     sks = await EMO.BERHASIL(client)
     prs = await EMO.PROSES(client)
     txt = await message.reply(f"<b>{prs}sᴇᴅᴀɴɢ ᴍᴇᴍᴘʀᴏsᴇs...</b>")
@@ -80,7 +79,7 @@ async def _(client, message):
 @PY.TOP_CMD
 @PY.GROUP
 async def _(client, message):
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     sks = await EMO.BERHASIL(client)
     prs = await EMO.PROSES(client)
     txt = await message.reply(f"<b>{prs}ᴛᴜɴɢɢᴜ sᴇʙᴇɴᴛᴀʀ..</b>")
@@ -106,11 +105,11 @@ async def _(client, message):
 async def _(client, message):
     vars = await all_vars(client.me.id, "FILTERS")
     if vars:
-        msg = "<emoji id=5411165185253592513>📝</emoji> ᴅᴀғᴛᴀʀ ғɪʟᴛᴇʀs\n"
+        msg = "<emoji id=5411165185253592513>◆</emoji> ᴅᴀғᴛᴀʀ ғɪʟᴛᴇʀs\n"
         for x in vars.keys():
             msg += f"├<emoji id=5316946234278169031>⏩</emoji> {x}\n"
         msg += f" ⤿ ᴛᴏᴛᴀʟ ғɪʟᴛᴇʀs: {len(vars)}"
     else:
-        msg = "<emoji id=6114014038960638990>❌</emoji> ᴛɪᴅᴀᴋ ᴀᴅᴀ ғɪʟᴛᴇʀs ʏᴀɴɢ ᴛᴇʀsɪᴍᴘᴀɴ"
+        msg = "<emoji id=6114014038960638990>⌭</emoji> ᴛɪᴅᴀᴋ ᴀᴅᴀ ғɪʟᴛᴇʀs ʏᴀɴɢ ᴛᴇʀsɪᴍᴘᴀɴ"
 
     return await message.reply(msg, quote=True)

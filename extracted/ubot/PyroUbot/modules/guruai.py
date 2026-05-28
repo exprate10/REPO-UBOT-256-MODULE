@@ -7,9 +7,9 @@ from pyrogram.types import Message
 
 __MODULE__ = "ɢᴜʀᴜ ᴀɪ"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk Guru Ai
+<blockquote><b><b>Guru Ai</b>
 
-perintah : <code>{0}guruai</code>
+<b>Perintah:</b> <code>{0}guruai</code>
     untuk bertanya tentang apa yang kamu tidak ketahui</b></blockquote>
 """
 
@@ -21,10 +21,10 @@ async def chat_gpt(client, message):
 
         if len(message.command) < 2:
             await message.reply_text(
-                "<blockquote><b><emoji id=5019523782004441717>❌</emoji>harus bertanya apa yang kamu tidak ketahui</b></blockquote>"
+                "<blockquote><b><emoji id=5019523782004441717>⌭</emoji>harus bertanya apa yang kamu tidak ketahui</b></blockquote>"
             )
         else:
-            prs = await message.reply_text(f"<blockquote><b><emoji id=6050660020054398110>🤔</emoji>Oke tunggu sebentar murid²....</b></blockquote>")
+            prs = await message.reply_text(f"<blockquote><b><emoji id=6050660020054398110></emoji>Oke tunggu sebentar murid²....</b></blockquote>")
             hai = message.text.split(' ', 1)[1]
             response = requests.get(f'https://fastrestapis.fasturl.cloud/aillm/degreeguru?ask={hai}')
 

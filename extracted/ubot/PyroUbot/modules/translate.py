@@ -10,15 +10,15 @@ from PyroUbot import *
 
 __MODULE__ = "ᴛʀᴀɴꜱʟᴀᴛᴇ"
 __HELP__ = """
-<blockquote>Bantuan Untuk Translate
+<blockquote><b>Translate</b>
 
-perintah : <code>{0}tr</code>
+<b>Perintah:</b> <code>{0}tr</code>
     menerjemahkan pesan/text
 
-perintah : <code>{0}tts</code>
+<b>Perintah:</b> <code>{0}tts</code>
      merubah text menjadi pesan suara sesui bahasa
 
-perintah : <code>{0}setlang</code>
+<b>Perintah:</b> <code>{0}setlang</code>
     merubah bahasa translate</blockquote>
 """
 
@@ -26,7 +26,7 @@ perintah : <code>{0}setlang</code>
 @PY.UBOT("tts")
 @PY.TOP_CMD
 async def _(client, message):
-    TM = await message.reply("<blockquote><b>silahkan tunggu</b></blockquote>")
+    TM = await message.reply("<blockquote><b>tunggu bentar ya</b></blockquote>")
     if message.reply_to_message:
         language = client._translate[client.me.id]
         words_to_say = message.reply_to_message.text or message.reply_to_message.caption
@@ -58,7 +58,7 @@ async def _(client, message):
 @PY.TOP_CMD
 async def _(client, message):
     trans = Translator()
-    TM = await message.reply("<blockquote><b>silahkan tunggu</b></blockquote>")
+    TM = await message.reply("<blockquote><b>tunggu bentar ya</b></blockquote>")
     if message.reply_to_message:
         dest = client._translate[client.me.id]
         to_translate = message.reply_to_message.text or message.reply_to_message.caption
@@ -109,7 +109,7 @@ async def _(client, inline_query):
                     title="get bahasa!",
                     reply_markup=buttons,
                     input_message_content=InputTextMessageContent(
-                        "silahkan pilih bahasa translate"
+                        "langsung aja pilih bahasa translate"
                     ),
                 )
             )

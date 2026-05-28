@@ -7,9 +7,9 @@ from pyrogram.types import Message
 
 __MODULE__ = "𝙱𝙰𝚁𝙳 𝙰𝙸"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk bard-ai
+<blockquote><b><b>bard-ai</b>
 
-perintah : <code>{0}bard</code>
+<b>Perintah:</b> <code>{0}bard</code>
     dapat menulis cerita, puisi, skrip, kode komputer, musik, email, surat, dll</b></blockquote>
 """
 
@@ -22,10 +22,10 @@ async def chat_gpt(client, message):
 
         if len(message.command) < 2:
             await message.reply_text(
-                "<emoji id=5019523782004441717>❌</emoji>mohon gunakan format\ncontoh : .bard query"
+                "<emoji id=5019523782004441717>⌭</emoji>tolong gunakan format\ncontoh : .bard query"
             )
         else:
-            prs = await message.reply_text(f"<emoji id=5319230516929502602>🔍</emoji>proccesing....")
+            prs = await message.reply_text(f"<emoji id=5319230516929502602>⌖</emoji>proccesing....")
             a = message.text.split(' ', 1)[1]
             response = requests.get(f'https://api.botcahx.eu.org/api/search/bard-ai?text={a}&apikey=bEcJ8rQU')
 

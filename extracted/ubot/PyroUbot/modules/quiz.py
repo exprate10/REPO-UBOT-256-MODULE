@@ -7,7 +7,7 @@ __MODULE__ = "Quick Quiz"
 __HELP__ = """
 <blockquote><b>『 QUICK QUIZ 』</b>
 
-<b>Perintah:</b>
+<b><b>Perintah:</b></b>
 • <code>.quiz</code> → mulai quiz
 • <code>.quizskor</code> → lihat skor
 
@@ -40,7 +40,7 @@ async def quiz(_, message):
     GAME[chat_id] = soal
 
     await message.reply_text(
-        f"""🎯 <b>QUICK QUIZ</b>
+        f"""◈ <b>QUICK QUIZ</b>
 
 ❓ Pertanyaan:
 <b>{soal['q']}</b>
@@ -69,10 +69,10 @@ async def autoquiz(_, message):
         del GAME[chat_id]
 
         await message.reply_text(
-            f"""✅ <b>BENAR!</b>
+            f"""⌬ <b>BENAR!</b>
 
-👤 <b>{user.first_name}</b>
-🏆 Skor: <b>{SCORE[uid]}</b> poin
+◉ <b>{user.first_name}</b>
+✧ Skor: <b>{SCORE[uid]}</b> poin
 """
         )
 
@@ -83,7 +83,7 @@ async def skor(_, message):
     if not SCORE:
         return await message.reply_text("📭 Belum ada skor")
 
-    text = "🏆 <b>SKOR QUICK QUIZ</b>\n\n"
+    text = "✧ <b>SKOR QUICK QUIZ</b>\n\n"
     for uid, sc in SCORE.items():
         text += f"• <code>{uid}</code> : <b>{sc}</b> poin\n"
 

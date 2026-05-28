@@ -10,18 +10,18 @@ from PyroUbot import *
 
 __MODULE__ = "ɢʟᴏʙᴀʟ"
 __HELP__ = """
-<blockquote>Bantuan Untuk Global
+<blockquote><b>Global</b>
 
-perintah : <code>{0}gban</code>
+<b>Perintah:</b> <code>{0}gban</code>
     banned user dari semua group chat 
 
-perintah : <code>{0}ungban</code>
+<b>Perintah:</b> <code>{0}ungban</code>
     unbanned user dari semua group chat
 
-perintah : <code>{0}gmute</code>
+<b>Perintah:</b> <code>{0}gmute</code>
     untuk mengemute user dari semua gc yg kmu admin 
 
-perintah : <code>{0}ungmute</code>
+<b>Perintah:</b> <code>{0}ungmute</code>
     untuk meng ungmute user dari semua gc yg kmu admin</blockquote> 
 """
 
@@ -32,13 +32,13 @@ perintah : <code>{0}ungmute</code>
 async def _(client, message):
     sks = await EMO.BERHASIL(client)
     prs = await EMO.PROSES(client)
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     user_id = await extract_user(message)
-    _msg = f"{prs}proceꜱꜱing..."
+    _msg = f"{prs}sebentar ya..."
 
     Tm = await message.reply(_msg)
     if not user_id:
-        return await Tm.edit(f"{ggl}user tidak ditemukan")
+        return await Tm.edit(f"{ggl}user ga ketemu")
     try:
         user = await client.get_users(user_id)
     except Exception as error:
@@ -49,7 +49,7 @@ async def _(client, message):
     global_id = await get_data_id(client, "global")
     for dialog in global_id:
         if user.id == OWNER_ID:
-            return await Tm.edit(f"{ggl}anda tidak bisa gban dia karena dia pembuat saya")
+            return await Tm.edit(f"{ggl}kamu ga bisa gban dia karena dia pembuat saya")
         try:
             await client.ban_chat_member(dialog, user.id)
             done += 1
@@ -70,13 +70,13 @@ async def _(client, message):
 async def _(client, message):
     sks = await EMO.BERHASIL(client)
     prs = await EMO.PROSES(client)
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     user_id = await extract_user(message)
-    _msg = f"{prs}proceꜱꜱing..."
+    _msg = f"{prs}sebentar ya..."
 
     Tm = await message.reply(_msg)
     if not user_id:
-        return await Tm.edit(f"{ggl}user tidak ditemukan")
+        return await Tm.edit(f"{ggl}user ga ketemu")
     try:
         user = await client.get_users(user_id)
     except Exception as error:
@@ -110,13 +110,13 @@ async def _(client, message):
 async def _(client, message):
     sks = await EMO.BERHASIL(client)
     prs = await EMO.PROSES(client)
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     user_id = await extract_user(message)
-    _msg = f"{prs}proceꜱꜱing..."
+    _msg = f"{prs}sebentar ya..."
 
     Tm = await message.reply(_msg)
     if not user_id:
-        return await Tm.edit(f"{ggl}user tidak ditemukan")
+        return await Tm.edit(f"{ggl}user ga ketemu")
     try:
         user = await client.get_users(user_id)
     except Exception as error:
@@ -127,7 +127,7 @@ async def _(client, message):
     global_id = await get_data_id(client, "group")
     for dialog in global_id:
         if user.id == OWNER_ID:
-            return await Tm.edit(f"{ggl}anda tidak bisa gmute dia karena dia pembuat saya")
+            return await Tm.edit(f"{ggl}kamu ga bisa gmute dia karena dia pembuat saya")
         try:
             await client.restrict_chat_member(dialog, user.id, ChatPermissions(can_send_messages=False))
             done += 1
@@ -147,12 +147,12 @@ async def _(client, message):
 async def _(client, message):
     sks = await EMO.BERHASIL(client)
     prs = await EMO.PROSES(client)
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     user_id = await extract_user(message)
-    _msg = f"{prs}proceꜱꜱing..."
+    _msg = f"{prs}sebentar ya..."
     Tm = await message.reply(_msg)
     if not user_id:
-        return await Tm.edit(f"{ggl}user tidak ditemukan")
+        return await Tm.edit(f"{ggl}user ga ketemu")
     try:
         user = await client.get_users(user_id)
     except Exception as error:

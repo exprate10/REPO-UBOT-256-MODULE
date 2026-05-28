@@ -50,9 +50,8 @@ async def truth(client, message):
 
 __MODULE__ = "ᴛʀᴜᴛʜ & ᴅᴀʀᴇ"
 __HELP__ = """
-<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴛʀᴜᴛʜ & ᴅᴀʀᴇ ⦫</b>
-
-<blockquote><b>⎆ perintah :
+<b>⦪ 
+<blockquote><b>⎆ <b>Perintah:</b>
 ᚗ <code>{0}dare</code>
 ⊷ coba aja
 

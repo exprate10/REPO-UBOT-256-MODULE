@@ -3,9 +3,9 @@ from PyroUbot import *
 
 __MODULE__ = "ɢᴏᴏɢʟᴇ"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk Google
+<blockquote><b><b>Google</b>
 
-perintah : <code>{0}google [query]</code>
+<b>Perintah:</b> <code>{0}google [query]</code>
     search google</b></blockquote>
 """
 

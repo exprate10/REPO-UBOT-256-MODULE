@@ -10,9 +10,8 @@ kontol = False
 
 __MODULE__ = "sᴘᴀᴍ ᴅʙ"
 __HELP__ = """
-<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ sᴘᴀᴍ ᴅʙ ⦫</b>
-<blockquote>
-⎆ perintah :
+<b>⦪ <blockquote>
+⎆ <b>Perintah:</b>
 ᚗ <code>{0}spamdb</code> waktu replytext
 ⊶ Memulai spam ke database.
 
@@ -37,7 +36,7 @@ async def _(c, m):
     if not m.reply_to_message:
         return await m.reply("<b>Silakan balas ke pesan !!</b>")
     if len(m.command) != 2:
-        return await m.reply("<b>Silahkan balas ke pesan dan berikan waktu delay.</b>")
+        return await m.reply("<b>langsung aja balas ke pesan dan berikan waktu delay.</b>")
     try:
         interval = int(m.command[1])
     except ValueError:
@@ -77,7 +76,7 @@ async def _(c, m):
     global kontol
     if not kontol:
         return await m.reply_text(
-            "<b>Tidak ada pengiriman spam yang sedang berlangsung.</b>"
+            "<b>ga ada pengiriman spam yang sedang berlangsung.</b>"
         )
     chat_ids = monggo.ambil_spdb(c.me.id)
     for chat_id in chat_ids:
@@ -106,7 +105,7 @@ async def _(c, m):
 async def _(c, m):
     user_id = c.me.id
     chat_id = m.command[1] if len(m.command) > 1 else m.chat.id
-    mmk = await m.reply("<b>Processing...</b>")
+    mmk = await m.reply("<b>sebentar ya...</b>")
     if m.command[0] == "addspm":
         monggo.tambah_spdb(user_id, chat_id)
         return await mmk.edit(

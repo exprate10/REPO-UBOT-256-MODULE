@@ -6,9 +6,8 @@ import requests
 
 __MODULE__ = "ʙʀᴀᴛ"
 __HELP__ = """
-<blockquote><b>『 ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ brat 』</b>
-
-  <b>• ᴘᴇʀɪɴᴛᴀʜ:</b> <code>{0}brat [text]</code>
+<blockquote><b>『 
+  <b>• <b>Perintah:</b></b> <code>{0}brat [text]</code>
   <b>• ᴘᴇɴᴊᴇʟᴀsᴀɴ:</b> Untuk Membuat Gambar Text Seperti Tren Tiktok</b></blockquote>
 """
 
@@ -37,7 +36,7 @@ async def _(client, message):
         return
 
     request_text = args[1]
-    await message.reply_text("Sedang memproses, mohon tunggu...")
+    await message.reply_text("Sedang memproses, tolong tunggu...")
 
     image_content = get_brat_image(request_text)
     if image_content:
@@ -49,7 +48,7 @@ async def _(client, message):
         
         os.remove(temp_file)
     else:
-        await message.reply_text("Gagal membuat gambar. Coba lagi nanti.")
+        await message.reply_text("gagal membuat gambar. Coba lagi nanti.")
 
 
 @PY.BOT("brat")
@@ -60,7 +59,7 @@ async def _(client, message):
         return
 
     request_text = args[1]
-    await message.reply_text("Sedang memproses, mohon tunggu...")
+    await message.reply_text("Sedang memproses, tolong tunggu...")
 
     image_content = get_brat_image(request_text)
     if image_content:
@@ -72,4 +71,4 @@ async def _(client, message):
         
         os.remove(temp_file)
     else:
-        await message.reply_text("Gagal membuat gambar. Coba lagi nanti.")
+        await message.reply_text("gagal membuat gambar. Coba lagi nanti.")

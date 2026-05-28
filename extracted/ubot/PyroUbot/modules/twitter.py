@@ -5,9 +5,8 @@ from PyroUbot import *
 
 __MODULE__ = "ᴛᴡɪᴛᴛᴇʀ"
 __HELP__ = """
-<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴛᴡɪᴛᴛᴇʀ ⦫</b>
-<blockquote><b>
-⎆ Perintah :
+<b>⦪ <blockquote><b>
+⎆ <b>Perintah:</b>
 ᚗ <code>{0}twit</code> link video twitter
 ⊶ Mendownload Music Yang Di Inginkan.</b></blockquote>
 """
@@ -40,4 +39,4 @@ async def twitter_download(client, message):
         await msg.edit("Mengirim video...")
         await message.reply_video(video_url, caption="Berikut video yang Anda minta.")
     else:
-        await msg.edit("Gagal mengambil video. Pastikan link benar atau coba lagi nanti.")
+        await msg.edit("gagal mengambil video. Pastikan link benar atau coba lagi nanti.")

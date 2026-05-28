@@ -7,8 +7,7 @@ from pyrogram.types import Message
 
 __MODULE__ = "ᴇɴᴄ ʙᴀsᴇ64"
 __HELP__ = """
-<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴇɴᴄ ʙᴀsᴇ64 ⦫</b>
-<blockquote>⎆ perintah :
+<b>⦪ <blockquote>⎆ <b>Perintah:</b>
 ᚗ <code>{0}enc64</code> code
 ⊶ untuk encode base64.
 </blockquote>
@@ -22,7 +21,7 @@ async def chat_gpt(client, message):
 
         if len(message.command) < 2:
             await message.reply_text(
-                "<emoji id=5019523782004441717>❌</emoji>mohon gunakan format\ncontoh : .enc64 [code]"
+                "<emoji id=5019523782004441717>⌭</emoji>tolong gunakan format\ncontoh : .enc64 [code]"
             )
         else:
             prs = await message.reply_text(f"<emoji id=6298414727487818323>😉</emoji>proccesing encode base64....")

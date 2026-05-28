@@ -6,9 +6,9 @@ from PyroUbot import *
 
 __MODULE__ = "ɪɴᴠɪᴛᴇ"
 __HELP__ = """
-<blockquote>Bantuan Untuk Invite
+<blockquote><b>Invite</b>
 
-perintah : <code>{0}invite</code> [username]
+<b>Perintah:</b> <code>{0}invite</code> [username]
     mengundang anggota ke group</blockquote>
 """
 
@@ -34,7 +34,7 @@ async def _(client, message):
         await client.add_chat_members(message.chat.id, user_list, forward_limit=100)
     except Exception as e:
         return await mg.edit(f"{e}")
-    await mg.edit(f"{brhsl}berhasil ditambahkan {len(user_list)} ke grup ini")
+    await mg.edit(f"{brhsl}berhasil ditambah {len(user_list)} ke grup ini")
 
 
 
@@ -47,7 +47,7 @@ async def _(client, message):
 # async def _(client, message):
     # prs = await EMO.PROSES(client)
     # brhsl = await EMO.BERHASIL(client)
-    # ggl = await EMO.GAGAL(client)
+    # ggl = await EMO.gagal(client)
     # ktrng = await EMO.BL_KETERANGAN(client)
     # Tm = await message.reply(f"{prs}processing . . .")
     # if len(message.command) < 3:
@@ -59,7 +59,7 @@ async def _(client, message):
         # return await Tm.edit(error)
     # if message.chat.id in invite_id:
         # return await Tm.edit_text(
-            # f"{ktrng}sedang menginvite member silahkan coba lagi nanti atau gunakan perintah : cancel"
+            # f"{ktrng}sedang menginvite member langsung aja coba lagi nanti atau gunakan perintah : cancel"
         # )
     # else:
         # done = 0
@@ -98,7 +98,7 @@ async def _(client, message):
     # brhsl = await EMO.BERHASIL(client)
     # if message.chat.id not in invite_id:
         # return await message.reply_text(
-            # f"sedang tidak ada perintah : inviteall"
+            # f"sedang ga ada perintah : inviteall"
         # )
     # try:
         # invite_id.remove(message.chat.id)

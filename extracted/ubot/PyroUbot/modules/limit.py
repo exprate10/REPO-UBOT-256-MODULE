@@ -1,7 +1,6 @@
 __MODULE__ = "ʟɪᴍɪᴛ"
 __HELP__ = """
-<blockquote><b>♛ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ʟɪᴍɪᴛ ♛<b>
-
-<blockquote><b>perintah : 
+<blockquote><b>♛ 
+<blockquote><b><b>Perintah:</b> 
 <code>{0}limit</code> mengecek status akun apakah terkena limit atau tidak</b></blockquote>
 """

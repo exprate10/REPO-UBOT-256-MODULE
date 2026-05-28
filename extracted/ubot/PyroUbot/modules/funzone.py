@@ -75,7 +75,7 @@ NPC = [
     "Kembali lagi nanti.",
 ]
 
-EMOJIS = ["🔥", "😂", "💀", "😎", "✨", "👀", "💎", "🗿"]
+EMOJIS = ["🔥", "", "💀", "", "✨", "👀", "✧", "🗿"]
 
 # ================= COMMANDS ================= #
 
@@ -85,7 +85,7 @@ async def rate_cmd(client: Client, message):
     if len(teks) < 2:
         return await message.reply("Kasih teks yang mau dinilai.")
     nilai = round(random.uniform(1, 10), 1)
-    await message.reply(f"📊 Rating **{teks[1]}**: **{nilai}/10**")
+    await message.reply(f"◆ Rating **{teks[1]}**: **{nilai}/10**")
 
 @PY.UBOT("ship")
 async def ship_cmd(client: Client, message):
@@ -102,7 +102,7 @@ async def ship_cmd(client: Client, message):
 
 @PY.UBOT("truth")
 async def truth_cmd(client: Client, message):
-    await message.reply("🧠 **TRUTH:**\n" + random.choice(TRUTH))
+    await message.reply("◈ **TRUTH:**\n" + random.choice(TRUTH))
 
 @PY.UBOT("dare")
 async def dare_cmd(client: Client, message):

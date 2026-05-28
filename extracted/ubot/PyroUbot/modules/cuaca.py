@@ -6,9 +6,8 @@ from PyroUbot import *
 
 __MODULE__ = "ᴄᴜᴀᴄᴀ"
 __HELP__ = """
-<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴄᴜᴀᴄᴀ ⦫</b>
-<blockquote>
-⎆ perintah :
+<b>⦪ <blockquote>
+⎆ <b>Perintah:</b>
 ᚗ <code>{0}cuaca</code> nama kota
 ⊶ cek info cuaca di kota kota besar.
 
@@ -17,11 +16,11 @@ __HELP__ = """
 
 @PY.UBOT("cuaca")
 async def cuaca(client, message):
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     sks = await EMO.BERHASIL(client)
     prs = await EMO.PROSES(client)
     
-    jalan = await message.reply(f"{prs} Processing...")
+    jalan = await message.reply(f"{prs} sebentar ya...")
     a = message.text.split(' ', 1)[1]
     chat_id = message.chat.id
     url = f"https://api.botcahx.eu.org/api/tools/cuaca?query={a}&apikey=@31Moire_mor"

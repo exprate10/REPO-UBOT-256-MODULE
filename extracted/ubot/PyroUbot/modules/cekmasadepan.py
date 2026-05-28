@@ -4,9 +4,8 @@ from PyroUbot import *
 
 __MODULE__ = "ᴄᴇᴋ ᴍᴀsᴀ ᴅᴇᴘᴀɴ"
 __HELP__ = """
-<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴄᴇᴋ ᴍᴀsᴀ ᴅᴇᴘᴀɴ ⦫</b>
-
-<blockquote><b>⎆ perintah :
+<b>⦪ 
+<blockquote><b>⎆ <b>Perintah:</b>
 ᚗ <code>{0}cmasadepan</code> reply chat
 ⊷ mendeteksi masa depan seseorang.
 </blockquote></b>
@@ -15,9 +14,9 @@ __HELP__ = """
 
 def emoji(alias):
     emojis = {
-        "DETEK": "<emoji id=6026321200597176575>🃏</emoji>",    
+        "DETEK": "<emoji id=6026321200597176575>◱</emoji>",    
         "SUBJEK": "<emoji id=5215503483318325191>👊</emoji><emoji id=5217914643598557136>👊</emoji>",
-        "KARIR": "<emoji id=5206659381151680254>☀️</emoji>", 
+        "KARIR": "<emoji id=5206659381151680254>✦</emoji>", 
         "JODOH": "<emoji id=5226859896539989141>😘</emoji><emoji id=5204015897500469606>😢</emoji>",
         "WARISAN": "<emoji id=5235457574958023592>💸</emoji>",
         "PASANGAN": "<emoji id=5434008750501415949>🫶</emoji>",
@@ -83,4 +82,4 @@ async def _(client, message):
 """
         await message.reply_text(response)
     else:
-        await message.reply_text("{ggll} **Gagal mendeteksi pengguna...**")
+        await message.reply_text("{ggll} **gagal mendeteksi pengguna...**")

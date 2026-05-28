@@ -29,4 +29,4 @@ async def _(client, message):
 <b>/tiktok - ʙᴇʀɪᴋᴀɴ ʟɪɴᴋ ᴠᴛ/ʟɪɴᴋ ғɪᴅɪᴏ ᴛɪᴋᴛᴏᴋ ᴜɴᴛᴜᴋ ᴅɪ ᴅᴏᴡɴʟᴏᴀᴅ</b></blockquote>
 
 <blockquote><b>ᴏᴡɴᴇʀ ᴜsᴇʀʙᴏᴛ ᴅɪʙᴀᴡᴀʜ sɪɴɪʜ</b>
-<b>ᴏᴡɴᴇʀ ᴜsᴇʀʙᴏᴛ: <a href=https://t.me/Rilesya>ᴏᴡɴᴇʀ ᴜʙᴏᴛ ɪ𝚀ʙᴀʟ ᴘʀᴇᴍɪᴜᴍ</a></b></blockquote>""", reply_markup=InlineKeyboardMarkup(buttons))
+<b>ᴏᴡɴᴇʀ ᴜsᴇʀʙᴏᴛ: <a href=https://t.me/Rilesya>ᴏᴡɴᴇʀ RANZ PEDIA</a></b></blockquote>""", reply_markup=InlineKeyboardMarkup(buttons))

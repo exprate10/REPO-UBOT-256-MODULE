@@ -5,9 +5,9 @@ from pyrogram.types import Message
 
 __MODULE__ = "ᴄᴏɴᴠᴇʀᴛ ᴄᴜʀʀᴇɴᴄʏ"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk Convert Currency</b>
+<blockquote><b><b>Convert Currency</b></b>
 
-Perintah:
+<b>Perintah:</b>
 <code>{0}convert 10000 IDR USD</code> → Mengubah 10.000 IDR ke USD.
 
 Sumber: Menggunakan API Exchange Rate.</blockquote></b>
@@ -21,7 +21,7 @@ async def convert_currency(client: Client, message: Message):
     args = message.text.split()
     
     if len(args) != 4:
-        return await message.reply("❌ Format salah! Gunakan: `/convert [jumlah] [dari] [ke]`.\n\nContoh: `/convert 10000 IDR USD`")
+        return await message.reply("⌭ Format salah! Gunakan: `/convert [jumlah] [dari] [ke]`.\n\nContoh: `/convert 10000 IDR USD`")
 
     try:
         amount = float(args[1])
@@ -33,16 +33,16 @@ async def convert_currency(client: Client, message: Message):
         data = response.json()
 
         if "rates" not in data:
-            return await message.reply("⚠️ Mata uang tidak ditemukan atau tidak didukung!")
+            return await message.reply("⌯ Mata uang ga ketemu atau tidak didukung!")
 
         # Hitung konversi
         if to_currency not in data["rates"]:
-            return await message.reply("⚠️ Mata uang tujuan tidak tersedia!")
+            return await message.reply("⌯ Mata uang tujuan tidak tersedia!")
 
         converted_amount = amount * data["rates"][to_currency]
-        await message.reply(f"💰 **Konversi Mata Uang** 💱\n\n💵 {amount} {from_currency} ≈ **{converted_amount:.2f} {to_currency}**")
+        await message.reply(f"✦ **Konversi Mata Uang** 💱\n\n✦ {amount} {from_currency} ≈ **{converted_amount:.2f} {to_currency}**")
 
     except ValueError:
-        await message.reply("❌ Jumlah harus berupa angka!")
+        await message.reply("⌭ Jumlah harus berupa angka!")
     except Exception as e:
-        await message.reply(f"⚠️ Terjadi kesalahan: {e}")
+        await message.reply(f"⌯ Terjadi kesalahan: {e}")

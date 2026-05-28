@@ -5,9 +5,8 @@ from pyrogram.types import Message
 
 __MODULE__ = "ʀᴇᴍɪɴɪ"
 __HELP__ = """
-<blockquote><b>ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ʜᴅ</b></blockquote>
-
-<blockquote><b>ᴘᴇʀɪɴᴛᴀʜ : <code>{0}ʀᴇᴍɪɴɪ</code> ᴀᴛᴀᴜ <code>{0}ʜᴅ</code>
+<blockquote><b>
+<blockquote><b><b>Perintah:</b> <code>{0}ʀᴇᴍɪɴɪ</code> ᴀᴛᴀᴜ <code>{0}ʜᴅ</code>
     ᴜɴᴛᴜᴋ ᴍᴇɴᴊᴇʀɴɪʜᴋᴀɴ ɢᴀᴍʙᴀʀ (ғᴜʟʟ ᴘʀᴇᴍɪᴜᴍ)</b></blockquote>
 """
 

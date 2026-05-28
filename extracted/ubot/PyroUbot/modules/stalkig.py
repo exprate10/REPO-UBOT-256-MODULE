@@ -8,17 +8,17 @@ __MODULE__ = "ꜱᴛᴀʟᴋɪɢ"
 __HELP__ = """
 <blockquote><b>『 ꜱᴛᴀʟᴋɪɢ 』</b>
 
-  <b>➢ ᴘᴇʀɪɴᴛᴀʜ:</b> <code>{0}stalkig</code> 
+  <b>➢ <b>Perintah:</b></b> <code>{0}stalkig</code> 
    <i>penjelasan:</b> untuk stalking instagram menggunakan username</i></blockquote>
 """
 
 @PY.UBOT("stalkig")
 async def stalkig(client, message):
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     sks = await EMO.BERHASIL(client)
     prs = await EMO.PROSES(client)
     
-    jalan = await message.reply(f"{prs} Processing...")
+    jalan = await message.reply(f"{prs} sebentar ya...")
     
     if len(message.command) != 2:
         return await jalan.edit(f"{ggl} Please use the command `stalkig` followed by the Instagram username.")
@@ -40,12 +40,12 @@ async def stalkig(client, message):
             photoUrl = hasil['photoUrl']
             bio = hasil['bio']
             caption = f"""
-<b><emoji id=5841235769728962577>⭐</emoji>Username: <code>{username}</code></b>
-<b><emoji id=5843952899184398024>⭐</emoji>Full Name: <code>{fullName}</code></b>
-<b><emoji id=5841243255856960314>⭐</emoji>Followers: <code>{followers}</code></b>
-<b><emoji id=5352566966454330504>⭐</emoji>Following: <code>{following}</code></b>
-<b><emoji id=5841243255856960314>⭐</emoji>Posts: <code>{postsCount}</code></b>
-<b><emoji id=5353036831581544549>⭐</emoji>Bio: <code>{bio}</code></b>
+<b><emoji id=5841235769728962577>✦</emoji>Username: <code>{username}</code></b>
+<b><emoji id=5843952899184398024>✦</emoji>Full Name: <code>{fullName}</code></b>
+<b><emoji id=5841243255856960314>✦</emoji>Followers: <code>{followers}</code></b>
+<b><emoji id=5352566966454330504>✦</emoji>Following: <code>{following}</code></b>
+<b><emoji id=5841243255856960314>✦</emoji>Posts: <code>{postsCount}</code></b>
+<b><emoji id=5353036831581544549>✦</emoji>Bio: <code>{bio}</code></b>
 
 <blockquote><b>-- USERBOT 15K/BULAN BY @ndyzoffc --</blockquote></b>
 """

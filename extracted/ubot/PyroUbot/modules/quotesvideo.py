@@ -8,9 +8,8 @@ from PyroUbot import *
 
 __MODULE__ = "ϙᴜᴏᴛᴇs ᴠɪᴅᴇᴏ"
 __HELP__ = """
-<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ϙᴜᴏᴛᴇs ᴠɪᴅᴇᴏ ⦫</b>
-<blockquote>
-⎆ perintah :
+<b>⦪ <blockquote>
+⎆ <b>Perintah:</b>
 ᚗ <code>{0}qvideo</code> Link
 
 ⎆ ᴘᴇɴᴊᴇʟᴀsᴀɴ:
@@ -49,11 +48,11 @@ async def quotesvideo_handler(client, message: Message):
     if not query:
         return await message.reply("Silakan masukkan teks untuk quotes video.\nContoh: `/qvideo Makan Ayam`")
 
-    msg = await message.reply("🔄 Mengunggah video...")
+    msg = await message.reply("⟳ Mengunggah video...")
     video_url = await upload_media(message)
 
     if not video_url:
-        return await msg.edit("❌ Gagal mengunggah video!")
+        return await msg.edit("⌭ gagal mengunggah video!")
 
     await msg.edit("🎥 Membuat Quotes Video...")
     
@@ -64,8 +63,8 @@ async def quotesvideo_handler(client, message: Message):
         data = res.json()
         if "result" in data:
             video_result_url = data["result"]
-            return await message.reply_video(video_result_url, caption="✅ Quotes Video berhasil dibuat!")
-        return await msg.edit("❌ Gagal membuat quotes video.")
+            return await message.reply_video(video_result_url, caption="⌬ Quotes Video berhasil dibuat!")
+        return await msg.edit("⌭ gagal membuat quotes video.")
     
-    return await msg.edit(f"❌ Gagal mendapatkan hasil (Status: {res.status_code})")
+    return await msg.edit(f"⌭ gagal mendapatkan hasil (Status: {res.status_code})")
             

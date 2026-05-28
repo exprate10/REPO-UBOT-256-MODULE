@@ -7,10 +7,10 @@ from pyrogram.types import Message
 
 __MODULE__ = "ᴜsᴇʀ ᴅᴀɴᴀ"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk Check Username Dana
+<blockquote><b><b>Check Username Dana</b>
 
-perintah : <code>{0}checkdana</code>
-cek username dana dari nomor contoh <code>{0}checkdana</code> 085xxxx</b></blockquote>
+<b>Perintah:</b> <code>{0}checkdana</code>
+cek username dana dari nomor Contoh <code>{0}checkdana</code> 085xxxx</b></blockquote>
 """
 
 @PY.UBOT("checkdana")
@@ -21,10 +21,10 @@ async def chat_gpt(client, message):
 
         if len(message.command) < 2:
             await message.reply_text(
-                "<emoji id=5019523782004441717>❌</emoji>mohon gunakan format\ncontoh : .checkdana 085xxx"
+                "<emoji id=5019523782004441717>⌭</emoji>tolong gunakan format\ncontoh : .checkdana 085xxx"
             )
         else:
-            prs = await message.reply_text(f"<emoji id=6226405134004389590>🔍</emoji>proccesing Kingz....")
+            prs = await message.reply_text(f"<emoji id=6226405134004389590>⌖</emoji>proccesing Kingz....")
             a = message.text.split(' ', 1)[1]
             response = requests.get(f'https://api.siputzx.my.id/api/check/dana?account_number={a}')
 

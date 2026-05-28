@@ -8,9 +8,8 @@ from PyroUbot import *
 
 __MODULE__ = "ᴡʜᴀᴛ ᴍᴜsɪᴄ"
 __HELP__ = """
-<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴡʜᴀᴛ ᴍᴜsɪᴄ ⦫</b>
-<blockquote>
-⎆ perintah :
+<b>⦪ <blockquote>
+⎆ <b>Perintah:</b>
 ᚗ <code>{0}whatmusic</code> Reply video atau music
 
 ⎆ ᴘᴇɴᴊᴇʟᴀsᴀɴ:
@@ -50,13 +49,13 @@ async def whatmusic_handler(client, message: Message):
     if not message.reply_to_message or not message.reply_to_message.video:
         return await message.reply("Silakan balas ke sebuah video untuk mengenali musiknya.")
     
-    msg = await message.reply("🔄 Mengunggah video...")
+    msg = await message.reply("⟳ Mengunggah video...")
     video_url = await upload_media(message)
 
     if not video_url:
-        return await msg.edit("❌ Gagal mengunggah video!")
+        return await msg.edit("⌭ gagal mengunggah video!")
     
-    await msg.edit("🎵 Menganalisis musik dalam video...")
+    await msg.edit("♧ Menganalisis musik dalam video...")
     
     response = requests.get(f"https://api.botcax.eu.org/api/tools/whatmusic?url={video_url}&apikey=@31Moire_mor")
     if response.status_code == 200:
@@ -67,9 +66,9 @@ async def whatmusic_handler(client, message: Message):
             if data.get("status"):
                 result = data.get("result", "").strip()
                 if not result or "undefined" in result.lower():
-                    return await msg.edit("❌ Musik tidak ditemukan dalam video.")
-                return await msg.edit(f"**🎶 Hasil Pengenalan Musik:**\n```{result}```")
+                    return await msg.edit("⌭ Musik ga ketemu dalam video.")
+                return await msg.edit(f"**♧ Hasil Pengenalan Musik:**\n```{result}```")
         except Exception as e:
             print(f"Error parsing JSON: {e}")
-            return await msg.edit("❌ Terjadi kesalahan dalam memproses data API.")
-    return await msg.edit(f"❌ Gagal mendapatkan hasil (Status: {response.status_code})")
+            return await msg.edit("⌭ Terjadi kesalahan dalam memproses data API.")
+    return await msg.edit(f"⌭ gagal mendapatkan hasil (Status: {response.status_code})")

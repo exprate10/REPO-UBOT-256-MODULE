@@ -5,9 +5,9 @@ from PyroUbot import *
 
 __MODULE__ = "ᴀʟᴋɪᴛᴀʙ"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk Alkitab
+<blockquote><b><b>Alkitab</b>
 
-perintah : <code>{0}alkitab</code> kejadian
+<b>Perintah:</b> <code>{0}alkitab</code> kejadian
     Untuk Search Ayat Alkitab.</b></blockquote>
 """
 
@@ -41,4 +41,4 @@ async def search_alkitab(client, message):
 {v['teks']}</b></blockquote>
 """ for v in result)
     
-    await message.reply(caption if caption else "Tidak ada hasil yang ditemukan.")
+    await message.reply(caption if caption else "ga ada hasil yang ditemukan.")

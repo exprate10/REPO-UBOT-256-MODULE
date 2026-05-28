@@ -6,7 +6,7 @@ __MODULE__ = "ʀᴀɴᴅᴏᴍ ᴘᴡ"
 __HELP__ = """
 <blockquote><b>Random Generator</b>
 
-Perintah:
+<b>Perintah:</b>
    <code>{0}pass</code> <panjang>
     └ Generate password random
 
@@ -30,5 +30,5 @@ async def password_generator(client, message):
     password = "".join(secrets.choice(chars) for _ in range(length))
 
     await message.reply(
-        f"<b>🔐 Password Random</b>\n<code>{password}</code>"
+        f"<b>⌠ Password Random</b>\n<code>{password}</code>"
     )

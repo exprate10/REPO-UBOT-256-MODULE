@@ -6,7 +6,7 @@ __MODULE__ = "ʀᴀɴᴅᴏᴍ ᴘʀᴏ"
 __HELP__ = """
 <blockquote><b>Random Generator Pro</b>
 
-Perintah:
+<b>Perintah:</b>
 • <code>{0}randnum min max</code>
 • <code>{0}randpick a|b|c</code>
 • <code>{0}randpass panjang</code>
@@ -20,13 +20,13 @@ Perintah:
 @PY.UBOT("randnum")
 async def rand_number(_, m):
     if len(m.command) < 3:
-        return await m.reply_text("❌ contoh: .randnum 1 100")
+        return await m.reply_text("⌭ contoh: .randnum 1 100")
     try:
         a = int(m.command[1])
         b = int(m.command[2])
-        await m.reply_text(f"🎲 Hasil: <b>{random.randint(a, b)}</b>")
+        await m.reply_text(f"◈ Hasil: <b>{random.randint(a, b)}</b>")
     except:
-        await m.reply_text("❌ input harus angka")
+        await m.reply_text("⌭ input harus angka")
 
 # =====================
 # RANDOM PICK
@@ -34,9 +34,9 @@ async def rand_number(_, m):
 @PY.UBOT("randpick")
 async def rand_pick(_, m):
     if len(m.command) < 2:
-        return await m.reply_text("❌ contoh: .randpick kopi|teh|susu")
+        return await m.reply_text("⌭ contoh: .randpick kopi|teh|susu")
     items = m.text.split(" ", 1)[1].split("|")
-    await m.reply_text(f"🎯 Terpilih: <b>{random.choice(items)}</b>")
+    await m.reply_text(f"◈ Terpilih: <b>{random.choice(items)}</b>")
 
 # =====================
 # RANDOM PASSWORD
@@ -46,7 +46,7 @@ async def rand_password(_, m):
     length = int(m.command[1]) if len(m.command) > 1 else 12
     chars = string.ascii_letters + string.digits + "!@#$%^&*"
     pwd = "".join(random.choice(chars) for _ in range(length))
-    await m.reply_text(f"🔐 Password:\n<code>{pwd}</code>")
+    await m.reply_text(f"⌠ Password:\n<code>{pwd}</code>")
 
 # =====================
 # RANDOM BOOLEAN

@@ -2,9 +2,9 @@ from PyroUbot import *
 
 __MODULE__ = "ɢᴀᴍᴇ ᴠ2"
 __HELP__ = """
-<blockquote>Bantuan Untuk gamev2
+<blockquote><b>gamev2</b>
 
-perintah : <code>{0}gamev2</code>
+<b>Perintah:</b> <code>{0}gamev2</code>
    untuk memunculkan game random 2
 
 note: jumlah menu game cuma 3</blockquote>

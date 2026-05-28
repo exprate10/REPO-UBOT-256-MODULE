@@ -5,9 +5,9 @@ from PyroUbot import *
 
 __MODULE__ = "ꜰɪx ɴᴏᴅᴇ"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk Fix Node</b>
+<blockquote><b><b>Fix Node</b></b>
 
-Perintah:
+<b>Perintah:</b>
 <code>{0}fixnode [url/ip]</code> → Cek status koneksi node/server.</blockquote></b>
 """
 
@@ -30,7 +30,7 @@ async def _(client, message):
     target = message.command[1]
     url = f"http://{target}" if not target.startswith("http") else target
 
-    status_msg = await message.reply_text("<blockquote><b>🔍 Sedang menganalisa kesehatan node...</b></blockquote>")
+    status_msg = await message.reply_text("<blockquote><b>⌖ Sedang menganalisa kesehatan node...</b></blockquote>")
     start_time = time.time()
 
     try:
@@ -44,15 +44,15 @@ async def _(client, message):
                 f"<blockquote><b>🟢 NODE SEHAT (ONLINE)</b>\n\n"
                 f"<b>📍 Target:</b> <code>{target}</code>\n"
                 f"<b>⚡ Respon:</b> <code>{ping}ms</code>\n"
-                f"<b>✅ Status:</b> Normal\n\n"
+                f"<b>⌬ Status:</b> Normal\n\n"
                 f"<i>Node Anda berjalan dengan baik, tidak perlu tindakan lebih lanjut.</i></blockquote>"
             )
         else:
             res_text = (
                 f"<blockquote><b>🟡 NODE PERLU PERHATIAN</b>\n\n"
                 f"<b>📍 Target:</b> <code>{target}</code>\n"
-                f"<b>⚠️ Kode:</b> <code>{response.status_code}</code>\n\n"
-                f"<b>💡 Saran:</b> Node merespon tapi tidak memberikan akses penuh. Cek firewall atau login dashboard Anda.</blockquote>"
+                f"<b>⌯ Kode:</b> <code>{response.status_code}</code>\n\n"
+                f"<b>✦ Saran:</b> Node merespon tapi tidak memberikan akses penuh. Cek firewall atau login dashboard Anda.</blockquote>"
             )
         await status_msg.edit(res_text)
 
@@ -60,7 +60,7 @@ async def _(client, message):
         err_text = (
             f"<blockquote><b>🔴 NODE MERAH (OFFLINE)</b>\n\n"
             f"<b>📍 Target:</b> <code>{target}</code>\n"
-            f"<b>❌ Error:</b> <code>Connection Timeout / Refused</code>\n\n"
+            f"<b>⌭ Error:</b> <code>Connection Timeout / Refused</code>\n\n"
             f"<b>🛠 ARAHAN PERBAIKAN:</b>\n"
             f"1. Pastikan server VPS Anda dalam keadaan <b>Running</b>.\n"
             f"2. Cek apakah service (misal: Node-RED) sudah dinyalakan.\n"
@@ -83,7 +83,7 @@ async def auto_notif_new_module():
                 f"📦 <b>SUKSES ADD MODULE</b>\n\n"
                 f"🛠 <b>Module:</b> <code>{__MODULE__}</code>\n"
                 f"✨ <b>Status:</b> <code>File Terdeteksi</code>\n"
-                f"💡 <i>Silakan restart bot untuk mengaktifkan module ini.</i> 💡"
+                f"✦ <i>Silakan restart bot untuk mengaktifkan module ini.</i> ✦"
             )
             # Mengirim via Bot API sesuai permintaan sebelumnya
             from PyroUbot import bot

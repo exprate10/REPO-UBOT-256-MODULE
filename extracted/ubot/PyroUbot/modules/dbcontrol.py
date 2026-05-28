@@ -6,17 +6,16 @@ from PyroUbot import *
 
 __MODULE__ = "ᴅʙ ᴄᴏɴᴛʀᴏʟ"
 __HELP__ = """
-<blockquote><b>ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴅʙ ᴄᴏɴᴛʀᴏʟ</b></blockquote>
-
-<blockquote><b>ᴘᴇʀɪɴᴛᴀʜ : <code>{0}ᴛɪᴍᴇ</code>
+<blockquote><b>
+<blockquote><b><b>Perintah:</b> <code>{0}ᴛɪᴍᴇ</code>
     ᴜɴᴛᴜᴋ ᴍᴇɴᴀᴍʙᴀʜ - ᴍᴇɴɢᴜʀᴀɴɢɪ ᴍᴀsᴀ ᴀᴋᴛɪғ ᴜsᴇʀ</b></blockquote>
 
-<blockquote><b>ᴘᴇʀɪɴᴛᴀʜ : <code>{0}ᴄᴇᴋ</code>
+<blockquote><b><b>Perintah:</b> <code>{0}ᴄᴇᴋ</code>
     ᴜɴᴛᴜᴋ ᴍᴇʟɪʜᴀᴛ ᴍᴀsᴀ ᴀᴋᴛɪғ ᴜsᴇʀ</b></blockquote>
 
-<blockquote><b>ᴘᴇʀɪɴᴛᴀʜ : <code>{0}ᴀᴅᴅᴀᴅᴍɪɴ</code> - <code>{0}ᴜɴᴀᴅᴍɪɴ</code> - <code>{0}ɢᴇᴛᴀᴅᴍɪɴ</code></b></blockquote>
+<blockquote><b><b>Perintah:</b> <code>{0}ᴀᴅᴅᴀᴅᴍɪɴ</code> - <code>{0}ᴜɴᴀᴅᴍɪɴ</code> - <code>{0}ɢᴇᴛᴀᴅᴍɪɴ</code></b></blockquote>
 
-<blockquote><b>ᴘᴇʀɪɴᴛᴀʜ : <code>{0}sᴇʟᴇs</code> - <code>{0}ᴜɴsᴇʟᴇs</code> - <code>{0}ɢᴇᴛsᴇʟᴇs</code></b></blockquote>
+<blockquote><b><b>Perintah:</b> <code>{0}sᴇʟᴇs</code> - <code>{0}ᴜɴsᴇʟᴇs</code> - <code>{0}ɢᴇᴛsᴇʟᴇs</code></b></blockquote>
 """
 
 @PY.BOT("prem")
@@ -57,7 +56,7 @@ async def _(client, message):
 <b>sɪʟᴀʜᴋᴀɴ ʙᴜᴋᴀ @{client.me.username} ᴜɴᴛᴜᴋ ᴍᴇᴍʙᴜᴀᴛ ᴜsᴇʀʙᴏᴛ</b></blockquote>
 
 <blockquote>ᴄᴀʀᴀ ʙᴜᴀᴛ ᴜsᴇʀʙᴏᴛ :
-- sɪʟᴀʜᴋᴀɴ /sᴛᴀʀᴛ ᴅᴜʟᴜ ʙᴏᴛ @UbotZexcOfficial_bot
+- sɪʟᴀʜᴋᴀɴ /sᴛᴀʀᴛ ᴅᴜʟᴜ ʙᴏᴛ @ranzpedia_bot
 - ᴋᴀʟᴀᴜ sᴜᴅᴀʜ sᴛᴀʀᴛ ʙᴏᴛ ᴀʙɪsᴛᴜ ᴘᴇɴᴄᴇᴛ ᴛᴏᴍʙᴏʟ ʙᴜᴀᴛ ᴜsᴇʀʙᴏᴛ 
 - ɴᴀʜ ɴᴀɴᴛɪ ᴀᴅᴀ ᴀʀᴀʜᴀɴ ᴅᴀʀɪ ʙᴏᴛ ɴʏᴀ ɪᴛᴜ ɪᴋᴜᴛɪɴ</blockquote>
 <blockquote><b>ɴᴏᴛᴇ : ᴊᴀɴɢᴀɴ ʟᴜᴘᴀ ʙᴀᴄᴀ ᴀʀᴀʜᴀɴ ᴅᴀʀɪ ʙᴏᴛ ɴʏᴀ</b></blockquote>
@@ -141,7 +140,7 @@ async def _(client, message):
     if not text:
         await message.reply_text("<blockquote><b>ᴛɪᴅᴀᴋ ᴀᴅᴀ ᴘᴇɴɢɢᴜɴᴀ ʏᴀɴɢ ᴅɪᴛᴇᴍᴜᴋᴀɴ</b></blockquote>")
     else:
-        await message.reply_text(f"<b>📋 ᴅᴀғᴛᴀʀ ᴘʀᴇᴍɪᴜᴍ:</b>\n\n{text}")
+        await message.reply_text(f"<b>◆ ᴅᴀғᴛᴀʀ ᴘʀᴇᴍɪᴜᴍ:</b>\n\n{text}")
 
 
 @PY.BOT("seles")
@@ -236,14 +235,14 @@ async def _(client, message):
         try:
             user = await client.get_users(int(user_id))
             seles_list.append(
-                f"<blockquote>👤 [{user.first_name} {user.last_name or ''}](tg://user?id={user.id}) | <code>{user.id}</code></blockquote>"
+                f"<blockquote>◉ [{user.first_name} {user.last_name or ''}](tg://user?id={user.id}) | <code>{user.id}</code></blockquote>"
             )
         except:
             continue
 
     if seles_list:
         response = (
-            "<b>📋 ᴅᴀғᴛᴀʀ sᴇʟʟᴇʀ:</b>\n\n"
+            "<b>◆ ᴅᴀғᴛᴀʀ sᴇʟʟᴇʀ:</b>\n\n"
             + "\n".join(seles_list)
             + f"\n\n<blockquote>⚜️ ᴛᴏᴛᴀʟ sᴇʟʟᴇʀ: {len(seles_list)}</blockquote>"
         )
@@ -338,7 +337,7 @@ async def _(client, message):
 
     if user.id in admin_users:
         return await msg.edit(f"""
-<blockquote><b>💬 ɪɴғᴏʀᴍᴀᴛɪᴏɴ</b>
+<blockquote><b>◱ ɪɴғᴏʀᴍᴀᴛɪᴏɴ</b>
 <b>ɴᴀᴍᴀ: [{user.first_name} {user.last_name or ''}](tg://user?id={user.id})</b>
 <b>ɪᴅ: {user.id}</b>
 <b>ᴋᴇᴛᴇʀᴀɴɢᴀɴ: sᴜᴅᴀʜ ᴅᴀʟᴀᴍ ᴅᴀғᴛᴀʀ</b></blockquote>
@@ -348,7 +347,7 @@ async def _(client, message):
     try:
         await add_to_vars(client.me.id, "ADMIN_USERS", user.id)
         return await msg.edit(f"""
-<blockquote><b>💬 ɪɴғᴏʀᴍᴀᴛɪᴏɴ</b>
+<blockquote><b>◱ ɪɴғᴏʀᴍᴀᴛɪᴏɴ</b>
 <b>ɴᴀᴍᴀ: [{user.first_name} {user.last_name or ''}](tg://user?id={user.id})</b>
 <b>ɪᴅ: {user.id}</b>
 <b>ᴋᴇᴛᴇʀᴀɴɢᴀɴ: sᴜᴋsᴇs ᴊᴀᴅɪ ᴀᴅᴍɪɴ</b></blockquote>
@@ -377,7 +376,7 @@ async def _(client, message):
 
     if user.id not in admin_users:
         return await msg.edit(f"""
-<blockquote><b>💬 ɪɴғᴏʀᴍᴀᴛɪᴏɴ</b>
+<blockquote><b>◱ ɪɴғᴏʀᴍᴀᴛɪᴏɴ</b>
 <b>ɴᴀᴍᴀ: [{user.first_name} {user.last_name or ''}](tg://user?id={user.id})</b>
 <b>ɪᴅ: {user.id}</b>
 <b>ᴋᴇᴛᴇʀᴀɴɢᴀɴ: ᴛɪᴅᴀᴋ ᴅᴀʟᴀᴍ ᴅᴀғᴛᴀʀ</b></blockquote>
@@ -387,7 +386,7 @@ async def _(client, message):
     try:
         await remove_from_vars(client.me.id, "ADMIN_USERS", user.id)
         return await msg.edit(f"""
-<blockquote><b>💬 ɪɴғᴏʀᴍᴀᴛɪᴏɴ</b>
+<blockquote><b>◱ ɪɴғᴏʀᴍᴀᴛɪᴏɴ</b>
 <b>ɴᴀᴍᴀ: [{user.first_name} {user.last_name or ''}](tg://user?id={user.id})</b>
 <b>ɪᴅ: {user.id}</b>
 <b>ᴋᴇᴛᴇʀᴀɴɢᴀɴ: ᴜɴᴀᴅᴍɪɴ sᴜᴋsᴇs</b></blockquote>
@@ -411,14 +410,14 @@ async def _(client, message):
         try:
             user = await client.get_users(int(user_id))
             admin_list.append(
-                f"<blockquote>👤 [{user.first_name} {user.last_name or ''}](tg://user?id={user.id}) | <code>{user.id}</code></blockquote>"
+                f"<blockquote>◉ [{user.first_name} {user.last_name or ''}](tg://user?id={user.id}) | <code>{user.id}</code></blockquote>"
             )
         except:
             continue
 
     if admin_list:
         response = (
-            "<b>📋 ᴅᴀғᴛᴀʀ ᴀᴅᴍɪɴ:</b>\n\n"
+            "<b>◆ ᴅᴀғᴛᴀʀ ᴀᴅᴍɪɴ:</b>\n\n"
             + "\n".join(admin_list)
             + f"\n\n<blockquote>⚜️ ᴛᴏᴛᴀʟ ᴀᴅᴍɪɴ: {len(admin_list)}</blockquote>"
         )
@@ -532,14 +531,14 @@ async def _(client, message):
         try:
             user = await client.get_users(user_id)
             ultra_list.append(
-                f"<blockquote>👤 [{user.first_name} {user.last_name or ''}](tg://user?id={user.id}) | <code>{user.id}</code></blockquote>"
+                f"<blockquote>◉ [{user.first_name} {user.last_name or ''}](tg://user?id={user.id}) | <code>{user.id}</code></blockquote>"
             )
         except:
             continue
 
     if ultra_list:
         response = (
-            "<b>📋 ᴅᴀғᴛᴀʀ sᴜᴘᴇʀᴜʟᴛʀᴀ:</b>\n\n"
+            "<b>◆ ᴅᴀғᴛᴀʀ sᴜᴘᴇʀᴜʟᴛʀᴀ:</b>\n\n"
             + "\n".join(ultra_list)
             + f"\n\n<blockquote>⚜️ ᴛᴏᴛᴀʟ sᴜᴘᴇʀᴜʟᴛʀᴀ: {len(ultra_list)}</blockquote>"
         )

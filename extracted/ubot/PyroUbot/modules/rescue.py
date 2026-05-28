@@ -9,7 +9,7 @@ __MODULE__ = "ʀᴇsᴄᴜᴇ"
 __HELP__ = """
 <blockquote><b>『 Bantuan Rescue 』</b>
 
-• Perintah:
+• <b>Perintah:</b>
 <code>.rescue</code>
 
 • Fungsi:
@@ -30,4 +30,4 @@ async def rescue_ubot(client, message):
         )
         await message.reply_text("♻️ Error terdeteksi, ubot direstart.")
     else:
-        await message.reply_text("✅ UBot aman, tidak ada error.")
+        await message.reply_text("⌬ UBot aman, ga ada error.")

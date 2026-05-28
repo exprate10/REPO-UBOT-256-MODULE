@@ -4,9 +4,8 @@ from PyroUbot import *
 
 __MODULE__ = "ᴛᴇʀᴀʙᴏx"
 __HELP__ = """
-<blockquote> <b>ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴛᴇʀᴀʙᴏx
-
-ᴘᴇʀɪɴᴛᴀʜ : <code>{0}terabox</code> terabox <b>[link nya]</b>
+<blockquote> <b>
+<b>Perintah:</b> <code>{0}terabox</code> terabox <b>[link nya]</b>
 ᴘᴇɴᴊᴇʟᴀsᴀɴ : ᴅᴏᴡɴʟᴏᴀᴅ ᴠɪᴅᴇᴏ ᴛᴇʀᴀʙᴏx.</b></blockquote>
 
 """
@@ -22,7 +21,7 @@ async def terabox_handler(client, message):
     response = requests.get(api_url)
     
     if response.status_code != 200:
-        await message.reply_text("Gagal mengambil data dari Terabox API.")
+        await message.reply_text("gagal mengambil data dari Terabox API.")
         return
     
     data = response.json()
@@ -41,6 +40,6 @@ async def terabox_handler(client, message):
             filename = file.get("filename", "Tidak diketahui")
             size = file.get("size", "Tidak diketahui")
             url = file.get("url", "Tidak tersedia")
-            result_text += f"  ├ 🎬 {filename} ({size} bytes)\n  └ 🔗 [Download]({url})\n\n"
+            result_text += f"  ├ 🎬 {filename} ({size} bytes)\n  └ ⌕ [Download]({url})\n\n"
     
     await message.reply_text(result_text, disable_web_page_preview=True)

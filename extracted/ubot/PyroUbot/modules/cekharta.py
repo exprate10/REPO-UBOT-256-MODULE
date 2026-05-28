@@ -4,9 +4,8 @@ from PyroUbot import *
 
 __MODULE__ = "ᴄᴇᴋ ʜᴀʀᴛᴀ"
 __HELP__ = """
-<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴄᴇᴋ ʜᴀʀᴛᴀ ⦫</b>
-
-<blockquote><b>⎆ perintah :
+<b>⦪ 
+<blockquote><b>⎆ <b>Perintah:</b>
 ᚗ <code>{0}charta</code> reply chat
 ⊷ mendeteksi Harta seseorang.
 </blockquote></b>
@@ -15,13 +14,13 @@ __HELP__ = """
 
 def emoji(alias):
     emojis = {
-        "DETEK": "<emoji id=6026321200597176575>🃏</emoji>",    
+        "DETEK": "<emoji id=6026321200597176575>◱</emoji>",    
         "SUBJEK": "<emoji id=5382148180043376268>😱</emoji>",
-        "DOMPET": "<emoji id=6257972409190585253>💰</emoji>",
-        "ATM": "<emoji id=5472250091332993630>💳</emoji>",
+        "DOMPET": "<emoji id=6257972409190585253>✦</emoji>",
+        "ATM": "<emoji id=5472250091332993630>◈</emoji>",
         "MOBIL": "<emoji id=5429317443623339836>🚘</emoji>", 
         "RUMAH": "<emoji id=4958485609464202497>🏡</emoji>",
-        "KERJA": "<emoji id=5384549749661641183>🤔</emoji>",
+        "KERJA": "<emoji id=5384549749661641183></emoji>",
         "HEWAN": "<emoji id=5256041592271157291>🐈‍⬛</emoji>",           
     }
     return emojis.get(alias, "⎆")
@@ -132,4 +131,4 @@ async def _(client, message):
 """
         await message.reply_text(response)
     else:
-        await message.reply_text("{ggll} **Gagal mendeteksi pengguna...**")
+        await message.reply_text("{ggll} **gagal mendeteksi pengguna...**")

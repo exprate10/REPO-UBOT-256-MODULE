@@ -9,7 +9,7 @@ TRUTH = [
 "Jika permintaanmu dapat terkabul, apa hal yang ingin kamu minta?",
 "Jika kamu dapat memilih seseorang di dunia ini untuk menjadi Presiden Indonesia, siapakah orang tersebut dan apa alasannya?",
 "Apa hal paling kejam yang pernah kamu katakan kepada orang lain?",
-"Apa satu hal yang akan kamu lakukan jika kamu tahu tidak ada konsekuensinya?",
+"Apa satu hal yang akan kamu lakukan jika kamu tahu ga ada konsekuensinya?",
 "Apa hal tergila yang pernah kamu lakukan di depan cermin?",
 "Apa hal yang kamu suka lakukan dengan teman-temanmu yang tidak akan pernah kamu lakukan di depan pasangan?",
 "Siapa yang paling membuatmu cemburu?",

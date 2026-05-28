@@ -10,13 +10,13 @@ __MODULE__ = "ꜱᴘᴀᴍ"
 __HELP__ = """
 <blockquote><b>『 bantuan spam 』</b>
 
-<b>perintah:</b> <code>{0}spam</code>
+<b><b>Perintah:</b></b> <code>{0}spam</code>
    <code>melakukan spam pesan</code>
 
-<b>perintah:</b> <code>{0}setdelay</code>
+<b><b>Perintah:</b></b> <code>{0}setdelay</code>
    <code>mengatur delay setiap pesan yang di kirim</code>
 
-<b>perintah:</b> <code>{0}stopspam</code>
+<b><b>Perintah:</b></b> <code>{0}stopspam</code>
    <code>memberhentikan spam pesan yang sedang berjalan</code></blockquote>
 """
 
@@ -87,4 +87,4 @@ async def _(client, message):
         spam_progress.remove(client.me.id)
         await message.reply("<b>spam telah berhenti</b>")
     else:
-        await message.reply("<b>tidak ada spam yang ditemukan</b>")
+        await message.reply("<b>ga ada spam yang ditemukan</b>")

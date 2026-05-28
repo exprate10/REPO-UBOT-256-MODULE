@@ -4,27 +4,27 @@ from PyroUbot import *
 
 __MODULE__ = "ɴᴏᴛᴇ"
 __HELP__ = """
-<blockquote>Bantuan Untuk Notes
+<blockquote><b>Notes</b>
 
-perintah : <code>{0}addnote</code> [name]
+<b>Perintah:</b> <code>{0}addnote</code> [name]
     menyimpan sebuah catatan
 
-perintah : <code>{0}addcb</code> [name]
+<b>Perintah:</b> <code>{0}addcb</code> [name]
     menyimpan sebuah callback
 
-perintah : <code>{0}get</code> [name]
+<b>Perintah:</b> <code>{0}get</code> [name]
     mendapatkan catatan yang di simpan
  
-perintah : <code>{0}delnote</code> [name]
+<b>Perintah:</b> <code>{0}delnote</code> [name]
     menghapus catatan yang di simpan
 
-perintah : <code>{0}delcb</code> [name]
+<b>Perintah:</b> <code>{0}delcb</code> [name]
     menghapus callback yang di simpan
  
-perintah : <code>{0}listnote</code>
+<b>Perintah:</b> <code>{0}listnote</code>
    melihat daftar catatan yang di simpan
 
-perintah : <code>{0}listcb</code>
+<b>Perintah:</b> <code>{0}listcb</code>
    melihat daftar callback yang di simpan
 
 for button:
@@ -33,7 +33,7 @@ for button:
 payment | dana - dana | | bank - bank # | 
 catatan : untuk membuat button menyamping adalah #
 
-contoh menggunakan callback/tombol : <a href='https://t.me/Rilesya'>tutorial</a></blockquote>
+Contoh menggunakan callback/tombol : <a href='https://t.me/Rilesya'>tutorial</a></blockquote>
 """
 
 
@@ -41,9 +41,9 @@ contoh menggunakan callback/tombol : <a href='https://t.me/Rilesya'>tutorial</a>
 @PY.TOP_CMD
 async def _(client, message):
     brhsl = await EMO.BERHASIL(client)
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     if len(message.command) != 2:
-        return await message.reply(f"{ggl}woi asu mohon gunakan {message.text.split()[0]} namacatatan/namacb")
+        return await message.reply(f"{ggl}woi asu tolong gunakan {message.text.split()[0]} namacatatan/namacb")
     args = get_arg(message)
     reply = message.reply_to_message
     query = "notes_cb" if message.command[0] == "addcb" else "notes"
@@ -56,7 +56,7 @@ async def _(client, message):
     vars = await get_vars(client.me.id, args, query)
 
     if vars:
-        return await message.reply(f"{ggl}catatan {args} ꜱudah ada</n>")
+        return await message.reply(f"{ggl}catatan {args} udah ada</n>")
 
     value = None
     type_mapping = {
@@ -93,7 +93,7 @@ async def _(client, message):
 @PY.TOP_CMD
 async def _(client, message):
     brhsl = await EMO.BERHASIL(client)
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     args = get_arg(message)
 
     if not args:
@@ -105,17 +105,17 @@ async def _(client, message):
     vars = await get_vars(client.me.id, args, query)
 
     if not vars:
-        return await message.reply(f"{ggl}catatan {args} tidak ditemukan")
+        return await message.reply(f"{ggl}catatan {args} ga ketemu")
 
     await remove_vars(client.me.id, args, query)
     await client.delete_messages(client.me.id, int(vars["message_id"]))
-    return await message.reply(f"<brhsl>{brhsl}catan {args} berhasil dihapus")
+    return await message.reply(f"<brhsl>{brhsl}catan {args} sukses dihapus")
 
 
 @PY.UBOT("get")
 @PY.TOP_CMD
 async def _(client, message):
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     msg = message.reply_to_message or message
     args = get_arg(message)
 
@@ -128,7 +128,7 @@ async def _(client, message):
 
     if not data:
         return await message.reply(
-            f"{ggl}catatan {args} tidak ditemukan"
+            f"{ggl}catatan {args} ga ketemu"
         )
 
     m = await client.get_messages(client.me.id, int(data["message_id"]))
@@ -157,7 +157,7 @@ async def _(client, message):
 @PY.TOP_CMD
 async def _(client, message):
     brhsl = await EMO.BERHASIL(client)
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     ktrng = await EMO.BL_KETERANGAN(client)
     query = "notes_cb" if message.command[0] == "listcb" else "notes"
     vars = await all_vars(client.me.id, query)
@@ -167,7 +167,7 @@ async def _(client, message):
             msg += f" {x} |({data['type']})\n"
         msg += f"\n{ktrng}total catatan: {len(vars)}"
     else:
-        msg = f"{ggl}tidak ada catatan"
+        msg = f"{ggl}ga ada catatan"
 
     return await message.reply(msg, quote=True)
 

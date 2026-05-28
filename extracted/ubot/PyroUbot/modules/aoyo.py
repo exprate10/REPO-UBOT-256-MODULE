@@ -7,10 +7,10 @@ from pyrogram.types import Message
 
 __MODULE__ = "ᴀᴏʏᴏ"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk aoyo
+<blockquote><b><b>aoyo</b>
 
-perintah : <code>{0}aoyo</code>
-    Membantu mencari informasi dengan nama, contoh: .aoyo informasi siapa Boysz</b></blockquote>
+<b>Perintah:</b> <code>{0}aoyo</code>
+    Membantu mencari informasi dengan nama, Contoh: .aoyo informasi siapa Boysz</b></blockquote>
 """
 
 
@@ -22,10 +22,10 @@ async def chat_gpt(client, message):
 
         if len(message.command) < 2:
             await message.reply_text(
-                "<emoji id=5019523782004441717>❌</emoji>mohon gunakan format\ncontoh : .aoyo cari informasi siapa Boysz"
+                "<emoji id=5019523782004441717>⌭</emoji>tolong gunakan format\ncontoh : .aoyo cari informasi siapa Boysz"
             )
         else:
-            prs = await message.reply_text(f"<emoji id=5469783727838088134>💻</emoji>proccesing mencari informasi....")
+            prs = await message.reply_text(f"<emoji id=5469783727838088134>◍</emoji>proccesing mencari informasi....")
             a = message.text.split(' ', 1)[1]
             response = requests.get(f'https://api.siputzx.my.id/api/ai/aoyo?content={a}')
 

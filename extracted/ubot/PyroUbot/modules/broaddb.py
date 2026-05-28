@@ -11,21 +11,21 @@ from PyroUbot import *
 
 __MODULE__ = "ʙʀᴏᴀᴅᴅʙ"
 __HELP__ = """
-<blockquote>Bantuan Untuk Broaddb
+<blockquote><b>Broaddb</b>
 
-perintah : <code>{0}gikesdb</code> 
+<b>Perintah:</b> <code>{0}gikesdb</code> 
     mengirim pesan siaran grup/pesan database
 
-perintah : <code>{0}adddb</code> 
+<b>Perintah:</b> <code>{0}adddb</code> 
     menambahkan database broadcast 
 
-perintah : <code>{0}undb</code> 
+<b>Perintah:</b> <code>{0}undb</code> 
     menghapus database broadcast
 
-perintah : <code>{0}listdb</code> 
+<b>Perintah:</b> <code>{0}listdb</code> 
     melihat total database broadcast
 
-perintah : <code>{0}ralldb</code> 
+<b>Perintah:</b> <code>{0}ralldb</code> 
     menghapus semua database broadcast</blockquote></b>
     
 """
@@ -35,12 +35,12 @@ perintah : <code>{0}ralldb</code>
 async def _(client, message):
     prs = await EMO.PROSES(client)
     brhsl = await EMO.BERHASIL(client)
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     bcs = await EMO.BROADCAST(client)
     _msg = f"{prs}proccesing..."
     gcs = await message.reply(_msg)
     if not message.reply_to_message:
-        return await gcs.edit(f"**{ggl} mohon balas ke pesan !**")
+        return await gcs.edit(f"**{ggl} tolong balas ke pesan !**")
     text = message.reply_to_message
     database = await get_list_from_vars(client.me.id, "DB_ID")
     done = 0
@@ -77,7 +77,7 @@ gagal {failed} chat database
 async def _(client, message):
     prs = await EMO.PROSES(client)
     grp = await EMO.BERHASIL(client)
-    _msg = f"{prs}proceꜱꜱing..."
+    _msg = f"{prs}sebentar ya..."
 
     msg = await message.reply(_msg)
     try:
@@ -86,7 +86,7 @@ async def _(client, message):
 
         if chat_id in database:
             txt = f"""
-{grp}ꜱudah ada dalam database broadcaꜱt
+{grp}udah ada dalam database broadcaꜱt
 """
         else:
             await add_to_vars(client.me.id, "DB_ID", chat_id)
@@ -104,7 +104,7 @@ async def _(client, message):
 async def _(client, message):
     prs = await EMO.PROSES(client)
     grp = await EMO.BERHASIL(client)
-    _msg = f"{prs}proceꜱꜱing..."
+    _msg = f"{prs}sebentar ya..."
 
     msg = await message.reply(_msg)
     try:
@@ -113,7 +113,7 @@ async def _(client, message):
 
         if chat_id not in database:
             response = f"""
-{grp}tidak ada dalam database broadcaꜱt
+{grp}ga ada dalam database broadcaꜱt
 """
         else:
             await remove_from_vars(client.me.id, "DB_ID", chat_id)
@@ -132,7 +132,7 @@ async def _(client, message):
     prs = await EMO.PROSES(client)
     brhsl = await EMO.BERHASIL(client)
     ktrng = await EMO.BL_KETERANGAN(client)
-    _msg = f"{prs}proceꜱꜱing..."
+    _msg = f"{prs}sebentar ya..."
     mzg = await message.reply(_msg)
 
     database = await get_list_from_vars(client.me.id, "DB_ID")
@@ -155,9 +155,9 @@ async def _(client, message):
 @PY.TOP_CMD
 async def _(client, message):
     prs = await EMO.PROSES(client)
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     brhsl = await EMO.BERHASIL(client)
-    _msg = f"{prs}proceꜱꜱing..."
+    _msg = f"{prs}sebentar ya..."
 
     msg = await message.reply(_msg)
     databases = await get_list_from_vars(client.me.id, "DB_ID")

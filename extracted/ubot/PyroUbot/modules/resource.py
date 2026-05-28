@@ -12,7 +12,7 @@ async def _(client, message: Message):
     ram = psutil.virtual_memory()
     swap = psutil.swap_memory()
 
-    text = "<b>📊 RESOURCE DETAIL</b><blockquote>"
+    text = "<b>◆ RESOURCE DETAIL</b><blockquote>"
     for i, c in enumerate(cpu):
         text += f"\nCPU Core {i+1}: {c}%"
     text += f"""

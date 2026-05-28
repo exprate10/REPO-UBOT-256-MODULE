@@ -53,12 +53,12 @@ async def cb_gitpull(client, callback_query):
     os.system(f"kill -9 {os.getpid()} && git pull && python3 -m PyroUbot")
     
 async def handle_shutdown(message):
-    await message.reply("✅ System berhasil dimatikan", quote=True)
+    await message.reply("⌬ System berhasil dimatikan", quote=True)
     os.system(f"kill -9 {os.getpid()}")
 
 
 async def handle_restart(message):
-    await message.reply("✅ System berhasil direstart", quote=True)
+    await message.reply("⌬ System berhasil direstart", quote=True)
     os.execl(sys.executable, sys.executable, "-m", "PyroUbot")
 
 

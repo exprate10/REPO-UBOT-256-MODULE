@@ -7,9 +7,8 @@ from pyrogram.types import Message
 
 __MODULE__ = "ᴅᴜᴄᴋ ᴀɪ"
 __HELP__ = """
-<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴅᴜᴄᴋ ᴀɪ ⦫</b>
-<blockquote>
-⎆ perintah :
+<b>⦪ <blockquote>
+⎆ <b>Perintah:</b>
 ᚗ <code>{0}duckai</code>
 ⊶ Ai yang bisa memberikan tips dan saran.
 </blockquote>
@@ -24,10 +23,10 @@ async def chat_gpt(client, message):
 
         if len(message.command) < 2:
             await message.reply_text(
-                "<emoji id=5019523782004441717>❌</emoji>mohon gunakan format\ncontoh : .duckai query"
+                "<emoji id=5019523782004441717>⌭</emoji>tolong gunakan format\ncontoh : .duckai query"
             )
         else:
-            prs = await message.reply_text(f"<emoji id=5319230516929502602>🔍</emoji>menjawab....")
+            prs = await message.reply_text(f"<emoji id=5319230516929502602>⌖</emoji>menjawab....")
             a = message.text.split(' ', 1)[1]
             respons = requests.get(f'https://api.siputzx.my.id/api/ai/duckai?query={a}')
 

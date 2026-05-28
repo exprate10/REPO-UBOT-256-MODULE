@@ -9,21 +9,21 @@ from PyroUbot import *
 
 __MODULE__ = "ᴄᴏɴᴠᴇʀᴛ"
 __HELP__ = """
-<blockquote>Bantuan Untuk Clnvert
+<blockquote><b>Clnvert</b>
 
-perintah : <code>{0}toanime</code>
+<b>Perintah:</b> <code>{0}toanime</code>
     untuk merubah photo/sticker/gif menjadi gambar anime
   
-perintah : <code>{0}toimg</code>
+<b>Perintah:</b> <code>{0}toimg</code>
     untuk merubah sticker/gif menjadi photo
   
-perintah : <code>{0}tosticker</code>
+<b>Perintah:</b> <code>{0}tosticker</code>
     untuk merubah foto menjadi sticker
   
-perintah : <code>{0}togif</code>
+<b>Perintah:</b> <code>{0}togif</code>
     untuk merubah sticker menjadi gif
   
-perintah : <code>{0}toaudio</code>
+<b>Perintah:</b> <code>{0}toaudio</code>
     untuk merubah video menjadi audio mp3</blockquote>
 """
 
@@ -35,7 +35,7 @@ perintah : <code>{0}toaudio</code>
 async def _(client, message):
     prs = await EMO.PROSES(client)
     brhsl = await EMO.BERHASIL(client)
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     Tm = await message.reply(f"{prs}tunggu sebentar...")
     if message.reply_to_message:
         if len(message.command) < 2:
@@ -50,7 +50,7 @@ async def _(client, message):
                 get_photo = await dl_pic(client, message.reply_to_message)
             else:
                 return await Tm.edit(
-                    f"{ggl}mohon balas ke photo/striker/git"
+                    f"{ggl}tolong balas ke photo/striker/git"
                 )
         else:
             if message.command[1] in ["foto", "profil", "photo"]:
@@ -75,7 +75,7 @@ async def _(client, message):
                 get_photo = await dl_pic(client, photo)
             except Exception as error:
                 return await Tm.edit(error)
-    await Tm.edit("proceꜱꜱing...")
+    await Tm.edit("sebentar ya...")
     await client.unblock_user("@Image_To_AnimeBot")
     send_photo = await client.send_photo("@Image_To_AnimeBot", get_photo)
     await asyncio.sleep(30)
@@ -113,7 +113,7 @@ async def _(client, message):
 @PY.TOP_CMD
 async def _(client, message):
     prs = await EMO.PROSES(client)
-    _msg = f"{prs}proceꜱꜱing..."
+    _msg = f"{prs}sebentar ya..."
     Tm = await message.reply(_msg)
   
     try:
@@ -154,8 +154,8 @@ async def _(client, message):
 @PY.TOP_CMD
 async def _(client, message):
     prs = await EMO.PROSES(client)
-    ggl = await EMO.GAGAL(client)
-    TM = await message.reply(f"{prs}proceꜱꜱing...")
+    ggl = await EMO.gagal(client)
+    TM = await message.reply(f"{prs}sebentar ya...")
     if not message.reply_to_message.sticker:
         return await TM.edit(f"{ggl}balas ke stiker...")
     await TM.edit(f"{prs}downloading sticker. . .")
@@ -178,12 +178,12 @@ async def _(client, message):
 async def _(client, message):
     prs = await EMO.PROSES(client)
     brhsl = await EMO.BERHASIL(client)
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     ktrng = await EMO.BL_KETERANGAN(client)
     replied = message.reply_to_message
     Tm = await message.reply(f"{prs}tunggu sebentar")
     if not replied:
-        return await Tm.edit(f"{ggl}mohon balas ke video")
+        return await Tm.edit(f"{ggl}tolong balas ke video")
     if replied.media == MessageMediaType.VIDEO:
         await Tm.edit(f"{prs}downloading video . . ..")
         file = await client.download_media(
@@ -206,20 +206,20 @@ async def _(client, message):
         except Exception as error:
             await Tm.edit(error)
     else:
-        return await Tm.edit(f"{ggl}mohon balas ke video")
+        return await Tm.edit(f"{ggl}tolong balas ke video")
 
 
 @PY.UBOT("colong")
 @PY.TOP_CMD
 async def _(client, message):
     prs = await EMO.PROSES(client)
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     ktrng = await EMO.BL_KETERANGAN(client)
     dia = message.reply_to_message
     if not dia:
-        return await message.reply(f"{ggl}mohon balas ke media")
+        return await message.reply(f"{ggl}tolong balas ke media")
     anjing = dia.caption or ""
-    Tm = await message.reply(f"{prs}processing...")
+    Tm = await message.reply(f"{prs}sebentar ya...")
     if dia.photo:
         if message.reply_to_message.photo.file_size > 10000000:
             return await Tm.edit(f"{ktrng}file di atas 10mb tidak di izinkan")

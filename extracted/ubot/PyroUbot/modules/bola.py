@@ -7,7 +7,7 @@ __MODULE__ = "⚽ Tebak Bola"
 __HELP__ = """
 <blockquote><b>『 TEBak PEMAIN BOLA 』</b>
 
-<b>Perintah:</b>
+<b><b>Perintah:</b></b>
 • <code>.bola</code> → mulai game
 • <code>.jawab</code> [nama] → jawab
 • <code>.bolaskor</code> → lihat skor
@@ -75,7 +75,7 @@ async def jawab(_, message):
     chat_id = message.chat.id
 
     if chat_id not in GAME:
-        return await message.reply_text("❌ Belum ada game. Ketik <code>.bola</code>")
+        return await message.reply_text("⌭ Belum ada game. Ketik <code>.bola</code>")
 
     jawaban = message.text.split(" ", 1)
     if len(jawaban) < 2:
@@ -92,17 +92,17 @@ async def jawab(_, message):
         del GAME[chat_id]
 
         await message.reply_text(
-            f"""✅ <b>BENAR!</b>
+            f"""⌬ <b>BENAR!</b>
 
-👤 Pemain:
+◉ Pemain:
 <b>{pemain.title()}</b>
 
-🏆 Poin:
+✧ Poin:
 <b>{user.first_name}</b> sekarang punya <b>{SCORE[uid]}</b> poin
 """
         )
     else:
-        await message.reply_text("❌ Salah! Coba lagi 😆")
+        await message.reply_text("⌭ Salah! Coba lagi 😆")
 
 # ================= SCORE =================
 
@@ -112,7 +112,7 @@ async def skor(_, message):
     if not SCORE:
         return await message.reply_text("📭 Belum ada skor")
 
-    text = "🏆 <b>SKOR TEBAK BOLA</b>\n\n"
+    text = "✧ <b>SKOR TEBAK BOLA</b>\n\n"
     for uid, sc in SCORE.items():
         text += f"• <code>{uid}</code> : <b>{sc}</b> poin\n"
 

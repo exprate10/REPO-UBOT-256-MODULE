@@ -4,9 +4,9 @@ from PyroUbot import *
 
 __MODULE__ = "ʙᴏᴋᴇxx"
 __HELP__ = """
-<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ʙᴏᴋᴇxx ⦫</b>
+<b>⦪ </b>
 
-<blockquote><b>⎆ perintah :
+<blockquote><b>⎆ <b>Perintah:</b>
 ᚗ <code>{0}bokep1</code>
 ⊷ lagi nyari bokepnya bntr....
 

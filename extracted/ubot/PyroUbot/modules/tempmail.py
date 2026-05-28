@@ -7,8 +7,7 @@ from PyroUbot import *
 
 __MODULE__ = "ᴛᴇᴍᴘ ᴍᴀɪʟ"
 __HELP__ = """
-<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴛᴇᴍᴘ ᴍᴀɪʟ ⦫</b>
-<blockquote>⎆ perintah :
+<b>⦪ <blockquote>⎆ <b>Perintah:</b>
 ᚗ <code>{0}tempmail</code>
 ⊶ untuk untuk membuat email gratis
 
@@ -66,9 +65,9 @@ async def tempmail(client: Client, message):
         email = sessions_mail[user_id]["email"]
         return await edit_or_reply(
             message,
-            f"✅ **TempMail Aktif**\n\n"
+            f"⌬ **TempMail Aktif**\n\n"
             f"📩 Email: `{email}`\n"
-            f"⏳ Berlaku ±30 menit\n\n"
+            f"◷ Berlaku ±30 menit\n\n"
             f"➡ `{prefix}cekmail` untuk cek inbox\n"
             f"➡ `{prefix}resetmail` untuk email baru"
         )
@@ -85,9 +84,9 @@ async def tempmail(client: Client, message):
 
     await edit_or_reply(
         message,
-        f"✅ **TempMail Berhasil Dibuat**\n\n"
+        f"⌬ **TempMail Berhasil Dibuat**\n\n"
         f"📩 Email: `{email}`\n"
-        f"⏳ Berlaku ±30 menit\n\n"
+        f"◷ Berlaku ±30 menit\n\n"
         f"➡ `{prefix}cekmail` untuk cek inbox\n"
         f"➡ `{prefix}resetmail` untuk email baru"
     )
@@ -99,7 +98,7 @@ async def cekmail(client: Client, message):
     if user_id not in sessions_mail:
         return await edit_or_reply(
             message,
-            "⚠️ Anda belum punya TempMail.\n"
+            "⌯ Anda belum punya TempMail.\n"
             "Gunakan `.tempmail` terlebih dahulu."
         )
 
@@ -118,7 +117,7 @@ async def cekmail(client: Client, message):
         detail = read_message(data["login"], data["domain"], msg["id"])
         hasil.append(
             f"📬 **Email Masuk**\n"
-            f"👤 Dari : `{detail.get('from')}`\n"
+            f"◉ Dari : `{detail.get('from')}`\n"
             f"📚 Subjek : `{detail.get('subject')}`\n"
             f"🕒 Waktu : `{detail.get('date')}`\n\n"
             f"📜 **Isi:**\n{detail.get('textBody') or detail.get('htmlBody') or '-'}"

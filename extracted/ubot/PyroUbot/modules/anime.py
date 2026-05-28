@@ -8,9 +8,8 @@ from io import BytesIO
 
 __MODULE__ = "ᴀɴɪᴍᴇ"
 __HELP__ = """
-<blockquote><b>『 ʙᴀɴᴛᴜᴀɴ ᴀɴɪᴍᴇ 』</b>
-
-<b>⌲ ᴘᴇʀɪɴᴛᴀʜ:</b> <code>{0}anime [query]</code>
+<blockquote><b>『 
+<b>⌲ <b>Perintah:</b></b> <code>{0}anime [query]</code>
 
 <b>Query:</b> <b>keneki</b>,
     <b>megumin/b>,
@@ -67,4 +66,4 @@ async def _(client, message):
         await client.send_photo(message.chat.id, photo)
         await processing_msg.delete()
     except requests.exceptions.RequestException as e:
-        await processing_msg.edit_text(f"Gagal mengambil gambar anime Error: {e}")
+        await processing_msg.edit_text(f"gagal mengambil gambar anime Error: {e}")

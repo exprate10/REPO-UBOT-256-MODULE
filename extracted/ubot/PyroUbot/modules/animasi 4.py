@@ -11,9 +11,8 @@ from PyroUbot import *
 
 __MODULE__ = "ᴀɴɪᴍᴀsɪ 4"
 __HELP__ = """
-<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴀɴɪᴍᴀsɪ 4<b>
-
-<blockqoute><b>⎆ perintah :
+<b>⦪ 
+<blockqoute><b>⎆ <b>Perintah:</b>
 ᚗ <code>{0}fadmin</code> 
 ᚗ <code>{0}fleave</code> 
 ᚗ <code>{0}tupload</code> 
@@ -36,22 +35,22 @@ async def _(client, message):
     animation_chars = [
             "**Promoting User As Admin...**",
             "**Enabling All Permissions To User...**",
-            "**(1) Send Messages: ☑️**",
-            "**(1) Send Messages: ✅**",
-            "**(2) Send Media: ☑️**",
-            "**(2) Send Media: ✅**",
-            "**(3) Send Stickers & GIFs: ☑️**",
-            "**(3) Send Stickers & GIFs: ✅**",
-            "**(4) Send Polls: ☑️**",
-            "**(4) Send Polls: ✅**",
-            "**(5) Embed Links: ☑️**",
-            "**(5) Embed Links: ✅**",
-            "**(6) Add Users: ☑️**",
-            "**(6) Add Users: ✅**",
-            "**(7) Pin Messages: ☑️**",
-            "**(7) Pin Messages: ✅**",
-            "**(8) Change Chat Info: ☑️**",
-            "**(8) Change Chat Info: ✅**",
+            "**(1) Send Messages: ⌬**",
+            "**(1) Send Messages: ⌬**",
+            "**(2) Send Media: ⌬**",
+            "**(2) Send Media: ⌬**",
+            "**(3) Send Stickers & GIFs: ⌬**",
+            "**(3) Send Stickers & GIFs: ⌬**",
+            "**(4) Send Polls: ⌬**",
+            "**(4) Send Polls: ⌬**",
+            "**(5) Embed Links: ⌬**",
+            "**(5) Embed Links: ⌬**",
+            "**(6) Add Users: ⌬**",
+            "**(6) Add Users: ⌬**",
+            "**(7) Pin Messages: ⌬**",
+            "**(7) Pin Messages: ⌬**",
+            "**(8) Change Chat Info: ⌬**",
+            "**(8) Change Chat Info: ⌬**",
             "**Permission Granted Successfully**",
             "**pRoMooTeD SuCcEsSfUlLy**"
     ]
@@ -69,15 +68,15 @@ async def _(client, message):
     await message.edit("Leave Proses....")
     animation_chars = [
             "⬛⬛⬛\n⬛⬛⬛\n⬛⬛⬛",
-            "⬛⬛⬛\n⬛🔄⬛\n⬛⬛⬛",
-            "⬛⬆️⬛\n⬛🔄⬛\n⬛⬛⬛",
-            "⬛⬆️↗️\n⬛🔄⬛\n⬛⬛⬛",
-            "⬛⬆️↗️\n⬛🔄➡️\n⬛⬛⬛",
-            "⬛⬆️↗️\n⬛🔄➡️\n⬛⬛↘️",
-            "⬛⬆️↗️\n⬛🔄➡️\n⬛⬇️↘️",
-            "⬛⬆️↗️\n⬛🔄➡️\n↙️⬇️↘️",
-            "⬛⬆️↗️\n⬅️🔄➡️\n↙️⬇️↘️",
-            "↖️⬆️↗️\n⬅️🔄➡️\n↙️⬇️↘️",
+            "⬛⬛⬛\n⬛⟳⬛\n⬛⬛⬛",
+            "⬛↑⬛\n⬛⟳⬛\n⬛⬛⬛",
+            "⬛↑↗️\n⬛⟳⬛\n⬛⬛⬛",
+            "⬛↑↗️\n⬛⟳→\n⬛⬛⬛",
+            "⬛↑↗️\n⬛⟳→\n⬛⬛↘️",
+            "⬛↑↗️\n⬛⟳→\n⬛↓↘️",
+            "⬛↑↗️\n⬛⟳→\n↙️↓↘️",
+            "⬛↑↗️\n←⟳→\n↙️↓↘️",
+            "↖️↑↗️\n←⟳→\n↙️↓↘️",
             "**Chat Message Exported To** `./Inpu/`",
             "**Chat Message Exported To** `./Inpu/homework/`",
             "**Chat Message Exported To** `./Inpu/homework/groupchat.txt`",
@@ -112,7 +111,7 @@ async def _(client, message):
             "SPLITTING FILE IN WHATSAPP SUPPORTED SIZE & UPLOADING IT ... 86.21% [███████████████░░░░░]\n\nETA: 0m, 04s",
             "SPLITTING FILE IN WHATSAPP SUPPORTED SIZE & UPLOADING IT... 93.50% [█████████████████░░░]\n\nETA: 0m, 02s",
             "UPLOADING TO ADMIN'S WHATSAPP GROUP [CHUTIYA GANG BOYS]... 100% [████████████████████]\n`Scanning file...`\nETA: 0m, 00s",
-            "UPLOADING FILE TO WHATSAPP GROUP COMPLETED!\nFILE VERIFIED: ✅",
+            "UPLOADING FILE TO WHATSAPP GROUP COMPLETED!\nFILE VERIFIED: ⌬",
             "API TERMINATED UNTIL FURTHER USAGE..."
     ]
     for i in animation_ttl:

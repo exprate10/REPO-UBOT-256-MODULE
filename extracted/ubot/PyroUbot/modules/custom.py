@@ -2,11 +2,11 @@ from PyroUbot import *
 from pyrogram.enums import ParseMode
 __MODULE__ = "ᴄᴜꜱᴛᴏᴍ"
 __HELP__ = """
-<blockquote>Bantuan Untuk Custom
+<blockquote><b>Custom</b>
 
-perintah : <code>{0}lihatemoji</code>
+<b>Perintah:</b> <code>{0}lihatemoji</code>
 
-perintah : <code>{0}text</code>
+<b>Perintah:</b> <code>{0}text</code>
    untuk merubah text pada tampilan tertentu
 
 query:
@@ -14,7 +14,7 @@ query:
   <code>{0}owner<code> | default : ± owner
   <code>{0}ubot<code> | default : ± ubot
 
-contoh :
+Contoh :
      <code>{0}</code>text pong none | untuk menyeting ke default</blockquote>
 """
 def extract_emojis_from_entities(message):
@@ -29,7 +29,7 @@ def extract_emojis_from_entities(message):
 async def _(client, message):
     prs = await EMO.PROSES(client)
     brhsl = await EMO.BERHASIL(client)
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     try:
         msg = await message.reply(f"{prs}memproses...", quote=True)
 
@@ -56,7 +56,7 @@ async def _(client, message):
                 f"{brhsl}text berhasil di setting ke: {value}"
             )
         else:
-            await msg.edit(f"{ggl}mapping tidak ditemukan")
+            await msg.edit(f"{ggl}mapping ga ketemu")
 
     except Exception as error:
         await msg.edit(str(error))

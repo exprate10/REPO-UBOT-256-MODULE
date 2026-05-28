@@ -29,11 +29,10 @@ from httpx import AsyncClient, Timeout
 
 __MODULE__ = "ᴏɴɢɴᴇʀ"
 __HELP__ = """
-<blockquote><b>ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴏɴɢɴᴇʀ</b></blockquote>
+<blockquote><b>
+<blockquote><b><b>Perintah:</b> <code>{0}ᴄᴘɪɴɢ</code> - <code>{0}ᴄᴀᴅᴅʙʟ</code> - <code>{0}ᴄʟɪᴍɪᴛ</code> - <code>ᴄᴀʟɪᴠᴇ</code></b></blockquote>
 
-<blockquote><b>ᴘᴇʀɪɴᴛᴀʜ : <code>{0}ᴄᴘɪɴɢ</code> - <code>{0}ᴄᴀᴅᴅʙʟ</code> - <code>{0}ᴄʟɪᴍɪᴛ</code> - <code>ᴄᴀʟɪᴠᴇ</code></b></blockquote>
-
-<blockquote><b>ᴘᴇʀɪɴᴛᴀʜ : <code>{0}ʙᴏʏsᴢ ɢᴀɴᴛᴇɴᴋ ɢᴀ</code> - <code>{0}ᴛᴇs ᴏɴ</code></b></blockquote>
+<blockquote><b><b>Perintah:</b> <code>{0}ʙᴏʏsᴢ ɢᴀɴᴛᴇɴᴋ ɢᴀ</code> - <code>{0}ᴛᴇs ᴏɴ</code></b></blockquote>
 
 <blockquote><b>- <code>{0}ᴘ</code>\n- <code>{0}ᴏᴋ</code>\n- <code>{0}sɪᴘ</code>\n- <code>{0}ʟᴏᴠᴇ</code>\n- <code>{0}ʜᴀʜᴀ</code>\n- <code>{0}ᴋᴜᴅᴀ</code></b></blockquote>
 """
@@ -63,7 +62,7 @@ async def didingantenkga(client, message):
 @PY.INDRI("tes on")
 async def teson(client, message):
     await message.reply(
-       "<blockquote><b>ᴏɴ sᴇʟᴀʀᴜ ᴅᴇᴠ ᴋɪɴɢᴢ👑</b></blockquote>")
+       "<blockquote><b>ᴏɴ sᴇʟᴀʀᴜ ᴅᴇᴠ ᴋɪɴɢᴢ✧</b></blockquote>")
         
 @PY.INDRI("kuda")
 async def _(client, message):
@@ -77,7 +76,7 @@ async def _(client, message):
 
 @PY.INDRI("sip")
 async def _(client, message):
-    try: await message.react("👍")
+    try: await message.react("⌬")
     except: pass
 
 @PY.INDRI("ok")
@@ -92,7 +91,7 @@ async def _(client, message):
 
 @PY.INDRI("p")
 async def _(client, message):
-    try: await message.react("👋")
+    try: await message.react("◈")
     except: pass
 
 @PY.INDRI("wow")

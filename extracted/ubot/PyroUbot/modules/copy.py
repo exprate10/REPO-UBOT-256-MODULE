@@ -2,9 +2,9 @@ from PyroUbot import *
 
 __MODULE__ = "ᴄᴏᴘʏ"
 __HELP__ = """
-<blockquote>Bantuan Untuk Copy
+<blockquote><b>Copy</b>
 
-perintah : <code>{0}copy</code> [link_konten_telegram]
+<b>Perintah:</b> <code>{0}copy</code> [link_konten_telegram]
     untuk mengambil pesan dan postingan chanel telegram melalui link mereka</blockquote>
 """
 import asyncio
@@ -23,7 +23,7 @@ from pyrogram.types import (InlineKeyboardButton, InlineKeyboardMarkup,
 from PyroUbot import *
 
 async def nyolongnih(client, message):
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     sks = await EMO.BERHASIL(client)
     prs = await EMO.PROSES(client)
     try:

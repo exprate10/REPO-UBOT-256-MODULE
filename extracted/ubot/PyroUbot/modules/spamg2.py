@@ -10,21 +10,21 @@ kontol = False
 
 __MODULE__ = "𝚂𝙿𝙰𝙼 𝟸"
 __HELP__ = """
- <blockquote><b>Bantuan Untuk Spam 2<b>
+ <blockquote><b><b>Spam 2</b><b>
 
-• Perintah : <code>{0}sdspm</code> [Waktu] [Balas ke pesan]
+• <b>Perintah:</b> <code>{0}sdspm</code> [Waktu] [Balas ke pesan]
 • Penjelasan : Memulai spam ke database.
 
-• Perintah : <code>{0}stdspm</code>
+• <b>Perintah:</b> <code>{0}stdspm</code>
 • Penjelasan : Menghentikan proses spam didatabase.
 
-• Perintah : <code>{0}listspm</code> 
+• <b>Perintah:</b> <code>{0}listspm</code> 
 • Penjelasan : Melihat daftar grup didalam database.
 
-• Perintah : <code>{0}addspm</code> 
+• <b>Perintah:</b> <code>{0}addspm</code> 
 • Penjelasan : Menambahkan grup ke dalam database spam.
 
-• Perintah : <code>{0}delspm</code> 
+• <b>Perintah:</b> <code>{0}delspm</code> 
 • Penjelasan : Menghapus grup dari database spam.</b></blockquote><b>
 """
 
@@ -36,7 +36,7 @@ async def _(c, m):
     if not m.reply_to_message:
         return await m.reply("<b>Silakan balas ke pesan !!</b>")
     if len(m.command) != 2:
-        return await m.reply("<b>Silahkan balas ke pesan dan berikan waktu delay.</b>")
+        return await m.reply("<b>langsung aja balas ke pesan dan berikan waktu delay.</b>")
     try:
         interval = int(m.command[1])
     except ValueError:
@@ -76,7 +76,7 @@ async def _(c, m):
     global kontol
     if not kontol:
         return await m.reply_text(
-            "<b>Tidak ada pengiriman spam yang sedang berlangsung.</b>"
+            "<b>ga ada pengiriman spam yang sedang berlangsung.</b>"
         )
     chat_ids = monggo.ambil_spdb(c.me.id)
     for chat_id in chat_ids:
@@ -105,7 +105,7 @@ async def _(c, m):
 async def _(c, m):
     user_id = c.me.id
     chat_id = m.command[1] if len(m.command) > 1 else m.chat.id
-    mmk = await m.reply("<b>Processing...</b>")
+    mmk = await m.reply("<b>sebentar ya...</b>")
     if m.command[0] == "addspm":
         monggo.tambah_spdb(user_id, chat_id)
         return await mmk.edit(

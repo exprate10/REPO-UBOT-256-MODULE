@@ -51,7 +51,7 @@ from pytgcalls.types import MediaStream
 @PY.GROUP
 async def play_audio(client, message):
     brhsl = await EMO.BERHASIL(client)
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     prs = await EMO.PROSES(client)
 
     if message.reply_to_message and message.reply_to_message.audio:
@@ -107,7 +107,7 @@ async def play_audio(client, message):
 @PY.GROUP
 async def play_video(client, message):
     brhsl = await EMO.BERHASIL(client)
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     prs = await EMO.PROSES(client)
 
     if message.reply_to_message and message.reply_to_message.video:
@@ -155,7 +155,7 @@ async def play_video(client, message):
 @PY.GROUP
 async def pause_audio(client, message):
     brhsl = await EMO.BERHASIL(client)
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     
     try:
         await client.call_py.pause_stream(message.chat.id)
@@ -170,7 +170,7 @@ async def pause_audio(client, message):
 @PY.GROUP
 async def resume_audio(client, message):
     brhsl = await EMO.BERHASIL(client)
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     
     try:
         await client.call_py.resume_stream(message.chat.id)
@@ -185,7 +185,7 @@ async def resume_audio(client, message):
 @PY.GROUP
 async def stop_audio(client, message):
     brhsl = await EMO.BERHASIL(client)
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     
     try:
         await client.call_py.leave_call(message.chat.id)

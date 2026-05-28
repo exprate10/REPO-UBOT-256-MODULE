@@ -4,9 +4,9 @@ from PyroUbot import *
 
 __MODULE__ = "ᴀᴜᴛᴏ ʀᴇᴘᴏʀᴛ"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk Auto Report</b>
+<blockquote><b><b>Auto Report</b></b>
 
-Perintah:
+<b>Perintah:</b>
 <code>{0}report</code> [reply/username] [alasan] → Laporkan akun ke Telegram.
 
 <b>Alasan yang tersedia:</b>
@@ -36,7 +36,7 @@ async def _(client, message):
     
     selected_reason = reasons.get(reason_input, raw.types.InputReportReasonOther())
     
-    status_msg = await message.reply_text("<blockquote><b>📡 Mengirimkan laporan ke server Telegram...</b></blockquote>")
+    status_msg = await message.reply_text("<blockquote><b>◎ Mengirimkan laporan ke server Telegram...</b></blockquote>")
 
     try:
         user = await client.get_users(args)
@@ -52,15 +52,15 @@ async def _(client, message):
         )
 
         hasil = (
-            f"<blockquote><b>✅ LAPORAN TERKIRIM</b>\n\n"
-            f"<b>👤 Target:</b> {user.mention}\n"
+            f"<blockquote><b>⌬ LAPORAN TERKIRIM</b>\n\n"
+            f"<b>◉ Target:</b> {user.mention}\n"
             f"<b>🆔 ID:</b> <code>{user.id}</code>\n"
             f"<b>⚖️ Alasan:</b> <code>{reason_input.upper()}</code>\n\n"
-            f"<b>💡 ARAHAN:</b>\n"
+            f"<b>✦ ARAHAN:</b>\n"
             f"<i>Laporan telah diteruskan ke tim moderator Telegram untuk ditinjau lebih lanjut.</i></blockquote>"
         )
         await status_msg.edit(hasil)
 
     except Exception as e:
-        await status_msg.edit(f"<blockquote><b>❌ Gagal Report:</b>\n<code>{str(e)}</code></blockquote>")
+        await status_msg.edit(f"<blockquote><b>⌭ gagal Report:</b>\n<code>{str(e)}</code></blockquote>")
         

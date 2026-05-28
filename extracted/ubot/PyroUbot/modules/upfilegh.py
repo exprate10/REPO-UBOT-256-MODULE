@@ -6,9 +6,9 @@ from PyroUbot import PY
 
 __MODULE__ = "ᴜᴘʟᴏᴀᴅ ᴋᴇ ɢɪᴛʜᴜʙ"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk Upload File ke GitHub</b>
+<blockquote><b><b>Upload File ke GitHub</b></b>
 
-Perintah:
+<b>Perintah:</b>
 <code>{0}upgh [email] [password]</code> → Login ke GitHub.
 Lalu, reply file yang ingin diunggah.
 
@@ -23,7 +23,7 @@ user_sessions = {}  # Menyimpan sesi user sementara
 async def github_login(client, message):
     args = message.text.split(maxsplit=2)
     if len(args) < 3:
-        return await message.reply_text("⚠️ Harap masukkan email dan password GitHub.\nContoh: `.upgh email@gmail.com password123`")
+        return await message.reply_text("⌯ Harap masukkan email dan password GitHub.\nContoh: `.upgh email@gmail.com password123`")
     
     email = args[1]
     password = args[2]
@@ -35,20 +35,20 @@ async def github_login(client, message):
     user_response = requests.get(f"{GITHUB_API}/user", headers=headers)
     
     if user_response.status_code != 200:
-        return await message.reply_text("🚫 Login gagal. Pastikan email dan password benar.")
+        return await message.reply_text("⊘ Login gagal. Pastikan email dan password benar.")
     
     user_data = user_response.json()
     username = user_data["login"]
     user_sessions[message.chat.id] = {"email": email, "password": password, "username": username}
     
-    await message.reply_text(f"✅ Login berhasil!\n👤 GitHub User: `{username}`\n🔹 Silakan reply file yang ingin di-upload.")
+    await message.reply_text(f"⌬ Login berhasil!\n◉ GitHub User: `{username}`\n🔹 Silakan reply file yang ingin di-upload.")
 
 
 @PY.UBOT(filters.document & filters.reply)
 async def upload_to_github(client, message):
     chat_id = message.chat.id
     if chat_id not in user_sessions:
-        return await message.reply_text("⚠️ Anda belum login! Gunakan perintah `.upgh email password` terlebih dahulu.")
+        return await message.reply_text("⌯ Anda belum login! Gunakan perintah `.upgh email password` terlebih dahulu.")
     
     user_data = user_sessions[chat_id]
     email, password, username = user_data["email"], user_data["password"], user_data["username"]
@@ -75,7 +75,7 @@ async def upload_to_github(client, message):
             headers=headers,
         )
         if create_repo.status_code != 201:
-            return await message.reply_text("🚫 Gagal membuat repositori.")
+            return await message.reply_text("⊘ gagal membuat repositori.")
     
     upload_url = f"{GITHUB_API}/repos/{username}/{repo_name}/contents/{file_path}"
     
@@ -88,6 +88,6 @@ async def upload_to_github(client, message):
     
     if upload_response.status_code == 201:
         file_url = upload_response.json()["content"]["html_url"]
-        await message.reply_text(f"✅ File berhasil diunggah ke GitHub!\n🔗 {file_url}")
+        await message.reply_text(f"⌬ File berhasil diunggah ke GitHub!\n⌕ {file_url}")
     else:
-        await message.reply_text("🚫 Gagal mengunggah file.")
+        await message.reply_text("⊘ gagal mengunggah file.")

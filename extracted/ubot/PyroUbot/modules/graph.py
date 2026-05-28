@@ -4,9 +4,9 @@ from PyroUbot import *
 
 __MODULE__ = "ᴛᴇʟᴇɢʀᴀᴘʜ"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk Telegraph</b>
+<blockquote><b><b>Telegraph</b></b>
 
-Perintah:
+<b>Perintah:</b>
 <code>{0}tg [reply_media]</code> → Upload gambar/video ke link telegraph.</blockquote></b>
 """
 
@@ -22,7 +22,7 @@ async def _(client, message):
             "Balas (Reply) pada foto atau video, lalu ketik <code>.tg</code></blockquote>"
         )
 
-    status_msg = await message.reply_text("<blockquote><b>⏳ Sedang mengupload ke Telegraph...</b></blockquote>")
+    status_msg = await message.reply_text("<blockquote><b>◷ Sedang mengupload ke Telegraph...</b></blockquote>")
 
     try:
         # Mendownload media secara lokal
@@ -34,9 +34,9 @@ async def _(client, message):
         
         # Hasil dalam format premium
         hasil = (
-            f"<blockquote><b>✅ BERHASIL DIUPLOAD</b>\n\n"
-            f"<b>🌐 Link:</b> <a href='https://telegra.ph{upload_link[0]}'>Klik di Sini</a>\n\n"
-            f"<b>💡 ARAHAN:</b>\n"
+            f"<blockquote><b>⌬ BERHASIL DIUPLOAD</b>\n\n"
+            f"<b>◎ Link:</b> <a href='https://telegra.ph{upload_link[0]}'>Klik di Sini</a>\n\n"
+            f"<b>✦ ARAHAN:</b>\n"
             f"<i>Link ini bisa kamu gunakan untuk mempercantik tampilan broadcast atau tombol inline.</i></blockquote>"
         )
         await status_msg.edit(hasil)
@@ -47,5 +47,5 @@ async def _(client, message):
             os.remove(local_path)
 
     except Exception as e:
-        await status_msg.edit(f"<blockquote><b>❌ Gagal Upload:</b>\n<code>{str(e)}</code></blockquote>")
+        await status_msg.edit(f"<blockquote><b>⌭ gagal Upload:</b>\n<code>{str(e)}</code></blockquote>")
         

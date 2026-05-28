@@ -25,8 +25,8 @@ async def joinreseller_handler(client, message):
     from PyroUbot.core.helpers.inline import BTN
     buttons = BTN.PROMODEK(message)
     await message.reply(
-        "<blockquote><b>🏷️ Join Reseller — Rp 15.000</b>\n\n"
-        "<b>⚠️ Rules Reseller:</b>\n"
+        "<blockquote><b>◈ Join Reseller — Rp 15.000</b>\n\n"
+        "<b>⌯ Rules Reseller:</b>\n"
         "<b>•</b> Bertanggung jawab penuh atas transaksi\n"
         "<b>•</b> Dilarang scam / penipuan\n"
         "<b>•</b> Wajib punya Bank / E-Wallet aktif\n"
@@ -50,7 +50,7 @@ async def alive_handler(client, message):
         )
         await message.reply_inline_bot_result(x.query_id, x.results[0].id, quote=True)
     except Exception as error:
-        await message.reply(f"<blockquote><b>❌ Error:</b> {error}</blockquote>")
+        await message.reply(f"<blockquote><b>⌭ Error:</b> {error}</blockquote>")
 
 
 @PY.INLINE("^alive")
@@ -68,7 +68,7 @@ async def alive_inline(client, inline_query):
                 group = random.randrange(await my.get_dialogs_count())
 
             get_exp = await get_expired_date(my.me.id)
-            exp = get_exp.strftime("%d-%m-%Y") if get_exp else "Tidak Ada"
+            exp = get_exp.strftime("%d-%m-%Y") if get_exp else "ga ada"
 
             ultra_list = await get_list_from_vars(client.me.id, "ULTRA_PREM")
             status = "SuperUltra" if my.me.id in ultra_list else "Premium"
@@ -95,7 +95,7 @@ async def alive_inline(client, inline_query):
                 cache_time=300,
                 results=[
                     InlineQueryResultArticle(
-                        title="💬",
+                        title="◱",
                         reply_markup=InlineKeyboardMarkup(button),
                         input_message_content=InputTextMessageContent(msg),
                     )
@@ -122,7 +122,7 @@ async def anu_handler(client, message):
     from PyroUbot.core.helpers.inline import BTN
     buttons = BTN.BOT_HELP(message)
     await message.reply(
-        "<blockquote><b>⚙️ Panel Kontrol Bot RANZ PEDIA</b></blockquote>",
+        "<blockquote><b>⌘ Panel Kontrol Bot RANZ PEDIA</b></blockquote>",
         reply_markup=InlineKeyboardMarkup(buttons),
     )
 
@@ -132,7 +132,7 @@ async def balik_callback(client, callback_query):
     from PyroUbot.core.helpers.inline import BTN
     buttons = BTN.BOT_HELP(callback_query)
     await callback_query.edit_message_text(
-        "<blockquote><b>⚙️ Panel Kontrol Bot RANZ PEDIA</b></blockquote>",
+        "<blockquote><b>⌘ Panel Kontrol Bot RANZ PEDIA</b></blockquote>",
         reply_markup=InlineKeyboardMarkup(buttons),
     )
 
@@ -143,7 +143,7 @@ async def reboot_callback(client, callback_query):
     admin_list = await get_list_from_vars(client.me.id, "ADMIN_USERS")
     if user_id not in admin_list:
         return await callback_query.answer("Ini bukan buat kamu!", show_alert=True)
-    await callback_query.answer("✅ Sistem berhasil direstart!", show_alert=True)
+    await callback_query.answer("⌬ Sistem berhasil direstart!", show_alert=True)
     subprocess.call(["bash", "start.sh"])
 
 
@@ -154,8 +154,8 @@ async def update_callback(client, callback_query):
         return await callback_query.answer("Ini bukan buat kamu!", show_alert=True)
     out = subprocess.check_output(["git", "pull"]).decode("UTF-8")
     if "Already up to date." in out:
-        return await callback_query.answer("✅ Sudah versi terbaru!", show_alert=True)
-    await callback_query.answer("🔄 Lagi proses update...", show_alert=True)
+        return await callback_query.answer("⌬ Sudah versi terbaru!", show_alert=True)
+    await callback_query.answer("⟳ Lagi proses update...", show_alert=True)
     os.execl(sys.executable, sys.executable, "-m", "PyroUbot")
 
 
@@ -167,7 +167,7 @@ async def user_help(client, message):
             x = await client.get_inline_bot_results(bot.me.username, "user_help")
             await message.reply_inline_bot_result(x.query_id, x.results[0].id)
         except Exception as error:
-            await message.reply(f"<blockquote><b>❌ Error:</b> {error}</blockquote>")
+            await message.reply(f"<blockquote><b>⌭ Error:</b> {error}</blockquote>")
     else:
         module = get_arg(message)
         if module in HELP_COMMANDS:
@@ -177,7 +177,7 @@ async def user_help(client, message):
                 quote=True,
             )
         else:
-            await message.reply(f"<blockquote><b>❌ Modul <code>{module}</code> tidak ditemukan!</b></blockquote>")
+            await message.reply(f"<blockquote><b>⌭ Modul <code>{module}</code> ga ketemu!</b></blockquote>")
 
 
 @PY.INLINE("^user_help")
@@ -185,7 +185,7 @@ async def user_help_inline(client, inline_query):
     SH = await ubot.get_prefix(inline_query.from_user.id)
 
     caption = (
-        f"<blockquote><b>📋 Menu Help RANZ PEDIA</b>\n\n"
+        f"<blockquote><b>◆ Menu Help RANZ PEDIA</b>\n\n"
         f"<b>User:</b> <a href='tg://user?id={inline_query.from_user.id}'>"
         f"{inline_query.from_user.first_name} {inline_query.from_user.last_name or ''}</a>\n"
         f"<b>Total Modul:</b> {len(HELP_COMMANDS)}\n"
@@ -228,7 +228,7 @@ async def help_callback(client, callback_query):
     SH = await ubot.get_prefix(callback_query.from_user.id)
 
     top_text = (
-        f"<blockquote><b>📋 Menu Help RANZ PEDIA</b>\n\n"
+        f"<blockquote><b>◆ Menu Help RANZ PEDIA</b>\n\n"
         f"<b>User:</b> <a href='tg://user?id={callback_query.from_user.id}'>"
         f"{callback_query.from_user.first_name} {callback_query.from_user.last_name or ''}</a>\n"
         f"<b>Total Modul:</b> {len(HELP_COMMANDS)}\n"
@@ -239,7 +239,7 @@ async def help_callback(client, callback_query):
     if mod_match:
         module = mod_match.group(1).replace(" ", "_")
         text = HELP_COMMANDS[module].__HELP__.format(next((p) for p in SH))
-        button = [[InlineKeyboardButton("⬅️ Kembali", callback_data="help_back")]]
+        button = [[InlineKeyboardButton("← Kembali", callback_data="help_back")]]
         await callback_query.edit_message_text(
             text=text,
             reply_markup=InlineKeyboardMarkup(button),

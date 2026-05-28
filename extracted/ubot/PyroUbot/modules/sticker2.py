@@ -6,7 +6,7 @@ __MODULE__ = "ᴀᴛᴛᴘ-ᴛᴛᴘ"
 __HELP__ = """
 <blockquote><b>『 ᴀᴛᴛᴘ & ᴛᴛᴘ 』</b>
 
-  <b>➢ ᴘᴇʀɪɴᴛᴀʜ:</b> 
+  <b>➢ <b>Perintah:</b></b> 
     ◉ <code>{0}attp</code> <i>teks</i> - Membuat stiker teks berwarna.
     ◉ <code>{0}ttp</code> <i>teks</i> - Membuat stiker teks biasa.</blockquote>
 """
@@ -15,7 +15,7 @@ API_KEY = "@31Moire_mor"
 
 @PY.UBOT("attp")
 async def attp(client, message):
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     prs = await EMO.PROSES(client)
 
     jalan = await message.reply(f"{prs} Sedang memproses...")
@@ -46,7 +46,7 @@ async def attp(client, message):
             )
             await jalan.delete()
         else:
-            await jalan.edit(f"{ggl} Gagal mendapatkan stiker ATTP. Status: {response.status_code}")
+            await jalan.edit(f"{ggl} gagal mendapatkan stiker ATTP. Status: {response.status_code}")
     except requests.exceptions.RequestException as e:
         await jalan.edit(f"{ggl} Permintaan gagal: {e}")
     except Exception as e:
@@ -54,7 +54,7 @@ async def attp(client, message):
 
 @PY.UBOT("ttp")
 async def ttp(client, message):
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     prs = await EMO.PROSES(client)
 
     jalan = await message.reply(f"{prs} Sedang memproses...")
@@ -85,7 +85,7 @@ async def ttp(client, message):
             )
             await jalan.delete()
         else:
-            await jalan.edit(f"{ggl} Gagal mendapatkan stiker TTP. Status: {response.status_code}")
+            await jalan.edit(f"{ggl} gagal mendapatkan stiker TTP. Status: {response.status_code}")
     except requests.exceptions.RequestException as e:
         await jalan.edit(f"{ggl} Permintaan gagal: {e}")
     except Exception as e:

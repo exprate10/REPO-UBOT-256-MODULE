@@ -7,8 +7,7 @@ from pyrogram.types import Message
 
 __MODULE__ = "ʟᴀᴛᴜᴋᴀᴍ ᴀɪ"
 __HELP__ = """
-<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ʟᴀᴛᴜᴋᴀᴍ ᴀɪ ⦫</b>
-<blockquote>⎆ perintah :
+<b>⦪ <blockquote>⎆ <b>Perintah:</b>
 ᚗ <code>{0}latukam</code> text
 ⊶ AI yang rada toxic.
 """
@@ -21,7 +20,7 @@ async def chat_gpt(client, message):
 
         if len(message.command) < 2:
             await message.reply_text(
-                "<emoji id=5019523782004441717>❌</emoji>mohon gunakan format\ncontoh : .latukam siapa kamu"
+                "<emoji id=5019523782004441717>⌭</emoji>tolong gunakan format\ncontoh : .latukam siapa kamu"
             )
         else:
             prs = await message.reply_text(f"<emoji id=6260400955498435049>🌎</emoji> latukam sedang mikir......")

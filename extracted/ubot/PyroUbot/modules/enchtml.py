@@ -12,7 +12,7 @@ from PyroUbot import *
 __MODULE__ = "ᴇɴᴄʜᴛᴍʟ"
 
 __HELP__ = """
-<blockquote>🔐 <b>ENC HTML</b>
+<blockquote>⌠ <b>ENC HTML</b>
 
 <code>{0}enchtml</code>
 <b>➥ Reply ke HTML untuk di-encrypt</b>
@@ -29,7 +29,7 @@ def _xor(data: bytes, key: bytes):
 async def enc_html_brutal(client, message):
     reply = message.reply_to_message
     if not reply:
-        return await message.reply("❌ Reply ke text atau file HTML.")
+        return await message.reply("⌭ Reply ke text atau file HTML.")
 
     data = None
 
@@ -41,9 +41,9 @@ async def enc_html_brutal(client, message):
     elif reply.document:
         name = reply.document.file_name or ""
         if not name.lower().endswith((".html", ".htm")):
-            return await message.reply("❌ File harus .html atau .htm")
+            return await message.reply("⌭ File harus .html atau .htm")
 
-        proc = await message.reply("🔐 Mengunduh file HTML...\n[░░░░░░░░░░] 0%")
+        proc = await message.reply("⌠ Mengunduh file HTML...\n[░░░░░░░░░░] 0%")
         path = await reply.download()
 
         try:
@@ -54,15 +54,15 @@ async def enc_html_brutal(client, message):
                 os.remove(path)
 
     if not data:
-        return await message.reply("❌ Tidak bisa membaca isi HTML.")
+        return await message.reply("⌭ Tidak bisa membaca isi HTML.")
 
     # PROGRESS BAR
-    proc = await message.reply("🔐 Encrypting HTML...\n[░░░░░░░░░░] 0%")
+    proc = await message.reply("⌠ Encrypting HTML...\n[░░░░░░░░░░] 0%")
 
     async def bar(p):
         fill = "█" * (p // 10)
         empty = "░" * (10 - len(fill))
-        await proc.edit(f"🔐 Encrypting HTML...\n[{fill}{empty}] {p}%")
+        await proc.edit(f"⌠ Encrypting HTML...\n[{fill}{empty}] {p}%")
 
     await bar(20); await asyncio.sleep(0.2)
 

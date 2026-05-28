@@ -4,9 +4,8 @@ from PyroUbot import *
 
 __MODULE__ = "ᴄᴀᴘᴄᴜᴛ ᴅʟ"
 __HELP__ = """
-<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴄᴀᴘᴄᴜᴛ ᴅʟ ⦫</b>
-<blockquote>
-⎆ perintah :
+<b>⦪ <blockquote>
+⎆ <b>Perintah:</b>
 ᚗ <code>{0}capdl</code> Link
 
 ⎆ ᴘᴇɴᴊᴇʟᴀsᴀɴ:
@@ -22,13 +21,13 @@ async def capcut_download(client, message):
         return
     
     url = message.command[1]
-    processing_msg = await message.reply_text("🔄 Memproses permintaan, harap tunggu...")
+    processing_msg = await message.reply_text("⟳ Memproses permintaan, harap tunggu...")
     
     response = requests.get(f"https://api.botcahx.eu.org/api/download/capcut?url={url}&apikey=@31Moire_mor")
     data = response.json()
     
     if not data.get("status"):
-        await processing_msg.edit_text("❌ Gagal mengambil data. Pastikan URL valid.")
+        await processing_msg.edit_text("⌭ gagal mengambil data. Pastikan URL valid.")
         return
     
     video_url = data["result"]["video"]
@@ -39,7 +38,7 @@ async def capcut_download(client, message):
     await message.reply_video(
         video=video_url,
         thumb=thumbnail_url,
-        caption=f"**{title}**\n👤 Pembuat: {author}\n🔗 [Sumber]({url})",
+        caption=f"**{title}**\n◉ Pembuat: {author}\n⌕ [Sumber]({url})",
     )
     
     await processing_msg.delete()

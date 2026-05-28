@@ -4,9 +4,8 @@ from PyroUbot import *
 
 __MODULE__ = "ᴄᴇᴋ ᴅᴏᴍᴘᴇᴛ"
 __HELP__ = """
-<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴄᴇᴋ ᴅᴏᴍᴘᴇᴛ ⦫</b>
-
-<blockquote><b>⎆ perintah :
+<b>⦪ 
+<blockquote><b>⎆ <b>Perintah:</b>
 ᚗ <code>{0}cdompet</code> reply chat
 ⊷ mendeteksi isi dompet seseorang.
 </blockquote></b>
@@ -15,14 +14,14 @@ __HELP__ = """
 
 def emoji(alias):
     emojis = {
-        "DETEK": "<emoji id=6026321200597176575>🃏</emoji>",    
+        "DETEK": "<emoji id=6026321200597176575>◱</emoji>",    
         "SUBJEK": "<emoji id=5382148180043376268>😱</emoji>",
-        "DOMPET": "<emoji id=6257972409190585253>💰</emoji>",
-        "ATM": "<emoji id=5472250091332993630>💳</emoji>",
+        "DOMPET": "<emoji id=6257972409190585253>✦</emoji>",
+        "ATM": "<emoji id=5472250091332993630>◈</emoji>",
         "DANA": "<emoji id=6161325517497701900>🤝</emoji>", 
-        "ROYAL": "<emoji id=5384588885403641796>🥰</emoji>",
+        "ROYAL": "<emoji id=5384588885403641796></emoji>",
         "PELIT": "<emoji id=5384236096789949675>😒</emoji>",
-        "MASAA": "<emoji id=5206659381151680254>☀️</emoji>",
+        "MASAA": "<emoji id=5206659381151680254>✦</emoji>",
         "ENERGY": "<emoji id=5215420556089776398>👛</emoji>",                   
     }
     return emojis.get(alias, "⎆")
@@ -103,4 +102,4 @@ async def _(client, message):
 """
         await message.reply_text(response)
     else:
-        await message.reply_text("{ggll} **Gagal mendeteksi pengguna...**")
+        await message.reply_text("{ggll} **gagal mendeteksi pengguna...**")

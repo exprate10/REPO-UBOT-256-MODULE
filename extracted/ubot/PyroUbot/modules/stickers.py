@@ -18,18 +18,18 @@ from PyroUbot import *
 
 __MODULE__ = "ꜱᴛɪᴄᴋᴇʀ"
 __HELP__ = """
-<blockquote>Bantuan Untuk Sticker
+<blockquote><b>Sticker</b>
 
-perintah : <code>{0}q</code>
+<b>Perintah:</b> <code>{0}q</code>
     merubah text menjadi sticker
 
-perintah : <code>{0}kang</code>
+<b>Perintah:</b> <code>{0}kang</code>
     menambahkan sticker ke dalam pack
 
-perintah : <code>{0}tiny</code>
+<b>Perintah:</b> <code>{0}tiny</code>
     merubah sticker menjadi kecil
 
-perintah : <code>{0}mmf</code>
+<b>Perintah:</b> <code>{0}mmf</code>
     sticker atau foto akan di ubah menjad sticker text</blockquote>
 """
 
@@ -43,7 +43,7 @@ async def _(client, message):
     if not reply_message.media:
         return await message.reply("balas ke pesan foto atau sticker")
     file = await client.download_media(reply_message)
-    Tm = await message.reply("processing...")
+    Tm = await message.reply("sebentar ya...")
     text = get_arg(message)
     if len(text) < 1:
         return await Tm.edit(f"harap ketik: mmf - [text]")
@@ -64,8 +64,8 @@ async def _(client, message):
 async def _(client, message):
     prs = await EMO.PROSES(client)
     brhsl = await EMO.BERHASIL(client)
-    ggl = await EMO.GAGAL(client)
-    info = await message.reply(f"{prs}proceꜱꜱing...", quote=True)
+    ggl = await EMO.gagal(client)
+    info = await message.reply(f"{prs}sebentar ya...", quote=True)
     await client.unblock_user("@QuotLyBot")
     if message.reply_to_message:
         if len(message.command) < 2:
@@ -122,8 +122,8 @@ async def _(client, message):
 async def _(client, message):
     reply = message.reply_to_message
     if not (reply and (reply.media)):
-        return await message.reply("silahkan balas ke pesan sticker!")
-    Tm = await message.reply("processing...")
+        return await message.reply("langsung aja balas ke pesan sticker!")
+    Tm = await message.reply("sebentar ya...")
     ik = await client.download_media(reply)
     im1 = Image.open("storage/TM_BLACK.png")
     if ik.endswith(".tgs"):
@@ -201,11 +201,11 @@ async def _(client, message):
 async def _(client, message):
     prs = await EMO.PROSES(client)
     brhsl = await EMO.BERHASIL(client)
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     await client.unblock_user("stickers")
     user = message.from_user
     replied = message.reply_to_message
-    Tm = await message.reply(f"{prs}procceꜱ ꜱtickerꜱ...")
+    Tm = await message.reply(f"{prs}lagi proses sticker...")
     media_ = None
     emoji_ = None
     is_anim = False

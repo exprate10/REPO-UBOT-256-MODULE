@@ -4,15 +4,15 @@ from PyroUbot import *
 
 __MODULE__ = "ᴘᴜʀɢᴇ"
 __HELP__ = """
-<blockquote>Bantuan Untuk Purge
+<blockquote><b>Purge</b>
 
-perintah : <code>{0}purge</code>
+<b>Perintah:</b> <code>{0}purge</code>
     bersihkan (hapus semua pesan) dari pesan yang di bales
 
-perintah : <code>{0}del</code>
+<b>Perintah:</b> <code>{0}del</code>
     menghapus pesan yang di balas
 
-perintah : <code>{0}purgeme</code>
+<b>Perintah:</b> <code>{0}purgeme</code>
     menghapus pesan anda sediri</blockquote>
 """
 
@@ -29,7 +29,7 @@ async def _(client, message):
 @PY.TOP_CMD
 async def _(client, message):
     brhsl = await EMO.BERHASIL(client)
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     if len(message.command) != 2:
         return await message.delete()
     n = (
@@ -52,7 +52,7 @@ async def _(client, message):
         )
     ]
     if not message_ids:
-        return await message.reply_text(f"{ggl}tidak ada pesan yang ditemukan")
+        return await message.reply_text(f"{ggl}ga ada pesan yang ditemukan")
     to_delete = [message_ids[i : i + 999] for i in range(0, len(message_ids), 999)]
     for hundred_messages_or_less in to_delete:
         await client.delete_messages(
@@ -68,7 +68,7 @@ async def _(client, message):
 @PY.UBOT("purge")
 @PY.TOP_CMD
 async def _(client, message):
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     await message.delete()
     if not message.reply_to_message:
         return await message.reply_text(f"{ggl}membalas pesan untuk dibersihka")

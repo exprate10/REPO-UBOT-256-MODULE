@@ -1,10 +1,10 @@
 __MODULE__ = "ᴀꜰᴋ"
 __HELP__ = """
-<blockquote><b>Bantuan untuk Afk
+<blockquote><b><b>Afk</b>
 
-perintah : <code>{0}afk</code> [alasan]
+<b>Perintah:</b> <code>{0}afk</code> [alasan]
     untuk mengaktifkan afk
 
-perintah : unafk
+<b>Perintah:</b> unafk
     menonaktifkan afk</b></blockquote>
 """

@@ -28,11 +28,11 @@ async def _(client, message: Message):
     try:
         ip = socket.gethostbyname(domain)
         await message.reply(
-            f"<b>🌐 IP DOMAIN</b>\n<blockquote>{domain} → <code>{ip}</code></blockquote>",
+            f"<b>◎ IP DOMAIN</b>\n<blockquote>{domain} → <code>{ip}</code></blockquote>",
             parse_mode=enums.ParseMode.HTML
         )
     except Exception as e:
-        await message.reply(f"❌ Gagal resolve domain\n<code>{e}</code>")
+        await message.reply(f"⌭ gagal resolve domain\n<code>{e}</code>")
 
 @PY.UBOT("ping")
 async def _(client, message: Message):
@@ -50,8 +50,8 @@ async def _(client, message: Message):
         )
 
         await message.reply(
-            f"<b>📡 PING RESULT</b>\n<pre>{result}</pre>",
+            f"<b>◎ PING RESULT</b>\n<pre>{result}</pre>",
             parse_mode=enums.ParseMode.HTML
         )
     except Exception:
-        await message.reply("❌ Host tidak merespon / diblokir")
+        await message.reply("⌭ Host tidak merespon / diblokir")

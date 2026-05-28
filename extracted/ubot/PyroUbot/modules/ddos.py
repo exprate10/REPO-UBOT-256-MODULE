@@ -10,7 +10,7 @@ time_limit = 300  # Batas waktu maksimum (dalam detik)
 
 __MODULE__ = "ᴅᴅᴏs"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk ddos</b>
+<blockquote><b><b>ddos</b></b>
 
 • <b>Perintah</b> : <code>{0}ddosfloods</code> <b>[Target] [Time]</b>
 • <b>Perintah</b> : <code>{0}ddoshttp</code> <b>[Target] [Time]</b>
@@ -254,4 +254,4 @@ async def stop_attack(client, message):
         processes[chat_id] = []
         await message.reply_text("Attack berhasil dihentikan!")
     else:
-        await message.reply_text("Tidak ada proses yang berjalan untuk dihentikan.")
+        await message.reply_text("ga ada proses yang berjalan untuk dihentikan.")

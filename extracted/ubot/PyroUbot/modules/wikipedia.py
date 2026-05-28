@@ -4,9 +4,9 @@ from PyroUbot import *
 
 __MODULE__ = "ᴡɪᴋɪᴘᴇᴅɪᴀ"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk wikipedia
+<blockquote><b><b>wikipedia</b>
 
-Perintah : <code>{0}wiki/wikipedia</code>
+<b>Perintah:</b> <code>{0}wiki/wikipedia</code>
     Wikipedia menyediakan informasi tentang berbagai topik, mulai dari sejarah, sains, budaya, hingga teknologi.</b></blockquote>
 """
 
@@ -16,7 +16,7 @@ async def wikipedia(query):
         async with aiohttp.ClientSession() as session:
             async with session.get(url) as response:
                 if response.status != 200:
-                    return {'status': response.status, 'Pesan': 'Tidak Ditemukan'}
+                    return {'status': response.status, 'Pesan': 'ga ketemu'}
                 page_content = await response.text()
                 soup = BeautifulSoup(page_content, 'html.parser')          
                 title = soup.find(id="firstHeading").get_text().strip()    
@@ -64,4 +64,4 @@ async def wiki_handler(client, message):
             caption=caption
         )
     else:
-        await message.reply_text('<b><i>Tidak Ditemukan</i></b>')
+        await message.reply_text('<b><i>ga ketemu</i></b>')

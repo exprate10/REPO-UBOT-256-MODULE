@@ -5,9 +5,9 @@ from PyroUbot import *
 
 __MODULE__ = "ꜱᴜʙᴅᴏᴍᴀɪɴ"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk Subdomain</b>
+<blockquote><b><b>Subdomain</b></b>
 
-Perintah:
+<b>Perintah:</b>
 <code>{0}sd [subdomain] [ip]</code> → Membuat subdomain baru.</blockquote></b>
 """
 
@@ -31,7 +31,7 @@ async def _(client, message):
             "<b>Contoh:</b>\n"
             "<code>.sd vps01 192.168.1.1</code>\n"
             "<i>Maka akan menjadi: vps01.domainkamu.com</i>\n\n"
-            "⚠️ <b>Catatan:</b> Pastikan API Cloudflare sudah terkonfigurasi di dalam script!</blockquote>"
+            "⌯ <b>Catatan:</b> Pastikan API Cloudflare sudah terkonfigurasi di dalam script!</blockquote>"
         )
         return await message.reply_text(arahan)
 
@@ -39,7 +39,7 @@ async def _(client, message):
     ip = message.command[2]
     full_domain = f"{sub}.{DOMAIN}"
 
-    status_msg = await message.reply_text("<blockquote><b>⏳ Sedang memproses ke Cloudflare...</b></blockquote>")
+    status_msg = await message.reply_text("<blockquote><b>◷ Sedang memproses ke Cloudflare...</b></blockquote>")
 
     url = f"https://api.cloudflare.org/client/v4/zones/{ZONE_ID}/dns_records"
     headers = {
@@ -60,8 +60,8 @@ async def _(client, message):
 
         if response.get("success"):
             res_text = (
-                f"<blockquote><b>✅ SUBDOMAIN BERHASIL DIBUAT</b>\n\n"
-                f"<b>🌐 Host:</b> <code>{full_domain}</code>\n"
+                f"<blockquote><b>⌬ SUBDOMAIN BERHASIL DIBUAT</b>\n\n"
+                f"<b>◎ Host:</b> <code>{full_domain}</code>\n"
                 f"<b>📍 IP:</b> <code>{ip}</code>\n"
                 f"<b>⚡ Status:</b> 🟢 Active / DNS Only\n\n"
                 f"<i>Silakan tunggu 1-3 menit untuk proses propagasi DNS.</i></blockquote>"
@@ -69,14 +69,14 @@ async def _(client, message):
         else:
             error_msg = response["errors"][0]["message"]
             res_text = (
-                f"<blockquote><b>❌ GAGAL MEMBUAT SUBDOMAIN</b>\n\n"
+                f"<blockquote><b>⌭ gagal MEMBUAT SUBDOMAIN</b>\n\n"
                 f"<b>Alasan:</b> <code>{error_msg}</code>\n\n"
-                f"<b>💡 Solusi:</b> Cek kembali apakah nama subdomain sudah dipakai atau API Key Anda salah.</blockquote>"
+                f"<b>✦ Solusi:</b> Cek kembali apakah nama subdomain sudah dipakai atau API Key Anda salah.</blockquote>"
             )
         await status_msg.edit(res_text)
 
     except Exception as e:
-        await status_msg.edit(f"<blockquote><b>⚠️ Terjadi Kesalahan:</b>\n<code>{str(e)}</code></blockquote>")
+        await status_msg.edit(f"<blockquote><b>⌯ Terjadi Kesalahan:</b>\n<code>{str(e)}</code></blockquote>")
 
 # --- NOTIFIKASI OTOMATIS KE CHANNEL ---
 async def auto_notif_subdomain():
@@ -91,7 +91,7 @@ async def auto_notif_subdomain():
                 f"📦 <b>SUKSES ADD MODULE</b>\n\n"
                 f"🛠 <b>Module:</b> <code>{__MODULE__}</code>\n"
                 f"✨ <b>Status:</b> <code>File Terdeteksi</code>\n"
-                f"💡 <i>Silakan restart bot untuk mengaktifkan module ini.</i> 💡"
+                f"✦ <i>Silakan restart bot untuk mengaktifkan module ini.</i> ✦"
             )
             await bot.send_message(ID_LOG_CHANNEL, msg_modul)
         except:

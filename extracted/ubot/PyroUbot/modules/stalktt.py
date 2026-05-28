@@ -8,17 +8,17 @@ __MODULE__ = "ꜱᴛᴀʟᴋᴛᴛ"
 __HELP__ = """
 <blockquote><b>『 ꜱᴛᴀʟᴋᴛᴛ 』</b>
 
-  <b>➢ ᴘᴇʀɪɴᴛᴀʜ:</b> <code>{0}stalktt</code> 
+  <b>➢ <b>Perintah:</b></b> <code>{0}stalktt</code> 
    <i>penjelasan:</b> untuk stalk tiktok menggunakan username</i></blockquote>
 """
 
 @PY.UBOT("stalktt")
 async def stalktt(client, message):
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     sks = await EMO.BERHASIL(client)
     prs = await EMO.PROSES(client)
     
-    jalan = await message.reply(f"{prs} Processing...")
+    jalan = await message.reply(f"{prs} sebentar ya...")
     
     if len(message.command) != 2:
         return await jalan.edit(f"{ggl} Please use the command `stalktt` followed by the tiktok username.")
@@ -40,12 +40,12 @@ async def stalktt(client, message):
             totalPosts = hasil['totalPosts']
             photoUrl = hasil['profile']
             caption = f"""
-<b><emoji id=5841235769728962577>⭐</emoji>Username: <code>{username}</code></b>
-<b><emoji id=5843952899184398024>⭐</emoji>Description: <code>{description}</code></b>
-<b><emoji id=5841243255856960314>⭐</emoji>Likes: <code>{likes}</code></b>
-<b><emoji id=5352566966454330504>⭐</emoji>Followers: <code>{followers}</code></b>
-<b><emoji id=5353036831581544549>⭐</emoji>Following: <code>{following}</code></b>
-<b><emoji id=5841243255856960314>⭐</emoji>TotalPosts: <code>{totalPosts}</code></b>
+<b><emoji id=5841235769728962577>✦</emoji>Username: <code>{username}</code></b>
+<b><emoji id=5843952899184398024>✦</emoji>Description: <code>{description}</code></b>
+<b><emoji id=5841243255856960314>✦</emoji>Likes: <code>{likes}</code></b>
+<b><emoji id=5352566966454330504>✦</emoji>Followers: <code>{followers}</code></b>
+<b><emoji id=5353036831581544549>✦</emoji>Following: <code>{following}</code></b>
+<b><emoji id=5841243255856960314>✦</emoji>TotalPosts: <code>{totalPosts}</code></b>
 """
             photo_path = wget.download(photoUrl)
             await client.send_photo(chat_id, caption=caption, photo=photo_path)

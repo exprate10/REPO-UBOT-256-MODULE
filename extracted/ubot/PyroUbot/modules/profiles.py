@@ -15,27 +15,27 @@ from PyroUbot import *
 
 __MODULE__ = "ᴘʀᴏꜰɪʟᴇꜱ"
 __HELP__ = """
-<blockquote>Bantuan Untuk Profiles
+<blockquote><b>Profiles</b>
 
-perintah : <code>{0}setbio</code>
+<b>Perintah:</b> <code>{0}setbio</code>
     mengubah bio pada akun anda
 
-perintah : <code>{0}setname</code>
+<b>Perintah:</b> <code>{0}setname</code>
     mengubah nama pada akun anda:
 
-perintah : <code>{0}block</code>
+<b>Perintah:</b> <code>{0}block</code>
     memblokir pengguna
 
-perintah : <code>{0}unblock</code>
+<b>Perintah:</b> <code>{0}unblock</code>
     membuka pemblokiran pada pengguna
 
-perintah : <code>{0}sg</code>
+<b>Perintah:</b> <code>{0}sg</code>
     memeriksa histori name pengguna telegram
 
-perintah : <code>{0}info</code>
+<b>Perintah:</b> <code>{0}info</code>
     melihat informasi data akun telegram
 
-perintah : <code>{0}cinfo</code>
+<b>Perintah:</b> <code>{0}cinfo</code>
     melihat informasi data group/channel telegram</blockquote>
 """
 
@@ -44,11 +44,11 @@ perintah : <code>{0}cinfo</code>
 @PY.TOP_CMD
 async def _(client, message):
     prs = await EMO.PROSES(client)
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     get_user = await extract_user(message)
-    lol = await message.reply(f"{prs}proceꜱꜱing...")
+    lol = await message.reply(f"{prs}sebentar ya...")
     if not get_user:
-        return await lol.edit(f"{ggl}user tidak ditemukan")
+        return await lol.edit(f"{ggl}user ga ketemu")
     try:
         user_id = (await client.get_users(get_user)).id
     except Exception:
@@ -79,7 +79,7 @@ async def _(client, message):
 async def _(client, message):
     prs = await EMO.PROSES(client)
     brhsl = await EMO.BERHASIL(client)
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     user_id = await extract_user(message)
     Tm = await message.reply(f"{prs}processing . . .")
     if not user_id:
@@ -111,17 +111,17 @@ async def _(client, message):
 <emoji id=5260399854500191689>😀</emoji> first name: {first_name}
 <emoji id=5257969839313526622>📂</emoji> last name: {last_name}
 <emoji id=5258331647358540449>✍️</emoji> username: {username}
-<emoji id=5260268501515377807>📣</emoji> dc id: {dc_id}
+<emoji id=5260268501515377807>◉</emoji> dc id: {dc_id}
 <emoji id=5258093637450866522>😀</emoji> is bot: {user.is_bot}
 <emoji id=5219805369806629055>😀</emoji> is scam: {user.is_scam}
-<emoji id=6003779240837780921>🚫</emoji> restricted: {user.is_restricted}
+<emoji id=6003779240837780921>⊘</emoji> restricted: {user.is_restricted}
 <emoji id=5260341314095947411>👀</emoji> verified: {user.is_verified}
-<emoji id=5258185631355378853>⭐️</emoji> premium: {user.is_premium}
-<emoji id=5292226786229236118>🔄</emoji> user bio: {bio}</blockquote></b>
+<emoji id=5258185631355378853>✦️</emoji> premium: {user.is_premium}
+<emoji id=5292226786229236118>⟳</emoji> user bio: {bio}</blockquote></b>
 
 <blockquote><b><emoji id=5220070652756635426>😀</emoji> same groups seen: {len(common)}
 <emoji id=5253959125838090076>😀</emoji> last seen: {status}
-<emoji id=4942990428317156193>😅</emoji> ᴜsᴇʀʙᴏᴛ: <a href=tg://user?id={user.id}>{fullname}</a></blockquote></b>
+<emoji id=4942990428317156193></emoji> ᴜsᴇʀʙᴏᴛ: <a href=tg://user?id={user.id}>{fullname}</a></blockquote></b>
 """
         
         photo_id = user.photo.big_file_id if user.photo else None
@@ -148,7 +148,7 @@ async def _(client, message):
 async def _(client, message):
     prs = await EMO.PROSES(client)
     brhsl = await EMO.BERHASIL(client)
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     Tm = await message.reply(f"{prs}processing . . .")
     try:
         if len(message.text.split()) > 1:
@@ -181,12 +181,12 @@ async def _(client, message):
 🏛️ dc id: {dc_id}
 🗣️ is scam: {chat.is_scam}
 🎭 is fake: {chat.is_fake}
-✅ verified: {chat.is_verified}
-🚫 restricted: {chat.is_restricted}
-🔰 protected: {chat.has_protected_content}
+⌬ verified: {chat.is_verified}
+⊘ restricted: {chat.is_restricted}
+◈ protected: {chat.has_protected_content}
 
 🚻 total members: {chat.members_count}
-📝 description: {description}
+◆ description: {description}
 """
         
         photo_id = chat.photo.big_file_id if chat.photo else None
@@ -211,19 +211,19 @@ async def _(client, message):
 @PY.UBOT("id")
 @PY.TOP_CMD
 async def _(client, message):
-    text = f"<blockquote><b><emoji id=6026218958900695642>💎</emoji> ᴍᴇꜱꜱᴀɢᴇ ɪᴅ: `{message.id}`\n</blockquote></b>"
+    text = f"<blockquote><b><emoji id=6026218958900695642>✧</emoji> ᴍᴇꜱꜱᴀɢᴇ ɪᴅ: `{message.id}`\n</blockquote></b>"
 
     if message.chat.type == ChatType.CHANNEL:
         text += f"<blockquote><b><emoji id=6026056450223116307>⏺</emoji> ᴄʜᴀᴛ ɪᴅ: `{message.sender_chat.id}`\n</blockquote></b>"
     else:
-        text += f"<blockquote><b><emoji id=6026292029179301727>👑</emoji> ʏᴏᴜʀ ɪᴅ: `{message.from_user.id}`\n</blockquote></b>"
+        text += f"<blockquote><b><emoji id=6026292029179301727>✧</emoji> ʏᴏᴜʀ ɪᴅ: `{message.from_user.id}`\n</blockquote></b>"
 
         if len(message.command) > 1:
             try:
                 user = await client.get_chat(message.text.split()[1])
                 text += f"<blockquote><b><emoji id=6026056450223116307>⏺</emoji> ᴜꜱᴇʀ ɪᴅ: `{user.id}`\n</blockquote></b>\n"
             except:
-                return await message.reply("<emoji id=6113891550788324241>❌</emoji>ᴘᴇɴɢɢᴜɴᴀ ᴛɪᴅᴀᴋ ᴅɪᴛᴇᴍᴜᴋᴀɴ")
+                return await message.reply("<emoji id=6113891550788324241>⌭</emoji>ᴘᴇɴɢɢᴜɴᴀ ᴛɪᴅᴀᴋ ᴅɪᴛᴇᴍᴜᴋᴀɴ")
 
         text += f"<blockquote><b><emoji id=6026056450223116307>⏺</emoji> ᴄʜᴀᴛ ɪᴅ: `{message.chat.id}`\n</blockquote></b>"
 
@@ -237,8 +237,8 @@ async def _(client, message):
         if file_info:
             text += f"media id: {file_info.file_id}\n\n"
         text += (
-            f"<blockquote><b><emoji id=6026257381678124710>✅</emoji> ʀᴇᴘʟɪᴇᴅ ᴍᴇꜱꜱᴀɢᴇ ɪᴅ: `{message.reply_to_message.id}` </blockquote></b>\n"
-            f"<blockquote><b><emoji id=6026257381678124710>✅</emoji> ʀᴇᴘʟɪᴇᴅ ᴜꜱᴇʀ ɪᴅ: `{id_}` </blockquote></b>"
+            f"<blockquote><b><emoji id=6026257381678124710>⌬</emoji> ʀᴇᴘʟɪᴇᴅ ᴍᴇꜱꜱᴀɢᴇ ɪᴅ: `{message.reply_to_message.id}` </blockquote></b>\n"
+            f"<blockquote><b><emoji id=6026257381678124710>⌬</emoji> ʀᴇᴘʟɪᴇᴅ ᴜꜱᴇʀ ɪᴅ: `{id_}` </blockquote></b>"
         )
 
     return await message.reply(text, disable_web_page_preview=True)
@@ -249,8 +249,8 @@ async def _(client, message):
 async def _(client, message):
     prs = await EMO.PROSES(client)
     brhsl = await EMO.BERHASIL(client)
-    ggl = await EMO.GAGAL(client)
-    tex = await message.reply(f"{prs}proceꜱꜱing...")
+    ggl = await EMO.gagal(client)
+    tex = await message.reply(f"{prs}sebentar ya...")
     if len(message.command) == 1:
         return await tex.edit(f"{ggl}{message.text.split()[0]} [text]")
     elif len(message.command) > 1:
@@ -269,8 +269,8 @@ async def _(client, message):
 async def _(client, message):
     prs = await EMO.PROSES(client)
     brhsl = await EMO.BERHASIL(client)
-    ggl = await EMO.GAGAL(client)
-    tex = await message.reply(f"{prs}proceꜱꜱing...")
+    ggl = await EMO.gagal(client)
+    tex = await message.reply(f"{prs}sebentar ya...")
     if len(message.command) == 1:
         return await tex.edit(f"{ggl}{message.text.split()[0]} [text]")
     elif len(message.command) > 1:
@@ -291,9 +291,9 @@ async def _(client, message):
 async def _(client, message):
     prs = await EMO.PROSES(client)
     brhsl = await EMO.BERHASIL(client)
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     user_id = await extract_user(message)
-    tex = await message.reply(f"{prs}proceꜱꜱing...")
+    tex = await message.reply(f"{prs}sebentar ya...")
     if not user_id:
         return await tex.edit(f"{ggl}{message.text.split()[0]} [reply to user]")
     if user_id == client.me.id:
@@ -308,9 +308,9 @@ async def _(client, message):
 async def _(client, message):
     prs = await EMO.PROSES(client)
     brhsl = await EMO.BERHASIL(client)
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     user_id = await extract_user(message)
-    tex = await message.reply(f"{prs}proceꜱꜱing...")
+    tex = await message.reply(f"{prs}sebentar ya...")
     if not user_id:
         return await tex.edit(f"{ggl}{message.text.split()[0]} [reply to user]")
     if user_id == client.me.id:

@@ -1,11 +1,11 @@
 __MODULE__ = "ʀᴇᴀᴄᴛɪᴏɴ"
 __HELP__ = """
-<blockquote>Bantuan Untuk Reaction
+<blockquote><b>Reaction</b>
 
-perintah : <code>{0}react</code> [username]
+<b>Perintah:</b> <code>{0}react</code> [username]
     memberikan reaction emoji
    
-perintah : <code>{0}stopreact</code>
+<b>Perintah:</b> <code>{0}stopreact</code>
     membatalkan proses reaction</blockquote>
 """
 
@@ -20,7 +20,7 @@ reaction_progress = []
 @PY.UBOT("react")
 @PY.TOP_CMD
 async def react_command(c, m):
-    ggl = await EMO.GAGAL(c)
+    ggl = await EMO.gagal(c)
     sks = await EMO.BERHASIL(c)
     prs = await EMO.PROSES(c)
     global reaction_progress
@@ -52,7 +52,7 @@ async def react_command(c, m):
 @PY.UBOT("stopreact")
 @PY.TOP_CMD
 async def stopreact_command(client, message):
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     sks = await EMO.BERHASIL(client)
     prs = await EMO.PROSES(client)
     global reaction_progress
@@ -60,4 +60,4 @@ async def stopreact_command(client, message):
         reaction_progress.remove(client.me.id)
         await message.reply(f"<blockquote><b>{sks}berhaꜱil membatalkan reaction</b></blockquote>")
     else:
-        await message.reply(f"<blockquote><b>{ggl}tidak ada proses reaction yang sedang berjalan</b></blockquote>")
+        await message.reply(f"<blockquote><b>{ggl}ga ada proses reaction yang sedang berjalan</b></blockquote>")

@@ -4,9 +4,8 @@ from PyroUbot import *
 
 __MODULE__ = "ʙʀᴀᴛᴠɪᴅɪᴏ"
 __HELP__ =  """
-<b>✮ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ʙʀᴀᴛ ✮</b>
-
-<blockquote><b>ᴘᴇʀɪɴᴛᴀʜ:
+<b>✮ 
+<blockquote><b><b>Perintah:</b>
 <code>{0}bratvideo [text]</code>
 Untuk Membuat Gambar Text video Seperti Tren Tiktok</b></blockquote>
 
@@ -33,7 +32,7 @@ async def BratVideo(text):
             )
 
             if res.status_code != 200:
-                raise Exception("<blockquote><b>Gagal mengambil frame dari API</b></blockquote>")
+                raise Exception("<blockquote><b>gagal mengambil frame dari API</b></blockquote>")
 
             frame_path = os.path.join(temp_dir, f"frame{i}.mp4")
             with open(frame_path, "wb") as f:

@@ -5,9 +5,9 @@ from PyroUbot import PY
 
 __MODULE__ = "Upload MediaFire"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk Upload MediaFire</b>
+<blockquote><b><b>Upload MediaFire</b></b>
 
-Perintah:
+<b>Perintah:</b>
 <code>.mediafire</code> → Mengunggah file ZIP ke MediaFire.
 
 Balas perintah ini dengan file ZIP.</blockquote></b>
@@ -21,16 +21,16 @@ MEDIAFIRE_PASSWORD = "Nizam20@"
 @PY.TOP_CMD
 async def _(client, message):
     if not message.reply_to_message or not message.reply_to_message.document:
-        return await message.reply_text("❌ Silakan reply file ZIP untuk diunggah!")
+        return await message.reply_text("⌭ Silakan reply file ZIP untuk diunggah!")
 
-    msg = await message.reply_text("🔄 Mengunggah file ke MediaFire...")
+    msg = await message.reply_text("⟳ Mengunggah file ke MediaFire...")
 
     # Ambil informasi file
     file = message.reply_to_message.document
     file_path = await client.download_media(file)
 
     if not file_path.endswith(".zip"):
-        return await msg.edit("❌ Hanya file ZIP yang bisa diunggah!")
+        return await msg.edit("⌭ Hanya file ZIP yang bisa diunggah!")
 
     try:
         # Login ke MediaFire
@@ -44,7 +44,7 @@ async def _(client, message):
         login_response = requests.get(login_url, params=login_params).json()
         
         if login_response["response"]["result"] != "Success":
-            return await msg.edit("❌ Gagal login ke MediaFire!")
+            return await msg.edit("⌭ gagal login ke MediaFire!")
 
         session_token = login_response["response"]["session_token"]
 
@@ -58,14 +58,14 @@ async def _(client, message):
         upload_response = requests.post(upload_url, params=upload_params, files=files).json()
         
         if upload_response["response"]["result"] != "Success":
-            return await msg.edit("❌ Gagal mengunggah file!")
+            return await msg.edit("⌭ gagal mengunggah file!")
 
         file_link = upload_response["response"]["doupload"]["links"]["normal_download"]
         
-        await msg.edit(f"✅ **Berhasil diunggah!**\n🔗 [Download di MediaFire]({file_link})")
+        await msg.edit(f"⌬ **Berhasil diunggah!**\n⌕ [Download di MediaFire]({file_link})")
     
     except Exception as e:
-        await msg.edit(f"❌ Terjadi kesalahan: {str(e)}")
+        await msg.edit(f"⌭ Terjadi kesalahan: {str(e)}")
 
     finally:
         os.remove(file_path)  # Hapus file lokal setelah diunggah

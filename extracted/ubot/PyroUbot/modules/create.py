@@ -2,9 +2,8 @@ from PyroUbot import *
 
 __MODULE__ = "ᴄʀᴇᴀᴛᴇ ᴄʜ/ɢʙ"
 __HELP__ = """
-<b> ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴄʀᴇᴀᴛᴇ ᴄʜ/ɢʙ </b>
-<blockquote>
-perintah :
+<b> <blockquote>
+<b>Perintah:</b>
 <code>{0}create</code> group nama
 <code>{0}create</code> channel nama
 

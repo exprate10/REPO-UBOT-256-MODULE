@@ -7,9 +7,8 @@ API_KEY = "@31Moire_mor"  # Ganti dengan API key yang benar
 
 __MODULE__ = "ᴇᴘʜᴏᴛᴏ 2"
 __HELP__ = """
-<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴇᴘʜᴏᴛᴏ 2 ⦫<b>
-
-<blockquote>⎆ perintah :
+<b>⦪ 
+<blockquote>⎆ <b>Perintah:</b>
 ᚗ <code>{0}gb</code> teks
 ⊷ membuat gambar dengan efek Green Brush.
 
@@ -56,7 +55,7 @@ async def process_image_command(client, message, api_url, command_name):
         return
 
     request_text = args[1]
-    await message.reply_text("<b><i>Sedang memproses, mohon tunggu...</i></b>")
+    await message.reply_text("<b><i>Sedang memproses, tolong tunggu...</i></b>")
 
     image_content = fetch_image(api_url, request_text)
     if image_content:
@@ -66,7 +65,7 @@ async def process_image_command(client, message, api_url, command_name):
         await message.reply_photo(photo=temp_file)
         os.remove(temp_file)
     else:
-        await message.reply_text("Gagal membuat gambar. Coba lagi nanti.")
+        await message.reply_text("gagal membuat gambar. Coba lagi nanti.")
 
 # Handler untuk setiap perintah
 @PY.UBOT("gbr")

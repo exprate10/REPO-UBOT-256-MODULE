@@ -6,9 +6,8 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 __MODULE__ = "ᴅᴏxxɪɴɢ"
 __HELP__ = """
-<b>✮ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴅᴏxxɪɴɢ ✮</b>
-
-<blockquote>perintah :
+<b>✮ 
+<blockquote><b>Perintah:</b>
  <code>{0}dox</code> nama/nik/nomor telpon
  mencari data sesuai query.
 </blockquote>
@@ -33,7 +32,7 @@ async def fetch_data_from_github():
 async def cari_data(client, message):
     query = message.text.split(maxsplit=1)
     if len(query) < 2:
-        await message.reply_text("❌ Silakan masukkan nama, NIK, atau nomor telepon setelah perintah dox.")
+        await message.reply_text("⌭ Silakan masukkan nama, NIK, atau nomor telepon setelah perintah dox.")
         return
 
     pencarian = query[1].lower()
@@ -43,7 +42,7 @@ async def cari_data(client, message):
         # Ambil data dari GitHub
         csv_data = await fetch_data_from_github()
         if not csv_data:
-            await message.reply_text("❌ Gagal mengambil data.")
+            await message.reply_text("⌭ gagal mengambil data.")
             return
 
         # Parsing CSV
@@ -59,21 +58,21 @@ async def cari_data(client, message):
             results[chat_id] = hasil_pencarian  # Simpan hasil di dictionary
             await tampilkan_hasil(client, chat_id, 0, message)
         else:
-            await message.reply_text("🔍 Tidak ditemukan hasil untuk pencarian tersebut.")
+            await message.reply_text("⌖ ga ketemu hasil untuk pencarian tersebut.")
 
     except Exception as e:
-        await message.reply_text(f"⚠️ Terjadi kesalahan: {e}")
+        await message.reply_text(f"⌯ Terjadi kesalahan: {e}")
 
 async def tampilkan_hasil(client, chat_id, start_index, message):
     hasil = results.get(chat_id, [])
     if not hasil:
-        await message.reply_text("❌ Tidak ada data untuk ditampilkan.")
+        await message.reply_text("⌭ ga ada data untuk ditampilkan.")
         return
 
     end_index = start_index + 3
     results_to_show = hasil[start_index:end_index]
 
-    response = "🔍 **Hasil Pencarian:**\n"
+    response = "⌖ **Hasil Pencarian:**\n"
     response += "====================\n"
     for data in results_to_show:
         response += (

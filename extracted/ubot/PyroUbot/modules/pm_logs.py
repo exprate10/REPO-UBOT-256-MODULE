@@ -17,7 +17,7 @@ PM_TEXT = """
 <blockquote>🙋🏻‍♂halo {mention} ada yang bisa saya bantu?
 
 perkenalkan saya adalah pm-security disini
-silahkan tunggu majikan saya membalas pesan mu ini ya
+tunggu bentar ya majikan saya membalas pesan mu ini ya
 jangan spam ya atau anda akan di blokir secara otomatis
 
 ⚠peringatan: {warn} hati-hati</blockquote>
@@ -26,26 +26,26 @@ jangan spam ya atau anda akan di blokir secara otomatis
 
 __MODULE__ = "ᴘᴍᴘᴇʀᴍɪᴛ"
 __HELP__ = """
-<blockquote>Bantuan Untuk Pmpermit
+<blockquote><b>Pmpermit</b>
 
-perintah : <code>{0}pmpermit</code> query > on or off
+<b>Perintah:</b> <code>{0}pmpermit</code> query > on or off
     mengaktifkan atau menonaktifkan pm permit
 
-perintah : <code>{0}ok</code>
+<b>Perintah:</b> <code>{0}ok</code>
     mengizinkan seseoranh untuk pm anda
 
-perintah : <code>{0}no</code>
+<b>Perintah:</b> <code>{0}no</code>
     menolak seseorang untuk pm anda
 
-perintah : <code>{0}setpm</code>
+<b>Perintah:</b> <code>{0}setpm</code>
 query: |pic |text |limit
     mengatur configuration pada pm_permit
 
-contoh menggunakan button  : <a href='https://t.me/Priaindiareal/1558'>tutorial</a>
+Contoh menggunakan button  : <a href='https://t.me/Priaindiareal/1558'>tutorial</a>
 
-contoh menggunakan gambar yang benar  : <a href='https://t.me/Priaindiareal/1559'>tutorial</a>
+Contoh menggunakan gambar yang benar  : <a href='https://t.me/Priaindiareal/1559'>tutorial</a>
 
-contoh menggunakan warning 
+Contoh menggunakan warning 
     command : setpm limit 5</blockquote>
 """
 
@@ -113,7 +113,7 @@ async def _(client, message):
 @PY.TOP_CMD
 async def _(client, message):
     brhsl = await EMO.BERHASIL(client)
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     if len(message.command) < 3:
         return await message.reply(
             f"{ggl}{message.text.split()[0]} [query] [value]"
@@ -138,7 +138,7 @@ async def _(client, message):
 @PY.TOP_CMD
 async def _(client, message):
     brhsl = await EMO.BERHASIL(client)
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     if len(message.command) < 2:
         return await message.reply(
             f"{ggl}{message.text.split()[0]} [on/off]"
@@ -199,7 +199,7 @@ async def _(client, inline_query):
 @PY.TOP_CMD
 @PY.PRIVATE
 async def _(client, message):
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     brhsl = await EMO.BERHASIL(client)
     user = message.chat
     rpk = f"[{user.first_name} {user.last_name or ''}](tg://user?id={user.id})"
@@ -215,17 +215,17 @@ async def _(client, message):
 @PY.TOP_CMD
 @PY.PRIVATE
 async def _(client, message):
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     user = message.chat
     rpk = f"[{user.first_name} {user.last_name or ''}](tg://user?id={user.id})"
     vars = await get_pm_id(client.me.id)
     if user.id not in vars:
-        await message.reply(f"<blockquote><b>{ggl}🙏🏻 ᴍᴀᴀғ ⁣{rpk} ᴀɴᴅᴀ ᴛᴇʟᴀʜ ᴅɪʙʟᴏᴋɪʀ</blockquote></b>\n||mampus kontol gw blok||")
+        await message.reply(f"<blockquote><b>{ggl}⌗🏻 ᴍᴀᴀғ ⁣{rpk} ᴀɴᴅᴀ ᴛᴇʟᴀʜ ᴅɪʙʟᴏᴋɪʀ</blockquote></b>\n||mampus kontol gw blok||")
         return await client.block_user(user.id)
     else:
         await remove_pm_id(client.me.id, user.id)
         return await message.reply(
-            f"<blockquote><b>{ggl}🙏🏻 ᴍᴀᴀғ {rpk} ᴀɴᴅᴀ ᴛᴇʟᴀʜ ᴅɪᴛᴏʟᴀᴋ ᴜɴᴛᴜᴋ ᴍᴇɴɢʜᴜʙᴜɴɢɪ ᴀᴋᴜɴ ɪɴɪ ʟᴀɢɪ</blockquote></b>"
+            f"<blockquote><b>{ggl}⌗🏻 ᴍᴀᴀғ {rpk} ᴀɴᴅᴀ ᴛᴇʟᴀʜ ᴅɪᴛᴏʟᴀᴋ ᴜɴᴛᴜᴋ ᴍᴇɴɢʜᴜʙᴜɴɢɪ ᴀᴋᴜɴ ɪɴɪ ʟᴀɢɪ</blockquote></b>"
         )
 
 async def pmpermit_button(m):
@@ -252,13 +252,13 @@ async def send_log(client, chat_id, message, message_text, msg):
         await client.send_message(chat_id, message_text, disable_web_page_preview=True)
         await message.forward(chat_id)
     except Exception as error:
-        print(f"{msg} ERROR: GAGAL MENERUSKAN PESAN")
+        print(f"{msg} ERROR: gagal MENERUSKAN PESAN")
 
 @PY.UBOT("logs")
 @PY.TOP_CMD
 async def _(client, message):
     brhsl = await EMO.BERHASIL(client)
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     if len(message.command) < 2:
         return await message.reply(
             f"{ggl}{message.text.split()[0]} [on/off]"
@@ -285,8 +285,8 @@ async def _(client, message):
         user_link = f"{message.from_user.first_name} {message.from_user.last_name or ''}"
         message_link = message.link
         message_text = f"""
-🤖 ada pesan masuk dari {message.chat.title} 
-👤 pengguna : {message.from_user.first_name} 
+◍ ada pesan masuk dari {message.chat.title} 
+◉ pengguna : {message.from_user.first_name} 
 🗯 pesan : {message.text}
 """
         await bot.send_message(

@@ -5,9 +5,8 @@ from PyroUbot import *
 
 __MODULE__ = "ss ᴡᴇʙ ᴛᴀʙʟᴇᴛ"
 __HELP__ = """
-<b>✮ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ss ᴡᴇʙ ᴛᴀʙʟᴇᴛ✮</b>
-
-<blockquote><b>perintah :
+<b>✮ 
+<blockquote><b><b>Perintah:</b>
 <code>{0}sswebtablet</code> link
 untuk screenshot website tablet</b></blockquote>
 """
@@ -45,7 +44,7 @@ async def screenshot_handler(client, message):
 
     image_data = get_ssweb_image(url)
     if not image_data:
-        await message.reply_text("<b><i>Gagal mengambil screenshot.</i></b>")
+        await message.reply_text("<b><i>gagal mengambil screenshot.</i></b>")
         return
 
     filepath = f"img2p.jpeg"

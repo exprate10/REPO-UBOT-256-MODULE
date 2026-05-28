@@ -15,7 +15,7 @@ async def get_top_module(client, message):
 
     total_count = sum(count for _, count in sorted_vars[:command_count])
 
-    txt = "<emoji id=5231200819986047254>📊</emoji> top command\n\n"
+    txt = "<emoji id=5231200819986047254>◆</emoji> top command\n\n"
     for command, count in sorted_vars[:command_count]:
         txt += f"<blockquote><b> •> {command} : {count}\n</b></blockquote>"
 

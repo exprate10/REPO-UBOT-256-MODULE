@@ -7,9 +7,8 @@ from PyroUbot import *
 
 __MODULE__ = "ᴢᴏᴅɪᴀᴋ"
 __HELP__ = """
-<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴢᴏᴅɪᴀᴋ ⦫</b>
-
-<blockquote><b>⎆ ᴘᴇʀɪɴᴛᴀʜ :
+<b>⦪ 
+<blockquote><b>⎆ <b>Perintah:</b>
 ᚗ <code>{0}zodiak</code> taurus
 
 ⌭ ᴘᴇɴᴊᴇʟᴀsᴀɴ:
@@ -56,6 +55,6 @@ async def _(client, message):
 
             await message.reply_text(reply_text)
         else:
-            await message.reply_text(f"<blockquote><b>❌ Maaf, Title dari **{title}** tidak ditemukan.</blockquote></b>")
+            await message.reply_text(f"<blockquote><b>⌭ Maaf, Title dari **{title}** ga ketemu.</blockquote></b>")
     except Exception as e:
-        await message.reply_text(f"<blockquote><b>⚠️ Terjadi kesalahan saat mengambil data:\n`{str(e)}`</blockquote></b>")
+        await message.reply_text(f"<blockquote><b>⌯ Terjadi kesalahan saat mengambil data:\n`{str(e)}`</blockquote></b>")

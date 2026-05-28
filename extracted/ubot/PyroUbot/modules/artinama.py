@@ -4,9 +4,9 @@ from PyroUbot import *
 
 __MODULE__ = "ᴀʀᴛɪ ɴᴀᴍᴀ"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk Arti Nama</b>
+<blockquote><b><b>Arti Nama</b></b>
 
-Perintah:
+<b>Perintah:</b>
 <code>{0}artinama [nama]</code> → Mengartikan dengan nama</blockquote></b>
 """
 
@@ -28,15 +28,15 @@ async def _(client, message):
             catatan_res = response["data"].get("catatan", "")
 
             reply_text = (
-                f"<blockquote><b>**🔍 Arti Nama: {nama_res}**\n\n</blockquote></b>"
+                f"<blockquote><b>**⌖ Arti Nama: {nama_res}**\n\n</blockquote></b>"
                 f"<blockquote><b>📖 {arti_res}\n</blockquote></b>"
             )
 
             if catatan_res:
-                reply_text += f"<blockquote><b>\n💡 *{catatan_res}*</blockquote></b>"
+                reply_text += f"<blockquote><b>\n✦ *{catatan_res}*</blockquote></b>"
 
             await message.reply_text(reply_text)
         else:
-            await message.reply_text(f"<blockquote><b>❌ Maaf, arti nama **{nama}** tidak ditemukan.</blockquote></b>")
+            await message.reply_text(f"<blockquote><b>⌭ Maaf, arti nama **{nama}** ga ketemu.</blockquote></b>")
     except Exception as e:
-        await message.reply_text(f"<blockquote><b>⚠️ Terjadi kesalahan saat mengambil data:\n`{str(e)}`</blockquote></b>")
+        await message.reply_text(f"<blockquote><b>⌯ Terjadi kesalahan saat mengambil data:\n`{str(e)}`</blockquote></b>")

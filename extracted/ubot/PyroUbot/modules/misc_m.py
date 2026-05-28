@@ -16,28 +16,28 @@ from PyroUbot import *
 
 __MODULE__ = "ᴍɪꜱᴄ"
 __HELP__ = """
-<blockquote>Bantuan Untuk Misc
+<blockquote><b>Misc</b>
 
-perintah : <code>{0}limit</code>
+<b>Perintah:</b> <code>{0}limit</code>
     mengecek status akun apakah terkena limit atau tidak
 
-perintah : <code>{0}carbon</code>
+<b>Perintah:</b> <code>{0}carbon</code>
     membuat text carbonara
 
-perintah : <code>{0}qrGen</code>
+<b>Perintah:</b> <code>{0}qrGen</code>
     merubah qrcode text menjadi gambar
 
-perintah : <code>{0}qrRead</code>
+<b>Perintah:</b> <code>{0}qrRead</code>
     merubah qrcode media menjadi text
 
-perintah : <code>{0}font</code>
+<b>Perintah:</b> <code>{0}font</code>
     merubah text menjadi berbeda</blockquote>
 """
 
 @PY.UBOT("limit")
 @PY.TOP_CMD
 async def _(client, message):
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     sks = await EMO.BERHASIL(client)
     prs = await EMO.PROSES(client)
     pong = await EMO.PING(client)
@@ -99,7 +99,7 @@ async def _(client, message):
             await client.send_message(message.chat.id, text)
             return await client.invoke(DeleteHistory(peer=bot_info, max_id=0, revoke=True))
     else:
-        print("Status tidak valid atau status.text tidak ada")
+        print("Status tidak valid atau status.text ga ada")
 
 async def make_carbon(code):
     url = "https://carbonara.solopov.dev/api/cook"
@@ -281,7 +281,7 @@ async def _(client, inline_query):
                     title="get font!",
                     reply_markup=buttons,
                     input_message_content=InputTextMessageContent(
-                        "silahkan pilih salah satu font dibawah"
+                        "langsung aja pilih salah satu font dibawah"
                     ),
                 )
             )
@@ -340,4 +340,4 @@ async def _(client, callback_query):
         buttons.row(InlineKeyboardButton("►", callback_data=f"next {get_id}"))
         return await callback_query.edit_message_reply_markup(reply_markup=buttons)
     except Exception as error:
-        return await callback_query.answer(f"❌ Error: {error}", True)
+        return await callback_query.answer(f"⌭ Error: {error}", True)

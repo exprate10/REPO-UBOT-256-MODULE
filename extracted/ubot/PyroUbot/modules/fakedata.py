@@ -4,8 +4,7 @@ from PyroUbot import *
 
 __MODULE__ = "ғᴀᴋᴇ ᴅᴀᴛᴀ"
 __HELP__ = """
-<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ғᴀᴋᴇ ᴅᴀᴛᴀ ⦫</b>
-<blockquote>⎆ perintah :
+<b>⦪ <blockquote>⎆ <b>Perintah:</b>
 ᚗ <code>{0}fakedata</code>
 ⊶ untuk membuat fake data pribadi</blockquote>
 """
@@ -27,7 +26,7 @@ async def generate_fake_data(client, message):
             
             for i, fake in enumerate(fake_list, start=1):
                 result += f"\n**{i}.**\n"
-                result += f"👤 **Name:** `{fake['name']}`\n"
+                result += f"◉ **Name:** `{fake['name']}`\n"
                 result += f"📧 **Email:** `{fake['email']}`\n"
                 result += f"📞 **Phone:** `{fake['phone']}`\n"
                 result += f"🎂 **Birth Date:** `{fake['birthDate']}`\n"
@@ -35,7 +34,7 @@ async def generate_fake_data(client, message):
             
             await message.reply_text(result)
         else:
-            await message.reply_text("Gagal mengambil data Fake Data.")
+            await message.reply_text("gagal mengambil data Fake Data.")
     
     except Exception as e:
         await message.reply_text(f"Terjadi kesalahan: {e}")

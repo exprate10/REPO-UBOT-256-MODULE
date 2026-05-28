@@ -4,8 +4,7 @@ from PyroUbot import *
 
 __MODULE__ = "ϙᴜᴏᴛᴇs ᴀɴɪᴍᴇ"
 __HELP__ = """
-<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ϙᴜᴏᴛᴇs ᴀɴɪᴍᴇ ⦫</b>
-<blockquote>⎆ perintah :
+<b>⦪ <blockquote>⎆ <b>Perintah:</b>
 ᚗ <code>{0}qanime</code></blockquote>
 """
 
@@ -34,7 +33,7 @@ async def quotes_anime(client, message):
             
             await message.reply_text(result)
         else:
-            await message.reply_text("Gagal mengambil data Quotes.")
+            await message.reply_text("gagal mengambil data Quotes.")
     
     except Exception as e:
         await message.reply_text(f"Terjadi kesalahan: {e}")

@@ -7,9 +7,9 @@ from pyrogram.types import Message
 
 __MODULE__ = "ʙɪɴɢ ᴄʜᴀᴛ"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk Bing Chat
+<blockquote><b><b>Bing Chat</b>
 
-perintah : <code>{0}bing</code>
+<b>Perintah:</b> <code>{0}bing</code>
     dapat mencari informasi terbaru dari web, Membantu dengan tugas produktivitas, Membantu dengan tugas produktivitas Seperti membuat daftar ,mengatur jadwal bisa merekomendasikan: wisata,buku,film dll</b></blockquote>
 """
 
@@ -22,7 +22,7 @@ async def chat_gpt(client, message):
 
         if len(message.command) < 2:
             await message.reply_text(
-                "<emoji id=5019523782004441717>❌</emoji>mohon gunakan format\ncontoh : .bard query"
+                "<emoji id=5019523782004441717>⌭</emoji>tolong gunakan format\ncontoh : .bard query"
             )
         else:
             prs = await message.reply_text(f"<emoji id=5469745532693923461>♾</emoji>Proccesing Kingz....")

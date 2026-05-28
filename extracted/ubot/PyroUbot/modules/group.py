@@ -1,16 +1,16 @@
 __MODULE__ = "ɢʀᴏᴜᴘ"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk Group
+<blockquote><b><b>Group</b>
 
-perintah : <code>{0}etmin</code>
+<b>Perintah:</b> <code>{0}etmin</code>
     Untuk Mengadminkan
 
-perintah : <code>{0}demote</code>
+<b>Perintah:</b> <code>{0}demote</code>
     Untuk Mengunadmin
 
-perintah : <code>{0}ceo</code>
+<b>Perintah:</b> <code>{0}ceo</code>
     Untuk Mengownerkan Orang
 
-perintah : <code>{0}getlink</code>
+<b>Perintah:</b> <code>{0}getlink</code>
     Untuk Mengambil Link Group</blockquote></b>
 """

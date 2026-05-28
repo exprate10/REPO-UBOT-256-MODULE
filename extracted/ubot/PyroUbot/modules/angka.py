@@ -7,7 +7,7 @@ __MODULE__ = "Tebak Angka"
 __HELP__ = """
 <blockquote><b>『 TEBak ANGKA 』</b>
 
-<b>Perintah:</b>
+<b><b>Perintah:</b></b>
 • <code>.angka</code> → mulai game
 • <code>.jawab</code> [angka] → jawab
 • <code>.angkaskor</code> → lihat skor
@@ -30,7 +30,7 @@ async def angka(_, message):
     GAME[chat_id] = nomor
 
     await message.reply_text(
-        f"""🎲 <b>TEBAK ANGKA</b>
+        f"""◈ <b>TEBAK ANGKA</b>
 
 Aku nyimpen angka dari <b>1–10</b>
 Siapa cepat dia dapet poin 😈
@@ -47,7 +47,7 @@ async def jawab(_, message):
     chat_id = message.chat.id
 
     if chat_id not in GAME:
-        return await message.reply_text("❌ Belum ada game. Ketik <code>.angka</code>")
+        return await message.reply_text("⌭ Belum ada game. Ketik <code>.angka</code>")
 
     try:
         tebak = int(message.text.split(" ", 1)[1])
@@ -64,14 +64,14 @@ async def jawab(_, message):
         del GAME[chat_id]
 
         await message.reply_text(
-            f"""✅ <b>BENAR!</b>
+            f"""⌬ <b>BENAR!</b>
 
-🎯 Angkanya: <b>{angka}</b>
-🏆 <b>{user.first_name}</b> sekarang punya <b>{SCORE[uid]}</b> poin
+◈ Angkanya: <b>{angka}</b>
+✧ <b>{user.first_name}</b> sekarang punya <b>{SCORE[uid]}</b> poin
 """
         )
     else:
-        await message.reply_text("❌ Salah 😆 coba lagi")
+        await message.reply_text("⌭ Salah 😆 coba lagi")
 
 # ===== SCORE =====
 @PY.UBOT("angkaskor")
@@ -80,7 +80,7 @@ async def skor(_, message):
     if not SCORE:
         return await message.reply_text("📭 Belum ada skor")
 
-    text = "🏆 <b>SKOR TEBAK ANGKA</b>\n\n"
+    text = "✧ <b>SKOR TEBAK ANGKA</b>\n\n"
     for uid, sc in SCORE.items():
         text += f"• <code>{uid}</code> : <b>{sc}</b> poin\n"
 

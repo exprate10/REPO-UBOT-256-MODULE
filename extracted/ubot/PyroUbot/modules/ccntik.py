@@ -6,7 +6,7 @@ from PyroUbot import *
 __MODULE__ = "ᴄᴇᴋᴄᴀɴᴛɪᴋ"
 __HELP__ = """**「 BANTUAN UNTUK MODULE CEK CANTIK 」**
 
-𖠇➛ **ᴘᴇʀɪɴᴛᴀʜ: .cekcantik**
+𖠇➛ **<b>Perintah:</b> .cekcantik**
 𖠇➛ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: ᴜɴᴛᴜᴋ ᴍᴇʟɪʜᴀᴛ ᴄᴀɴᴛɪᴋ ɴᴀᴍᴀ ᴏʀᴀɴɢ**"""
 
 

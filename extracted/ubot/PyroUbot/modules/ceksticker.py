@@ -34,11 +34,11 @@ async def sticker_inspector(client, message):
 • Sticker ID :
 <code>{sticker.file_id}</code>
 
-• Emoji      : {sticker.emoji or 'Tidak ada'}
-• Pack Name  : {sticker.set_name or 'Tidak ada'}
+• Emoji      : {sticker.emoji or 'ga ada'}
+• Pack Name  : {sticker.set_name or 'ga ada'}
 
-• Animated   : {"✅ Ya" if sticker.is_animated else "❌ Tidak"}
-• Video      : {"✅ Ya" if sticker.is_video else "❌ Tidak"}</blockquote>
+• Animated   : {"⌬ Ya" if sticker.is_animated else "⌭ Tidak"}
+• Video      : {"⌬ Ya" if sticker.is_video else "⌭ Tidak"}</blockquote>
 """
 
     await message.reply(text)

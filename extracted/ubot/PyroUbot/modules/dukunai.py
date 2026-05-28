@@ -7,10 +7,10 @@ from pyrogram.types import Message
 
 __MODULE__ = "ᴅᴜᴋᴜɴ ᴀɪ"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk Dukun Ai
+<blockquote><b><b>Dukun Ai</b>
 
-perintah : <code>{0}dukunai</code>
-meramal dengan nama/peristiwa contoh <code>{0}dukunai</code> namaku boysz</b></blockquote>
+<b>Perintah:</b> <code>{0}dukunai</code>
+meramal dengan nama/peristiwa Contoh <code>{0}dukunai</code> namaku boysz</b></blockquote>
 """
 
 @PY.UBOT("dukunai")
@@ -21,7 +21,7 @@ async def chat_gpt(client, message):
 
         if len(message.command) < 2:
             await message.reply_text(
-                "<emoji id=5019523782004441717>❌</emoji>mohon gunakan format\ncontoh : .dukunai namaku boysz"
+                "<emoji id=5019523782004441717>⌭</emoji>tolong gunakan format\ncontoh : .dukunai namaku boysz"
             )
         else:
             prs = await message.reply_text(f"<emoji id=5192886773948107844>😮‍💨</emoji>Mbah Dukun Sedang Meramal....")

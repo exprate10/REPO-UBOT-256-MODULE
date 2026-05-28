@@ -5,9 +5,9 @@ from PyroUbot import *
 
 __MODULE__ = "ʙɪɴɢ ɪᴍɢ"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk Bing-image
+<blockquote><b><b>Bing-image</b>
 
-Perintah : <code>{0}pic</code> [ǫᴜᴇʀʏ]
+<b>Perintah:</b> <code>{0}pic</code> [ǫᴜᴇʀʏ]
     Untuk Mencari Photo Random Dari Google</b></blockquote>
 """
 
@@ -34,7 +34,7 @@ async def pic_bing_cmd(client, message):
         except:
             pass
     if len(get_media) == 0:
-        return await TM.edit("<b>❌ ɪᴍᴀɢᴇ ᴘʜᴏᴛᴏ ᴛɪᴅᴀᴋ ᴅɪᴛᴇᴍᴜᴋᴀɴ</b>")
+        return await TM.edit("<b>⌭ ɪᴍᴀɢᴇ ᴘʜᴏᴛᴏ ᴛɪᴅᴀᴋ ᴅɪᴛᴇᴍᴜᴋᴀɴ</b>")
     else:
         await client.send_media_group(
             message.chat.id,

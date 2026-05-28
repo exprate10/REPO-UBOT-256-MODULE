@@ -9,7 +9,7 @@ __MODULE__ = "sᴛᴀʙɪʟɪᴛʏ ᴀɪ"
 __HELP__ = """
 📚 <b>sᴛᴀʙɪʟɪᴛʏ ᴀɪ Commands</b>
 
-<blockquote><b>🚦 Perintah : <code>stabilityai</code>
+<blockquote><b>🚦 <b>Perintah:</b> <code>stabilityai</code>
 🦠 Penjelasan : Membuat gambar dengan efek stabilityai.</b></blockquote>
 """
 
@@ -41,7 +41,7 @@ async def process_image_command(client, message, api_url, command_name):
         return
 
     request_text = args[1]
-    await message.reply_text("<b><i>Sedang memproses, mohon tunggu...</i></b>")
+    await message.reply_text("<b><i>Sedang memproses, tolong tunggu...</i></b>")
 
     image_content = fetch_image(api_url, request_text)
     if image_content:
@@ -51,7 +51,7 @@ async def process_image_command(client, message, api_url, command_name):
         await message.reply_photo(photo=temp_file)
         os.remove(temp_file)
     else:
-        await message.reply_text("Gagal membuat gambar. Coba lagi nanti.")
+        await message.reply_text("gagal membuat gambar. Coba lagi nanti.")
 
 # Handler untuk setiap perintah
 @PY.UBOT("stabilityai")

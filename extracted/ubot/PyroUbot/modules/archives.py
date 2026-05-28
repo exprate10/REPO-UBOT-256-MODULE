@@ -2,9 +2,8 @@ from PyroUbot.core.helpers.tools import get_data_id
 from PyroUbot import *
 __MODULE__ = "ᴀʀᴄʜɪᴠᴇ"
 __HELP__ = """
-<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴀʀᴄʜɪᴠᴇ ⦫<b>
-
-<blockquote><b>⎆ perintah :
+<b>⦪ 
+<blockquote><b>⎆ <b>Perintah:</b>
 ᚗ <code>{0}arch</code>
 ⊷ mengarchivekan group chat pribadi maupun channel
 
@@ -16,9 +15,9 @@ __HELP__ = """
 async def archive_user(client, message):
     prs = await EMO.PROSES(client)
     brhsl = await EMO.BERHASIL(client)
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     if len(message.command) <2:
-        return await message.reply(f"{ggl}mohon gunakan arch all, users, group")
+        return await message.reply(f"{ggl}tolong gunakan arch all, users, group")
     anjai = await message.reply(f"{prs}proccesing...")
     anjir = message.command[1]
     xx = await get_data_id(client, anjir)
@@ -32,9 +31,9 @@ async def archive_user(client, message):
 async def unarchive_user(client, message):
     prs = await EMO.PROSES(client)
     brhsl = await EMO.BERHASIL(client)
-    ggl = await EMO.GAGAL(client)
+    ggl = await EMO.gagal(client)
     if len(message.command) <2:
-        return await message.reply(f"{ggl}mohon gunakan arch all, users, group")
+        return await message.reply(f"{ggl}tolong gunakan arch all, users, group")
     anjai = await message.reply(f"{prs}proccesing...")
     anjir = message.command[1]
     xx = await get_data_id(client, anjir)
